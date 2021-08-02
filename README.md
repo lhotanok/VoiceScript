@@ -1,2 +1,4 @@
 # VoiceScript
-Desktop application using speech-to-text feature for translating voice commands into UML diagrams and code
+`WinForms` `Google Cloud Platform`  `Speech-to-Text`
+
+Desktop application providing voice commands conversion into UML diagrams and the corresponding code signatures in C# language.
