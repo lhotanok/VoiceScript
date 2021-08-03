@@ -17,7 +17,7 @@ namespace VoiceScript
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VoiceScript());
+            Application.Run(new Form1());
         }
     }
 }
