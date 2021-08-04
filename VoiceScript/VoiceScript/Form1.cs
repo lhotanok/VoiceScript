@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 using NAudio.Wave; // Credit: https://github.com/naudio/NAudio
 
 using Google.Cloud.Speech.V1;
-using Google.LongRunning;
-using Google.Protobuf;
-using System.Threading;
 
 namespace VoiceScript
 {
@@ -22,6 +19,7 @@ namespace VoiceScript
         readonly string audioFilename;
 
         VoiceDetection voiceDetection;
+        bool isClosing;
 
         readonly RecognitionConfig configuration;
 
@@ -48,6 +46,9 @@ namespace VoiceScript
             {
                 DiscardOnBufferOverflow = true
             };
+
+            // for safe release of recording device
+            FormClosing += (sender, e) => { isClosing = true; waveIn.StopRecording(); };
             #endregion
 
             #region Initialize voice recognition configuration
@@ -134,12 +135,6 @@ namespace VoiceScript
             }
         }
 
-        //async Task<Operation<LongRunningRecognizeResponse, LongRunningRecognizeMetadata>>
-        //    GetCompletedOperationResult(Operation<LongRunningRecognizeResponse,
-        //                                           LongRunningRecognizeMetadata> operation)
-
-        //    => await operation.PollUntilCompletedAsync();
-
         /// <summary>
         /// Start speech recording.
         /// </summary>
@@ -151,7 +146,7 @@ namespace VoiceScript
             {
                 voiceDetection = VoiceDetection.Recording;
                 writer = new WaveFileWriter(audioFilename, waveIn.WaveFormat);
-                //timer1.Enabled = true;
+                timer1.Enabled = true;
                 waveIn.StartRecording();
 
                 #region Handle buttons accessibility
@@ -169,6 +164,8 @@ namespace VoiceScript
 
         /// <summary>
         /// Synchronous convert from the saved file.
+        /// Suitable for audio files under the length of 1 minute
+        /// (according to the Google Cloud speech-to-text documentation).
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -234,14 +231,12 @@ namespace VoiceScript
 
         void RecordingStoppedHandler(object sender, StoppedEventArgs e)
         {
-            //Task task = StreamingRecognizeAsync();
-            //task.ContinueWith((result) => {
-            //    voiceDetection = VoiceDetection.Stopped;
-            //    writer.Dispose();
-            //});
+            writer?.Dispose();
+            writer = null;
+            
+            if (isClosing) waveIn.Dispose();
 
             timer1.Enabled = false;
-            writer.Dispose();
             voiceDetection = VoiceDetection.Stopped;
         }
 
@@ -251,14 +246,81 @@ namespace VoiceScript
             reader.Dispose();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private async void timer1_Tick(object sender, EventArgs e)
         {
             if (voiceDetection.Equals(VoiceDetection.Recording) || voiceDetection.Equals(VoiceDetection.Stopped))
             {
-                // Task task = StreamingRecognizeAsync();
+                await StreamingRecognizeAsync();
             }
         }
 
-        
+        private async Task<object> StreamingRecognizeAsync()
+        {
+            var speechClient = SpeechClient.Create();
+            var response = speechClient.StreamingRecognize();
+
+            #region Send requests to the server
+            bool finished = false;
+            while (!finished)
+            {
+                var recognizeRequest = new StreamingRecognizeRequest
+                {
+                    StreamingConfig = new StreamingRecognitionConfig()
+                    {
+                        Config = configuration,
+                        SingleUtterance = true
+                    },
+                };
+
+                await response.WriteAsync(recognizeRequest); // configuration stream request for the server
+
+                byte[] buffer = new byte[waveProvider.BufferLength];
+                waveProvider.Read(buffer, 0, buffer.Length);
+                await response.WriteAsync(new StreamingRecognizeRequest()
+                {
+                    AudioContent = Google.Protobuf.ByteString.CopyFrom(buffer, 0, waveProvider.BufferedBytes)
+                });
+
+                if (voiceDetection.Equals(VoiceDetection.Stopped) || voiceDetection.Equals(VoiceDetection.Waiting))
+                {
+                    finished = true;
+                }
+            }
+            #endregion
+
+            #region Task for server responses processing
+            Task responseHandlerTask = Task.Run(async () =>
+            {
+                var responseStream = response.GetResponseStream();
+                var voiceCommand = string.Empty;
+                var lastVoiceCommand = string.Empty;
+
+                while (await responseStream.MoveNextAsync())
+                {
+                    var current = responseStream.Current;
+
+                    foreach (var result in current.Results)
+                    {
+                        foreach (var alternative in result.Alternatives)
+                        {
+                            voiceCommand = alternative.Transcript;
+                            if (voiceCommand != lastVoiceCommand)
+                            {
+                                lastVoiceCommand = voiceCommand;
+                                richTextBox.Invoke((MethodInvoker)(() => 
+                                    richTextBox.AppendText(richTextBox.Text + voiceCommand)));
+                            }
+                        }
+                    }
+                }
+            });
+            #endregion
+
+            await response.WriteCompleteAsync(); // Finish request stream writing
+            await responseHandlerTask; // Awaits all server responses to get processed
+
+            waveProvider.ClearBuffer();
+            return 0; // for the compiler
+        }
     }
 }

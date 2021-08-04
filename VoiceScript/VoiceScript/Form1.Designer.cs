@@ -36,7 +36,6 @@ namespace VoiceScript
             this.playBtn = new System.Windows.Forms.Button();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.stopBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -86,15 +85,6 @@ namespace VoiceScript
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(716, 266);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(8, 8);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // stopBtn
             // 
             this.stopBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -117,7 +107,6 @@ namespace VoiceScript
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(1377, 685);
             this.Controls.Add(this.stopBtn);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox);
             this.Controls.Add(this.playBtn);
             this.Controls.Add(this.convertBtn);
@@ -136,7 +125,6 @@ namespace VoiceScript
         private System.Windows.Forms.Button playBtn;
         private System.Windows.Forms.RichTextBox richTextBox;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button stopBtn;
     }
 }
