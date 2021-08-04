@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using NAudio.Wave; // Credit: https://github.com/naudio/NAudio
 
 using Google.Cloud.Speech.V1;
+using Google.Protobuf.Collections;
 
 namespace VoiceScript
 {
@@ -101,13 +102,30 @@ namespace VoiceScript
         void WriteTranscriptToTextbox(RecognizeResponse response, bool append = true)
         {
             if (!append) richTextBox.Text = string.Empty;
-            else if (richTextBox.Text.Length != 0) richTextBox.Text += Environment.NewLine;
 
             foreach (var result in response.Results)
             {
                 foreach (var alternative in result.Alternatives)
                 {
-                    richTextBox.AppendText(string.Concat(" ", alternative.Transcript));
+                    richTextBox.AppendText(" " + alternative.Transcript);
+                }
+            }
+        }
+
+        void WriteRealTimeTranscriptToTextbox(RepeatedField<StreamingRecognitionResult> results, ref string lastVoiceCommand)
+        {
+            foreach (var result in results)
+            {
+                foreach (var alternative in result.Alternatives)
+                {
+                    var voiceCommand = alternative.Transcript;
+
+                    if (voiceCommand != lastVoiceCommand)
+                    {
+                        lastVoiceCommand = voiceCommand;
+                        richTextBox.Invoke((MethodInvoker)(() =>
+                            richTextBox.AppendText(" " + voiceCommand)));
+                    }
                 }
             }
         }
@@ -146,7 +164,8 @@ namespace VoiceScript
             {
                 voiceDetection = VoiceDetection.Recording;
                 writer = new WaveFileWriter(audioFilename, waveIn.WaveFormat);
-                timer1.Enabled = true;
+                if (richTextBox.Text.Length != 0) richTextBox.Text += Environment.NewLine;
+                recordingTimer.Enabled = true;
                 waveIn.StartRecording();
 
                 #region Handle buttons accessibility
@@ -236,7 +255,7 @@ namespace VoiceScript
             
             if (isClosing) waveIn.Dispose();
 
-            timer1.Enabled = false;
+            recordingTimer.Enabled = false;
             voiceDetection = VoiceDetection.Waiting;
         }
 
@@ -246,81 +265,71 @@ namespace VoiceScript
             reader.Dispose();
         }
 
-        private async void timer1_Tick(object sender, EventArgs e)
+        private void recordingTimer_Tick(object sender, EventArgs e)
         {
             if (voiceDetection.Equals(VoiceDetection.Recording) || voiceDetection.Equals(VoiceDetection.Stopped))
             {
-                await StreamingRecognizeAsync();
+                StreamingRecognizeAsync();
             }
         }
 
-        private async Task<object> StreamingRecognizeAsync()
+        StreamingRecognizeRequest CreateConfigurationRequest()
         {
-            var speechClient = SpeechClient.Create();
-            var response = speechClient.StreamingRecognize();
-
-            #region Send requests to the server
-            bool finished = false;
-            while (!finished)
+            return new()
             {
-                var recognizeRequest = new StreamingRecognizeRequest
+                StreamingConfig = new StreamingRecognitionConfig()
                 {
-                    StreamingConfig = new StreamingRecognitionConfig()
-                    {
-                        Config = configuration,
-                    },
-                };
+                    Config = configuration,
+                },
+            };
+        }
 
-                await response.WriteAsync(recognizeRequest); // configuration stream request for the server
+        StreamingRecognizeRequest CreateAudioRequest()
+        {
+            byte[] buffer = new byte[waveProvider.BufferLength];
+            waveProvider.Read(buffer, 0, buffer.Length);
 
-                byte[] buffer = new byte[waveProvider.BufferLength];
-                waveProvider.Read(buffer, 0, buffer.Length);
-                await response.WriteAsync(new StreamingRecognizeRequest()
-                {
-                    AudioContent = Google.Protobuf.ByteString.CopyFrom(buffer, 0, buffer.Length)
-                }) ;
-
-                //if (voiceDetection.Equals(VoiceDetection.Stopped) || voiceDetection.Equals(VoiceDetection.Waiting))
-                //{
-                //    finished = true;
-                //}
-                finished = true;
-            }
-            #endregion
-
-            #region Task for server responses processing
-            Task responseHandlerTask = Task.Run(async () =>
+            return new()
             {
-                var responseStream = response.GetResponseStream();
-                var voiceCommand = string.Empty;
+                AudioContent = Google.Protobuf.ByteString.CopyFrom(buffer, 0, buffer.Length)
+            };
+        }
+
+        /// <summary>
+        /// Task for server responses processing.
+        /// </summary>
+        /// <param name="recognizeStream"></param>
+        /// <returns></returns>
+        Task ProcessServerResponseTask(SpeechClient.StreamingRecognizeStream recognizeStream)
+        {
+            return Task.Run(async () =>
+            {
+                var responseStream = recognizeStream.GetResponseStream();
                 var lastVoiceCommand = string.Empty;
 
                 while (await responseStream.MoveNextAsync())
                 {
-                    var current = responseStream.Current;
-
-                    foreach (var result in current.Results)
-                    {
-                        foreach (var alternative in result.Alternatives)
-                        {
-                            voiceCommand = alternative.Transcript;
-                            if (voiceCommand != lastVoiceCommand)
-                            {
-                                lastVoiceCommand = voiceCommand;
-                                richTextBox.Invoke((MethodInvoker)(() =>
-                                    richTextBox.AppendText(voiceCommand)));
-                            }
-                        }
-                    }
+                    WriteRealTimeTranscriptToTextbox(responseStream.Current.Results, ref lastVoiceCommand);
                 }
             });
+        }
+
+        private async void StreamingRecognizeAsync()
+        {
+            var speechClient = SpeechClient.Create();
+            var recognizeStream = speechClient.StreamingRecognize();
+
+            #region Send requests to the server
+            await recognizeStream.WriteAsync(CreateConfigurationRequest());
+            await recognizeStream.WriteAsync(CreateAudioRequest());
             #endregion
 
-            await response.WriteCompleteAsync(); // Finish request stream writing
+            Task responseHandlerTask = ProcessServerResponseTask(recognizeStream);
+
+            await recognizeStream.WriteCompleteAsync(); // Finish request stream writing
             await responseHandlerTask; // Awaits all server responses to get processed
 
             waveProvider.ClearBuffer();
-            return 0; // for the compiler
         }
     }
 }

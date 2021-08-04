@@ -35,7 +35,7 @@ namespace VoiceScript
             this.convertBtn = new System.Windows.Forms.Button();
             this.playBtn = new System.Windows.Forms.Button();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.recordingTimer = new System.Windows.Forms.Timer(this.components);
             this.stopBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -80,10 +80,10 @@ namespace VoiceScript
             this.richTextBox.TabIndex = 4;
             this.richTextBox.Text = "";
             // 
-            // timer1
+            // recordingTimer
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.recordingTimer.Interval = 1500;
+            this.recordingTimer.Tick += new System.EventHandler(this.recordingTimer_Tick);
             // 
             // stopBtn
             // 
@@ -124,7 +124,7 @@ namespace VoiceScript
         private System.Windows.Forms.Button convertBtn;
         private System.Windows.Forms.Button playBtn;
         private System.Windows.Forms.RichTextBox richTextBox;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer recordingTimer;
         private System.Windows.Forms.Button stopBtn;
     }
 }
