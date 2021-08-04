@@ -12,17 +12,26 @@ namespace VoiceScript
         /// Start audio playing from the given file.
         /// </summary>
         /// <param name="audioFilename"></param>
-        internal void Play(string audioFilename)
+        public void Play(string audioFilename)
         {
             reader = new WaveFileReader(audioFilename);
+
             waveOut = new WaveOutEvent();
             waveOut.Init(reader);
+            waveOut.PlaybackStopped += PlaybackStoppedHandler;
             waveOut.Play();
-            waveOut.PlaybackStopped += (sender, e) =>
-            {
-                waveOut.Stop();
-                reader.Dispose();
-            };
         }
+
+        public void Stop()
+        {
+            waveOut.Stop();
+            waveOut.Dispose();
+            waveOut = null;
+
+            reader.Dispose();
+            reader = null;
+        }
+
+        void PlaybackStoppedHandler(object sender, StoppedEventArgs e) => Stop();
     }
 }

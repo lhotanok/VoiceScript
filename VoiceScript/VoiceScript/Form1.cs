@@ -12,16 +12,10 @@ namespace VoiceScript
 {
     public partial class Form1 : Form
     {
-        readonly BufferedWaveProvider waveProvider;
-        readonly WaveInEvent waveIn;
-        WaveFileWriter writer;
-        readonly string audioFilename;
-
         readonly AudioPlayer audioPlayer;
-
-        VoiceDetection voiceDetection;
-        bool isClosing;
-
+        readonly AudioRecorder audioRecorder;
+        readonly StreamRecognizer streamRecognizer;
+        readonly string audioFilename;
         readonly RecognitionConfig configuration;
 
         public Form1()
@@ -29,25 +23,11 @@ namespace VoiceScript
             InitializeComponent();
 
             #region Initialize audio management
-            voiceDetection = VoiceDetection.Waiting;
             audioFilename = "audio.raw";
             audioPlayer = new AudioPlayer();
+            audioRecorder = new AudioRecorder(audioFilename, recordingTimer);
 
-            waveIn = new WaveInEvent
-            {
-                WaveFormat = new WaveFormat(16000, 1),
-                DeviceNumber = 0
-            };
-            waveIn.DataAvailable += DataAvailableHandler;
-            waveIn.RecordingStopped += RecordingStoppedHandler;
-
-            waveProvider = new BufferedWaveProvider(waveIn.WaveFormat)
-            {
-                DiscardOnBufferOverflow = true
-            };
-
-            // for safe release of recording device
-            FormClosing += (sender, e) => { isClosing = true; waveIn.StopRecording(); };
+            FormClosing += (sender, e) => audioRecorder.Dispose();
             #endregion
 
             #region Initialize voice recognition configuration
@@ -58,6 +38,8 @@ namespace VoiceScript
                 SampleRateHertz = 16000
             };
             #endregion
+
+            streamRecognizer = new StreamRecognizer(configuration, audioRecorder, ProcessServerResponseTask);
 
             SetGoogleCloudCredentialsPath();
             DisableButtons(convertBtn, playBtn);
@@ -88,6 +70,11 @@ namespace VoiceScript
             }
         }
 
+        static void EnableButtons(params Button[] buttons) => SetEnability(true, buttons);
+        static void DisableButtons(params Button[] buttons) => SetEnability(false, buttons);
+        static void ShowButtons(params Button[] buttons) => SetVisibility(true, buttons);
+        static void HideButtons(params Button[] buttons) => SetVisibility(false, buttons);
+
         void SetLanguages()
         {
             languages.Items.AddRange(new Language[]
@@ -100,11 +87,6 @@ namespace VoiceScript
             languages.SelectedIndexChanged += (sender, e)
                 => configuration.LanguageCode = ((Language)languages.SelectedItem).LanguageCode;
         }
-
-        static void EnableButtons(params Button[] buttons) => SetEnability(true, buttons);
-        static void DisableButtons(params Button[] buttons) => SetEnability(false, buttons);
-        static void ShowButtons(params Button[] buttons) => SetVisibility(true, buttons);
-        static void HideButtons(params Button[] buttons) => SetVisibility(false, buttons);
 
         /// <summary>
         /// Write converted speech from <see cref="RecognizeResponse"/> into <see cref="richTextBox"/>.
@@ -124,6 +106,11 @@ namespace VoiceScript
             }
         }
 
+        /// <summary>
+        /// Append new text converted from speech into <see cref="StreamingRecognitionResult"/>.
+        /// </summary>
+        /// <param name="results"></param>
+        /// <param name="lastVoiceCommand"></param>
         void WriteRealTimeTranscriptToTextbox(RepeatedField<StreamingRecognitionResult> results, ref string lastVoiceCommand)
         {
             foreach (var result in results)
@@ -143,26 +130,25 @@ namespace VoiceScript
         }
 
         /// <summary>
-        /// Append new bytes of audio stream into <see cref="WaveFileWriter"/>.
+        /// Synchronous conversion from the file saved under the given filename.
+        /// Can only be used for audio files under the length of 1 minute.
+        /// For files longer than 1 minute use asynchronous conversion
+        /// using <see cref="ConvertAudioRecordToTextAsync"/> method.
         /// </summary>
-        /// <param name="buffer"></param>
-        /// <param name="bytesToWrite"></param>
-        void WriteAudioStreamIntoFileWriter(byte[] buffer, int bytesToWrite)
+        /// <param name="filename"></param>
+        void ConvertAudioRecordToText(string filename)
         {
-            // if (File.Exists(audioFilename)) File.Delete(audioFilename);
-            const int tenMinutes = 60 * 10;
-            int maxFileSize = tenMinutes * waveIn.WaveFormat.AverageBytesPerSecond;
-            int remainingFileSize = (int)Math.Min(bytesToWrite, maxFileSize - writer.Length);
+            var speech = SpeechClient.Create();
+            var audio = RecognitionAudio.FromFile(filename);
 
-            if (remainingFileSize > 0)
-            {
-                writer.Write(buffer, 0, bytesToWrite);
-            }
-            else
-            {
-                writer.Dispose();
-                writer = new WaveFileWriter(audioFilename, waveIn.WaveFormat);
-            }
+            WriteTranscriptToTextbox(speech.Recognize(configuration, audio));
+
+            if (richTextBox.Text.Length == 0) MessageBox.Show("No data to convert.");
+        }
+
+        async void ConvertAudioRecordToTextAsync(string filename)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -174,11 +160,10 @@ namespace VoiceScript
         {
             if (WaveInEvent.DeviceCount >= 1)
             {
-                voiceDetection = VoiceDetection.Recording;
-                writer = new WaveFileWriter(audioFilename, waveIn.WaveFormat);
-                if (richTextBox.Text.Length != 0) richTextBox.Text += Environment.NewLine;
                 recordingTimer.Enabled = true;
-                waveIn.StartRecording();
+                if (richTextBox.Text.Length != 0) richTextBox.Text += Environment.NewLine;
+
+                audioRecorder.StartRecording();
 
                 #region Handle buttons accessibility
                 EnableButtons(stopBtn);
@@ -193,31 +178,13 @@ namespace VoiceScript
             }
         }
 
-        /// <summary>
-        /// Synchronous convert from the saved file.
-        /// Suitable for audio files under the length of 1 minute
-        /// (according to the Google Cloud speech-to-text documentation).
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         void convertBtn_Click(object sender, EventArgs e)
         {
             DisableButtons(convertBtn);
             EnableButtons(recordBtn, playBtn);
 
-            if (File.Exists(audioFilename))
-            {
-                var speech = SpeechClient.Create();
-                var audio = RecognitionAudio.FromFile(audioFilename);
-
-                WriteTranscriptToTextbox(speech.Recognize(configuration, audio));
-
-                if (richTextBox.Text.Length == 0) MessageBox.Show("No data to convert.");
-            }
-            else
-            {
-                MessageBox.Show("No audio file found.");
-            }
+            if (File.Exists(audioFilename)) ConvertAudioRecordToText(audioFilename);
+            else MessageBox.Show("No audio file found.");
         }
 
         void playBtn_Click(object sender, EventArgs e)
@@ -226,12 +193,11 @@ namespace VoiceScript
             else MessageBox.Show("No audio file found.");
         }
 
-        private void stopBtn_Click(object sender, EventArgs e)
+        void stopBtn_Click(object sender, EventArgs e)
         {
-            if (voiceDetection.Equals(VoiceDetection.Recording))
+            if (audioRecorder.Recording)
             {
-                waveIn.StopRecording();
-                voiceDetection = VoiceDetection.Stopped;
+                audioRecorder.StopRecording();
 
                 #region Handle buttons accessibility
                 DisableButtons(stopBtn);
@@ -246,52 +212,7 @@ namespace VoiceScript
             }
         }
 
-        void DataAvailableHandler(object sender, WaveInEventArgs e)
-        {
-            waveProvider.AddSamples(e.Buffer, 0, e.BytesRecorded);
-            WriteAudioStreamIntoFileWriter(e.Buffer, e.BytesRecorded);
-        }
-
-        void RecordingStoppedHandler(object sender, StoppedEventArgs e)
-        {
-            writer?.Dispose();
-            writer = null;
-            
-            if (isClosing) waveIn.Dispose();
-
-            recordingTimer.Enabled = false;
-            voiceDetection = VoiceDetection.Waiting;
-        }
-
-        private void recordingTimer_Tick(object sender, EventArgs e)
-        {
-            if (voiceDetection.Equals(VoiceDetection.Recording) || voiceDetection.Equals(VoiceDetection.Stopped))
-            {
-                StreamingRecognizeAsync();
-            }
-        }
-
-        StreamingRecognizeRequest CreateConfigurationRequest()
-        {
-            return new()
-            {
-                StreamingConfig = new StreamingRecognitionConfig()
-                {
-                    Config = configuration,
-                },
-            };
-        }
-
-        StreamingRecognizeRequest CreateAudioRequest()
-        {
-            byte[] buffer = new byte[waveProvider.BufferLength];
-            waveProvider.Read(buffer, 0, buffer.Length);
-
-            return new()
-            {
-                AudioContent = Google.Protobuf.ByteString.CopyFrom(buffer, 0, buffer.Length)
-            };
-        }
+        void recordingTimer_Tick(object sender, EventArgs e) => streamRecognizer.StreamingRecognizeAsync();
 
         /// <summary>
         /// Task for server responses processing.
@@ -310,24 +231,6 @@ namespace VoiceScript
                     WriteRealTimeTranscriptToTextbox(responseStream.Current.Results, ref lastVoiceCommand);
                 }
             });
-        }
-
-        private async void StreamingRecognizeAsync()
-        {
-            var speechClient = SpeechClient.Create();
-            var recognizeStream = speechClient.StreamingRecognize();
-
-            #region Send requests to the server
-            await recognizeStream.WriteAsync(CreateConfigurationRequest());
-            await recognizeStream.WriteAsync(CreateAudioRequest());
-            #endregion
-
-            Task responseHandlerTask = ProcessServerResponseTask(recognizeStream);
-
-            await recognizeStream.WriteCompleteAsync(); // Finish request stream writing
-            await responseHandlerTask; // Awaits all server responses to get processed
-
-            waveProvider.ClearBuffer();
         }
     }
 }
