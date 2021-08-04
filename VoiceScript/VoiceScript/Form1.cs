@@ -14,10 +14,10 @@ namespace VoiceScript
     {
         readonly BufferedWaveProvider waveProvider;
         readonly WaveInEvent waveIn;
-        readonly WaveOutEvent waveOut;
-        WaveFileReader reader;
         WaveFileWriter writer;
         readonly string audioFilename;
+
+        readonly AudioPlayer audioPlayer;
 
         VoiceDetection voiceDetection;
         bool isClosing;
@@ -29,8 +29,9 @@ namespace VoiceScript
             InitializeComponent();
 
             #region Initialize audio management
-            audioFilename = "audio.raw";
             voiceDetection = VoiceDetection.Waiting;
+            audioFilename = "audio.raw";
+            audioPlayer = new AudioPlayer();
 
             waveIn = new WaveInEvent
             {
@@ -39,9 +40,6 @@ namespace VoiceScript
             };
             waveIn.DataAvailable += DataAvailableHandler;
             waveIn.RecordingStopped += RecordingStoppedHandler;
-
-            waveOut = new WaveOutEvent();
-            waveOut.PlaybackStopped += PlaybackStoppedHandler;
 
             waveProvider = new BufferedWaveProvider(waveIn.WaveFormat)
             {
@@ -148,17 +146,17 @@ namespace VoiceScript
         /// Append new bytes of audio stream into <see cref="WaveFileWriter"/>.
         /// </summary>
         /// <param name="buffer"></param>
-        /// <param name="bytesToWright"></param>
-        void WriteAudioStreamIntoFileWriter(byte[] buffer, int bytesToWright)
+        /// <param name="bytesToWrite"></param>
+        void WriteAudioStreamIntoFileWriter(byte[] buffer, int bytesToWrite)
         {
             // if (File.Exists(audioFilename)) File.Delete(audioFilename);
             const int tenMinutes = 60 * 10;
             int maxFileSize = tenMinutes * waveIn.WaveFormat.AverageBytesPerSecond;
-            int remainingFileSize = (int)Math.Min(bytesToWright, maxFileSize - writer.Length);
+            int remainingFileSize = (int)Math.Min(bytesToWrite, maxFileSize - writer.Length);
 
             if (remainingFileSize > 0)
             {
-                writer.Write(buffer, 0, bytesToWright);
+                writer.Write(buffer, 0, bytesToWrite);
             }
             else
             {
@@ -224,16 +222,8 @@ namespace VoiceScript
 
         void playBtn_Click(object sender, EventArgs e)
         {
-            if (File.Exists(audioFilename))
-            {
-                reader = new WaveFileReader(audioFilename);
-                waveOut.Init(reader);
-                waveOut.Play();
-            }
-            else
-            {
-                MessageBox.Show("No audio file found.");
-            }
+            if (File.Exists(audioFilename)) audioPlayer.Play(audioFilename);
+            else MessageBox.Show("No audio file found.");
         }
 
         private void stopBtn_Click(object sender, EventArgs e)
@@ -271,12 +261,6 @@ namespace VoiceScript
 
             recordingTimer.Enabled = false;
             voiceDetection = VoiceDetection.Waiting;
-        }
-
-        void PlaybackStoppedHandler(object sender, StoppedEventArgs e)
-        {
-            waveOut.Stop();
-            reader.Dispose();
         }
 
         private void recordingTimer_Tick(object sender, EventArgs e)
