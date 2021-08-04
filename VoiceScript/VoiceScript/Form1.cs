@@ -207,7 +207,6 @@ namespace VoiceScript
         {
             if (voiceDetection.Equals(VoiceDetection.Recording))
             {
-                voiceDetection = VoiceDetection.Stopped;
                 waveIn.StopRecording();
 
                 #region Handle buttons accessibility
@@ -231,13 +230,14 @@ namespace VoiceScript
 
         void RecordingStoppedHandler(object sender, StoppedEventArgs e)
         {
+            voiceDetection = VoiceDetection.Stopped;
+
             writer?.Dispose();
             writer = null;
             
             if (isClosing) waveIn.Dispose();
 
             timer1.Enabled = false;
-            voiceDetection = VoiceDetection.Stopped;
         }
 
         void PlaybackStoppedHandler(object sender, StoppedEventArgs e)
@@ -268,7 +268,6 @@ namespace VoiceScript
                     StreamingConfig = new StreamingRecognitionConfig()
                     {
                         Config = configuration,
-                        SingleUtterance = true
                     },
                 };
 
@@ -278,13 +277,14 @@ namespace VoiceScript
                 waveProvider.Read(buffer, 0, buffer.Length);
                 await response.WriteAsync(new StreamingRecognizeRequest()
                 {
-                    AudioContent = Google.Protobuf.ByteString.CopyFrom(buffer, 0, waveProvider.BufferedBytes)
-                });
+                    AudioContent = Google.Protobuf.ByteString.CopyFrom(buffer, 0, buffer.Length)
+                }) ;
 
-                if (voiceDetection.Equals(VoiceDetection.Stopped) || voiceDetection.Equals(VoiceDetection.Waiting))
-                {
-                    finished = true;
-                }
+                //if (voiceDetection.Equals(VoiceDetection.Stopped) || voiceDetection.Equals(VoiceDetection.Waiting))
+                //{
+                //    finished = true;
+                //}
+                finished = true;
             }
             #endregion
 
@@ -319,7 +319,7 @@ namespace VoiceScript
             await response.WriteCompleteAsync(); // Finish request stream writing
             await responseHandlerTask; // Awaits all server responses to get processed
 
-            waveProvider.ClearBuffer();
+            //waveProvider.ClearBuffer();
             return 0; // for the compiler
         }
     }
