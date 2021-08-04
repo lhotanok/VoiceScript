@@ -208,6 +208,7 @@ namespace VoiceScript
             if (voiceDetection.Equals(VoiceDetection.Recording))
             {
                 waveIn.StopRecording();
+                voiceDetection = VoiceDetection.Stopped;
 
                 #region Handle buttons accessibility
                 DisableButtons(stopBtn);
@@ -230,14 +231,13 @@ namespace VoiceScript
 
         void RecordingStoppedHandler(object sender, StoppedEventArgs e)
         {
-            voiceDetection = VoiceDetection.Stopped;
-
             writer?.Dispose();
             writer = null;
             
             if (isClosing) waveIn.Dispose();
 
             timer1.Enabled = false;
+            voiceDetection = VoiceDetection.Waiting;
         }
 
         void PlaybackStoppedHandler(object sender, StoppedEventArgs e)
@@ -307,8 +307,8 @@ namespace VoiceScript
                             if (voiceCommand != lastVoiceCommand)
                             {
                                 lastVoiceCommand = voiceCommand;
-                                richTextBox.Invoke((MethodInvoker)(() => 
-                                    richTextBox.AppendText(richTextBox.Text + voiceCommand)));
+                                richTextBox.Invoke((MethodInvoker)(() =>
+                                    richTextBox.AppendText(voiceCommand)));
                             }
                         }
                     }
@@ -319,7 +319,7 @@ namespace VoiceScript
             await response.WriteCompleteAsync(); // Finish request stream writing
             await responseHandlerTask; // Awaits all server responses to get processed
 
-            //waveProvider.ClearBuffer();
+            waveProvider.ClearBuffer();
             return 0; // for the compiler
         }
     }
