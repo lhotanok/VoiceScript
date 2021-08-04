@@ -63,6 +63,7 @@ namespace VoiceScript
 
             SetGoogleCloudCredentialsPath();
             DisableButtons(convertBtn, playBtn);
+            SetLanguages();
         }
 
         static void SetGoogleCloudCredentialsPath()
@@ -87,6 +88,19 @@ namespace VoiceScript
             {
                 button.Visible = value;
             }
+        }
+
+        void SetLanguages()
+        {
+            languages.Items.AddRange(new Language[]
+            {
+                new EnglishLanguage(),
+                new CzechLanguage(),
+                new GermanLanguage()
+            });
+
+            languages.SelectedIndexChanged += (sender, e)
+                => configuration.LanguageCode = ((Language)languages.SelectedItem).LanguageCode;
         }
 
         static void EnableButtons(params Button[] buttons) => SetEnability(true, buttons);
