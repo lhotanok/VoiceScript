@@ -1,9 +1,9 @@
 ﻿using System;
 using NAudio.Wave;
 
-namespace VoiceScript
+namespace VoiceScript.VoiceTranscription
 {
-    class AudioPlayer
+    class AudioPlayer : IAudioPlayer
     {
         WaveFileReader reader;
         WaveOutEvent waveOut;

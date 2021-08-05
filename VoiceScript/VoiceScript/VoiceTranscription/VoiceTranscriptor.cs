@@ -3,7 +3,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Google.Cloud.Speech.V1;
 
-namespace VoiceScript
+namespace VoiceScript.VoiceTranscription
 {
     /// <summary>
     /// Manages voice transcription from audio to text

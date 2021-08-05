@@ -1,16 +1,17 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-
 using NAudio.Wave; // Credit: https://github.com/naudio/NAudio
+
+using VoiceScript.VoiceTranscription;
 
 namespace VoiceScript
 {
     public partial class Form1 : Form
     {
-        readonly AudioRecorder audioRecorder;
+        readonly IAudioRecorder audioRecorder;
         readonly AudioPlayer audioPlayer;
-        readonly VoiceTranscriptor voiceTranscriptor;
+        readonly IVoiceTranscriptor voiceTranscriptor;
 
         readonly string audioFilename;
 

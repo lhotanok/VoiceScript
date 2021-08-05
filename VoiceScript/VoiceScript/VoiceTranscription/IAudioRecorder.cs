@@ -1,7 +1,7 @@
 ﻿using System;
 using NAudio.Wave;
 
-namespace VoiceScript
+namespace VoiceScript.VoiceTranscription
 {
     interface IAudioRecorder : IDisposable
     {

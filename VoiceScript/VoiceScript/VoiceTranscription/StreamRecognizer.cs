@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Google.Cloud.Speech.V1;
 
-namespace VoiceScript
+namespace VoiceScript.VoiceTranscription
 {
     class StreamRecognizer
     {

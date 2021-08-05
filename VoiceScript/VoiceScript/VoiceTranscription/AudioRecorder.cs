@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 using NAudio.Wave;
 
-namespace VoiceScript
+namespace VoiceScript.VoiceTranscription
 {
     class AudioRecorder : IAudioRecorder
     {

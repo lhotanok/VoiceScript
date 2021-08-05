@@ -1,6 +1,6 @@
 ﻿using Google.Cloud.Speech.V1;
 
-namespace VoiceScript
+namespace VoiceScript.VoiceTranscription
 {
     abstract class Language
     {
