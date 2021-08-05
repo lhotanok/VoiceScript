@@ -2,6 +2,7 @@
 using System.Text;
 using System.Threading.Tasks;
 using Google.Cloud.Speech.V1;
+using NAudio.Wave;
 
 namespace VoiceScript.VoiceTranscription
 {
@@ -13,7 +14,9 @@ namespace VoiceScript.VoiceTranscription
     {
         readonly IAudioRecorder recorder;
         readonly StreamRecognizer streamRecognizer;
+        readonly LongRunningRecognizer longRunningRecognizer;
         readonly RecognitionConfig configuration;
+        readonly ServerResponseProcessor responseProcessor;
 
         public VoiceTranscriptor(IAudioRecorder audioRecorder)
         {
@@ -28,16 +31,17 @@ namespace VoiceScript.VoiceTranscription
 
             recorder = audioRecorder;
             streamRecognizer = new StreamRecognizer(configuration, recorder);
+            longRunningRecognizer = new LongRunningRecognizer(configuration, recorder);
+            responseProcessor = new ServerResponseProcessor();
 
             SetGoogleCloudCredentialsPath();
-
         }
 
         public RecognitionConfig Configuration => configuration;
 
         public void DoRealTimeTranscription(Action<string> callback)
         {
-            streamRecognizer.StreamingRecognizeAsync(ProcessServerResponseTask, callback);
+            streamRecognizer.StreamingRecognizeAsync(ProcessServerStreamResponseTask, callback);
         }
 
         /// <summary>
@@ -57,21 +61,18 @@ namespace VoiceScript.VoiceTranscription
 
             var transcription = new StringBuilder();
 
-            foreach (var result in response.Results)
-            {
-                foreach (var alternative in result.Alternatives)
-                {
-                    transcription.Append(alternative.Transcript);
-                    callback(alternative.Transcript);
-                }
-            }
+            responseProcessor.ProcessSpeechRecognitionTranscript(response.Results,
+                transcript => {
+                    transcription.Append(transcript);
+                    callback(transcript);
+                });
 
             return transcription.ToString();
         }
 
-        public Task<string> GetTranscriptionAsync(string filename)
+        public Task CreateTranscriptionAsync(string filename, Action<string> callback)
         {
-            throw new NotImplementedException();
+            return Task.Run(async () => await longRunningRecognizer.LongRunningRecognizeFromFileAsync(filename, callback));
         }
 
         static void SetGoogleCloudCredentialsPath()
@@ -88,28 +89,15 @@ namespace VoiceScript.VoiceTranscription
         /// <param name="recognizeStream"></param>
         /// <param name="callback"></param>
         /// <returns></returns>
-        Task ProcessServerResponseTask(SpeechClient.StreamingRecognizeStream recognizeStream, Action<string> callback)
+        Task ProcessServerStreamResponseTask(SpeechClient.StreamingRecognizeStream recognizeStream, Action<string> callback)
         {
             return Task.Run(async () =>
             {
                 var responseStream = recognizeStream.GetResponseStream();
-                var lastVoiceCommand = string.Empty;
 
                 while (await responseStream.MoveNextAsync())
                 {
-                    foreach (var result in responseStream.Current.Results)
-                    {
-                        foreach (var alternative in result.Alternatives)
-                        {
-                            var voiceCommand = alternative.Transcript;
-
-                            if (voiceCommand != lastVoiceCommand)
-                            {
-                                lastVoiceCommand = voiceCommand;
-                                callback(voiceCommand);
-                            }
-                        }
-                    }
+                    responseProcessor.ProcessStreamRecognitionTranscript(responseStream.Current.Results, callback);
                 }
             });
         }

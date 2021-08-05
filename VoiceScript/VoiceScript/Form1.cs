@@ -35,7 +35,7 @@ namespace VoiceScript
             SetLanguages();
             #endregion
 
-            DisableButtons(convertBtn, playBtn);
+            //DisableButtons(convertBtn, playBtn);
             appState = ApplicationState.Waiting;
         }
 
@@ -84,10 +84,19 @@ namespace VoiceScript
         {
             if (!append) richTextBox.Text = string.Empty;
 
-            var transcription = voiceTranscriptor.GetTranscription(filename,
-                transcript => richTextBox.AppendText(" " + transcript));
+            if (audioRecorder.GetFileSecondsLength(filename) < 60)
+            {
+                var transcription = voiceTranscriptor.GetTranscription(filename,
+                    transcript => richTextBox.AppendText(" " + transcript));
 
-            if (transcription.Length == 0) MessageBox.Show("No data to convert.");
+                if (transcription?.Length == 0) MessageBox.Show("No data to convert.");
+            }
+            else
+            {
+                var transcriptionTask = voiceTranscriptor.CreateTranscriptionAsync(filename,
+                    transcript => richTextBox.AppendText(" " + transcript));
+            }  
+
         }
 
         void WriteRealTimeTranscriptToTextbox(string voiceCommand)

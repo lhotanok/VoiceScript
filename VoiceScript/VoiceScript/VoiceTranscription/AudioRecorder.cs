@@ -39,6 +39,7 @@ namespace VoiceScript.VoiceTranscription
         }
 
         public BufferedWaveProvider WaveProvider => waveProvider;
+        public WaveFileWriter AudioStream => writer;
         public bool Recording => recording;
 
         public void StartRecording(Action RecordingStoppedCallback = null)
@@ -103,6 +104,15 @@ namespace VoiceScript.VoiceTranscription
                 writer.Dispose();
                 writer = new WaveFileWriter(outputFilename, waveIn.WaveFormat);
             }
+        }
+
+        public double GetFileSecondsLength(string audioFilename)
+        {
+            var audioReader = new AudioFileReader(audioFilename);
+            var fileSecondsDuration = new AudioFileReader(audioFilename).TotalTime.TotalSeconds;
+            audioReader.Dispose();
+
+            return fileSecondsDuration;
         }
     }
 }

@@ -5,9 +5,11 @@ namespace VoiceScript.VoiceTranscription
 {
     interface IAudioRecorder : IDisposable
     {
-        public BufferedWaveProvider WaveProvider { get; }
-        public bool Recording { get; }
-        public void StartRecording(Action RecordingStoppedCallback = null);
-        public void StopRecording();
+        BufferedWaveProvider WaveProvider { get; }
+        WaveFileWriter AudioStream { get; }
+        bool Recording { get; }
+        void StartRecording(Action RecordingStoppedCallback = null);
+        void StopRecording();
+        double GetFileSecondsLength(string audioFilename);
     }
 }
