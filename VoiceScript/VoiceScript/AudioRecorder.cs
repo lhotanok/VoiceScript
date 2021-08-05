@@ -11,13 +11,13 @@ namespace VoiceScript
         readonly WaveInEvent waveIn;
         WaveFileWriter writer;
 
-        VoiceDetection voiceDetection;
+        VoiceDetection voiceDetectionState;
         readonly Timer timer;
         readonly string outputFilename;
 
         public AudioRecorder(string outputAudioFilename, Timer recordingTimer)
         {
-            voiceDetection = VoiceDetection.Waiting;
+            voiceDetectionState = VoiceDetection.Waiting;
             timer = recordingTimer;
 
             waveIn = new WaveInEvent
@@ -37,19 +37,35 @@ namespace VoiceScript
         }
 
         public BufferedWaveProvider WaveProvider => waveProvider;
-        public bool Recording => voiceDetection.Equals(VoiceDetection.Recording);
+        public bool Recording => voiceDetectionState.Equals(VoiceDetection.Recording);
 
         public void StartRecording()
         {
-            voiceDetection = VoiceDetection.Recording;
+            voiceDetectionState = VoiceDetection.Recording;
             writer = new WaveFileWriter(outputFilename, waveIn.WaveFormat);
             waveIn.StartRecording();
         }
 
         public void StopRecording()
         {
-            voiceDetection = VoiceDetection.Stopped;
+            voiceDetectionState = VoiceDetection.Stopped;
             waveIn.StopRecording();
+        }
+
+        /// <summary>
+        /// Tries to stop voice recording.
+        /// </summary>
+        /// <returns>0 if successfull, 
+        /// -1 if not in <see cref="VoiceDetection.Recording"/> state originally.</returns>
+        public int TryStopRecording()
+        {
+            if (Recording)
+            {
+                StopRecording();
+                return 0;
+            }
+
+            return -1;
         }
 
         /// <summary>
@@ -74,7 +90,7 @@ namespace VoiceScript
             writer = null;
 
             timer.Enabled = false;
-            voiceDetection = VoiceDetection.Waiting;
+            voiceDetectionState = VoiceDetection.Waiting;
         }
 
         /// <summary>

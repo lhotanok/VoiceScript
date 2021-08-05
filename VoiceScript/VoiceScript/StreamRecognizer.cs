@@ -7,12 +7,11 @@ namespace VoiceScript
     class StreamRecognizer
     {
         readonly RecognitionConfig config;
-        readonly AudioRecorder audioRecorder;
-
-        Func<SpeechClient.StreamingRecognizeStream, Task> ProcessServerResponse;
+        readonly IAudioRecorder audioRecorder;
+        readonly Func<SpeechClient.StreamingRecognizeStream, Task> ProcessServerResponse;
 
         public StreamRecognizer(RecognitionConfig configuration,
-                                AudioRecorder recorder,
+                                IAudioRecorder recorder,
                                 Func<SpeechClient.StreamingRecognizeStream, Task> serverResponseCallback)
         {
             config = configuration;

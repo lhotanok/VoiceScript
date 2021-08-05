@@ -9,17 +9,17 @@ namespace VoiceScript
         public override string ToString() => Name;
     }
 
-    class EnglishLanguage : Language
+    class English : Language
     {
         public override string LanguageCode => LanguageCodes.English.UnitedStates;
         public override string Name => "English";
     }
-    class CzechLanguage : Language
+    class Czech : Language
     {
         public override string LanguageCode => LanguageCodes.Czech.CzechRepublic;
         public override string Name => "Czech";
     }
-    class GermanLanguage : Language
+    class German : Language
     {
         public override string LanguageCode => LanguageCodes.German.Germany;
         public override string Name => "German";

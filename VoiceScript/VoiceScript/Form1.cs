@@ -12,11 +12,11 @@ namespace VoiceScript
 {
     public partial class Form1 : Form
     {
-        readonly AudioPlayer audioPlayer;
         readonly AudioRecorder audioRecorder;
-        readonly StreamRecognizer streamRecognizer;
+        readonly AudioPlayer audioPlayer;
+        readonly VoiceTranscriptor voiceTranscriptor;
+
         readonly string audioFilename;
-        readonly RecognitionConfig configuration;
 
         public Form1()
         {
@@ -30,30 +30,13 @@ namespace VoiceScript
             FormClosing += (sender, e) => audioRecorder.Dispose();
             #endregion
 
-            #region Initialize voice recognition configuration
-            configuration = new RecognitionConfig()
-            {
-                Encoding = RecognitionConfig.Types.AudioEncoding.Linear16,
-                LanguageCode = LanguageCodes.English.UnitedStates,
-                SampleRateHertz = 16000
-            };
-            #endregion
+            voiceTranscriptor = new VoiceTranscriptor(audioRecorder);
 
-            streamRecognizer = new StreamRecognizer(configuration, audioRecorder, ProcessServerResponseTask);
-
-            SetGoogleCloudCredentialsPath();
             DisableButtons(convertBtn, playBtn);
             SetLanguages();
         }
 
-        static void SetGoogleCloudCredentialsPath()
-        {
-            // path to Google Cloud speech-to-text api key
-            var apiKey = @"..\\..\\..\\..\\Keys\\vs_auth_key.json";
-
-            System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", apiKey);
-        }
-
+        #region Button control settings
         static void SetEnability(bool value, params ButtonBase[] buttons)
         {
             foreach (var button in buttons)
@@ -74,18 +57,19 @@ namespace VoiceScript
         static void DisableButtons(params Button[] buttons) => SetEnability(false, buttons);
         static void ShowButtons(params Button[] buttons) => SetVisibility(true, buttons);
         static void HideButtons(params Button[] buttons) => SetVisibility(false, buttons);
+        #endregion
 
         void SetLanguages()
         {
             languages.Items.AddRange(new Language[]
             {
-                new EnglishLanguage(),
-                new CzechLanguage(),
-                new GermanLanguage()
+                new English(),
+                new Czech(),
+                new German()
             });
 
             languages.SelectedIndexChanged += (sender, e)
-                => configuration.LanguageCode = ((Language)languages.SelectedItem).LanguageCode;
+                => voiceTranscriptor.Configuration.LanguageCode = ((Language)languages.SelectedItem).LanguageCode;
         }
 
         /// <summary>
@@ -130,28 +114,6 @@ namespace VoiceScript
         }
 
         /// <summary>
-        /// Synchronous conversion from the file saved under the given filename.
-        /// Can only be used for audio files under the length of 1 minute.
-        /// For files longer than 1 minute use asynchronous conversion
-        /// using <see cref="ConvertAudioRecordToTextAsync"/> method.
-        /// </summary>
-        /// <param name="filename"></param>
-        void ConvertAudioRecordToText(string filename)
-        {
-            var speech = SpeechClient.Create();
-            var audio = RecognitionAudio.FromFile(filename);
-
-            WriteTranscriptToTextbox(speech.Recognize(configuration, audio));
-
-            if (richTextBox.Text.Length == 0) MessageBox.Show("No data to convert.");
-        }
-
-        async void ConvertAudioRecordToTextAsync(string filename)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
         /// Start speech recording.
         /// </summary>
         /// <param name="sender"></param>
@@ -161,7 +123,7 @@ namespace VoiceScript
             if (WaveInEvent.DeviceCount >= 1)
             {
                 recordingTimer.Enabled = true;
-                if (richTextBox.Text.Length != 0) richTextBox.Text += Environment.NewLine;
+                if (richTextBox.TextLength > 0) richTextBox.AppendText(Environment.NewLine);
 
                 audioRecorder.StartRecording();
 
@@ -195,10 +157,8 @@ namespace VoiceScript
 
         void stopBtn_Click(object sender, EventArgs e)
         {
-            if (audioRecorder.Recording)
+            if (audioRecorder.TryStopRecording() == 0)
             {
-                audioRecorder.StopRecording();
-
                 #region Handle buttons accessibility
                 DisableButtons(stopBtn);
                 EnableButtons(convertBtn, recordBtn, playBtn);
@@ -212,7 +172,7 @@ namespace VoiceScript
             }
         }
 
-        void recordingTimer_Tick(object sender, EventArgs e) => streamRecognizer.StreamingRecognizeAsync();
+        void recordingTimer_Tick(object sender, EventArgs e) => voiceTranscriptor.DoRealTimeTranscription();
 
         /// <summary>
         /// Task for server responses processing.
