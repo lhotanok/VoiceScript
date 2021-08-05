@@ -7,7 +7,7 @@ namespace VoiceScript
     {
         public BufferedWaveProvider WaveProvider { get; }
         public bool Recording { get; }
-        public void StartRecording();
+        public void StartRecording(Action RecordingStoppedCallback = null);
         public void StopRecording();
     }
 }

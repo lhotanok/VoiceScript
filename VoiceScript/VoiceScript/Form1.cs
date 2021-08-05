@@ -1,12 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using System.Threading.Tasks;
 
 using NAudio.Wave; // Credit: https://github.com/naudio/NAudio
-
-using Google.Cloud.Speech.V1;
-using Google.Protobuf.Collections;
 
 namespace VoiceScript
 {
@@ -17,6 +13,8 @@ namespace VoiceScript
         readonly VoiceTranscriptor voiceTranscriptor;
 
         readonly string audioFilename;
+
+        ApplicationState appState;
 
         public Form1()
         {
@@ -30,10 +28,14 @@ namespace VoiceScript
             FormClosing += (sender, e) => audioRecorder.Dispose();
             #endregion
 
+            #region Initialize voice transcripting
             voiceTranscriptor = new VoiceTranscriptor(audioRecorder);
+            recordingTimer.Tick += (sender, e) => voiceTranscriptor.DoRealTimeTranscription(WriteRealTimeTranscriptToTextbox);
+            SetLanguages();
+            #endregion
 
             DisableButtons(convertBtn, playBtn);
-            SetLanguages();
+            appState = ApplicationState.Waiting;
         }
 
         #region Button control settings
@@ -73,44 +75,23 @@ namespace VoiceScript
         }
 
         /// <summary>
-        /// Write converted speech from <see cref="RecognizeResponse"/> into <see cref="richTextBox"/>.
+        /// Write converted speech from audio file into <see cref="richTextBox"/>.
         /// </summary>
-        /// <param name="response"></param>
+        /// <param name="filename"></param>
         /// <param name="append">If set to false, <see cref="richTextBox"/> content is overwritten.</param>
-        void WriteTranscriptToTextbox(RecognizeResponse response, bool append = true)
+        void WriteTranscriptToTextbox(string filename, bool append = true)
         {
             if (!append) richTextBox.Text = string.Empty;
 
-            foreach (var result in response.Results)
-            {
-                foreach (var alternative in result.Alternatives)
-                {
-                    richTextBox.AppendText(" " + alternative.Transcript);
-                }
-            }
+            var transcription = voiceTranscriptor.GetTranscription(filename,
+                transcript => richTextBox.AppendText(" " + transcript));
+
+            if (transcription.Length == 0) MessageBox.Show("No data to convert.");
         }
 
-        /// <summary>
-        /// Append new text converted from speech into <see cref="StreamingRecognitionResult"/>.
-        /// </summary>
-        /// <param name="results"></param>
-        /// <param name="lastVoiceCommand"></param>
-        void WriteRealTimeTranscriptToTextbox(RepeatedField<StreamingRecognitionResult> results, ref string lastVoiceCommand)
+        void WriteRealTimeTranscriptToTextbox(string voiceCommand)
         {
-            foreach (var result in results)
-            {
-                foreach (var alternative in result.Alternatives)
-                {
-                    var voiceCommand = alternative.Transcript;
-
-                    if (voiceCommand != lastVoiceCommand)
-                    {
-                        lastVoiceCommand = voiceCommand;
-                        richTextBox.Invoke((MethodInvoker)(() =>
-                            richTextBox.AppendText(" " + voiceCommand)));
-                    }
-                }
-            }
+            richTextBox.Invoke((MethodInvoker)(() => richTextBox.AppendText(" " + voiceCommand)));
         }
 
         /// <summary>
@@ -120,12 +101,13 @@ namespace VoiceScript
         /// <param name="e"></param>
         void recordBtn_Click(object sender, EventArgs e)
         {
-            if (WaveInEvent.DeviceCount >= 1)
+            if (WaveInEvent.DeviceCount >= 1 && appState == ApplicationState.Waiting)
             {
                 recordingTimer.Enabled = true;
                 if (richTextBox.TextLength > 0) richTextBox.AppendText(Environment.NewLine);
 
-                audioRecorder.StartRecording();
+                appState = ApplicationState.Recording;
+                audioRecorder.StartRecording(() => appState = ApplicationState.Waiting);
 
                 #region Handle buttons accessibility
                 EnableButtons(stopBtn);
@@ -136,7 +118,8 @@ namespace VoiceScript
             }
             else
             {
-                MessageBox.Show("No input audio device found.");
+                if (WaveInEvent.DeviceCount < 1) MessageBox.Show("No input audio device found.");
+                else MessageBox.Show("You can not start recording in the current state.");
             }
         }
 
@@ -145,20 +128,27 @@ namespace VoiceScript
             DisableButtons(convertBtn);
             EnableButtons(recordBtn, playBtn);
 
-            if (File.Exists(audioFilename)) ConvertAudioRecordToText(audioFilename);
+            if (File.Exists(audioFilename)) WriteTranscriptToTextbox(audioFilename);
             else MessageBox.Show("No audio file found.");
         }
 
         void playBtn_Click(object sender, EventArgs e)
         {
-            if (File.Exists(audioFilename)) audioPlayer.Play(audioFilename);
+            if (File.Exists(audioFilename))
+            {
+                appState = ApplicationState.Playing;
+                DisableButtons(recordBtn);
+                audioPlayer.Play(audioFilename, PlaybackStoppedCallback);
+            }
             else MessageBox.Show("No audio file found.");
         }
 
         void stopBtn_Click(object sender, EventArgs e)
         {
-            if (audioRecorder.TryStopRecording() == 0)
+            if (appState == ApplicationState.Recording)
             {
+                appState = ApplicationState.StoppedRecording;
+                audioRecorder.StopRecording();
                 #region Handle buttons accessibility
                 DisableButtons(stopBtn);
                 EnableButtons(convertBtn, recordBtn, playBtn);
@@ -172,25 +162,10 @@ namespace VoiceScript
             }
         }
 
-        void recordingTimer_Tick(object sender, EventArgs e) => voiceTranscriptor.DoRealTimeTranscription();
-
-        /// <summary>
-        /// Task for server responses processing.
-        /// </summary>
-        /// <param name="recognizeStream"></param>
-        /// <returns></returns>
-        Task ProcessServerResponseTask(SpeechClient.StreamingRecognizeStream recognizeStream)
+        void PlaybackStoppedCallback()
         {
-            return Task.Run(async () =>
-            {
-                var responseStream = recognizeStream.GetResponseStream();
-                var lastVoiceCommand = string.Empty;
-
-                while (await responseStream.MoveNextAsync())
-                {
-                    WriteRealTimeTranscriptToTextbox(responseStream.Current.Results, ref lastVoiceCommand);
-                }
-            });
+            appState = ApplicationState.Waiting;
+            EnableButtons(recordBtn);
         }
     }
 }

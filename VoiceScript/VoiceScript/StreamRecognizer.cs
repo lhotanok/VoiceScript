@@ -8,18 +8,15 @@ namespace VoiceScript
     {
         readonly RecognitionConfig config;
         readonly IAudioRecorder audioRecorder;
-        readonly Func<SpeechClient.StreamingRecognizeStream, Task> ProcessServerResponse;
 
-        public StreamRecognizer(RecognitionConfig configuration,
-                                IAudioRecorder recorder,
-                                Func<SpeechClient.StreamingRecognizeStream, Task> serverResponseCallback)
+        public StreamRecognizer(RecognitionConfig configuration, IAudioRecorder recorder)
         {
             config = configuration;
             audioRecorder = recorder;
-            ProcessServerResponse = serverResponseCallback;
         }
 
-        public async void StreamingRecognizeAsync()
+        public async void StreamingRecognizeAsync(Func<SpeechClient.StreamingRecognizeStream, Action<string>, Task> ProcessServerResponse,
+            Action<string> callback)
         {
             var speechClient = SpeechClient.Create();
             var recognizeStream = speechClient.StreamingRecognize();
@@ -29,7 +26,7 @@ namespace VoiceScript
             await recognizeStream.WriteAsync(CreateAudioRequest());
             #endregion
 
-            Task responseHandlerTask = ProcessServerResponse(recognizeStream);
+            Task responseHandlerTask = ProcessServerResponse(recognizeStream, callback);
 
             await recognizeStream.WriteCompleteAsync(); // Finish request stream writing
             await responseHandlerTask; // Awaits all server responses to get processed

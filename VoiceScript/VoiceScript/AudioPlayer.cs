@@ -1,5 +1,5 @@
-﻿using NAudio.Wave;
-using System.IO;
+﻿using System;
+using NAudio.Wave;
 
 namespace VoiceScript
 {
@@ -7,13 +7,16 @@ namespace VoiceScript
     {
         WaveFileReader reader;
         WaveOutEvent waveOut;
+        Action PlayStoppedCallback;
 
         /// <summary>
         /// Start audio playing from the given file.
         /// </summary>
         /// <param name="audioFilename"></param>
-        public void Play(string audioFilename)
+        /// <param name="PlaybackStoppedCallback"></param>
+        public void Play(string audioFilename, Action PlaybackStoppedCallback = null)
         {
+            PlayStoppedCallback = PlaybackStoppedCallback;
             reader = new WaveFileReader(audioFilename);
 
             waveOut = new WaveOutEvent();
@@ -32,6 +35,10 @@ namespace VoiceScript
             reader = null;
         }
 
-        void PlaybackStoppedHandler(object sender, StoppedEventArgs e) => Stop();
+        void PlaybackStoppedHandler(object sender, StoppedEventArgs e) 
+        {
+            Stop();
+            PlayStoppedCallback?.Invoke();
+        }
     }
 }

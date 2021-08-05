@@ -86,7 +86,6 @@ namespace VoiceScript
             // recordingTimer
             // 
             this.recordingTimer.Interval = 1500;
-            this.recordingTimer.Tick += new System.EventHandler(this.recordingTimer_Tick);
             // 
             // stopBtn
             // 

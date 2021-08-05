@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text;
+using System.Threading.Tasks;
 using Google.Cloud.Speech.V1;
 
 namespace VoiceScript
@@ -7,7 +9,7 @@ namespace VoiceScript
     /// Manages voice transcription from audio to text
     /// using Google Cloud speech-to-text API.
     /// </summary>
-    class VoiceTranscriptor
+    class VoiceTranscriptor : IVoiceTranscriptor
     {
         readonly IAudioRecorder recorder;
         readonly StreamRecognizer streamRecognizer;
@@ -25,7 +27,7 @@ namespace VoiceScript
             #endregion
 
             recorder = audioRecorder;
-            streamRecognizer = new StreamRecognizer(configuration, recorder, ProcessServerResponseTask);
+            streamRecognizer = new StreamRecognizer(configuration, recorder);
 
             SetGoogleCloudCredentialsPath();
 
@@ -33,26 +35,41 @@ namespace VoiceScript
 
         public RecognitionConfig Configuration => configuration;
 
-        public void DoRealTimeTranscription() => streamRecognizer.StreamingRecognizeAsync();
+        public void DoRealTimeTranscription(Action<string> callback)
+        {
+            streamRecognizer.StreamingRecognizeAsync(ProcessServerResponseTask, callback);
+        }
 
         /// <summary>
         /// Synchronous conversion from the file saved under the given filename.
         /// Can only be used for audio files under the length of 1 minute.
         /// For files longer than 1 minute use asynchronous conversion
-        /// using <see cref="ConvertAudioRecordToTextAsync"/> method.
+        /// using <see cref="GetTranscriptionAsync"/> method.
         /// </summary>
         /// <param name="filename"></param>
-        public string ConvertAudioRecordToText(string filename, Action<RecognizeResponse> callback)
+        /// <param name="callback"></param>
+        /// <returns></returns>
+        public string GetTranscription(string filename, Action<string> callback)
         {
             var speech = SpeechClient.Create();
             var audio = RecognitionAudio.FromFile(filename);
             var response = speech.Recognize(configuration, audio);
 
-            WriteTranscriptToTextbox(response);
-            if (richTextBox.Text.Length == 0) MessageBox.Show("No data to convert.");
+            var transcription = new StringBuilder();
+
+            foreach (var result in response.Results)
+            {
+                foreach (var alternative in result.Alternatives)
+                {
+                    transcription.Append(alternative.Transcript);
+                    callback(alternative.Transcript);
+                }
+            }
+
+            return transcription.ToString();
         }
 
-        public async void ConvertAudioRecordToTextAsync(string filename)
+        public Task<string> GetTranscriptionAsync(string filename)
         {
             throw new NotImplementedException();
         }
@@ -65,9 +82,36 @@ namespace VoiceScript
             System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", apiKey);
         }
 
-        static string GetTranscription(RecognizeResponse response)
+        /// <summary>
+        /// Task for server responses processing.
+        /// </summary>
+        /// <param name="recognizeStream"></param>
+        /// <param name="callback"></param>
+        /// <returns></returns>
+        Task ProcessServerResponseTask(SpeechClient.StreamingRecognizeStream recognizeStream, Action<string> callback)
         {
-            Stringbuilder 
+            return Task.Run(async () =>
+            {
+                var responseStream = recognizeStream.GetResponseStream();
+                var lastVoiceCommand = string.Empty;
+
+                while (await responseStream.MoveNextAsync())
+                {
+                    foreach (var result in responseStream.Current.Results)
+                    {
+                        foreach (var alternative in result.Alternatives)
+                        {
+                            var voiceCommand = alternative.Transcript;
+
+                            if (voiceCommand != lastVoiceCommand)
+                            {
+                                lastVoiceCommand = voiceCommand;
+                                callback(voiceCommand);
+                            }
+                        }
+                    }
+                }
+            });
         }
     }
 }

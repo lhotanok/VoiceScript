@@ -1,9 +1,10 @@
 ﻿namespace VoiceScript
 {
-    enum VoiceDetection
+    enum ApplicationState
     {
         Waiting,
         Recording,
-        Stopped
+        StoppedRecording,
+        Playing
     }
 }
