@@ -35,7 +35,6 @@ namespace VoiceScript
             SetLanguages();
             #endregion
 
-            //DisableButtons(convertBtn, playBtn);
             appState = ApplicationState.Waiting;
         }
 
@@ -93,8 +92,11 @@ namespace VoiceScript
             }
             else
             {
-                var transcriptionTask = voiceTranscriptor.CreateTranscriptionAsync(filename,
+                var transcriptionTask = voiceTranscriptor.MakeTranscriptionAsync(filename,
                     transcript => richTextBox.AppendText(" " + transcript));
+
+                //var transcription = voiceTranscriptor.GetLongTranscription(filename,
+                //    transcript => richTextBox.AppendText(" " + transcript));
             }  
 
         }
@@ -113,14 +115,11 @@ namespace VoiceScript
         {
             if (WaveInEvent.DeviceCount >= 1 && appState == ApplicationState.Waiting)
             {
-                recordingTimer.Enabled = true;
-                if (richTextBox.TextLength > 0) richTextBox.AppendText(Environment.NewLine);
-
                 appState = ApplicationState.Recording;
                 audioRecorder.StartRecording(() => appState = ApplicationState.Waiting);
 
                 #region Handle buttons accessibility
-                EnableButtons(stopBtn);
+                EnableButtons(stopBtn, realTimeTranscBtn);
                 DisableButtons(recordBtn, playBtn, convertBtn);
                 ShowButtons(stopBtn);
                 HideButtons(recordBtn);
@@ -130,6 +129,14 @@ namespace VoiceScript
             {
                 if (WaveInEvent.DeviceCount < 1) MessageBox.Show("No input audio device found.");
                 else MessageBox.Show("You can not start recording in the current state.");
+            }
+        }
+        void realTimeTranscBtn_Click(object sender, EventArgs e)
+        {
+            if (appState == ApplicationState.Recording)
+            {
+                recordingTimer.Enabled = true;
+                if (richTextBox.TextLength > 0) richTextBox.AppendText(Environment.NewLine);
             }
         }
 
@@ -160,7 +167,7 @@ namespace VoiceScript
                 appState = ApplicationState.StoppedRecording;
                 audioRecorder.StopRecording();
                 #region Handle buttons accessibility
-                DisableButtons(stopBtn);
+                DisableButtons(stopBtn, realTimeTranscBtn);
                 EnableButtons(convertBtn, recordBtn, playBtn);
                 ShowButtons(recordBtn);
                 HideButtons(stopBtn);
@@ -177,5 +184,6 @@ namespace VoiceScript
             appState = ApplicationState.Waiting;
             EnableButtons(recordBtn);
         }
+        
     }
 }

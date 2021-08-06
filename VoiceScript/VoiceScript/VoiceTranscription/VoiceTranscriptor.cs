@@ -70,7 +70,20 @@ namespace VoiceScript.VoiceTranscription
             return transcription.ToString();
         }
 
-        public Task CreateTranscriptionAsync(string filename, Action<string> callback)
+        public string GetLongTranscription(string filename, Action<string> callback)
+        {
+            var transcription = new StringBuilder();
+
+            longRunningRecognizer.LongRunningRecognizeFromFile(filename,
+                transcript => {
+                    transcription.Append(transcript);
+                    callback(transcript);
+                });
+            
+            return transcription.ToString();
+        }
+
+        public Task MakeTranscriptionAsync(string filename, Action<string> callback)
         {
             return Task.Run(async () => await longRunningRecognizer.LongRunningRecognizeFromFileAsync(filename, callback));
         }

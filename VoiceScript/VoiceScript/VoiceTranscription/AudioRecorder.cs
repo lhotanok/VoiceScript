@@ -66,6 +66,8 @@ namespace VoiceScript.VoiceTranscription
             waveIn?.Dispose();
         }
 
+        public double GetFileSecondsLength(string audioFilename) => new AudioFileReader(audioFilename).TotalTime.TotalSeconds;
+
         void DataAvailableHandler(object sender, WaveInEventArgs e)
         {
             waveProvider.AddSamples(e.Buffer, 0, e.BytesRecorded);
@@ -106,13 +108,5 @@ namespace VoiceScript.VoiceTranscription
             }
         }
 
-        public double GetFileSecondsLength(string audioFilename)
-        {
-            var audioReader = new AudioFileReader(audioFilename);
-            var fileSecondsDuration = new AudioFileReader(audioFilename).TotalTime.TotalSeconds;
-            audioReader.Dispose();
-
-            return fileSecondsDuration;
-        }
     }
 }

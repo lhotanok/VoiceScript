@@ -26,6 +26,16 @@ namespace VoiceScript.VoiceTranscription
             var audio = RecognitionAudio.FromFile(filename);
             await LongRunningRecognizeAsync(audio, callback);
         }
+        public void LongRunningRecognizeFromStream(Action<string> callback = null)
+        {
+            var audio = RecognitionAudio.FromStream(audioRecorder.AudioStream);
+            LongRunningRecognize(audio, callback);
+        }
+        public void LongRunningRecognizeFromFile(string filename, Action<string> callback = null)
+        {
+            var audio = RecognitionAudio.FromFile(filename);
+            LongRunningRecognize(audio, callback);
+        }
         async Task LongRunningRecognizeAsync(RecognitionAudio audio, Action<string> callback = null)
         {
             var speechClient = await SpeechClient.CreateAsync();
@@ -34,10 +44,22 @@ namespace VoiceScript.VoiceTranscription
             var operation = await speechClient.LongRunningRecognizeAsync(config, audio);
 
             // Wait for long-running operation to finish
-            var completedResponse = await operation.PollUntilCompletedAsync();
+            var completedOperation = await operation.PollUntilCompletedAsync();
 
-            var response = completedResponse.Result;
+            var response = completedOperation.Result;
+            responseProcessor.ProcessSpeechRecognitionTranscript(response.Results, callback);
+        }
+        void LongRunningRecognize(RecognitionAudio audio, Action<string> callback = null)
+        {
+            var speechClient = SpeechClient.Create();
 
+            // Send request to the server
+            var operation = speechClient.LongRunningRecognize(config, audio);
+
+            // Wait for long-running operation to finish
+            var completedOperation = operation.PollUntilCompleted();
+
+            var response = completedOperation.Result;
             responseProcessor.ProcessSpeechRecognitionTranscript(response.Results, callback);
         }
     }

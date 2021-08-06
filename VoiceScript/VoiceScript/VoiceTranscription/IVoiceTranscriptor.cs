@@ -9,6 +9,7 @@ namespace VoiceScript.VoiceTranscription
         RecognitionConfig Configuration { get; }
         void DoRealTimeTranscription(Action<string> callback);
         string GetTranscription(string filename, Action<string> callback);
-        Task CreateTranscriptionAsync(string filename, Action<string> callback);
+        string GetLongTranscription(string filename, Action<string> callback);
+        Task MakeTranscriptionAsync(string filename, Action<string> callback);
     }
 }
