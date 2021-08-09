@@ -8,13 +8,7 @@ namespace VoiceScript.VoiceTranscription
     {
         RecognitionConfig Configuration { get; }
 
-        /// <summary>
-        /// Synchronous conversion from the file saved under the given filename.
-        /// </summary>
-        /// <param name="filename"></param>
-        /// <param name="callback"></param>
-        /// <returns></returns>
-        string GetTranscription(string filename, Action<string> callback);
+        Task CreateTranscriptionTask(string filename, Action<string> callback);
 
         /// <summary>
         /// Performs real-time transcription from audio to text.

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Google.Cloud.Speech.V1;
@@ -14,6 +13,7 @@ namespace VoiceScript.VoiceTranscription
     {
         readonly IAudioRecorder recorder;
         readonly StreamRecognizer streamRecognizer;
+        readonly LongRunningRecognizer longRunningRecognizer;
         readonly RecognitionConfig configuration;
 
         public VoiceTranscriptor(IAudioRecorder audioRecorder)
@@ -29,6 +29,7 @@ namespace VoiceScript.VoiceTranscription
 
             recorder = audioRecorder;
             streamRecognizer = new StreamRecognizer(configuration, recorder);
+            longRunningRecognizer = new LongRunningRecognizer(configuration);
 
             SetGoogleCloudCredentialsPath();
         }
@@ -40,66 +41,67 @@ namespace VoiceScript.VoiceTranscription
             streamRecognizer.StreamingRecognizeAsync(ProcessServerStreamResponseTask, callback);
         }
 
-        public string GetTranscription(string filename, Action<string> callback)
+        public Task CreateTranscriptionTask(string filename, Action<string> callback)
         {
-            return IsShortAudioFile(filename)
-                ? GetShortTranscription(filename, callback)
-                : GetLongTranscription(filename, callback);
+            return Task.Run(() =>
+            {
+                if (IsShortAudioFile(filename))
+                {
+                    CreateShortTranscription(filename, callback);
+                }
+                else
+                {
+                    CreateTranscriptionAsync(filename, callback);
+                }
+            });
         }
-
         bool IsShortAudioFile(string filename) => recorder.GetFileSecondsLength(filename) < 60;
 
-        string GetShortTranscription(string filename, Action<string> callback)
+        void CreateTranscriptionAsync(string filename, Action<string> callback)
         {
-            var transcription = new StringBuilder();
+            var audio = RecognitionAudio.FromFile(filename);
+            var audioBytes = audio.Content.ToByteArray();
+            var maxAudioFileSeconds = 15; // Google Cloud speech-to-text request padding is 15 seconds
+            var maxBytes = recorder.ConvertSecondsToBytes(maxAudioFileSeconds - 1); // 1 second reserved
 
+            var offset = 0;
+            while (offset < audioBytes.Length)
+            {
+                var remainingBytes = audioBytes.Length - offset;
+                var bytesToCopy = remainingBytes < maxBytes ? remainingBytes : maxBytes;
+
+                var transcription = new StringBuilder();
+
+                //await longRunningRecognizer.LongRunningRecognizeAsync(
+                //    RecognitionAudio.FromBytes(audioBytes, offset, bytesToCopy),
+                //    transcript => transcription.Append(transcript)
+                //);
+
+                CreateShortTranscription(RecognitionAudio.FromBytes(audioBytes, offset, bytesToCopy),
+                    transcript => transcription.Append(transcript));
+
+                callback(transcription.ToString());
+
+                offset += bytesToCopy;
+            }
+        }
+
+        void CreateShortTranscription(string filename, Action<string> callback)
+        {
             var client = SpeechClient.Create();
             var audio = RecognitionAudio.FromFile(filename);
             var response = client.Recognize(configuration, audio);
 
             ServerResponseProcessor.ProcessSpeechRecognitionTranscript(response.Results,
-                transcript => {
-                    transcription.Append(transcript);
-                    callback(transcript);
-                });
-
-            return transcription.ToString();
+                transcript => callback(transcript));
         }
 
-        string GetShortTranscription(byte[] audioBytes, SpeechClient client, Action<string> callback)
+        void CreateShortTranscription(RecognitionAudio audio, Action<string> callback)
         {
-            var audio = RecognitionAudio.FromBytes(audioBytes);
-            var response = client.Recognize(configuration, audio);
-
-            var transcription = new StringBuilder();
+            var response = SpeechClient.Create().Recognize(configuration, audio);
 
             ServerResponseProcessor.ProcessSpeechRecognitionTranscript(response.Results,
-                transcript => {
-                    transcription.Append(transcript);
-                    callback(transcript);
-                });
-
-            return transcription.ToString();
-        }
-
-        string GetLongTranscription(string filename, Action<string> callback)
-        {
-            var transcription = new StringBuilder();
-
-            var longAudio = RecognitionAudio.FromFile(filename);
-            var longAudioBytes = longAudio.Content.ToByteArray();
-            var maxAudioFileSeconds = 60;
-            var maxBytes = recorder.ConvertSecondsToBytes(maxAudioFileSeconds - 10); // 10 seconds reserved
-
-            var audioByteArrays = SplitByteArray(longAudioBytes, maxBytes);
-
-            var client = SpeechClient.Create();
-            foreach (var byteArray in audioByteArrays)
-            {
-                transcription.Append(GetShortTranscription(byteArray, client, callback));
-            }
-
-            return transcription.ToString();
+                transcript => callback(transcript));
         }
 
         static void SetGoogleCloudCredentialsPath()
@@ -108,24 +110,6 @@ namespace VoiceScript.VoiceTranscription
             var apiKey = @"..\\..\\..\\..\\Keys\\vs_auth_key.json";
 
             System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", apiKey);
-        }
-
-        static List<byte[]> SplitByteArray(byte[] byteArray, int maxSubArraySize)
-        {
-            var byteSubArrays = new List<byte[]>();
-            var offset = 0;
-
-            while (offset < byteArray.Length)
-            {
-                var remainingBytes = byteArray.Length - offset;
-                var bytesToCopy = remainingBytes < maxSubArraySize ? remainingBytes : maxSubArraySize;
-                var copy = new byte[bytesToCopy];
-                Array.Copy(byteArray, offset, copy, 0, bytesToCopy);
-                byteSubArrays.Add(copy);
-                offset += bytesToCopy;
-            }
-
-            return byteSubArrays;
         }
 
         /// <summary>

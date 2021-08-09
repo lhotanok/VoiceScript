@@ -36,7 +36,7 @@ namespace VoiceScript
             #endregion
 
             appState = ApplicationState.Waiting;
-            DisableButtons(convertBtn, playBtn, realTimeTranscBtn);
+            //DisableButtons(convertBtn, playBtn, realTimeTranscBtn);
         }
 
         #region Button control settings
@@ -80,14 +80,13 @@ namespace VoiceScript
         /// </summary>
         /// <param name="filename"></param>
         /// <param name="append">If set to false, <see cref="richTextBox"/> content is overwritten.</param>
-        void WriteTranscriptToTextbox(string filename, bool append = true)
+        async void WriteTranscriptToTextbox(string filename, bool append = true)
         {
             if (!append) richTextBox.Text = string.Empty;
 
-            var transcription = voiceTranscriptor.GetTranscription(filename,
-                    transcript => richTextBox.AppendText(" " + transcript));
+            await voiceTranscriptor.CreateTranscriptionTask(filename,
+                transcript => richTextBox.AppendText(" " + transcript));
 
-            if (transcription.Length == 0) MessageBox.Show("No data to convert.");
         }
 
         void WriteRealTimeTranscriptToTextbox(string voiceCommand)
