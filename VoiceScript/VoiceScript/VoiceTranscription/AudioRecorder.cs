@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 using NAudio.Wave;
@@ -41,12 +42,14 @@ namespace VoiceScript.VoiceTranscription
         public BufferedWaveProvider WaveProvider => waveProvider;
         public WaveFileWriter AudioStream => writer;
         public bool Recording => recording;
+        public string OutputFilename => outputFilename;
 
         public void StartRecording(Action RecordingStoppedCallback = null)
         {
             recording = true;
             RecStoppedCallback = RecordingStoppedCallback;
             writer = new WaveFileWriter(outputFilename, waveIn.WaveFormat);
+
             waveIn.StartRecording();
         }
 
@@ -67,6 +70,7 @@ namespace VoiceScript.VoiceTranscription
         }
 
         public double GetFileSecondsLength(string audioFilename) => new AudioFileReader(audioFilename).TotalTime.TotalSeconds;
+        public int ConvertSecondsToBytes(int seconds) => seconds * waveIn.WaveFormat.AverageBytesPerSecond;
 
         void DataAvailableHandler(object sender, WaveInEventArgs e)
         {
@@ -92,9 +96,8 @@ namespace VoiceScript.VoiceTranscription
         /// <param name="bytesToWrite"></param>
         void WriteAudioStreamIntoFileWriter(byte[] buffer, int bytesToWrite)
         {
-            // if (File.Exists(audioFilename)) File.Delete(audioFilename);
-            const int tenMinutes = 60 * 10;
-            int maxFileSize = tenMinutes * waveIn.WaveFormat.AverageBytesPerSecond;
+            const int tenMinutesInSeconds = 60 * 10;
+            int maxFileSize = ConvertSecondsToBytes(tenMinutesInSeconds);
             int remainingFileSize = (int)Math.Min(bytesToWrite, maxFileSize - writer.Length);
 
             if (remainingFileSize > 0)

@@ -7,9 +7,20 @@ namespace VoiceScript.VoiceTranscription
     interface IVoiceTranscriptor
     {
         RecognitionConfig Configuration { get; }
-        void DoRealTimeTranscription(Action<string> callback);
+
+        /// <summary>
+        /// Synchronous conversion from the file saved under the given filename.
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <param name="callback"></param>
+        /// <returns></returns>
         string GetTranscription(string filename, Action<string> callback);
-        string GetLongTranscription(string filename, Action<string> callback);
-        Task MakeTranscriptionAsync(string filename, Action<string> callback);
+
+        /// <summary>
+        /// Performs real-time transcription from audio to text.
+        /// </summary>
+        /// <param name="callback">Action to be done with the 
+        /// transcription in string format.</param>
+        void DoRealTimeTranscription(Action<string> callback);
     }
 }

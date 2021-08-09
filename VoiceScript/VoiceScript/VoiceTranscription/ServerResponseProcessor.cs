@@ -4,9 +4,9 @@ using Google.Protobuf.Collections;
 
 namespace VoiceScript.VoiceTranscription
 {
-    class ServerResponseProcessor
+    static class ServerResponseProcessor
     {
-        public void ProcessSpeechRecognitionTranscript(RepeatedField<SpeechRecognitionResult> results, Action<string> callback)
+        public static void ProcessSpeechRecognitionTranscript(RepeatedField<SpeechRecognitionResult> results, Action<string> callback)
         {
             foreach (SpeechRecognitionResult result in results)
             {
@@ -14,7 +14,7 @@ namespace VoiceScript.VoiceTranscription
             }
         }
 
-        public void ProcessStreamRecognitionTranscript(RepeatedField<StreamingRecognitionResult> results, Action<string> callback)
+        public static void ProcessStreamRecognitionTranscript(RepeatedField<StreamingRecognitionResult> results, Action<string> callback)
         {
             foreach (StreamingRecognitionResult result in results)
             {
@@ -22,7 +22,7 @@ namespace VoiceScript.VoiceTranscription
             }
         }
 
-        void ProcessRecognitionAlternative(RepeatedField<SpeechRecognitionAlternative> alternatives, Action<string> callback)
+        static void ProcessRecognitionAlternative(RepeatedField<SpeechRecognitionAlternative> alternatives, Action<string> callback)
         {
             foreach (SpeechRecognitionAlternative alternative in alternatives)
             {

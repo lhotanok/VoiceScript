@@ -10,8 +10,8 @@ namespace VoiceScript
     public partial class Form1 : Form
     {
         readonly IAudioRecorder audioRecorder;
-        readonly AudioPlayer audioPlayer;
         readonly IVoiceTranscriptor voiceTranscriptor;
+        readonly AudioPlayer audioPlayer;
 
         readonly string audioFilename;
 
@@ -36,6 +36,7 @@ namespace VoiceScript
             #endregion
 
             appState = ApplicationState.Waiting;
+            DisableButtons(convertBtn, playBtn, realTimeTranscBtn);
         }
 
         #region Button control settings
@@ -83,22 +84,10 @@ namespace VoiceScript
         {
             if (!append) richTextBox.Text = string.Empty;
 
-            if (audioRecorder.GetFileSecondsLength(filename) < 60)
-            {
-                var transcription = voiceTranscriptor.GetTranscription(filename,
+            var transcription = voiceTranscriptor.GetTranscription(filename,
                     transcript => richTextBox.AppendText(" " + transcript));
 
-                if (transcription?.Length == 0) MessageBox.Show("No data to convert.");
-            }
-            else
-            {
-                var transcriptionTask = voiceTranscriptor.MakeTranscriptionAsync(filename,
-                    transcript => richTextBox.AppendText(" " + transcript));
-
-                //var transcription = voiceTranscriptor.GetLongTranscription(filename,
-                //    transcript => richTextBox.AppendText(" " + transcript));
-            }  
-
+            if (transcription.Length == 0) MessageBox.Show("No data to convert.");
         }
 
         void WriteRealTimeTranscriptToTextbox(string voiceCommand)
