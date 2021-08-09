@@ -15,6 +15,7 @@ namespace VoiceScript.VoiceTranscription
         readonly StreamRecognizer streamRecognizer;
         readonly LongRunningRecognizer longRunningRecognizer;
         readonly RecognitionConfig configuration;
+        readonly int shortAudioFileSeconds = 30;
 
         public VoiceTranscriptor(IAudioRecorder audioRecorder)
         {
@@ -51,17 +52,17 @@ namespace VoiceScript.VoiceTranscription
                 }
                 else
                 {
-                    CreateTranscriptionAsync(filename, callback);
+                    CreateLongTranscription(filename, callback);
                 }
             });
         }
-        bool IsShortAudioFile(string filename) => recorder.GetFileSecondsLength(filename) < 60;
+        bool IsShortAudioFile(string filename) => recorder.GetFileSecondsLength(filename) < shortAudioFileSeconds;
 
-        void CreateTranscriptionAsync(string filename, Action<string> callback)
+        void CreateLongTranscription(string filename, Action<string> callback)
         {
             var audio = RecognitionAudio.FromFile(filename);
             var audioBytes = audio.Content.ToByteArray();
-            var maxAudioFileSeconds = 15; // Google Cloud speech-to-text request padding is 15 seconds
+            var maxAudioFileSeconds = shortAudioFileSeconds; // Google Cloud speech-to-text request padding is 15 seconds
             var maxBytes = recorder.ConvertSecondsToBytes(maxAudioFileSeconds - 1); // 1 second reserved
 
             var offset = 0;
@@ -71,11 +72,6 @@ namespace VoiceScript.VoiceTranscription
                 var bytesToCopy = remainingBytes < maxBytes ? remainingBytes : maxBytes;
 
                 var transcription = new StringBuilder();
-
-                //await longRunningRecognizer.LongRunningRecognizeAsync(
-                //    RecognitionAudio.FromBytes(audioBytes, offset, bytesToCopy),
-                //    transcript => transcription.Append(transcript)
-                //);
 
                 CreateShortTranscription(RecognitionAudio.FromBytes(audioBytes, offset, bytesToCopy),
                     transcript => transcription.Append(transcript));
