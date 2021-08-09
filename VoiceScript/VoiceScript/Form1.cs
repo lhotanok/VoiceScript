@@ -83,10 +83,10 @@ namespace VoiceScript
         async void WriteTranscriptToTextbox(string filename, bool append = true)
         {
             if (!append) richTextBox.Text = string.Empty;
+            if (richTextBox.TextLength != 0) richTextBox.AppendText(Environment.NewLine);
 
             await voiceTranscriptor.CreateTranscriptionTask(filename,
                 transcript => richTextBox.AppendText(" " + transcript));
-
         }
 
         void WriteRealTimeTranscriptToTextbox(string voiceCommand)
