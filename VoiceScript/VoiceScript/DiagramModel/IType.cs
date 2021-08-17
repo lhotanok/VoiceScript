@@ -1,7 +1,6 @@
 ﻿namespace VoiceScript.DiagramModel
 {
-    interface IType
+    interface IType : IComponent
     {
-        string Name { get; }
     }
 }

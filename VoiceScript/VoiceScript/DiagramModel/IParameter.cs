@@ -1,8 +1,7 @@
 ﻿namespace VoiceScript.DiagramModel
 {
-    interface IParameter
+    interface IParameter : IComponent
     {
-        string Name { get; }
         IType Type { get; }
         bool Required { get; }
     }

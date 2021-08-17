@@ -2,12 +2,11 @@
 
 namespace VoiceScript.DiagramModel
 {
-    interface IMethod
+    interface IMethod : IComponent
     {
-        string Name { get; }
-        AccessModifier AccessModifier { get; }
+        IVisibility Visibility { get; }
         IType ReturnType { get; }
-        IEnumerable<IType> RequiredParameters { get; }
-        IEnumerable<IType> OptionalParameters { get; }
+        IEnumerable<IParameter> RequiredParameters { get; }
+        IEnumerable<IParameter> OptionalParameters { get; }
     }
 }

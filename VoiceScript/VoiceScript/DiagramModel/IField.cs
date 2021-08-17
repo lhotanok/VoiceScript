@@ -1,9 +1,8 @@
 ﻿namespace VoiceScript.DiagramModel
 {
-    interface IField
+    interface IField : IComponent
     {
-        string Name { get; }
-        AccessModifier AccessModifier { get; }
+        IVisibility Visibility { get; }
         IType Type { get; }
     }
 }
