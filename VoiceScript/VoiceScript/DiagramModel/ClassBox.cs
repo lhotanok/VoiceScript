@@ -1,16 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VoiceScript.DiagramModel
 {
-    class ClassBox : Component, IClassBox
+    class ClassBox : IClassBox
     {
-        public ClassBox(string name) : base(name) { }
-        public IEnumerable<IField> Fields => throw new NotImplementedException();
+        List<IField> fields;
+        List<IMethod> methods;
 
-        public IEnumerable<IMethod> Methods => throw new NotImplementedException();
+        public ClassBox(string name)
+        {
+            Name = name;
+            ContainsComponents = true;
+
+            fields = new List<IField>();
+            methods = new List<IMethod>();
+        }
+
+        public IEnumerable<IField> Fields => fields;
+
+        public IEnumerable<IMethod> Methods => methods;
+
+        public string Name { get; private set; }
+
+        public bool ContainsComponents { get; }
     }
 }

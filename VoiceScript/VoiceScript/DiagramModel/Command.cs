@@ -12,12 +12,12 @@ namespace VoiceScript.DiagramModel
         {
             Name = name;
             TargetType = targetType;
-            TargetName = targetName;
+            TargetValue = targetName;
         }
         public string Name { get; }
 
         public string TargetType { get; }
 
-        public string TargetName { get; }
+        public string TargetValue { get; }
     }
 }

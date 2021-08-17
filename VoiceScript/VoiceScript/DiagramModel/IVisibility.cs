@@ -1,14 +1,10 @@
-﻿namespace VoiceScript.DiagramModel
-{
-    interface IVisibility
-    {
+﻿using System.Collections.Generic;
 
+namespace VoiceScript.DiagramModel
+{
+    interface IVisibility : IComponent
+    {
+        IEnumerable<string> ValidNames { get; }
+        string DefaultName { get; }
     }
-    //enum Visibility
-    //{
-    //    Private,
-    //    Protected,
-    //    Internal,
-    //    Public
-    //}
 }

@@ -2,5 +2,6 @@
 {
     interface IType : IComponent
     {
+        string DefaultName { get; }
     }
 }
