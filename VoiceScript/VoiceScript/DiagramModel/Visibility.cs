@@ -4,17 +4,20 @@ namespace VoiceScript.DiagramModel
 {
     class Visibility : Component
     {
+        public readonly static List<string> ValidChildTypes = new();
         readonly List<string> validNames;
         readonly static string defaultName = "public";
-        public Visibility(Component parent) : base(defaultName, parent) { }
-        public Visibility(string name, Component parent) : base(name, parent)
+        public Visibility(Component parent) : this(defaultName, parent) { }
+        public Visibility(string name, Component parent) : base(name, parent, ValidChildTypes)
         {
             validNames = new List<string>() { "public", "private", "protected", "internal" };
         }
+        public static string TypeName { get => nameof(Visibility).ToLower(); }
+
+        public static string DefaultName { get => defaultName; }
 
         public IEnumerable<string> ValidNames { get => validNames; }
 
-        public string DefaultName { get => defaultName; }
-        public override string TypeName { get => GetType().Name; }
+        public override string GetTypeName() => TypeName;
     }
 }

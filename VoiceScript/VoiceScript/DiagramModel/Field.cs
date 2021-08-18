@@ -8,14 +8,16 @@ namespace VoiceScript.DiagramModel
 {
     class Field : Component
     {
-        public Field(string name, Component parent) : base(name, parent)
+        public static List<string> ValidChildTypes = new() { Visibility.TypeName, VariableType.TypeName };
+        public Field(string name, Component parent) : base(name, parent, ValidChildTypes)
         {
             children.Add(new VariableType(this));
             children.Add(new Visibility(this));
         }
-        public Visibility Visibility { get => GetFilteredChildren<Visibility>()[0]; }
+        public static string TypeName { get => nameof(Field).ToLower(); }
+        public Visibility Visibility { get => GetTypeFilteredChildren<Visibility>()[0]; }
 
-        public VariableType Type { get => GetFilteredChildren<VariableType>()[0]; }
-        public override string TypeName { get => GetType().Name; }
+        public VariableType Type { get => GetTypeFilteredChildren<VariableType>()[0]; }
+        public override string GetTypeName() => TypeName;
     }
 }

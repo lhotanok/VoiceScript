@@ -5,14 +5,15 @@ namespace VoiceScript.DiagramModel
 {
     class Class : Component
     {
-        public Class(string name, Component parent) : base(name, parent) { }
+        public static List<string> ValidChildTypes = new() { Field.TypeName, Method.TypeName };
+        public Class(string name, Component parent) : base(name, parent, ValidChildTypes ) { }
+        public static string TypeName { get => nameof(Class).ToLower(); }
 
-        public IEnumerable<Field> GetFields() => GetFilteredChildren<Field>();
+        public IEnumerable<Field> GetFields() => GetTypeFilteredChildren<Field>();
 
-        public IEnumerable<Method> GetMethods() => GetFilteredChildren<Method>();
+        public IEnumerable<Method> GetMethods() => GetTypeFilteredChildren<Method>();
 
-
-        public override string TypeName { get => GetType().Name; }
+        public override string GetTypeName() => TypeName;
 
     }
 }

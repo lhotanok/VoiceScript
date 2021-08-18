@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace VoiceScript.DiagramModel
 {
-    class Diagram
+    class Diagram : Component
     {
         readonly List<Class> classBoxes;
-
-        public Diagram()
+        public static List<string> ValidChildTypes = new() { Class.TypeName };
+        public Diagram() : base("Diagram", null, ValidChildTypes)
         {
             classBoxes = new List<Class>();
         }
@@ -21,5 +21,7 @@ namespace VoiceScript.DiagramModel
 
             // process command tree
         }
+
+        public override string GetTypeName() => nameof(Diagram).ToLower();
     }
 }

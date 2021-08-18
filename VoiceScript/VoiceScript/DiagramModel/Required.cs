@@ -1,12 +1,18 @@
-﻿namespace VoiceScript.DiagramModel
+﻿using System.Collections.Generic;
+
+namespace VoiceScript.DiagramModel
 {
     class Required : Component
     {
+        public static List<string> ValidChildTypes = new();
         readonly static string defaultName = "false";
-        public Required(Component parent) : base(defaultName, parent) { }
+        public Required(Component parent) : base(defaultName, parent, ValidChildTypes) { }
+        public static string TypeName { get => nameof(Required).ToLower(); }
+
         public bool Value { get; private set; }
         public override string Name { get => base.Name; protected set => SetValue(value); }
-        public override string TypeName { get => GetType().Name; }
+        public static string DefaultName { get => defaultName; }
+        public override string GetTypeName() => TypeName;
 
         void SetValue(string value)
         {
