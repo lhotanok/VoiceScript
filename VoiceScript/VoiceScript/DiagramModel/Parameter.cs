@@ -1,27 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace VoiceScript.DiagramModel
 {
-    class Parameter : IParameter
+    class Parameter : Component
     {
-        public Parameter(string name)
+        public Parameter(string name, Component parent) : base(name, parent)
         {
-            Name = name;
-            Type = new ParameterType("object");
-            Required = false;
-            ContainsComponents = true;
+            // set default values
+            children.Add(new VariableType(this));
+            children.Add(new Required(this));
         }
 
-        public IType Type {get; private set;}
+        public VariableType Type { get => GetFilteredChildren<VariableType>()[0]; }
 
-        public bool Required { get; private set; }
-
-        public string Name { get; private set; }
-
-        public bool ContainsComponents { get; }
+        public Required Required { get => GetFilteredChildren<Required>()[0]; }
+        public override string TypeName { get => GetType().Name; }
     }
 }

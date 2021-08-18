@@ -39,6 +39,7 @@ namespace VoiceScript
             this.stopBtn = new System.Windows.Forms.Button();
             this.languages = new System.Windows.Forms.ListBox();
             this.realTimeTranscBtn = new System.Windows.Forms.Button();
+            this.diagramBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // recordBtn
@@ -58,10 +59,10 @@ namespace VoiceScript
             // 
             this.convertBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.convertBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.convertBtn.Location = new System.Drawing.Point(12, 57);
+            this.convertBtn.Location = new System.Drawing.Point(141, 59);
             this.convertBtn.Margin = new System.Windows.Forms.Padding(2);
             this.convertBtn.Name = "convertBtn";
-            this.convertBtn.Size = new System.Drawing.Size(113, 38);
+            this.convertBtn.Size = new System.Drawing.Size(113, 39);
             this.convertBtn.TabIndex = 2;
             this.convertBtn.Text = "Convert";
             this.convertBtn.UseVisualStyleBackColor = false;
@@ -71,10 +72,10 @@ namespace VoiceScript
             // 
             this.playBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.playBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.playBtn.Location = new System.Drawing.Point(141, 57);
+            this.playBtn.Location = new System.Drawing.Point(11, 59);
             this.playBtn.Margin = new System.Windows.Forms.Padding(2);
             this.playBtn.Name = "playBtn";
-            this.playBtn.Size = new System.Drawing.Size(89, 38);
+            this.playBtn.Size = new System.Drawing.Size(112, 39);
             this.playBtn.TabIndex = 3;
             this.playBtn.Text = "Play";
             this.playBtn.UseVisualStyleBackColor = false;
@@ -82,10 +83,12 @@ namespace VoiceScript
             // 
             // richTextBox
             // 
-            this.richTextBox.Location = new System.Drawing.Point(12, 101);
+            this.richTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.richTextBox.Location = new System.Drawing.Point(12, 111);
             this.richTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(439, 548);
+            this.richTextBox.Size = new System.Drawing.Size(357, 403);
             this.richTextBox.TabIndex = 4;
             this.richTextBox.Text = "";
             // 
@@ -115,10 +118,10 @@ namespace VoiceScript
             this.languages.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.languages.FormattingEnabled = true;
             this.languages.ItemHeight = 25;
-            this.languages.Location = new System.Drawing.Point(386, 12);
+            this.languages.Location = new System.Drawing.Point(267, 59);
             this.languages.Margin = new System.Windows.Forms.Padding(2);
             this.languages.Name = "languages";
-            this.languages.Size = new System.Drawing.Size(106, 29);
+            this.languages.Size = new System.Drawing.Size(102, 29);
             this.languages.TabIndex = 7;
             // 
             // realTimeTranscBtn
@@ -128,18 +131,31 @@ namespace VoiceScript
             this.realTimeTranscBtn.Location = new System.Drawing.Point(141, 12);
             this.realTimeTranscBtn.Margin = new System.Windows.Forms.Padding(2);
             this.realTimeTranscBtn.Name = "realTimeTranscBtn";
-            this.realTimeTranscBtn.Size = new System.Drawing.Size(230, 39);
+            this.realTimeTranscBtn.Size = new System.Drawing.Size(228, 39);
             this.realTimeTranscBtn.TabIndex = 8;
             this.realTimeTranscBtn.Text = "Real-time transcription";
             this.realTimeTranscBtn.UseVisualStyleBackColor = false;
             this.realTimeTranscBtn.Click += new System.EventHandler(this.realTimeTranscBtn_Click);
+            // 
+            // diagramBtn
+            // 
+            this.diagramBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.diagramBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.diagramBtn.Location = new System.Drawing.Point(423, 12);
+            this.diagramBtn.Name = "diagramBtn";
+            this.diagramBtn.Size = new System.Drawing.Size(113, 39);
+            this.diagramBtn.TabIndex = 9;
+            this.diagramBtn.Text = "Diagram";
+            this.diagramBtn.UseVisualStyleBackColor = false;
+            this.diagramBtn.Click += new System.EventHandler(this.diagramBtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(253)))));
-            this.ClientSize = new System.Drawing.Size(1010, 424);
+            this.ClientSize = new System.Drawing.Size(1042, 525);
+            this.Controls.Add(this.diagramBtn);
             this.Controls.Add(this.realTimeTranscBtn);
             this.Controls.Add(this.languages);
             this.Controls.Add(this.stopBtn);
@@ -165,6 +181,7 @@ namespace VoiceScript
         private System.Windows.Forms.Button stopBtn;
         private System.Windows.Forms.ListBox languages;
         private System.Windows.Forms.Button realTimeTranscBtn;
+        private System.Windows.Forms.Button diagramBtn;
     }
 }
 

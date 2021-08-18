@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using NAudio.Wave; // Credit: https://github.com/naudio/NAudio
 
 using VoiceScript.VoiceTranscription;
+using VoiceScript.DiagramModel;
 
 namespace VoiceScript
 {
@@ -12,6 +13,7 @@ namespace VoiceScript
         readonly IAudioRecorder audioRecorder;
         readonly IVoiceTranscriptor voiceTranscriptor;
         readonly AudioPlayer audioPlayer;
+        readonly Diagram diagram;
 
         readonly string audioFilename;
 
@@ -31,12 +33,15 @@ namespace VoiceScript
 
             #region Initialize voice transcripting
             voiceTranscriptor = new VoiceTranscriptor(audioRecorder);
-            recordingTimer.Tick += (sender, e) => voiceTranscriptor.DoRealTimeTranscription(WriteRealTimeTranscriptToTextbox);
+            recordingTimer.Tick += (sender, e) 
+                => voiceTranscriptor.DoRealTimeTranscription(voiceCommand => AppendToTextbox(richTextBox, voiceCommand));
             SetLanguages();
             #endregion
 
+            diagram = new Diagram();
+
             appState = ApplicationState.Waiting;
-            //DisableButtons(convertBtn, playBtn, realTimeTranscBtn);
+            //DisableButtons(convertBtn, playBtn, realTimeTranscBtn, diagramBtn); // bug with not initialized buttons
         }
 
         #region Button control settings
@@ -44,7 +49,7 @@ namespace VoiceScript
         {
             foreach (var button in buttons)
             {
-                button.Enabled = value;
+                button.Invoke((MethodInvoker)(() => button.Enabled = value));
             }
         }
 
@@ -52,7 +57,7 @@ namespace VoiceScript
         {
             foreach (var button in buttons)
             {
-                button.Visible = value;
+                button.Invoke((MethodInvoker)(() => button.Visible = value));
             }
         }
 
@@ -86,12 +91,15 @@ namespace VoiceScript
             if (richTextBox.TextLength != 0) richTextBox.AppendText(Environment.NewLine);
 
             await voiceTranscriptor.CreateTranscriptionTask(filename,
-                transcript => richTextBox.AppendText(" " + transcript));
+                transcript => {
+                    AppendToTextbox(richTextBox, transcript);
+                    EnableButtons(diagramBtn);
+                });
         }
 
-        void WriteRealTimeTranscriptToTextbox(string voiceCommand)
+        void AppendToTextbox(RichTextBox textBox, string text)
         {
-            richTextBox.Invoke((MethodInvoker)(() => richTextBox.AppendText(" " + voiceCommand)));
+            textBox.Invoke((MethodInvoker)(() => textBox.AppendText(text + ' ')));
         }
 
         /// <summary>
@@ -167,11 +175,18 @@ namespace VoiceScript
             }
         }
 
+        void diagramBtn_Click(object sender, EventArgs e)
+        {
+            diagram.ConvertTextToDiagram(richTextBox.Text);
+            var classBoxes = diagram.ClassBoxes;
+
+            // show class boxes
+        }
+
         void PlaybackStoppedCallback()
         {
             appState = ApplicationState.Waiting;
             EnableButtons(recordBtn);
         }
-        
     }
 }

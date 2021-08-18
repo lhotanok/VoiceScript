@@ -3,40 +3,36 @@ using System.Collections.Generic;
 
 namespace VoiceScript.DiagramModel
 {
-    class Method : IMethod
+    class Method : Component
     {
-        List<IParameter> parameters;
-
-        public Method(string name)
-        {
-            Name = name;
-            ContainsComponents = true;
-            ReturnType = new ReturnType();
-            Visibility = new Visibility();
+        public Method(string name, Component parent) : base(name, parent)
+        {   
+            // set default values
+            children.Add(new ReturnType(this));
+            children.Add(new Visibility(this));
         }
 
-        public IVisibility Visibility { get; private set; }
+        public Visibility Visibility { get => GetFilteredChildren<Visibility>()[0]; }
 
-        public IType ReturnType { get; private set; }
+        public ReturnType ReturnType { get => GetFilteredChildren<ReturnType>()[0]; }
 
-        public IEnumerable<IParameter> RequiredParameters
+        public IEnumerable<Parameter> RequiredParameters
         {
-            get => GetFilteredParameters(parameter => parameter.Required);
+            get => GetFilteredParameters(parameter => parameter.Required.Value);
         }
 
-        public IEnumerable<IParameter> OptionalParameters
+        public IEnumerable<Parameter> OptionalParameters
         {
-            get => GetFilteredParameters(parameter => !parameter.Required);
+            get => GetFilteredParameters(parameter => !parameter.Required.Value);
         }
 
-        public string Name { get; private set; }
+        public override string TypeName { get => GetType().Name; }
 
-        public bool ContainsComponents { get; }
-
-        IEnumerable<IParameter> GetFilteredParameters(Func<IParameter, bool> filterCallback)
+        IEnumerable<Parameter> GetFilteredParameters(Func<Parameter, bool> filterCallback)
         {
-            var filtered = new List<IParameter>();
-
+            var parameters = GetFilteredChildren<Parameter>();
+            var filtered = new List<Parameter>();
+       
             foreach (var parameter in parameters)
             {
                 if (filterCallback(parameter))

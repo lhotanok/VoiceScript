@@ -17,7 +17,7 @@ namespace VoiceScript.DiagramModel
             parsedWords = inputText.Split(' ');
 
             delimiterCommand = "escape";
-            validKeywords = new List<string>() { "attach", "change", "exclude", delimiterCommand};
+            validKeywords = new List<string>() { "add", "change", "exclude", delimiterCommand};
         }
 
         public IEnumerable<ICommand> GetParsedCommands()
@@ -37,6 +37,7 @@ namespace VoiceScript.DiagramModel
         ICommand GetNextCommand()
         {
             var commandName = GetCommandName();
+            parsedOffset++;
 
             if (!IsKeyword(commandName)) return null;
 
@@ -91,9 +92,9 @@ namespace VoiceScript.DiagramModel
 
         string GetNextWord() => parsedOffset < parsedWords.Length ? parsedWords[parsedOffset] : string.Empty;
 
-        bool IsKeyword(string word) => validKeywords.Contains(word);
+        bool IsKeyword(string word) => validKeywords.Contains(word.ToLower());
 
-        bool IsDelimiter(string word) => word == delimiterCommand;
+        bool IsDelimiter(string word) => word.ToLower() == delimiterCommand;
 
         static string ConvertToPascalCase(IEnumerable<string> words)
         {

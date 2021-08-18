@@ -1,18 +1,11 @@
 ﻿namespace VoiceScript.DiagramModel
 {
-    class ReturnType : IType
+    class ReturnType : Component
     {
         readonly static string defaultName = "void";
-        public ReturnType() : this(defaultName) { }
-        public ReturnType(string name = "void")
-        {
-            Name = name;
-            ContainsComponents = false;
-        }
-
-        public string Name { get; private set; }
+        public ReturnType(Component parent) : base(defaultName, parent) { }
+        public ReturnType(string name, Component parent) : base(name, parent) { }
         public string DefaultName { get; }
-
-        public bool ContainsComponents { get; }
+        public override string TypeName { get => GetType().Name; }
     }
 }
