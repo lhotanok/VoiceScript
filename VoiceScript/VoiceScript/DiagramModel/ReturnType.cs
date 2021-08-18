@@ -4,10 +4,10 @@ namespace VoiceScript.DiagramModel
 {
     class ReturnType : Component
     {
-        public readonly static List<string> ValidChildTypes = new();
+        readonly static List<string> validChildTypes = new();
         readonly static string defaultName = "void";
         public ReturnType(Component parent) : this(defaultName, parent) { }
-        public ReturnType(string name, Component parent) : base(name, parent, ValidChildTypes) { }
+        public ReturnType(string name, Component parent) : base(name, parent, validChildTypes) { }
         public static string TypeName { get => "return"; }
 
         public static string DefaultName { get => defaultName; }

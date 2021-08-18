@@ -4,9 +4,9 @@ namespace VoiceScript.DiagramModel
 {
     class Required : Component
     {
-        public static List<string> ValidChildTypes = new();
+        readonly static List<string> validChildTypes = new();
         readonly static string defaultName = "false";
-        public Required(Component parent) : base(defaultName, parent, ValidChildTypes) { }
+        public Required(Component parent) : base(defaultName, parent, validChildTypes) { }
         public static string TypeName { get => nameof(Required).ToLower(); }
 
         public bool Value { get; private set; }

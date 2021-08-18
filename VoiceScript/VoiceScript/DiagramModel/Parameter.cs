@@ -4,8 +4,8 @@ namespace VoiceScript.DiagramModel
 {
     class Parameter : Component
     {
-        public static List<string> ValidChildTypes = new() { VariableType.TypeName, Required.TypeName };
-        public Parameter(string name, Component parent) : base(name, parent, ValidChildTypes)
+        readonly static List<string> validChildTypes = new() { VariableType.TypeName, Required.TypeName };
+        public Parameter(string name, Component parent) : base(name, parent, validChildTypes)
         {
             // set default values
             children.Add(new VariableType(this));

@@ -5,8 +5,8 @@ namespace VoiceScript.DiagramModel
 {
     class Class : Component
     {
-        public static List<string> ValidChildTypes = new() { Field.TypeName, Method.TypeName };
-        public Class(string name, Component parent) : base(name, parent, ValidChildTypes ) { }
+        readonly static List<string> validChildTypes = new() { Field.TypeName, Method.TypeName };
+        public Class(string name, Component parent) : base(name, parent, validChildTypes ) { }
         public static string TypeName { get => nameof(Class).ToLower(); }
 
         public IEnumerable<Field> GetFields() => GetTypeFilteredChildren<Field>();

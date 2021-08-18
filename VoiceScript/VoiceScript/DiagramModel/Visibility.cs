@@ -4,11 +4,11 @@ namespace VoiceScript.DiagramModel
 {
     class Visibility : Component
     {
-        public readonly static List<string> ValidChildTypes = new();
+        readonly static List<string> validChildTypes = new();
         readonly List<string> validNames;
         readonly static string defaultName = "public";
         public Visibility(Component parent) : this(defaultName, parent) { }
-        public Visibility(string name, Component parent) : base(name, parent, ValidChildTypes)
+        public Visibility(string name, Component parent) : base(name, parent, validChildTypes)
         {
             validNames = new List<string>() { "public", "private", "protected", "internal" };
         }

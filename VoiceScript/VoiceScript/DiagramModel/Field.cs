@@ -8,8 +8,8 @@ namespace VoiceScript.DiagramModel
 {
     class Field : Component
     {
-        public static List<string> ValidChildTypes = new() { Visibility.TypeName, VariableType.TypeName };
-        public Field(string name, Component parent) : base(name, parent, ValidChildTypes)
+        readonly static List<string> validChildTypes = new() { Visibility.TypeName, VariableType.TypeName };
+        public Field(string name, Component parent) : base(name, parent, validChildTypes)
         {
             children.Add(new VariableType(this));
             children.Add(new Visibility(this));

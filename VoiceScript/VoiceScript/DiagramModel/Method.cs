@@ -5,8 +5,8 @@ namespace VoiceScript.DiagramModel
 {
     class Method : Component
     {
-        public static List<string> ValidChildTypes = new() { Visibility.TypeName, ReturnType.TypeName };
-        public Method(string name, Component parent) : base(name, parent, ValidChildTypes)
+        readonly static List<string> validChildTypes = new() { Visibility.TypeName, ReturnType.TypeName };
+        public Method(string name, Component parent) : base(name, parent, validChildTypes)
         {
             // set default values
             children.Add(new Visibility(this));

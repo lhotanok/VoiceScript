@@ -12,6 +12,13 @@ namespace VoiceScript.DiagramModel
 
         int parsedOffset;
 
+        static readonly Dictionary<string, Func<string, string, Command>> commandCtors = new()
+        {
+            { "add", (targetType, targetValue) => new AddCommand(targetType, targetValue) },
+            { "edit", (targetType, targetValue) => new EditCommand(targetType, targetValue) },
+            { "delete", (targetType, targetValue) => new DeleteCommand(targetType, targetValue) }
+        };
+
         public CommandParser(string inputText)
         {
             parsedWords = inputText.Split(' ');
@@ -20,9 +27,9 @@ namespace VoiceScript.DiagramModel
             validKeywords = new List<string>() { "add", "change", "exclude", delimiterCommand};
         }
 
-        public IEnumerable<ICommand> GetParsedCommands()
+        public IEnumerable<Command> GetParsedCommands()
         {
-            var parsedCommands = new List<ICommand>();
+            var parsedCommands = new List<Command>();
             var command = GetNextCommand();
 
             while (command != null)
@@ -34,7 +41,7 @@ namespace VoiceScript.DiagramModel
             return parsedCommands;
         }
 
-        ICommand GetNextCommand()
+        Command GetNextCommand()
         {
             var commandName = GetCommandName();
             parsedOffset++;
@@ -46,12 +53,12 @@ namespace VoiceScript.DiagramModel
 
             var targetName = GetTargetName();
 
-            if (targetType == string.Empty || targetName == string.Empty)
+            if (targetType == string.Empty || targetName == string.Empty || !commandCtors.ContainsKey(commandName))
             {
-                throw new InvalidOperationException();
+                throw new InvalidOperationException("Invalid command.");
             }
 
-            return new Command(commandName, targetType, targetName);
+            return commandCtors[commandName](targetType, targetName);
         }
 
         string GetCommandName()
@@ -64,7 +71,7 @@ namespace VoiceScript.DiagramModel
                 word = GetNextWord();
             }
 
-            return word;
+            return word.ToLower();
         }
 
         string GetTargetName()

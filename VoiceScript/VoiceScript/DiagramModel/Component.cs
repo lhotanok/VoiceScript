@@ -7,16 +7,6 @@ namespace VoiceScript.DiagramModel
     {
         protected readonly List<Component> children;
         readonly List<string> validChildrenTypes;
-        static readonly Dictionary<string, Func<string, Component, Component>> componentCtors = new()
-        {
-            {Class.TypeName, (childName, parent) => new Class(childName, parent) },
-            {Field.TypeName, (childName, parent) => new Field(childName, parent) },
-            {Method.TypeName, (childName, parent) => new Method(childName, parent) },
-            {Parameter.TypeName, (childName, parent) => new Parameter(childName, parent) },
-            {Required.TypeName, (childName, parent) => new Required(parent) },
-            {VariableType.TypeName, (childName, parent) => new VariableType(childName, parent) },
-            {Visibility.TypeName, (childName, parent) => new Visibility(childName, parent) }
-        };
         public Component(string name, Component parent, List<string> validChildren)
         {
             Parent = parent;
@@ -29,16 +19,20 @@ namespace VoiceScript.DiagramModel
         public IEnumerable<Component> Children { get => children; }
         public List<string> ValidChildrenTypes { get => validChildrenTypes; }
         public virtual string Name { get; protected set; }
-        public void AddChild(string childType, string childName)
+        public void AddChild(Component child) => children.Add(child);
+        public bool TryDeleteChild(string childType, string childName)
         {
-            if (ValidChildrenTypes.Contains(childType) && componentCtors.ContainsKey(childType))
+            for (int i = 0; i < children.Count; i++)
             {
-                children.Add(componentCtors[childType](childName, this));
+                var child = children[i];
+
+                if (child.GetTypeName() == childType && child.Name == childName)
+                {
+                    children.RemoveAt(i);
+                    return true;
+                }
             }
-            else
-            {
-                throw new InvalidOperationException();
-            }
+            return false;
         }
 
         protected List<T> GetTypeFilteredChildren<T>() where T: Component

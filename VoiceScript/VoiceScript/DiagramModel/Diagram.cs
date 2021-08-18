@@ -6,8 +6,8 @@ namespace VoiceScript.DiagramModel
     class Diagram : Component
     {
         readonly List<Class> classBoxes;
-        public static List<string> ValidChildTypes = new() { Class.TypeName };
-        public Diagram() : base("Diagram", null, ValidChildTypes)
+        readonly static List<string> validChildTypes = new() { Class.TypeName };
+        public Diagram() : base("Diagram", null, validChildTypes)
         {
             classBoxes = new List<Class>();
         }
@@ -19,9 +19,21 @@ namespace VoiceScript.DiagramModel
             var parser = new CommandParser(text);
             var parsedCommands = parser.GetParsedCommands();
 
-            // process command tree
+            ExecuteCommands(parsedCommands);
         }
 
         public override string GetTypeName() => nameof(Diagram).ToLower();
+
+        void ExecuteCommands(IEnumerable<Command> commands)
+        {
+            foreach (var command in commands)
+            {
+                command.Execute(new CommandContext()
+                {
+                    CurrentComponent = this,
+                    TargetComponent = this
+                });
+            }
+        }
     }
 }
