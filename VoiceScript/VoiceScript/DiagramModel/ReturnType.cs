@@ -1,16 +1,11 @@
-﻿using System.Collections.Generic;
-
-namespace VoiceScript.DiagramModel
+﻿namespace VoiceScript.DiagramModel
 {
-    class ReturnType : Component
+    class ReturnType : Type
     {
-        readonly static List<string> validChildTypes = new();
         readonly static string defaultName = "void";
-        public ReturnType(Component parent) : this(defaultName, parent) { }
-        public ReturnType(string name, Component parent) : base(name, parent, validChildTypes) { }
-        public static string TypeName { get => "return"; }
+        public ReturnType(Component parent) : base(defaultName, parent) { }
+        public ReturnType(string name, Component parent) : base(name, parent) { }
 
-        public static string DefaultName { get => defaultName; }
-        public override string GetTypeName() => TypeName;
+        public override string GetDefaultName() => defaultName;
     }
 }

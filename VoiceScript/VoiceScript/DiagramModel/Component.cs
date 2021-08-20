@@ -49,5 +49,18 @@ namespace VoiceScript.DiagramModel
 
             return filteredChildren;
         }
+
+        protected T GetUniqueChild<T>() where T : Component
+        {
+            var filteredChildren = GetTypeFilteredChildren<T>();
+            if (filteredChildren.Count != 0)
+            {
+                return filteredChildren[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

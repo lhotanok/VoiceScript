@@ -15,7 +15,7 @@ namespace VoiceScript.DiagramModel
             { Method.TypeName, (childName, parent) => new Method(childName, parent) },
             { Parameter.TypeName, (childName, parent) => new Parameter(childName, parent) },
             { Required.TypeName, (childName, parent) => new Required(parent) },
-            { VariableType.TypeName, (childName, parent) => new VariableType(childName, parent) },
+            { FieldType.TypeName, (childName, parent) => new FieldType(childName, parent) },
             { Visibility.TypeName, (childName, parent) => new Visibility(childName, parent) }
         };
         public static bool CanCreateComponent(string componentType) => componentCtors.ContainsKey(componentType);

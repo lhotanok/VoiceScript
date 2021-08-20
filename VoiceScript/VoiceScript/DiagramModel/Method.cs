@@ -6,16 +6,20 @@ namespace VoiceScript.DiagramModel
     class Method : Component
     {
         readonly static List<string> validChildTypes = new() { Visibility.TypeName, ReturnType.TypeName };
-        public Method(string name, Component parent) : base(name, parent, validChildTypes)
-        {
-            // set default values
-            children.Add(new Visibility(this));
-            children.Add(new ReturnType(this));
-        }
+        public Method(string name, Component parent) : base(name, parent, validChildTypes) { }
         public static string TypeName { get => nameof(Method).ToLower(); }
-        public Visibility Visibility { get => GetTypeFilteredChildren<Visibility>()[0]; }
 
-        public ReturnType GetReturnType() => GetTypeFilteredChildren<ReturnType>()[0];
+        /// <summary>
+        /// If visibility is not defined return default visibility.
+        /// </summary>
+        /// <returns>Defined value of visibility or default.</returns>
+        public Visibility GetVisibility() => GetUniqueChild<Visibility>() ?? new Visibility(this);
+
+        /// <summary>
+        /// If return type is not defined return default return type.
+        /// </summary>
+        /// <returns>Defined value of return type or default.</returns>
+        public ReturnType GetReturnType() => GetUniqueChild<ReturnType>() ?? new ReturnType(this);
 
         public IEnumerable<Parameter> GetRequiredParameters()
             => GetFilteredParameters(parameter => parameter.IsRequired().Value);

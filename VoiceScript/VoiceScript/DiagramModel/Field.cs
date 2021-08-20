@@ -1,23 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VoiceScript.DiagramModel
 {
     class Field : Component
     {
-        readonly static List<string> validChildTypes = new() { Visibility.TypeName, VariableType.TypeName };
-        public Field(string name, Component parent) : base(name, parent, validChildTypes)
-        {
-            children.Add(new VariableType(this));
-            children.Add(new Visibility(this));
-        }
-        public static string TypeName { get => nameof(Field).ToLower(); }
-        public Visibility Visibility { get => GetTypeFilteredChildren<Visibility>()[0]; }
+        readonly static List<string> validChildTypes = new() { Visibility.TypeName, FieldType.TypeName };
 
-        public VariableType Type { get => GetTypeFilteredChildren<VariableType>()[0]; }
+        public Field(string name, Component parent) : base(name, parent, validChildTypes) { }
+
+        public static string TypeName { get => nameof(Field).ToLower(); }
+
+        /// <summary>
+        /// If visibility is not defined return default visibility.
+        /// </summary>
+        /// <returns>Defined value of visibility or default.</returns>
+        public Visibility GetVisibility() => GetUniqueChild<Visibility>() ?? new Visibility(this);
+
+        /// <summary>
+        /// If field type is not defined return default field type.
+        /// </summary>
+        /// <returns>Defined value of field type or default.</returns>
+        public FieldType GetFieldType() => GetUniqueChild<FieldType>() ?? new FieldType(this);
+        
         public override string GetTypeName() => TypeName;
     }
 }
