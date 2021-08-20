@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VoiceScript.DiagramModel
+namespace VoiceScript.DiagramModel.Commands
 {
     class AddCommand : Command
     {

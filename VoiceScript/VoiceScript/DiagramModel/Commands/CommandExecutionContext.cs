@@ -1,4 +1,4 @@
-﻿namespace VoiceScript.DiagramModel
+﻿namespace VoiceScript.DiagramModel.Commands
 {
     class CommandExecutionContext
     {

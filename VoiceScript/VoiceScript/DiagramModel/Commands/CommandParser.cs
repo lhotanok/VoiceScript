@@ -2,29 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace VoiceScript.DiagramModel
+namespace VoiceScript.DiagramModel.Commands
 {
     class CommandParser
     {
-        readonly List<string> validKeywords;
-        readonly string delimiterCommand;
+        readonly static List<string> validKeywords = new() { "add", "edit", "delete", delimiterCommand };
+        readonly static string delimiterCommand = "escape";
+
         readonly string[] parsedWords;
-
         int parsedOffset;
-
-        static readonly Dictionary<string, Func<string, string, Command>> commandCtors = new()
-        {
-            { "add", (targetType, targetValue) => new AddCommand(targetType, targetValue) },
-            { "edit", (targetType, targetValue) => new EditCommand(targetType, targetValue) },
-            { "delete", (targetType, targetValue) => new DeleteCommand(targetType, targetValue) }
-        };
 
         public CommandParser(string inputText)
         {
             parsedWords = inputText.Split(' ');
-
-            delimiterCommand = "escape";
-            validKeywords = new List<string>() { "add", "change", "exclude", delimiterCommand};
         }
 
         public IEnumerable<Command> GetParsedCommands()
@@ -53,12 +43,12 @@ namespace VoiceScript.DiagramModel
 
             var targetName = GetTargetName();
 
-            if (targetType == string.Empty || targetName == string.Empty || !commandCtors.ContainsKey(commandName))
+            if (InvalidCommandTarget(targetType, targetName) || !CommandFactory.CanCreateCommand(commandName))
             {
                 throw new InvalidOperationException("Invalid command.");
             }
 
-            return commandCtors[commandName](targetType, targetName);
+            return CommandFactory.GetCommandCtor(commandName)(targetType, targetName);
         }
 
         string GetCommandName()
@@ -102,6 +92,8 @@ namespace VoiceScript.DiagramModel
         bool IsKeyword(string word) => validKeywords.Contains(word.ToLower());
 
         bool IsDelimiter(string word) => word.ToLower() == delimiterCommand;
+
+        static bool InvalidCommandTarget(string targetType, string targetName) => targetType == string.Empty || targetName == string.Empty;
 
         static string ConvertToPascalCase(IEnumerable<string> words)
         {

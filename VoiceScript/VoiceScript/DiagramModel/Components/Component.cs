@@ -15,24 +15,39 @@ namespace VoiceScript.DiagramModel
             validChildrenTypes = validChildren;
         }
         public abstract string GetTypeName();
-        public Component Parent { get; }
-        public IEnumerable<Component> Children { get => children; }
-        public List<string> ValidChildrenTypes { get => validChildrenTypes; }
-        public virtual string Name { get; protected set; }
-        public void AddChild(Component child) => children.Add(child);
-        public bool TryDeleteChild(string childType, string childName)
-        {
-            for (int i = 0; i < children.Count; i++)
-            {
-                var child = children[i];
 
-                if (child.GetTypeName() == childType && child.Name == childName)
-                {
-                    children.RemoveAt(i);
-                    return true;
-                }
+        public Component Parent { get; }
+
+        public IEnumerable<Component> Children { get => children; }
+
+        public List<string> ValidChildrenTypes { get => validChildrenTypes; }
+
+        public virtual string Name { get; set; }
+
+        public virtual void AddChild(Component child) => children.Add(child);
+
+        public virtual bool TryDeleteChild(string childType, string childName)
+        {
+            int childIndex = GetChildIndex(childType, childName);
+
+            if (childIndex != -1)
+            {
+                children.RemoveAt(childIndex);
             }
-            return false;
+
+            return childIndex != -1;
+        }
+
+        public virtual Component FindChild(string childType, string childName)
+        {
+            int childIndex = GetChildIndex(childType, childName);
+
+            if (childIndex != -1)
+            {
+                return children[childIndex];
+            }
+
+            return null;
         }
 
         protected List<T> GetTypeFilteredChildren<T>() where T: Component
@@ -61,6 +76,20 @@ namespace VoiceScript.DiagramModel
             {
                 return null;
             }
+        }
+
+        int GetChildIndex(string childType, string childName)
+        {
+            for (int i = 0; i < children.Count; i++)
+            {
+                var child = children[i];
+
+                if (child.GetTypeName() == childType && child.Name == childName)
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
     }
 }

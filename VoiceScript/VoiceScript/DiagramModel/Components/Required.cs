@@ -10,7 +10,7 @@ namespace VoiceScript.DiagramModel
         public static string TypeName { get => nameof(Required).ToLower(); }
 
         public bool Value { get; private set; }
-        public override string Name { get => base.Name; protected set => SetValue(value); }
+        public override string Name { get => base.Name; set => SetValue(value); }
         public static string DefaultName { get => defaultName; }
         public override string GetTypeName() => TypeName;
 

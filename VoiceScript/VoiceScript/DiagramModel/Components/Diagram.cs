@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using VoiceScript.DiagramModel.Commands;
+
 namespace VoiceScript.DiagramModel
 {
     class Diagram : Component
     {
         readonly static List<string> validChildTypes = new() { Class.TypeName };
-        public Diagram() : base("Diagram", null, validChildTypes) { }
+        public Diagram(string name = "Diagram", Component parent = null) : base(name, parent, validChildTypes) { }
+
+        public static string TypeName { get => nameof(Diagram).ToLower(); }
 
         public IEnumerable<Class> GetClasses()
         {

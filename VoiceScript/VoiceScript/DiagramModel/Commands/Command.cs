@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace VoiceScript.DiagramModel
+namespace VoiceScript.DiagramModel.Commands
 {
     abstract class Command
     {
-        
         public Command(string targetType, string targetName)
         {
             this.targetType = targetType;

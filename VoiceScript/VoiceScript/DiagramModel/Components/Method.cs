@@ -5,7 +5,7 @@ namespace VoiceScript.DiagramModel
 {
     class Method : Component
     {
-        readonly static List<string> validChildTypes = new() { Visibility.TypeName, ReturnType.TypeName };
+        readonly static List<string> validChildTypes = new() { Visibility.TypeName, ReturnType.TypeName, Parameter.TypeName };
         public Method(string name, Component parent) : base(name, parent, validChildTypes) { }
         public static string TypeName { get => nameof(Method).ToLower(); }
 
@@ -29,6 +29,12 @@ namespace VoiceScript.DiagramModel
 
         public override string GetTypeName() => TypeName;
 
+        public override void AddChild(Component child)
+        {
+            if (child is Type) child = new ReturnType(child.Name, child.Parent);
+
+            base.AddChild(child);
+        }
         IEnumerable<Parameter> GetFilteredParameters(Func<Parameter, bool> filterCallback)
         {
             var parameters = GetTypeFilteredChildren<Parameter>();

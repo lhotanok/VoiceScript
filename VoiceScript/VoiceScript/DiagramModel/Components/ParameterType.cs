@@ -2,10 +2,11 @@
 {
     class ParameterType : Type
     {
-        public ParameterType(Component parent) : this(defaultName, parent) { }
+        static readonly string defName = "object";
+        public ParameterType(Component parent) : this(defName, parent) { }
         public ParameterType(string name, Component parent) : base(name, parent)
         {
-            defaultName = "object";
+            defaultName = defName;
         }
     }
 }

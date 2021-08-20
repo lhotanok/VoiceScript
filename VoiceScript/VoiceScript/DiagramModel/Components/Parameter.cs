@@ -21,5 +21,12 @@ namespace VoiceScript.DiagramModel
         public Required IsRequired() => GetUniqueChild<Required>() ?? new Required(this);
 
         public override string GetTypeName() => TypeName;
+
+        public override void AddChild(Component child)
+        {
+            if (child is Type) child = new ParameterType(child.Name, child.Parent);
+
+            base.AddChild(child);
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VoiceScript.DiagramModel
+namespace VoiceScript.DiagramModel.Commands
 {
     class DeleteCommand : Command
     {
@@ -8,13 +8,12 @@ namespace VoiceScript.DiagramModel
 
         protected override void ProcessCommand(CommandExecutionContext context)
         {
-            while (context.CurrentComponent != null)
+            while (context.CurrentComponent != null && !context.CommandExecuted)
             {
                 if (context.CurrentComponent.TryDeleteChild(targetType, targetValue))
                 {
                     context.TargetComponent = context.CurrentComponent;
                     context.CommandExecuted = true;
-                    return;
                 }
                 else
                 {
@@ -22,7 +21,7 @@ namespace VoiceScript.DiagramModel
                 }
             }
 
-            throw new InvalidOperationException("Component can not be deleted. It does not exists in the current context.");
+            throw new InvalidOperationException("Component can not be deleted. It does not exist in the current context.");
         }
     }
 }

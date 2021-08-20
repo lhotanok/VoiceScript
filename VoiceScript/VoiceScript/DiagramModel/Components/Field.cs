@@ -24,5 +24,12 @@ namespace VoiceScript.DiagramModel
         public FieldType GetFieldType() => GetUniqueChild<FieldType>() ?? new FieldType(this);
         
         public override string GetTypeName() => TypeName;
+
+        public override void AddChild(Component child)
+        {
+            if (child is Type) child = new FieldType(child.Name, child.Parent);
+
+            base.AddChild(child);
+        }
     }
 }

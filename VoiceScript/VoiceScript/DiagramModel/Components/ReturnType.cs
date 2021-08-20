@@ -2,10 +2,11 @@
 {
     class ReturnType : Type
     {
-        public ReturnType(Component parent) : this(defaultName, parent) { }
+        static readonly string defName = "void";
+        public ReturnType(Component parent) : this(defName, parent) { }
         public ReturnType(string name, Component parent) : base(name, parent)
         {
-            defaultName = "void";
+            defaultName = defName;
         }
     }
 }
