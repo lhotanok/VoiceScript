@@ -6,13 +6,16 @@ namespace VoiceScript.DiagramModel
     {
         public AddCommand(string targetType, string targetName) : base(targetType, targetName) { }
 
-        protected override void ProcessCommand(CommandContext context)
+        protected override void ProcessCommand(CommandExecutionContext context)
         {
-            if (componentCtors.ContainsKey(targetType))
+            if (ComponentFactory.CanCreateComponent(targetType))
             {
-                var childComponent = componentCtors[targetType](targetValue, context.CurrentComponent);
+                var childComponentCtor = ComponentFactory.GetComponentCtor(targetType);
+                var childComponent = childComponentCtor(targetValue, context.CurrentComponent);
+
                 context.CurrentComponent.AddChild(childComponent);
                 context.TargetComponent = childComponent;
+                context.CommandExecuted = true;
             }
             else
             {

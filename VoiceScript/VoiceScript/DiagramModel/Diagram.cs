@@ -26,13 +26,16 @@ namespace VoiceScript.DiagramModel
 
         void ExecuteCommands(IEnumerable<Command> commands)
         {
+            var context = new CommandExecutionContext()
+            {
+                TargetComponent = this,
+            };
+
             foreach (var command in commands)
             {
-                command.Execute(new CommandContext()
-                {
-                    CurrentComponent = this,
-                    TargetComponent = this
-                });
+                context.CurrentComponent = context.TargetComponent;
+                context.CommandExecuted = false;
+                command.Execute(context);
             }
         }
     }

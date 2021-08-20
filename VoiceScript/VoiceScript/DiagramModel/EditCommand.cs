@@ -6,7 +6,7 @@ namespace VoiceScript.DiagramModel
     {
         public EditCommand(string targetType, string targetName) : base(targetType, targetName) { }
 
-        protected override void ProcessCommand(CommandContext context)
+        protected override void ProcessCommand(CommandExecutionContext context)
         {
             throw new NotImplementedException();
         }

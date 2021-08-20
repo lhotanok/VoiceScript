@@ -6,13 +6,14 @@ namespace VoiceScript.DiagramModel
     {
         public DeleteCommand(string targetType, string targetName) : base(targetType, targetName) { }
 
-        protected override void ProcessCommand(CommandContext context)
+        protected override void ProcessCommand(CommandExecutionContext context)
         {
             while (context.CurrentComponent != null)
             {
                 if (context.CurrentComponent.TryDeleteChild(targetType, targetValue))
                 {
                     context.TargetComponent = context.CurrentComponent;
+                    context.CommandExecuted = true;
                     return;
                 }
                 else
