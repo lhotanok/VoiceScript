@@ -5,14 +5,20 @@ namespace VoiceScript.DiagramModel
 {
     class Diagram : Component
     {
-        readonly List<Class> classBoxes;
         readonly static List<string> validChildTypes = new() { Class.TypeName };
-        public Diagram() : base("Diagram", null, validChildTypes)
-        {
-            classBoxes = new List<Class>();
-        }
+        public Diagram() : base("Diagram", null, validChildTypes) { }
 
-        public IEnumerable<Class> ClassBoxes { get => classBoxes; }
+        public IEnumerable<Class> GetClasses()
+        {
+            var classes = new List<Class>();
+
+            foreach (var child in children)
+            {
+                classes.Add((Class)child);
+            }
+
+            return classes;
+        }
 
         public void ConvertTextToDiagram(string text)
         {

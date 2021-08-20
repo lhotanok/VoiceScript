@@ -178,9 +178,9 @@ namespace VoiceScript
         void diagramBtn_Click(object sender, EventArgs e)
         {
             diagram.ConvertTextToDiagram(richTextBox.Text);
-            var classBoxes = diagram.ClassBoxes;
+            var classes = diagram.GetClasses();
 
-            // show class boxes
+            // show classes
         }
 
         void PlaybackStoppedCallback()
