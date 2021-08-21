@@ -2,7 +2,7 @@
 
 namespace VoiceScript.DiagramModel.Commands
 {
-    class EditCommand : Command
+    public class EditCommand : Command
     {
         public EditCommand(string targetType, string targetName) : base(targetType, targetName) { }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace VoiceScript.DiagramModel.Commands
 {
-    class CommandFactory
+    public class CommandFactory
     {
         static readonly Dictionary<string, Func<string, string, Command>> commandCtors = new()
         {

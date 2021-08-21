@@ -26,8 +26,8 @@ namespace VoiceScript.DiagramModel
 
         public void ConvertTextToDiagram(string text)
         {
-            var parser = new CommandParser(text);
-            var parsedCommands = parser.GetParsedCommands();
+            var parser = new CommandParser();
+            var parsedCommands = parser.GetParsedCommands(text);
 
             ExecuteCommands(parsedCommands);
         }
@@ -73,7 +73,8 @@ namespace VoiceScript.DiagramModel
         {
             Name = original.Name;
             Parent = original.Parent;
-            children = original.Children;
+            children.Clear();
+            children.AddRange(original.Children);
         }
     }
 }

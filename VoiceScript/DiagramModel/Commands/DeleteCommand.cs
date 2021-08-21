@@ -2,7 +2,7 @@
 
 namespace VoiceScript.DiagramModel.Commands
 {
-    class DeleteCommand : Command
+    public class DeleteCommand : Command
     {
         public DeleteCommand(string targetType, string targetName) : base(targetType, targetName) { }
 

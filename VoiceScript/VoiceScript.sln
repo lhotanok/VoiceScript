@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiagramModel", "DiagramMode
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoiceTranscription", "VoiceTranscription\VoiceTranscription.csproj", "{6AD95C74-B18D-4835-8373-3F68E0FDF541}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiagramModel_UnitTests", "DiagramModel_UnitTests\DiagramModel_UnitTests.csproj", "{DD07A3DF-2BCD-40C2-97B4-6A2684679328}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6AD95C74-B18D-4835-8373-3F68E0FDF541}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AD95C74-B18D-4835-8373-3F68E0FDF541}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AD95C74-B18D-4835-8373-3F68E0FDF541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD07A3DF-2BCD-40C2-97B4-6A2684679328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD07A3DF-2BCD-40C2-97B4-6A2684679328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD07A3DF-2BCD-40C2-97B4-6A2684679328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD07A3DF-2BCD-40C2-97B4-6A2684679328}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

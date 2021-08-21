@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-//using NAudio.Wave; // Credit: https://github.com/naudio/NAudio
 
 using VoiceScript.VoiceTranscription;
 using VoiceScript.DiagramModel;

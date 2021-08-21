@@ -4,21 +4,19 @@ using System.Text;
 
 namespace VoiceScript.DiagramModel.Commands
 {
-    class CommandParser
+    public class CommandParser
     {
         readonly static List<string> validKeywords = new() { "add", "edit", "delete", delimiterCommand };
         readonly static string delimiterCommand = "escape";
 
-        readonly string[] parsedWords;
+        string[] parsedWords;
         int parsedOffset;
 
-        public CommandParser(string inputText)
+        public ICollection<Command> GetParsedCommands(string inputText)
         {
             parsedWords = inputText.Split(' ');
-        }
+            parsedOffset = 0;
 
-        public IEnumerable<Command> GetParsedCommands()
-        {
             var parsedCommands = new List<Command>();
             var command = GetNextCommand();
 
@@ -38,12 +36,12 @@ namespace VoiceScript.DiagramModel.Commands
 
             if (!IsKeyword(commandName)) return null;
 
-            var targetType = GetNextWord();
+            var targetType = GetNextWord().ToLower();
             parsedOffset++;
 
             var targetName = GetTargetName();
 
-            if (InvalidCommandTarget(targetType, targetName) || !CommandFactory.CanCreateCommand(commandName))
+            if (IncompleteCommandTarget(targetType, targetName) || !CommandFactory.CanCreateCommand(commandName))
             {
                 throw new InvalidOperationException("Invalid command.");
             }
@@ -74,12 +72,19 @@ namespace VoiceScript.DiagramModel.Commands
             {
                 if (IsKeyword(word))
                 {
-                    if (IsDelimiter(word)) delimiterSet = true;
-                    else if (delimiterSet) delimiterSet = false;
+                    if (IsDelimiter(word))
+                    {
+                        delimiterSet = true;
+                    }
+                    else if (delimiterSet)
+                    {
+                        delimiterSet = false;
+                    }
                     else break;
                 }
 
-                nameParts.Add(word);
+                if (!IsDelimiter(word) || delimiterSet) nameParts.Add(word);
+
                 parsedOffset++;
                 word = GetNextWord();
             }
@@ -93,7 +98,8 @@ namespace VoiceScript.DiagramModel.Commands
 
         bool IsDelimiter(string word) => word.ToLower() == delimiterCommand;
 
-        static bool InvalidCommandTarget(string targetType, string targetName) => targetType == string.Empty || targetName == string.Empty;
+        static bool IncompleteCommandTarget(string targetType, string targetName)
+            => targetType == string.Empty || targetName == string.Empty;
 
         static string ConvertToPascalCase(IEnumerable<string> words)
         {

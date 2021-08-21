@@ -5,9 +5,9 @@ namespace VoiceScript.DiagramModel
 {
     public abstract class Component
     {
-        readonly List<string> validChildrenTypes;
-        protected List<Component> children;
-        public Component(string name, Component parent, List<string> validChildren)
+        protected readonly List<Component> children;
+        readonly ICollection<string> validChildrenTypes;
+        public Component(string name, Component parent, ICollection<string> validChildren)
         {
             Parent = parent;
             Name = name;
@@ -18,9 +18,9 @@ namespace VoiceScript.DiagramModel
 
         public Component Parent { get; protected set; }
 
-        public List<Component> Children { get => children; }
+        public ICollection<Component> Children { get => children; }
 
-        public List<string> ValidChildrenTypes { get => validChildrenTypes; }
+        public ICollection<string> ValidChildrenTypes { get => validChildrenTypes; }
 
         public virtual string Name { get; set; }
         public abstract Component Clone();

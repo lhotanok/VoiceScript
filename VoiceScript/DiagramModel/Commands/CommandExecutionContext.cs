@@ -1,6 +1,6 @@
 ﻿namespace VoiceScript.DiagramModel.Commands
 {
-    class CommandExecutionContext
+    public class CommandExecutionContext
     {
         public Component CurrentComponent { get; set; }
         public Component TargetComponent { get; set; }

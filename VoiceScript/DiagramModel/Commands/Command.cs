@@ -3,15 +3,18 @@ using System.Collections.Generic;
 
 namespace VoiceScript.DiagramModel.Commands
 {
-    abstract class Command
+    public abstract class Command
     {
-        public Command(string targetType, string targetName)
+        protected readonly string targetType, targetValue;
+
+        public Command(string commandTargetType, string commandTargetValue)
         {
-            this.targetType = targetType;
-            this.targetValue = targetName;
+            targetType = commandTargetType;
+            targetValue = commandTargetValue;
         }
 
-        protected readonly string targetType, targetValue;
+        public string TargetType { get => targetType; }
+        public string TargetValue { get => targetValue; }
 
         public virtual void Execute(CommandExecutionContext context)
         {

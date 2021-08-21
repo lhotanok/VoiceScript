@@ -1,8 +1,7 @@
 ﻿using System;
-using System.IO;
 using System.Windows.Forms;
 
-using NAudio.Wave;
+using NAudio.Wave; // Credit: https://github.com/naudio/NAudio
 
 namespace VoiceScript.VoiceTranscription
 {
