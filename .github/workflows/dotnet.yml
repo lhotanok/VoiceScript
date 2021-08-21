@@ -19,7 +19,9 @@ jobs:
         dotnet-version: '3.1.x'
     - name: Install dependencies
       run: dotnet restore
+      working-directory: VoiceScript
     - name: Build
       run: dotnet build
+      working-directory: VoiceScript
     - name: Test with the dotnet CLI
       run: dotnet test
