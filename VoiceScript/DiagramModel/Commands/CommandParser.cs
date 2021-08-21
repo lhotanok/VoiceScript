@@ -6,13 +6,12 @@ namespace VoiceScript.DiagramModel.Commands
 {
     public class CommandParser
     {
-        readonly static List<string> validKeywords = new() { "add", "edit", "delete", delimiterCommand };
-        readonly static string delimiterCommand = "escape";
+        readonly static List<string> validKeywords = new() { "add", "edit", "delete", DelimiterWrapper.Command };
 
         string[] parsedWords;
         int parsedOffset;
 
-        public ICollection<Command> GetParsedCommands(string inputText)
+        public IList<Command> GetParsedCommands(string inputText)
         {
             parsedWords = inputText.Split(' ');
             parsedOffset = 0;
@@ -65,25 +64,23 @@ namespace VoiceScript.DiagramModel.Commands
         string GetTargetName()
         {
             var nameParts = new List<string>();
+            var delimiter = new DelimiterWrapper();
+
             var word = GetNextWord();
-            var delimiterSet = false;
 
             while (word != string.Empty)
             {
                 if (IsKeyword(word))
                 {
-                    if (IsDelimiter(word))
-                    {
-                        delimiterSet = true;
-                    }
-                    else if (delimiterSet)
-                    {
-                        delimiterSet = false;
-                    }
-                    else break;
-                }
+                    delimiter.HandleDelimiter(word);
+                    if (!delimiter.Escape() && !delimiter.DelimiterSet) break;
 
-                if (!IsDelimiter(word) || delimiterSet) nameParts.Add(word);
+                    if (delimiter.Escape()) nameParts.Add(word);
+                }
+                else
+                {
+                    nameParts.Add(word);
+                }
 
                 parsedOffset++;
                 word = GetNextWord();
@@ -94,9 +91,7 @@ namespace VoiceScript.DiagramModel.Commands
 
         string GetNextWord() => parsedOffset < parsedWords.Length ? parsedWords[parsedOffset] : string.Empty;
 
-        bool IsKeyword(string word) => validKeywords.Contains(word.ToLower());
-
-        bool IsDelimiter(string word) => word.ToLower() == delimiterCommand;
+        static bool IsKeyword(string word) => validKeywords.Contains(word.ToLower());
 
         static bool IncompleteCommandTarget(string targetType, string targetName)
             => targetType == string.Empty || targetName == string.Empty;
