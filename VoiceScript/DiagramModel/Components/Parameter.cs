@@ -18,8 +18,9 @@ namespace VoiceScript.DiagramModel.Components
         /// If required value is not defined return default required value.
         /// </summary>
         /// <returns>Defined value of required level or default.</returns>
-        public Required IsRequired() => GetUniqueChild<Required>() ?? new Required(this);
+        public Required GetRequireInfo() => GetUniqueChild<Required>() ?? new Required(this);
 
+        public bool IsRequired { get => GetRequireInfo().Value; }
         public override string GetTypeName() => TypeName;
 
         public override void AddChild(Component child)

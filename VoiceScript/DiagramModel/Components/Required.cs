@@ -18,7 +18,7 @@ namespace VoiceScript.DiagramModel.Components
         void SetValue(string value)
         {
             base.Name = value;
-            Value = value == "true";
+            Value = value.ToLower() == "true";
         }
         public override Component Clone()
         {

@@ -7,9 +7,9 @@ namespace VoiceScript.DiagramModel.Commands
     {
         static readonly Dictionary<string, Func<string, string, Command>> commandCtors = new()
         {
-            { "add", (targetType, targetValue) => new AddCommand(targetType, targetValue) },
-            { "edit", (targetType, targetValue) => new EditCommand(targetType, targetValue) },
-            { "delete", (targetType, targetValue) => new DeleteCommand(targetType, targetValue) }
+            { AddCommand.DefaultFormat, (targetType, targetValue) => new AddCommand(targetType, targetValue) },
+            { EditCommand.DefaultFormat, (targetType, targetValue) => new EditCommand(targetType, targetValue) },
+            { DeleteCommand.DefaultFormat, (targetType, targetValue) => new DeleteCommand(targetType, targetValue) }
         };
         public static bool CanCreateCommand(string commandName) => commandCtors.ContainsKey(commandName);
         public static Func<string, string, Command> GetCommandCtor(string commandName) => commandCtors[commandName];

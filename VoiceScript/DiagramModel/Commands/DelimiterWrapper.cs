@@ -8,7 +8,7 @@
         {
             (delimiterSet, delimiterPreviouslySet) = (false, false);
         }
-        public static string CommandFormat { get => command; }
+        public static string CommandDefaultFormat { get => command; }
         public static bool IsDelimiter(string word) => word.ToLower() == command;
 
         public bool DelimiterSet {

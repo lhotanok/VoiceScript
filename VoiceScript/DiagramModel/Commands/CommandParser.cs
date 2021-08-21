@@ -7,10 +7,10 @@ namespace VoiceScript.DiagramModel.Commands
     public class CommandParser
     {
         readonly static List<string> validKeywords = new() {
-            AddCommand.Format,
-            EditCommand.Format,
-            DeleteCommand.Format,
-            DelimiterWrapper.CommandFormat
+            AddCommand.DefaultFormat,
+            EditCommand.DefaultFormat,
+            DeleteCommand.DefaultFormat,
+            DelimiterWrapper.CommandDefaultFormat
         };
 
         string[] parsedWords;

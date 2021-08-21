@@ -4,8 +4,8 @@ namespace VoiceScript.DiagramModel.Commands
 {
     public class DeleteCommand : Command
     {
-        static readonly string format = "delete";
-        public static string Format { get => format; }
+        static readonly string defaultFormat = "delete";
+        public static string DefaultFormat { get => defaultFormat; }
         public DeleteCommand(string targetType, string targetName) : base(targetType, targetName) { }
 
         protected override void ProcessCommand(CommandExecutionContext context)
