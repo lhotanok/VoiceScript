@@ -9,9 +9,9 @@ namespace VoiceScript.DiagramModel.Components
         public Class(string name, Component parent) : base(name, parent, validChildTypes ) { }
         public static string TypeName { get => nameof(Class).ToLower(); }
 
-        public IEnumerable<Field> GetFields() => GetTypeFilteredChildren<Field>();
+        public IReadOnlyList<Field> GetFields() => GetTypeFilteredChildren<Field>();
 
-        public IEnumerable<Method> GetMethods() => GetTypeFilteredChildren<Method>();
+        public IReadOnlyList<Method> GetMethods() => GetTypeFilteredChildren<Method>();
 
         public override string GetTypeName() => TypeName;
         public override Component Clone()

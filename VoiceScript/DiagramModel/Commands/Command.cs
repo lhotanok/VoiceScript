@@ -1,4 +1,6 @@
-﻿using VoiceScript.DiagramModel.Components;
+﻿using System;
+
+using VoiceScript.DiagramModel.Components;
 
 namespace VoiceScript.DiagramModel.Commands
 {
@@ -28,6 +30,9 @@ namespace VoiceScript.DiagramModel.Commands
                     context.CurrentComponent = context.CurrentComponent.Parent;
                 }
             }
+
+            if (context.CurrentComponent == null)
+                throw new InvalidOperationException("Command can not be executed in the current context.");
         }
         protected static bool IsChildComponentTypeCompatible(Component component, string componentChildType)
             => component.ValidChildrenTypes.Contains(componentChildType);

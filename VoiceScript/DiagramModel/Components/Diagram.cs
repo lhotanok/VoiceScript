@@ -8,11 +8,16 @@ namespace VoiceScript.DiagramModel.Components
     public class Diagram : Component
     {
         readonly static List<string> validChildTypes = new() { Class.TypeName };
-        public Diagram(string name = "Diagram", Component parent = null) : base(name, parent, validChildTypes) { }
+        readonly CommandExecutionContext context;
+        public Diagram(string name = "Diagram", Component parent = null) : base(name, parent, validChildTypes)
+        {
+            context = new CommandExecutionContext();
+            InitializeCommandExecutionContext(this);
+        }
 
         public static string TypeName { get => nameof(Diagram).ToLower(); }
 
-        public IEnumerable<Class> GetClasses()
+        public IReadOnlyList<Class> GetClasses()
         {
             var classes = new List<Class>();
 
@@ -36,10 +41,6 @@ namespace VoiceScript.DiagramModel.Components
 
         void ExecuteCommands(IEnumerable<Command> commands)
         {
-            var context = new CommandExecutionContext()
-            {
-                TargetComponent = this,
-            };
 
             var clonedDiagram = Clone();
 
@@ -47,9 +48,7 @@ namespace VoiceScript.DiagramModel.Components
             {
                 foreach (var command in commands)
                 {
-                    context.CurrentComponent = context.TargetComponent;
-                    context.CommandExecuted = false;
-
+                    InitializeCommandExecutionContext(context.TargetComponent);
                     command.Execute(context);
                 }
             }
@@ -59,6 +58,13 @@ namespace VoiceScript.DiagramModel.Components
                 throw;
             }
             
+        }
+
+        void InitializeCommandExecutionContext(Component target)
+        {
+            context.TargetComponent = target;
+            context.CurrentComponent = target;
+            context.CommandExecuted = false;
         }
 
         public override Component Clone()

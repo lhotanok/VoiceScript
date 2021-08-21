@@ -18,7 +18,7 @@ namespace VoiceScript.DiagramModel.Components
 
         public Component Parent { get; protected set; }
 
-        public ICollection<Component> Children { get => children; }
+        public IReadOnlyList<Component> Children { get => children; }
 
         public ICollection<string> ValidChildrenTypes { get => validChildrenTypes; }
 

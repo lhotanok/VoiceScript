@@ -21,10 +21,10 @@ namespace VoiceScript.DiagramModel.Components
         /// <returns>Defined value of return type or default.</returns>
         public ReturnType GetReturnType() => GetUniqueChild<ReturnType>() ?? new ReturnType(this);
 
-        public IEnumerable<Parameter> GetRequiredParameters()
+        public IReadOnlyList<Parameter> GetRequiredParameters()
             => GetFilteredParameters(parameter => parameter.IsRequired().Value);
 
-        public IEnumerable<Parameter> GetOptionalParameters()
+        public IReadOnlyList<Parameter> GetOptionalParameters()
             => GetFilteredParameters(parameter => !parameter.IsRequired().Value);
 
         public override string GetTypeName() => TypeName;
@@ -35,7 +35,7 @@ namespace VoiceScript.DiagramModel.Components
 
             base.AddChild(child);
         }
-        IEnumerable<Parameter> GetFilteredParameters(Func<Parameter, bool> filterCallback)
+        IReadOnlyList<Parameter> GetFilteredParameters(Func<Parameter, bool> filterCallback)
         {
             var parameters = GetTypeFilteredChildren<Parameter>();
             var filtered = new List<Parameter>();
