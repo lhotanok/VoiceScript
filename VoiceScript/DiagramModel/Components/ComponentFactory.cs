@@ -15,7 +15,7 @@ namespace VoiceScript.DiagramModel
             { Field.TypeName, (childName, parent) => new Field(childName, parent) },
             { Method.TypeName, (childName, parent) => new Method(childName, parent) },
             { Parameter.TypeName, (childName, parent) => new Parameter(childName, parent) },
-            { Required.TypeName, (childName, parent) => new Required(parent) },
+            { Required.TypeName, (childName, parent) => new Required(childName, parent) },
             { Type.TypeName, (childName, parent) => new Type(childName, parent) },
             { Visibility.TypeName, (childName, parent) => new Visibility(childName, parent) }
         };

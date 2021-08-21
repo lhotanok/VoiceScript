@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace VoiceScript.DiagramModel
 {
-    abstract class Component
+    public abstract class Component
     {
-        protected readonly List<Component> children;
         readonly List<string> validChildrenTypes;
+        protected List<Component> children;
         public Component(string name, Component parent, List<string> validChildren)
         {
             Parent = parent;
@@ -16,13 +16,14 @@ namespace VoiceScript.DiagramModel
         }
         public abstract string GetTypeName();
 
-        public Component Parent { get; }
+        public Component Parent { get; protected set; }
 
-        public IEnumerable<Component> Children { get => children; }
+        public List<Component> Children { get => children; }
 
         public List<string> ValidChildrenTypes { get => validChildrenTypes; }
 
         public virtual string Name { get; set; }
+        public abstract Component Clone();
 
         public virtual void AddChild(Component child) => children.Add(child);
 
@@ -75,6 +76,14 @@ namespace VoiceScript.DiagramModel
             else
             {
                 return null;
+            }
+        }
+
+        protected void CloneChildrenInto(Component parent)
+        {
+            foreach (var child in children)
+            {
+                parent.children.Add(child.Clone());
             }
         }
 

@@ -4,7 +4,7 @@ using NAudio.Wave;
 
 namespace VoiceScript.VoiceTranscription
 {
-    interface IAudioRecorder : IDisposable
+    public interface IAudioRecorder : IDisposable
     {
         BufferedWaveProvider WaveProvider { get; }
         WaveFileWriter AudioStream { get; }
@@ -14,5 +14,6 @@ namespace VoiceScript.VoiceTranscription
         void StopRecording();
         double GetFileSecondsLength(string audioFilename);
         int ConvertSecondsToBytes(int seconds);
+        bool RecordingDeviceAvailable();
     }
 }

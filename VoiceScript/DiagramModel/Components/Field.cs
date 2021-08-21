@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace VoiceScript.DiagramModel
 {
-    class Field : Component
+    public class Field : Component
     {
         readonly static List<string> validChildTypes = new() { Visibility.TypeName, FieldType.TypeName };
 
@@ -30,6 +30,14 @@ namespace VoiceScript.DiagramModel
             if (child is Type) child = new FieldType(child.Name, child.Parent);
 
             base.AddChild(child);
+        }
+
+        public override Component Clone()
+        {
+            var clone = new Field(Name, Parent);
+            CloneChildrenInto(clone);
+
+            return clone;
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace VoiceScript.DiagramModel
 {
-    class Type : Component
+    public class Type : Component
     {
         readonly static List<string> validChildTypes = new();
         readonly static string typeName = "type";
@@ -15,5 +15,12 @@ namespace VoiceScript.DiagramModel
 
         public string DefaultName { get => defaultName; }
         public override string GetTypeName() => typeName;
+        public override Component Clone()
+        {
+            var clone = new Type(Name, Parent);
+            CloneChildrenInto(clone);
+
+            return clone;
+        }
     }
 }

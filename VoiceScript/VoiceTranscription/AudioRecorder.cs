@@ -6,7 +6,7 @@ using NAudio.Wave;
 
 namespace VoiceScript.VoiceTranscription
 {
-    class AudioRecorder : IAudioRecorder
+    public class AudioRecorder : IAudioRecorder
     {
         readonly BufferedWaveProvider waveProvider;
         readonly WaveInEvent waveIn;
@@ -71,6 +71,7 @@ namespace VoiceScript.VoiceTranscription
 
         public double GetFileSecondsLength(string audioFilename) => new AudioFileReader(audioFilename).TotalTime.TotalSeconds;
         public int ConvertSecondsToBytes(int seconds) => seconds * waveIn.WaveFormat.AverageBytesPerSecond;
+        public bool RecordingDeviceAvailable() => WaveInEvent.DeviceCount >= 1;
 
         void DataAvailableHandler(object sender, WaveInEventArgs e)
         {
@@ -110,6 +111,5 @@ namespace VoiceScript.VoiceTranscription
                 writer = new WaveFileWriter(outputFilename, waveIn.WaveFormat);
             }
         }
-
     }
 }

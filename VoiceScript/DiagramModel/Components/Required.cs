@@ -2,11 +2,12 @@
 
 namespace VoiceScript.DiagramModel
 {
-    class Required : Component
+    public class Required : Component
     {
         readonly static List<string> validChildTypes = new();
         readonly static string defaultName = "false";
-        public Required(Component parent) : base(defaultName, parent, validChildTypes) { }
+        public Required(Component parent) : this(defaultName, parent) { }
+        public Required(string name, Component parent) : base(name, parent, validChildTypes) { }
         public static string TypeName { get => nameof(Required).ToLower(); }
 
         public bool Value { get; private set; }
@@ -18,6 +19,13 @@ namespace VoiceScript.DiagramModel
         {
             base.Name = value;
             Value = value == "true";
+        }
+        public override Component Clone()
+        {
+            var clone = new Required(Name, Parent);
+            CloneChildrenInto(clone);
+
+            return clone;
         }
     }
 }

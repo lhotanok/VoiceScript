@@ -4,6 +4,9 @@ using Google.Cloud.Storage.V1;
 
 namespace VoiceScript.VoiceTranscription
 {
+    /// <summary>
+    /// To be used for cloud storage of audio files longer than 1 minute.
+    /// </summary>
     class AudioCloudStorage
     {
         readonly string projectId = "xxx";

@@ -3,7 +3,7 @@ using NAudio.Wave;
 
 namespace VoiceScript.VoiceTranscription
 {
-    class AudioPlayer : IAudioPlayer
+    public class AudioPlayer : IAudioPlayer
     {
         WaveFileReader reader;
         WaveOutEvent waveOut;

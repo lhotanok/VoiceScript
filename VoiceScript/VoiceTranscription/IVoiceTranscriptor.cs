@@ -4,7 +4,7 @@ using Google.Cloud.Speech.V1;
 
 namespace VoiceScript.VoiceTranscription
 {
-    interface IVoiceTranscriptor
+    public interface IVoiceTranscriptor
     {
         RecognitionConfig Configuration { get; }
 

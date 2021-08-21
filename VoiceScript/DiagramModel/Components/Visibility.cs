@@ -2,7 +2,7 @@
 
 namespace VoiceScript.DiagramModel
 {
-    class Visibility : Component
+    public class Visibility : Component
     {
         readonly static List<string> validChildTypes = new();
         readonly List<string> validNames;
@@ -19,5 +19,12 @@ namespace VoiceScript.DiagramModel
         public IEnumerable<string> ValidNames { get => validNames; }
 
         public override string GetTypeName() => TypeName;
+        public override Component Clone()
+        {
+            var clone = new Visibility(Name, Parent);
+            CloneChildrenInto(clone);
+
+            return clone;
+        }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace VoiceScript.DiagramModel
 {
-    class Parameter : Component
+    public class Parameter : Component
     {
         readonly static List<string> validChildTypes = new() { ParameterType.TypeName, Required.TypeName };
         public Parameter(string name, Component parent) : base(name, parent, validChildTypes) { }
@@ -27,6 +27,13 @@ namespace VoiceScript.DiagramModel
             if (child is Type) child = new ParameterType(child.Name, child.Parent);
 
             base.AddChild(child);
+        }
+        public override Component Clone()
+        {
+            var clone = new Parameter(Name, Parent);
+            CloneChildrenInto(clone);
+
+            return clone;
         }
     }
 }

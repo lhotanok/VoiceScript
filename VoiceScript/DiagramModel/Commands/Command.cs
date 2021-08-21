@@ -13,7 +13,7 @@ namespace VoiceScript.DiagramModel.Commands
 
         protected readonly string targetType, targetValue;
 
-        public void Execute(CommandExecutionContext context)
+        public virtual void Execute(CommandExecutionContext context)
         {
             while (context.CurrentComponent != null && !context.CommandExecuted)
             {
@@ -27,7 +27,7 @@ namespace VoiceScript.DiagramModel.Commands
                 }
             }
         }
-        static bool IsChildComponentTypeCompatible(Component component, string componentChildType)
+        protected static bool IsChildComponentTypeCompatible(Component component, string componentChildType)
             => component.ValidChildrenTypes.Contains(componentChildType);
 
         /// <summary>

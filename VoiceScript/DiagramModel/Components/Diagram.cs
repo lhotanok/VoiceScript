@@ -5,7 +5,7 @@ using VoiceScript.DiagramModel.Commands;
 
 namespace VoiceScript.DiagramModel
 {
-    class Diagram : Component
+    public class Diagram : Component
     {
         readonly static List<string> validChildTypes = new() { Class.TypeName };
         public Diagram(string name = "Diagram", Component parent = null) : base(name, parent, validChildTypes) { }
@@ -32,7 +32,7 @@ namespace VoiceScript.DiagramModel
             ExecuteCommands(parsedCommands);
         }
 
-        public override string GetTypeName() => nameof(Diagram).ToLower();
+        public override string GetTypeName() => TypeName;
 
         void ExecuteCommands(IEnumerable<Command> commands)
         {
@@ -41,12 +41,39 @@ namespace VoiceScript.DiagramModel
                 TargetComponent = this,
             };
 
-            foreach (var command in commands)
+            var clonedDiagram = Clone();
+
+            try
             {
-                context.CurrentComponent = context.TargetComponent;
-                context.CommandExecuted = false;
-                command.Execute(context);
+                foreach (var command in commands)
+                {
+                    context.CurrentComponent = context.TargetComponent;
+                    context.CommandExecuted = false;
+
+                    command.Execute(context);
+                }
             }
+            catch (Exception)
+            {
+                RevertChanges(clonedDiagram);
+                throw;
+            }
+            
+        }
+
+        public override Component Clone()
+        {
+            var clone = new Diagram(Name, Parent);
+            CloneChildrenInto(clone);
+
+            return clone;
+        }
+
+        void RevertChanges(Component original)
+        {
+            Name = original.Name;
+            Parent = original.Parent;
+            children = original.Children;
         }
     }
 }

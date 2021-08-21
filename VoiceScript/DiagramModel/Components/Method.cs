@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace VoiceScript.DiagramModel
 {
-    class Method : Component
+    public class Method : Component
     {
         readonly static List<string> validChildTypes = new() { Visibility.TypeName, ReturnType.TypeName, Parameter.TypeName };
         public Method(string name, Component parent) : base(name, parent, validChildTypes) { }
@@ -49,6 +49,13 @@ namespace VoiceScript.DiagramModel
             }
 
             return filtered;
+        }
+        public override Component Clone()
+        {
+            var clone = new Method(Name, Parent);
+            CloneChildrenInto(clone);
+
+            return clone;
         }
     }
 }

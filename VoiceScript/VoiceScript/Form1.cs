@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using NAudio.Wave; // Credit: https://github.com/naudio/NAudio
+//using NAudio.Wave; // Credit: https://github.com/naudio/NAudio
 
 using VoiceScript.VoiceTranscription;
 using VoiceScript.DiagramModel;
@@ -109,7 +109,7 @@ namespace VoiceScript
         /// <param name="e"></param>
         void recordBtn_Click(object sender, EventArgs e)
         {
-            if (WaveInEvent.DeviceCount >= 1 && appState == ApplicationState.Waiting)
+            if (audioRecorder.RecordingDeviceAvailable() && appState == ApplicationState.Waiting)
             {
                 appState = ApplicationState.Recording;
                 audioRecorder.StartRecording(() => appState = ApplicationState.Waiting);
@@ -123,7 +123,7 @@ namespace VoiceScript
             }
             else
             {
-                if (WaveInEvent.DeviceCount < 1) MessageBox.Show("No input audio device found.");
+                if (!audioRecorder.RecordingDeviceAvailable()) MessageBox.Show("No input audio device found.");
                 else MessageBox.Show("You can not start recording in the current state.");
             }
         }
@@ -177,10 +177,17 @@ namespace VoiceScript
 
         void diagramBtn_Click(object sender, EventArgs e)
         {
-            diagram.ConvertTextToDiagram(richTextBox.Text);
-            var classes = diagram.GetClasses();
+            try
+            {
+                diagram.ConvertTextToDiagram(richTextBox.Text);
+                var classes = diagram.GetClasses();
 
-            // show classes
+                // show classes
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         void PlaybackStoppedCallback()

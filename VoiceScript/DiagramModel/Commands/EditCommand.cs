@@ -6,6 +6,20 @@ namespace VoiceScript.DiagramModel.Commands
     {
         public EditCommand(string targetType, string targetName) : base(targetType, targetName) { }
 
+        public override void Execute(CommandExecutionContext context)
+        {
+            while (context.CurrentComponent != null && !context.CommandExecuted)
+            {
+                if (IsEditNameCommand() || IsChildComponentTypeCompatible(context.CurrentComponent, targetType))
+                {
+                    ProcessCommand(context);
+                }
+                else
+                {
+                    context.CurrentComponent = context.CurrentComponent.Parent;
+                }
+            }
+        }
         protected override void ProcessCommand(CommandExecutionContext context)
         {
             if (IsEditNameCommand()) ChangeEditedComponentName(context);
@@ -30,6 +44,7 @@ namespace VoiceScript.DiagramModel.Commands
                 {
                     context.TargetComponent = childToEdit;
                     context.CommandExecuted = true;
+                    return;
                 }
                 else
                 {

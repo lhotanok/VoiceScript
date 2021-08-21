@@ -14,6 +14,7 @@ namespace VoiceScript.DiagramModel.Commands
                 {
                     context.TargetComponent = context.CurrentComponent;
                     context.CommandExecuted = true;
+                    return;
                 }
                 else
                 {

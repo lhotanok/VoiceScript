@@ -9,7 +9,7 @@ namespace VoiceScript.VoiceTranscription
     /// Manages voice transcription from audio to text
     /// using Google Cloud speech-to-text API.
     /// </summary>
-    class VoiceTranscriptor : IVoiceTranscriptor
+    public class VoiceTranscriptor : IVoiceTranscriptor
     {
         readonly IAudioRecorder recorder;
         readonly StreamRecognizer streamRecognizer;
@@ -56,7 +56,22 @@ namespace VoiceScript.VoiceTranscription
                 }
             });
         }
+
+        static void SetGoogleCloudCredentialsPath()
+        {
+            // path to Google Cloud speech-to-text api key
+            var apiKey = @"..\\..\\..\\..\\Keys\\vs_auth_key.json";
+
+            System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", apiKey);
+        }
+
         bool IsShortAudioFile(string filename) => recorder.GetFileSecondsLength(filename) < shortAudioFileSeconds;
+
+        //int GetFragmentsCount(int fragmentSize, int totalSize)
+        //{
+        //    int fullFragmentsCount = totalSize / fragmentSize;
+        //    return totalSize % fragmentSize == 0 ? fullFragmentsCount : fullFragmentsCount + 1;
+        //}
 
         void CreateLongTranscription(string filename, Action<string> callback)
         {
@@ -66,6 +81,7 @@ namespace VoiceScript.VoiceTranscription
             var maxBytes = recorder.ConvertSecondsToBytes(maxAudioFileSeconds - 1); // 1 second reserved
 
             var offset = 0;
+
             while (offset < audioBytes.Length)
             {
                 var remainingBytes = audioBytes.Length - offset;
@@ -83,14 +99,7 @@ namespace VoiceScript.VoiceTranscription
         }
 
         void CreateShortTranscription(string filename, Action<string> callback)
-        {
-            var client = SpeechClient.Create();
-            var audio = RecognitionAudio.FromFile(filename);
-            var response = client.Recognize(configuration, audio);
-
-            ServerResponseProcessor.ProcessSpeechRecognitionTranscript(response.Results,
-                transcript => callback(transcript));
-        }
+            => CreateShortTranscription(RecognitionAudio.FromFile(filename), callback);
 
         void CreateShortTranscription(RecognitionAudio audio, Action<string> callback)
         {
@@ -98,14 +107,6 @@ namespace VoiceScript.VoiceTranscription
 
             ServerResponseProcessor.ProcessSpeechRecognitionTranscript(response.Results,
                 transcript => callback(transcript));
-        }
-
-        static void SetGoogleCloudCredentialsPath()
-        {
-            // path to Google Cloud speech-to-text api key
-            var apiKey = @"..\\..\\..\\..\\Keys\\vs_auth_key.json";
-
-            System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", apiKey);
         }
 
         /// <summary>

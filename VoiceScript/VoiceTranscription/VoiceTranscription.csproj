@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
@@ -9,11 +8,8 @@
   <ItemGroup>
     <PackageReference Include="Google.Cloud.Speech.V1" Version="2.3.0" />
     <PackageReference Include="Google.Cloud.Storage.V1" Version="3.5.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\DiagramModel\DiagramModel.csproj" />
-    <ProjectReference Include="..\VoiceTranscription\VoiceTranscription.csproj" />
+    <PackageReference Include="NAudio" Version="2.0.1" />
+    <PackageReference Include="NAudio.WinForms" Version="2.0.1" />
   </ItemGroup>
 
 </Project>
