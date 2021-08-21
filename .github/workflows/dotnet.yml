@@ -8,11 +8,21 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-dotnet@v1
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '5.0'
-    - run: dotnet build /home/runner/work/VoiceScript/VoiceScript/VoiceScript/DiagramModel/DiagramModel
-    - run: dotnet test /home/runner/work/VoiceScript/VoiceScript/VoiceScript/DiagramModel/DiagramModel
+    - name: Install dependencies
+      run: dotnet restore
+      working-directory: /home/runner/work/VoiceScript/VoiceScript/VoiceScript/DiagramModel
+    - name: Build
+      run: dotnet build
+      working-directory: /home/runner/work/VoiceScript/VoiceScript/VoiceScript/DiagramModel
+    - name: Test with the dotnet CLI
+      run: dotnet test
+      working-directory: /home/runner/work/VoiceScript/VoiceScript/VoiceScript/DiagramModel_UnitTests
