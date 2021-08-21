@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VoiceScript.DiagramModel.Commands
+﻿namespace VoiceScript.DiagramModel.Commands
 {
     class DelimiterWrapper
     {
@@ -14,7 +8,7 @@ namespace VoiceScript.DiagramModel.Commands
         {
             (delimiterSet, delimiterPreviouslySet) = (false, false);
         }
-        public static string Command { get => command; }
+        public static string CommandFormat { get => command; }
         public static bool IsDelimiter(string word) => word.ToLower() == command;
 
         public bool DelimiterSet {
@@ -28,7 +22,7 @@ namespace VoiceScript.DiagramModel.Commands
 
         public bool Escape() => delimiterPreviouslySet;
 
-        public void HandleDelimiter(string word)
+        public void UpdateDelimiterContext(string word)
         {
             if (IsDelimiter(word) && !DelimiterSet)
             {

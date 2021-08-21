@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using Google.Cloud.Speech.V1;
@@ -60,18 +61,19 @@ namespace VoiceScript.VoiceTranscription
         static void SetGoogleCloudCredentialsPath()
         {
             // path to Google Cloud speech-to-text api key
-            var apiKey = @"..\\..\\..\\..\\Keys\\vs_auth_key.json";
+            var apiKeyPath = @"..\\..\\..\\..\\Keys\\vs_auth_key.json";
 
-            System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", apiKey);
+            if (File.Exists(apiKeyPath))
+            {
+                System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", apiKeyPath);
+            }
+            else
+            {
+                throw new Exception($"Invalid path to Google Cloud api key given. File not found at {apiKeyPath}");
+            }
         }
 
         bool IsShortAudioFile(string filename) => recorder.GetFileSecondsLength(filename) < shortAudioFileSeconds;
-
-        //int GetFragmentsCount(int fragmentSize, int totalSize)
-        //{
-        //    int fullFragmentsCount = totalSize / fragmentSize;
-        //    return totalSize % fragmentSize == 0 ? fullFragmentsCount : fullFragmentsCount + 1;
-        //}
 
         void CreateLongTranscription(string filename, Action<string> callback)
         {

@@ -4,19 +4,19 @@ using NUnit.Framework;
 
 using VoiceScript.DiagramModel.Commands;
 
-namespace DiagramModel_UnitTests
+namespace DiagramModel_UnitTests.CommandParserTests
 {
     [TestFixture("add class person")]
     [TestFixture("Add class person")]
     [TestFixture("ADD Class Person")]
     [TestFixture("unrecognized input add class person")]
     [TestFixture("add class escape person")]
-    public class CommandParser_CreateAddCommand
+    public class SingleAddCommand
     {
         readonly CommandParser parser;
         readonly string input;
 
-        public CommandParser_CreateAddCommand(string inputText)
+        public SingleAddCommand(string inputText)
         {
             parser = new CommandParser();
             input = inputText;
@@ -53,12 +53,12 @@ namespace DiagramModel_UnitTests
 
     [TestFixture("add class person add field name add method get name")]
     [TestFixture("unrecognized input add class person add field name add method get name")]
-    public class CommandParser_CreateMultipleAddCommands
+    public class MultipleAddCommands
     {
         readonly CommandParser parser;
         readonly string input;
 
-        public CommandParser_CreateMultipleAddCommands(string inputText)
+        public MultipleAddCommands(string inputText)
         {
             parser = new CommandParser();
             input = inputText;
@@ -106,13 +106,14 @@ namespace DiagramModel_UnitTests
     [TestFixture("add class Escape add result", "AddResult")]
     [TestFixture("add class escape edit result", "EditResult")]
     [TestFixture("add class escape delete result", "DeleteResult")]
-    public class CommandParser_CreateAddCommandWithCommandNameUsedInTargetName
+    [TestFixture("add class escape escape result", "EscapeResult")]
+    public class SingleAddCommandWithCommandNameUsedInTargetName
     {
         readonly CommandParser parser;
         readonly string input;
         readonly string expectedTargetValue;
 
-        public CommandParser_CreateAddCommandWithCommandNameUsedInTargetName(string inputText, string targetValue)
+        public SingleAddCommandWithCommandNameUsedInTargetName(string inputText, string targetValue)
         {
             parser = new CommandParser();
             input = inputText;

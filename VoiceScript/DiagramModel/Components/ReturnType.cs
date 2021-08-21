@@ -1,4 +1,4 @@
-﻿namespace VoiceScript.DiagramModel
+﻿namespace VoiceScript.DiagramModel.Components
 {
     public class ReturnType : Type
     {

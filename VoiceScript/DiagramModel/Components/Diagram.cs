@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using VoiceScript.DiagramModel.Commands;
 
-namespace VoiceScript.DiagramModel
+namespace VoiceScript.DiagramModel.Components
 {
     public class Diagram : Component
     {

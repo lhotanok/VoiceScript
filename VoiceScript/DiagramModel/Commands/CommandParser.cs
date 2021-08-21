@@ -6,7 +6,12 @@ namespace VoiceScript.DiagramModel.Commands
 {
     public class CommandParser
     {
-        readonly static List<string> validKeywords = new() { "add", "edit", "delete", DelimiterWrapper.Command };
+        readonly static List<string> validKeywords = new() {
+            AddCommand.Format,
+            EditCommand.Format,
+            DeleteCommand.Format,
+            DelimiterWrapper.CommandFormat
+        };
 
         string[] parsedWords;
         int parsedOffset;
@@ -72,7 +77,7 @@ namespace VoiceScript.DiagramModel.Commands
             {
                 if (IsKeyword(word))
                 {
-                    delimiter.HandleDelimiter(word);
+                    delimiter.UpdateDelimiterContext(word);
                     if (!delimiter.Escape() && !delimiter.DelimiterSet) break;
 
                     if (delimiter.Escape()) nameParts.Add(word);
@@ -92,7 +97,6 @@ namespace VoiceScript.DiagramModel.Commands
         string GetNextWord() => parsedOffset < parsedWords.Length ? parsedWords[parsedOffset] : string.Empty;
 
         static bool IsKeyword(string word) => validKeywords.Contains(word.ToLower());
-
         static bool IncompleteCommandTarget(string targetType, string targetName)
             => targetType == string.Empty || targetName == string.Empty;
 

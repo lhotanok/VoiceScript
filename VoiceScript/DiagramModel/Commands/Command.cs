@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using VoiceScript.DiagramModel.Components;
 
 namespace VoiceScript.DiagramModel.Commands
 {

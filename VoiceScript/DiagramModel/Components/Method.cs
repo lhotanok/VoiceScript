@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace VoiceScript.DiagramModel
+namespace VoiceScript.DiagramModel.Components
 {
     public class Method : Component
     {

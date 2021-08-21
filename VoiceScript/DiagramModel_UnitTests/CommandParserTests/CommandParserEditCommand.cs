@@ -2,25 +2,25 @@
 
 using VoiceScript.DiagramModel.Commands;
 
-namespace DiagramModel_UnitTests
+namespace DiagramModel_UnitTests.CommandParserTests
 {
     [TestFixture("add class person edit class person")]
     [TestFixture("add class person Edit class person")]
     [TestFixture("unrecognized input add class person edit class person")]
     [TestFixture("add class person edit class escape person")]
-    public class CommandParser_CreateEditCommand
+    public class SingleEditCommand
     {
         readonly CommandParser parser;
         readonly string input;
 
-        public CommandParser_CreateEditCommand(string inputText)
+        public SingleEditCommand(string inputText)
         {
             parser = new CommandParser();
             input = inputText;
         }
 
         [Test]
-        public void ParseClassEditationCommand_ParseExactlyOneEditCommandAfterAddCommand()
+        public void ParseEditationCommand_ParseExactlyOneEditCommandAfterAddCommand()
         {
             var parsedCommands = parser.GetParsedCommands(input);
 
@@ -28,7 +28,7 @@ namespace DiagramModel_UnitTests
         }
 
         [Test]
-        public void ParseClassEditationCommand_CheckIfSecondParsedCommandIsEditCommand()
+        public void ParseEditationCommand_CheckIfSecondParsedCommandIsEditCommand()
         {
             var parsedCommands = parser.GetParsedCommands(input);
 
@@ -36,7 +36,7 @@ namespace DiagramModel_UnitTests
         }
 
         [Test]
-        public void ParseClassEditationCommand_CommandHasCorrectContent()
+        public void ParseEditationCommand_CommandHasCorrectContent()
         {
             var parsedCommands = parser.GetParsedCommands(input);
             var command = parsedCommands[1];

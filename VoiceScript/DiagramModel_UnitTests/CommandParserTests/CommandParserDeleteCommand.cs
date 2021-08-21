@@ -2,25 +2,25 @@
 
 using VoiceScript.DiagramModel.Commands;
 
-namespace DiagramModel_UnitTests
+namespace DiagramModel_UnitTests.CommandParserTests
 {
     [TestFixture("add class person delete class person")]
     [TestFixture("add class person Delete class person")]
     [TestFixture("unrecognized input add class person delete class person")]
     [TestFixture("add class person delete class escape person")]
-    public class CommandParser_CreateDeleteCommand
+    public class SingleDeleteCommand
     {
         readonly CommandParser parser;
         readonly string input;
 
-        public CommandParser_CreateDeleteCommand(string inputText)
+        public SingleDeleteCommand(string inputText)
         {
             parser = new CommandParser();
             input = inputText;
         }
 
         [Test]
-        public void ParseClassDeletionCommand_ParseExactlyOneDeleteCommandAfterAddCommand()
+        public void ParseDeletionCommand_ParseExactlyOneDeleteCommandAfterAddCommand()
         {
             var parsedCommands = parser.GetParsedCommands(input);
 
@@ -28,7 +28,7 @@ namespace DiagramModel_UnitTests
         }
 
         [Test]
-        public void ParseClassDeletionCommand_CheckIfSecondParsedCommandIsDeleteCommand()
+        public void ParseDeletionCommand_CheckIfSecondParsedCommandIsDeleteCommand()
         {
             var parsedCommands = parser.GetParsedCommands(input);
 
@@ -36,7 +36,7 @@ namespace DiagramModel_UnitTests
         }
 
         [Test]
-        public void ParseClassDeletionCommand_CommandHasCorrectContent()
+        public void ParseDeletionCommand_CommandHasCorrectContent()
         {
             var parsedCommands = parser.GetParsedCommands(input);
             var command = parsedCommands[1];

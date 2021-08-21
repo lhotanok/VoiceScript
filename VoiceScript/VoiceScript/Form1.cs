@@ -3,7 +3,7 @@ using System.IO;
 using System.Windows.Forms;
 
 using VoiceScript.VoiceTranscription;
-using VoiceScript.DiagramModel;
+using VoiceScript.DiagramModel.Components;
 
 namespace VoiceScript
 {
@@ -31,7 +31,15 @@ namespace VoiceScript
             #endregion
 
             #region Initialize voice transcripting
-            voiceTranscriptor = new VoiceTranscriptor(audioRecorder);
+            try
+            {
+                voiceTranscriptor = new VoiceTranscriptor(audioRecorder);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             recordingTimer.Tick += (sender, e) 
                 => voiceTranscriptor.DoRealTimeTranscription(voiceCommand => AppendToTextbox(richTextBox, voiceCommand));
             SetLanguages();
