@@ -19,9 +19,10 @@ jobs:
         dotnet-version: '3.1.x'
     - name: Install dependencies
       run: dotnet restore
-      working-directory: VoiceScript
+      working-directory: DiagramModel
     - name: Build
       run: dotnet build
-      working-directory: VoiceScript
+      working-directory: DiagramModel
     - name: Test with the dotnet CLI
       run: dotnet test
+      working-directory: DiagramModel_UnitTests
