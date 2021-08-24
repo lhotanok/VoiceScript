@@ -15,5 +15,7 @@
 
             return clone;
         }
+
+        public static new string DefaultName => defName;
     }
 }

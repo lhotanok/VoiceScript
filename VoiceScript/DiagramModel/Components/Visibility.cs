@@ -34,7 +34,7 @@ namespace VoiceScript.DiagramModel.Components
             return clone;
         }
 
-        string GetValidNamesJoined(string separator)
+        static string GetValidNamesJoined(string separator)
         {
             var validVisibilityValues = new StringBuilder();
 
