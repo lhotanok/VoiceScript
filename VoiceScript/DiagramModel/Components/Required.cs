@@ -13,7 +13,7 @@ namespace VoiceScript.DiagramModel.Components
         public bool Value { get; private set; }
         public override string Name { get => base.Name; set => SetValue(value); }
         public static string DefaultName { get => defaultName; }
-        public override string GetTypeName() => TypeName;
+        public override string GetUniqueTypeName() => TypeName;
 
         void SetValue(string value)
         {

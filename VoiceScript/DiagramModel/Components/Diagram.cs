@@ -37,7 +37,7 @@ namespace VoiceScript.DiagramModel.Components
             ExecuteCommands(parsedCommands);
         }
 
-        public override string GetTypeName() => TypeName;
+        public override string GetUniqueTypeName() => TypeName;
 
         void ExecuteCommands(IEnumerable<Command> commands)
         {

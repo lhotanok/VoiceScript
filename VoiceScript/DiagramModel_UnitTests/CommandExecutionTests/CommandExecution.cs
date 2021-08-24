@@ -26,5 +26,17 @@ namespace DiagramModel_UnitTests.CommandExecutionTests
             context.CurrentComponent = target;
             context.CommandExecuted = false;
         }
+
+        protected void ExecuteCommandsManually(string inputText)
+        {
+            var parsedCommands = parser.GetParsedCommands(inputText);
+            InitializeCommandExecutionContext(diagram);
+
+            foreach (var command in parsedCommands)
+            {
+                InitializeCommandExecutionContext(context.TargetComponent);
+                command.Execute(context);
+            }
+        }
     }
 }

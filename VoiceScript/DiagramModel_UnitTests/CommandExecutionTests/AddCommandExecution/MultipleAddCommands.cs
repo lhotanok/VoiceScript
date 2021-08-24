@@ -16,14 +16,7 @@ namespace DiagramModel_UnitTests.CommandExecutionTests
         [Test]
         public void ExecuteAddClassCommandManually_CheckThatClassWithTwoChildrenWasCreated()
         {
-            var parsedCommands = parser.GetParsedCommands(input);
-            InitializeCommandExecutionContext(diagram);
-
-            foreach (var command in parsedCommands)
-            {
-                InitializeCommandExecutionContext(context.TargetComponent);
-                command.Execute(context);
-            }
+            ExecuteCommandsManually(input);
 
             Assert.AreEqual(2, diagram.GetClasses()[0].Children.Count);
         }

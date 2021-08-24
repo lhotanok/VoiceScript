@@ -14,7 +14,7 @@ namespace VoiceScript.DiagramModel.Components
             children = new List<Component>();
             validChildrenTypes = validChildren;
         }
-        public abstract string GetTypeName();
+        public abstract string GetUniqueTypeName();
 
         public Component Parent { get; protected set; }
 
@@ -93,7 +93,7 @@ namespace VoiceScript.DiagramModel.Components
             {
                 var child = children[i];
 
-                if (child.GetTypeName() == childType && child.Name == childName)
+                if (child.GetUniqueTypeName() == childType && child.Name == childName)
                 {
                     return i;
                 }

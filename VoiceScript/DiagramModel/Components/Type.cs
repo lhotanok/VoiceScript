@@ -14,7 +14,7 @@ namespace VoiceScript.DiagramModel.Components
         public Type(string name, Component parent) : base(name, parent, validChildTypes) { }
 
         public string DefaultName { get => defaultName; }
-        public override string GetTypeName() => typeName;
+        public override string GetUniqueTypeName() => typeName;
         public override Component Clone()
         {
             var clone = new Type(Name, Parent);

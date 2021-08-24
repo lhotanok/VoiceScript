@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using NUnit.Framework;
 
 namespace DiagramModel_UnitTests.CommandExecutionTests
@@ -11,10 +10,7 @@ namespace DiagramModel_UnitTests.CommandExecutionTests
         [TestCase("Add class person")]
         public void ExecuteAddClassCommandManually_CheckThatDiagramHasExactlyOneClass(string inputText)
         {
-            var parsedCommands = parser.GetParsedCommands(inputText);
-            InitializeCommandExecutionContext(diagram);
-            
-            parsedCommands[0].Execute(context);
+            ExecuteCommandsManually(inputText);
 
             Assert.AreEqual(1, diagram.Children.Count);
         }

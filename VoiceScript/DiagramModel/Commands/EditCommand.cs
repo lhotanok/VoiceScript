@@ -21,6 +21,9 @@ namespace VoiceScript.DiagramModel.Commands
                     context.CurrentComponent = context.CurrentComponent.Parent;
                 }
             }
+
+            if (context.CurrentComponent == null)
+                throw new InvalidOperationException("Command can not be executed in the current context.");
         }
         protected override void ProcessCommand(CommandExecutionContext context)
         {

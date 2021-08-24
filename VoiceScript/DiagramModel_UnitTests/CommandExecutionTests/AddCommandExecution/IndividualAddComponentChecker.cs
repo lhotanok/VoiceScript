@@ -94,6 +94,29 @@ namespace DiagramModel_UnitTests.CommandExecutionTests
         }
 
         [Test]
+        public void AddVisibility_CheckThatFieldHasVisibilityWithCorrectName()
+        {
+            ExecuteCommands("add class car add field color add visibility protected");
+
+            Assert.AreEqual("Protected", diagram.GetClasses()[0].GetFields()[0].GetVisibility().Name);
+        }
+
+        [Test]
+        public void AddVisibility_CheckThatMethodHasVisibilityWithCorrectName()
+        {
+            ExecuteCommands("add class car add method get color add visibility public");
+
+            Assert.AreEqual("Public", diagram.GetClasses()[0].GetMethods()[0].GetVisibility().Name);
+        }
+
+        [Test]
+        public void TryAddVisibilityWithInvalidName_CheckThatExceptionIsThrown()
+        {
+            Assert.Throws<InvalidOperationException>(
+                () => ExecuteCommands("add class car add method get color add visibility specific"));
+        }
+
+        [Test]
         public void ExecuteAddUndefinedCommand_CheckThatExceptionIsThrownIfTargetTypeIsUnknown()
         {
             Assert.Throws<InvalidOperationException>(() => ExecuteCommands("add undefined car"));
