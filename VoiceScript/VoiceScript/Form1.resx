@@ -57,6 +57,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="gViewer.Transform" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdBdXRvbWF0aWNHcmFwaExheW91dCwgVmVyc2lvbj0wLjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTZiYWEyYzEzNDVlODNiNmUFAQAAADhNaWNy
+        b3NvZnQuTXNhZ2wuQ29yZS5HZW9tZXRyeS5DdXJ2ZXMuUGxhbmVUcmFuc2Zvcm1hdGlvbgEAAAAIZWxl
+        bWVudHMDEVN5c3RlbS5Eb3VibGVbXVtdAgAAAAkDAAAABwMAAAABAQAAAAIAAAAHBgkEAAAACQUAAAAP
+        BAAAAAMAAAAGAAAAAABAb0AAAAAAAAAAAAIAAACAa+LADwUAAAADAAAABgAAAAAAAAAAAAAAAABAb8AA
+        AAAAAEB/QAs=
+</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>25</value>
+  </metadata>
   <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

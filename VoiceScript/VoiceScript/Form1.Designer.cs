@@ -1,4 +1,5 @@
-﻿
+﻿using System.Windows.Forms;
+
 namespace VoiceScript
 {
     partial class Form1
@@ -40,6 +41,7 @@ namespace VoiceScript
             this.languages = new System.Windows.Forms.ListBox();
             this.realTimeTranscBtn = new System.Windows.Forms.Button();
             this.diagramBtn = new System.Windows.Forms.Button();
+            this.gViewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             this.SuspendLayout();
             // 
             // recordBtn
@@ -85,10 +87,10 @@ namespace VoiceScript
             // 
             this.richTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.richTextBox.Location = new System.Drawing.Point(12, 111);
+            this.richTextBox.Location = new System.Drawing.Point(12, 114);
             this.richTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(357, 403);
+            this.richTextBox.Size = new System.Drawing.Size(357, 603);
             this.richTextBox.TabIndex = 4;
             this.richTextBox.Text = "";
             // 
@@ -149,12 +151,56 @@ namespace VoiceScript
             this.diagramBtn.UseVisualStyleBackColor = false;
             this.diagramBtn.Click += new System.EventHandler(this.diagramBtn_Click);
             // 
+            // gViewer
+            // 
+            this.gViewer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gViewer.ArrowheadLength = 10D;
+            this.gViewer.AsyncLayout = false;
+            this.gViewer.AutoScroll = true;
+            this.gViewer.BackwardEnabled = false;
+            this.gViewer.BuildHitTree = true;
+            this.gViewer.CurrentLayoutMethod = Microsoft.Msagl.GraphViewerGdi.LayoutMethod.UseSettingsOfTheGraph;
+            this.gViewer.EdgeInsertButtonVisible = false;
+            this.gViewer.FileName = "";
+            this.gViewer.ForwardEnabled = false;
+            this.gViewer.Graph = null;
+            this.gViewer.InsertingEdge = false;
+            this.gViewer.LayoutAlgorithmSettingsButtonVisible = false;
+            this.gViewer.LayoutEditingEnabled = true;
+            this.gViewer.Location = new System.Drawing.Point(426, 60);
+            this.gViewer.LooseOffsetForRouting = 0.25D;
+            this.gViewer.MouseHitDistance = 0.05D;
+            this.gViewer.Name = "gViewer";
+            this.gViewer.NavigationVisible = true;
+            this.gViewer.NeedToCalculateLayout = true;
+            this.gViewer.OffsetForRelaxingInRouting = 0.6D;
+            this.gViewer.PaddingForEdgeRouting = 1.5D;
+            this.gViewer.PanButtonPressed = false;
+            this.gViewer.SaveAsImageEnabled = true;
+            this.gViewer.SaveAsMsaglEnabled = true;
+            this.gViewer.SaveButtonVisible = true;
+            this.gViewer.SaveGraphButtonVisible = true;
+            this.gViewer.SaveInVectorFormatEnabled = true;
+            this.gViewer.Size = new System.Drawing.Size(555, 656);
+            this.gViewer.TabIndex = 10;
+            this.gViewer.TightOffsetForRouting = 0.125D;
+            this.gViewer.ToolBarIsVisible = true;
+            this.gViewer.Transform = ((Microsoft.Msagl.Core.Geometry.Curves.PlaneTransformation)(resources.GetObject("gViewer.Transform")));
+            this.gViewer.UndoRedoButtonsVisible = true;
+            this.gViewer.WindowZoomButtonPressed = false;
+            this.gViewer.ZoomF = 250D;
+            this.gViewer.ZoomWindowThreshold = 0.05D;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(253)))));
-            this.ClientSize = new System.Drawing.Size(1042, 525);
+            this.ClientSize = new System.Drawing.Size(1366, 728);
+            this.Controls.Add(this.gViewer);
             this.Controls.Add(this.diagramBtn);
             this.Controls.Add(this.realTimeTranscBtn);
             this.Controls.Add(this.languages);
@@ -166,6 +212,7 @@ namespace VoiceScript
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VoiceScript";
             this.ResumeLayout(false);
 
@@ -182,6 +229,8 @@ namespace VoiceScript
         private System.Windows.Forms.ListBox languages;
         private System.Windows.Forms.Button realTimeTranscBtn;
         private System.Windows.Forms.Button diagramBtn;
+        private Microsoft.Msagl.GraphViewerGdi.GViewer gViewer;
+        private Microsoft.Msagl.Drawing.Graph graph;
     }
 }
 
