@@ -42,14 +42,16 @@ namespace VoiceScript
             this.realTimeTranscBtn = new System.Windows.Forms.Button();
             this.diagramBtn = new System.Windows.Forms.Button();
             this.gViewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+            this.codeTextBox = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // recordBtn
             // 
             this.recordBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.recordBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.recordBtn.Location = new System.Drawing.Point(12, 12);
-            this.recordBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.recordBtn.Location = new System.Drawing.Point(12, 11);
+            this.recordBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.recordBtn.Name = "recordBtn";
             this.recordBtn.Size = new System.Drawing.Size(113, 39);
             this.recordBtn.TabIndex = 0;
@@ -61,8 +63,8 @@ namespace VoiceScript
             // 
             this.convertBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.convertBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.convertBtn.Location = new System.Drawing.Point(141, 59);
-            this.convertBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.convertBtn.Location = new System.Drawing.Point(128, 60);
+            this.convertBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.convertBtn.Name = "convertBtn";
             this.convertBtn.Size = new System.Drawing.Size(113, 39);
             this.convertBtn.TabIndex = 2;
@@ -74,8 +76,8 @@ namespace VoiceScript
             // 
             this.playBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.playBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.playBtn.Location = new System.Drawing.Point(11, 59);
-            this.playBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.playBtn.Location = new System.Drawing.Point(12, 60);
+            this.playBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.playBtn.Name = "playBtn";
             this.playBtn.Size = new System.Drawing.Size(112, 39);
             this.playBtn.TabIndex = 3;
@@ -87,8 +89,9 @@ namespace VoiceScript
             // 
             this.richTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.richTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.richTextBox.Location = new System.Drawing.Point(12, 114);
-            this.richTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox.Name = "richTextBox";
             this.richTextBox.Size = new System.Drawing.Size(357, 603);
             this.richTextBox.TabIndex = 4;
@@ -104,8 +107,8 @@ namespace VoiceScript
             this.stopBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.stopBtn.Enabled = false;
             this.stopBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.stopBtn.Location = new System.Drawing.Point(12, 12);
-            this.stopBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.stopBtn.Location = new System.Drawing.Point(12, 11);
+            this.stopBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.stopBtn.Name = "stopBtn";
             this.stopBtn.Size = new System.Drawing.Size(112, 39);
             this.stopBtn.TabIndex = 6;
@@ -120,20 +123,20 @@ namespace VoiceScript
             this.languages.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.languages.FormattingEnabled = true;
             this.languages.ItemHeight = 25;
-            this.languages.Location = new System.Drawing.Point(267, 59);
-            this.languages.Margin = new System.Windows.Forms.Padding(2);
+            this.languages.Location = new System.Drawing.Point(249, 60);
+            this.languages.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.languages.Name = "languages";
-            this.languages.Size = new System.Drawing.Size(102, 29);
+            this.languages.Size = new System.Drawing.Size(120, 29);
             this.languages.TabIndex = 7;
             // 
             // realTimeTranscBtn
             // 
             this.realTimeTranscBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.realTimeTranscBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.realTimeTranscBtn.Location = new System.Drawing.Point(141, 12);
-            this.realTimeTranscBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.realTimeTranscBtn.Location = new System.Drawing.Point(129, 12);
+            this.realTimeTranscBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.realTimeTranscBtn.Name = "realTimeTranscBtn";
-            this.realTimeTranscBtn.Size = new System.Drawing.Size(228, 39);
+            this.realTimeTranscBtn.Size = new System.Drawing.Size(240, 39);
             this.realTimeTranscBtn.TabIndex = 8;
             this.realTimeTranscBtn.Text = "Real-time transcription";
             this.realTimeTranscBtn.UseVisualStyleBackColor = false;
@@ -143,7 +146,7 @@ namespace VoiceScript
             // 
             this.diagramBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.diagramBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.diagramBtn.Location = new System.Drawing.Point(423, 12);
+            this.diagramBtn.Location = new System.Drawing.Point(410, 12);
             this.diagramBtn.Name = "diagramBtn";
             this.diagramBtn.Size = new System.Drawing.Size(113, 39);
             this.diagramBtn.TabIndex = 9;
@@ -169,7 +172,7 @@ namespace VoiceScript
             this.gViewer.InsertingEdge = false;
             this.gViewer.LayoutAlgorithmSettingsButtonVisible = false;
             this.gViewer.LayoutEditingEnabled = true;
-            this.gViewer.Location = new System.Drawing.Point(426, 60);
+            this.gViewer.Location = new System.Drawing.Point(410, 61);
             this.gViewer.LooseOffsetForRouting = 0.25D;
             this.gViewer.MouseHitDistance = 0.05D;
             this.gViewer.Name = "gViewer";
@@ -183,7 +186,7 @@ namespace VoiceScript
             this.gViewer.SaveButtonVisible = true;
             this.gViewer.SaveGraphButtonVisible = true;
             this.gViewer.SaveInVectorFormatEnabled = true;
-            this.gViewer.Size = new System.Drawing.Size(555, 656);
+            this.gViewer.Size = new System.Drawing.Size(447, 656);
             this.gViewer.TabIndex = 10;
             this.gViewer.TightOffsetForRouting = 0.125D;
             this.gViewer.ToolBarIsVisible = true;
@@ -194,13 +197,38 @@ namespace VoiceScript
             this.gViewer.ZoomF = 250D;
             this.gViewer.ZoomWindowThreshold = 0.05D;
             // 
+            // codeTextBox
+            // 
+            this.codeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.codeTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.codeTextBox.Location = new System.Drawing.Point(903, 60);
+            this.codeTextBox.Name = "codeTextBox";
+            this.codeTextBox.Size = new System.Drawing.Size(469, 655);
+            this.codeTextBox.TabIndex = 11;
+            this.codeTextBox.Text = "";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(903, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 38);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Code";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(253)))));
-            this.ClientSize = new System.Drawing.Size(1366, 728);
+            this.ClientSize = new System.Drawing.Size(1384, 728);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.codeTextBox);
             this.Controls.Add(this.gViewer);
             this.Controls.Add(this.diagramBtn);
             this.Controls.Add(this.realTimeTranscBtn);
@@ -210,6 +238,7 @@ namespace VoiceScript
             this.Controls.Add(this.playBtn);
             this.Controls.Add(this.convertBtn);
             this.Controls.Add(this.recordBtn);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
@@ -232,6 +261,8 @@ namespace VoiceScript
         private System.Windows.Forms.Button diagramBtn;
         private Microsoft.Msagl.GraphViewerGdi.GViewer gViewer;
         private Microsoft.Msagl.Drawing.Graph graph;
+        private RichTextBox codeTextBox;
+        private Button button1;
     }
 }
 
