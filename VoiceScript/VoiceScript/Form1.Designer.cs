@@ -189,6 +189,7 @@ namespace VoiceScript
             this.gViewer.ToolBarIsVisible = true;
             this.gViewer.Transform = ((Microsoft.Msagl.Core.Geometry.Curves.PlaneTransformation)(resources.GetObject("gViewer.Transform")));
             this.gViewer.UndoRedoButtonsVisible = true;
+            this.gViewer.Visible = false;
             this.gViewer.WindowZoomButtonPressed = false;
             this.gViewer.ZoomF = 250D;
             this.gViewer.ZoomWindowThreshold = 0.05D;

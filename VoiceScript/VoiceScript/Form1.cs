@@ -5,6 +5,7 @@ using Microsoft.Msagl.Drawing;
 
 using VoiceScript.VoiceTranscription;
 using VoiceScript.DiagramModel.Components;
+using System.Collections.Generic;
 
 namespace VoiceScript
 {
@@ -14,6 +15,7 @@ namespace VoiceScript
         readonly IVoiceTranscriptor voiceTranscriptor;
         readonly AudioPlayer audioPlayer;
         readonly Diagram diagram;
+        readonly DiagramDesigner designer;
 
         readonly string audioFilename;
 
@@ -47,10 +49,10 @@ namespace VoiceScript
             #endregion
 
             diagram = new Diagram();
+            designer = new DiagramDesigner();
 
             appState = ApplicationState.Waiting;
             //DisableButtons(convertBtn, playBtn, realTimeTranscBtn, diagramBtn); // bug with not initialized button
-            AddDiagramControls();
         }
 
         #region Button control settings
@@ -106,7 +108,7 @@ namespace VoiceScript
                 });
         }
 
-        void AppendToTextbox(RichTextBox textBox, string text)
+        static void AppendToTextbox(RichTextBox textBox, string text)
         {
             textBox.Invoke((MethodInvoker)(() => textBox.AppendText(text + ' ')));
         }
@@ -193,7 +195,9 @@ namespace VoiceScript
 
                 // show classes
                 gViewer.Visible = true;
-                AddDiagramControls();
+                gViewer.Graph = designer.CreateGraphDiagram(classes);
+                ResumeLayout();
+
             }
             catch (Exception ex)
             {
@@ -205,44 +209,6 @@ namespace VoiceScript
         {
             appState = ApplicationState.Waiting;
             EnableButtons(recordBtn);
-        }
-
-        void AddDiagramControls()
-        {
-            var backgroundColors = new Microsoft.Msagl.Drawing.Color[]
-            {
-                Color.Bisque,
-                Color.LavenderBlush,
-                Color.LightCoral,
-                Color.LightGoldenrodYellow,
-                Color.LightGreen,
-                Color.LightSalmon,
-                Color.LightSeaGreen,
-                Color.LightSkyBlue,
-                Color.LightSteelBlue,
-                Color.MistyRose,
-                Color.PaleGoldenrod,
-                Color.PaleTurquoise,
-                Color.PaleVioletRed,
-                Color.Plum,
-                Color.PowderBlue,
-        };
-            graph = new Microsoft.Msagl.Drawing.Graph("graph");
-            Random rnd = new((int)DateTime.Now.Ticks);
-            var letters = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O' };
-            for (int i = 0; i < letters.Length; i++)
-            {
-                var rndNodeIndex = rnd.Next(0, letters.Length);
-                var rndNodeName = letters[rndNodeIndex].ToString();
-                graph.AddEdge(rndNodeName, letters[i].ToString()).Attr.Color = Color.Transparent;
-                var joinedNode = graph.FindNode(letters[i].ToString());
-                joinedNode.Attr.FillColor = backgroundColors[i];
-                joinedNode.Attr.LabelMargin = 10;
-                joinedNode.LabelText = "Person\n\nFields:\nName\n\nMethods:\nAddName()\nGetName()\n";
-            }
-            graph.Attr.BackgroundColor = Color.Transparent;
-            gViewer.Graph = graph;
-            ResumeLayout();
         }
     }
 }
