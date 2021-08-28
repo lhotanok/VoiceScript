@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
+using System.Collections.Generic;
 
 namespace VoiceScript.DiagramModel.Commands
 {
@@ -57,10 +57,13 @@ namespace VoiceScript.DiagramModel.Commands
         {
             var word = GetNextWord();
 
+            if (word.Contains('\n')) word = GetWordAfterLineFeed(word);
+
             while (word != string.Empty && !IsKeyword(word))
             {
                 parsedOffset++;
                 word = GetNextWord();
+                if (word.Contains('\n')) word = GetWordAfterLineFeed(word);
             }
 
             return word.ToLower();
@@ -75,6 +78,12 @@ namespace VoiceScript.DiagramModel.Commands
 
             while (word != string.Empty)
             {
+                if (word.Contains('\n'))
+                {
+                    word = GetWordBeforeLineFeed(word);
+                    if (word != string.Empty) nameParts.Add(word);
+                    break;
+                }
                 if (IsKeyword(word))
                 {
                     delimiter.UpdateDelimiterContext(word);
@@ -112,6 +121,36 @@ namespace VoiceScript.DiagramModel.Commands
             }
 
             return pascalCaseWord.ToString();
+        }
+
+        string GetWordBeforeLineFeed(string word)
+        {
+            var substring = new StringBuilder();
+
+            int index = 0;
+            while (index < word.Length && word[index] != '\n')
+            {
+                substring.Append(word[index]);
+                index++;
+            }
+
+            return substring.ToString();
+        }
+        string GetWordAfterLineFeed(string word)
+        {
+            var wordFragments = word.Split('\n');
+            var substring = string.Empty;
+
+            for (int i = wordFragments.Length - 1; i >= 0; i--)
+            {
+                if (wordFragments[i] != string.Empty)
+                {
+                    substring = wordFragments[i];
+                    break;
+                }
+            }
+
+            return substring;
         }
     }
 }

@@ -260,7 +260,6 @@ namespace VoiceScript
         private System.Windows.Forms.Button realTimeTranscBtn;
         private System.Windows.Forms.Button diagramBtn;
         private Microsoft.Msagl.GraphViewerGdi.GViewer gViewer;
-        private Microsoft.Msagl.Drawing.Graph graph;
         private RichTextBox codeTextBox;
         private Button button1;
     }

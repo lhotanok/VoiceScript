@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace VoiceScript.DiagramModel.Components
 {
-    public class Field : Component
+    public class Field : Component, IVisibleComponent
     {
         readonly static List<string> validChildTypes = new() { Visibility.TypeName, FieldType.TypeName };
 

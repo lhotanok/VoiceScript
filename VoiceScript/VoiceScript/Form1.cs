@@ -1,11 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using Microsoft.Msagl.Drawing;
 
 using VoiceScript.VoiceTranscription;
+using VoiceScript.DiagramDesign;
 using VoiceScript.DiagramModel.Components;
-using System.Collections.Generic;
 
 namespace VoiceScript
 {

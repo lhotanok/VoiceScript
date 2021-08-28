@@ -4,7 +4,7 @@ using Microsoft.Msagl.Drawing;
 
 using VoiceScript.DiagramModel.Components;
 
-namespace VoiceScript
+namespace VoiceScript.DiagramDesign
 {
     class DiagramDesigner
     {
@@ -53,6 +53,7 @@ namespace VoiceScript
         void ProcessNode(Graph graph, Class nodeClass)
         {
             var node = graph.FindNode(nodeClass.Name);
+            if (node == null) node = graph.AddNode(nodeClass.Name);
             node.UserData = nodeClass;
             SetUpNodeDesign(node);
         }

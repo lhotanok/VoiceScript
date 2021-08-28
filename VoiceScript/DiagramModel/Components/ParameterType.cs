@@ -2,7 +2,7 @@
 {
     public class ParameterType : Type
     {
-        static readonly string defName = "object";
+        static readonly string defName = "Object";
         public ParameterType(Component parent) : this(defName, parent) { }
         public ParameterType(string name, Component parent) : base(name, parent)
         {

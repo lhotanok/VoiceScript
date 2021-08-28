@@ -2,7 +2,7 @@
 {
     public class FieldType : Type
     {
-        static readonly string defName = "object";
+        static readonly string defName = "Object";
         public FieldType(Component parent) : this(defName, parent) { }
         public FieldType(string name, Component parent) : base(name, parent)
         {

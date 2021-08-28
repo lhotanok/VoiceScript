@@ -19,9 +19,9 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
         static readonly Dictionary<string, string> componentNames = new()
         {
             { Diagram.TypeName, "diagram" },
-            { Class.TypeName, "třídu"},
-            { Field.TypeName, "člena" },
-            { Method.TypeName, "metodu" },
+            { Class.TypeName, "tříd"},
+            { Field.TypeName, "člen" },
+            { Method.TypeName, "metod" },
             { Type.TypeName, "typ" },
             { Parameter.TypeName, "parametr" },
             { Required.TypeName, "povinnost" },
