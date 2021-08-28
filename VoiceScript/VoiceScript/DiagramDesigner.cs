@@ -33,18 +33,28 @@ namespace VoiceScript
         {
             var graph = new Graph("graph");
             graph.Attr.BackgroundColor = Color.Transparent;
+            graph.LayoutAlgorithmSettings.NodeSeparation = 10;
 
-            foreach (var cls in classes)
+            for (int i = 0; i < classes.Count - 1; i++)
             {
-                var joinedNode = graph.AddNode(cls.Name);
-                joinedNode.UserData = cls;
+                if (!graph.NodeMap.ContainsKey(classes[i].Name) || !graph.NodeMap.ContainsKey(classes[i + 1].Name))
+                {
+                    graph.AddEdge(classes[i].Name, classes[i + 1].Name).Attr.Color = Color.Transparent;
+                }
 
-                SetUpNodeDesign(joinedNode);
-                //graph.AddEdge(rndNodeName, cls.Name).Attr.Color = Color.Transparent;
-
+                ProcessNode(graph, classes[i]);
             }
 
+            ProcessNode(graph, classes[classes.Count - 1]);
+
             return graph;
+        }
+
+        void ProcessNode(Graph graph, Class nodeClass)
+        {
+            var node = graph.FindNode(nodeClass.Name);
+            node.UserData = nodeClass;
+            SetUpNodeDesign(node);
         }
 
         void SetUpNodeDesign(Node node)
@@ -55,7 +65,7 @@ namespace VoiceScript
             node.LabelText = BuildLabelText(node);
         }
 
-        string BuildLabelText(Node node)
+        static string BuildLabelText(Node node)
         {
             var classGrid = new ClassDiagramGrid();
 
