@@ -16,6 +16,9 @@ namespace DiagramModel_UnitTests.CommandParserTests
 
         [TestCase("class person")]
         [TestCase("person")]
+        [TestCase("")]
+        [TestCase("\n")]
+        [TestCase("    \n   \n\n\n")]
         public void ParseInputWithNoCommand_CheckThatExceptionIsNotThrown(string inputText)
         {
             Assert.DoesNotThrow(() => parser.GetParsedCommands(inputText));
