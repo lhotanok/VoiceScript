@@ -89,6 +89,8 @@ namespace VoiceScript
             // 
             this.richTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.richTextBox.BackColor = System.Drawing.Color.LightGray;
+            this.richTextBox.EnableAutoDragDrop = true;
             this.richTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.richTextBox.Location = new System.Drawing.Point(12, 114);
             this.richTextBox.Margin = new System.Windows.Forms.Padding(2);
@@ -201,7 +203,9 @@ namespace VoiceScript
             // 
             this.codeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.codeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.codeTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.codeTextBox.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.codeTextBox.Location = new System.Drawing.Point(903, 60);
             this.codeTextBox.Name = "codeTextBox";
             this.codeTextBox.Size = new System.Drawing.Size(469, 655);

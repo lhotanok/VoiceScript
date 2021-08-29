@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using VoiceScript.DiagramModel.Components;
 
 namespace VoiceScript.DiagramModel.Commands
@@ -14,17 +13,37 @@ namespace VoiceScript.DiagramModel.Commands
         {
             if (ComponentFactory.CanCreateComponent(targetType))
             {
-                var childComponentCtor = ComponentFactory.GetComponentCtor(targetType);
-                var childComponent = childComponentCtor(targetValue, context.CurrentComponent);
+                var sameNameChild = GetChildWithSameName(targetValue, context.CurrentComponent);
 
-                context.CurrentComponent.AddChild(childComponent);
-                context.TargetComponent = childComponent;
+                if (sameNameChild == null)
+                {
+                    var childComponentCtor = ComponentFactory.GetComponentCtor(targetType);
+                    var childComponent = childComponentCtor(targetValue, context.CurrentComponent);
+
+                    context.CurrentComponent.AddChild(childComponent);
+                    context.TargetComponent = childComponent;
+                }
+                else
+                {
+                    context.TargetComponent = sameNameChild;
+                }
+
                 context.CommandExecuted = true;
             }
             else
             {
                 throw new InvalidOperationException("Invalid component type given.");
             }
+        }
+
+        static Component GetChildWithSameName(string childName, Component parent)
+        {
+            foreach (var child in parent.Children)
+            {
+                if (child.Name == childName) return child;
+            }
+
+            return null;
         }
     }
 }

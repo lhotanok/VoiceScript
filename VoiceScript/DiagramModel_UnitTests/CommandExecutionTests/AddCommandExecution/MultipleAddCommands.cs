@@ -57,4 +57,32 @@ namespace DiagramModel_UnitTests.CommandExecutionTests
             Assert.AreEqual(1, createdClass.GetMethods().Count);
         }
     }
+
+    public class RepeatedAdditionOfSameComponent : CommandExecution
+    {
+        [TestCase("add class person add class person")]
+        [TestCase("add class person add field name add class person add method get name")]
+        public void TryAddComponentWithSameName_CheckThatExceptionIsNotThrown(string inputText)
+        {
+            Assert.DoesNotThrow(() => diagram.ConvertTextToDiagram(inputText));
+        }
+
+        [TestCase("add class person add class person")]
+        [TestCase("add class person add field name add class person add method get name")]
+        public void TryAddComponentWithSameName_CheckThatComponentWasNotAdded(string inputText)
+        {
+            diagram.ConvertTextToDiagram(inputText);
+
+            Assert.AreEqual(1, diagram.GetClasses().Count);
+        }
+
+        [TestCase("add class person add class person add method get name")]
+        [TestCase("add class person add field name add class person add method get name")]
+        public void TryAddComponentWithSameName_CheckThatComponentChildWasAddedToExistingComponent(string inputText)
+        {
+            diagram.ConvertTextToDiagram(inputText);
+
+            Assert.AreEqual(1, diagram.GetClasses()[0].GetMethods().Count);
+        }
+    }
 }
