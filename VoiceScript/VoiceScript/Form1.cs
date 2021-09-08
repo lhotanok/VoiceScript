@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using VoiceScript.VoiceTranscription;
 using VoiceScript.DiagramDesign;
 using VoiceScript.DiagramModel.Components;
+using VoiceScript.CodeGeneration;
 
 namespace VoiceScript
 {
@@ -13,8 +14,11 @@ namespace VoiceScript
         readonly IAudioRecorder audioRecorder;
         readonly IVoiceTranscriptor voiceTranscriptor;
         readonly AudioPlayer audioPlayer;
+
         readonly Diagram diagram;
         readonly DiagramDesigner designer;
+
+        readonly CodeGenerator codeGenerator;
 
         readonly string audioFilename;
 
@@ -49,6 +53,8 @@ namespace VoiceScript
 
             diagram = new Diagram();
             designer = new DiagramDesigner();
+
+            codeGenerator = new CodeGenerator(diagram, codeTextBox);
 
             appState = ApplicationState.Waiting;
             //DisableButtons(convertBtn, playBtn, realTimeTranscBtn, diagramBtn); // bug with not initialized button
@@ -202,6 +208,11 @@ namespace VoiceScript
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        void codeBtn_Click(object sender, EventArgs e)
+        {
+            codeGenerator.GenerateCode();
         }
 
         void PlaybackStoppedCallback()

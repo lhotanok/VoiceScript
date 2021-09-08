@@ -43,7 +43,7 @@ namespace VoiceScript
             this.diagramBtn = new System.Windows.Forms.Button();
             this.gViewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             this.codeTextBox = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.codeBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // recordBtn
@@ -89,9 +89,9 @@ namespace VoiceScript
             // 
             this.richTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.richTextBox.BackColor = System.Drawing.Color.LightGray;
+            this.richTextBox.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.richTextBox.EnableAutoDragDrop = true;
-            this.richTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.richTextBox.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.richTextBox.Location = new System.Drawing.Point(12, 114);
             this.richTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox.Name = "richTextBox";
@@ -201,28 +201,30 @@ namespace VoiceScript
             // 
             // codeTextBox
             // 
+            this.codeTextBox.AcceptsTab = true;
             this.codeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.codeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.codeTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.codeTextBox.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.codeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.codeTextBox.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.codeTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.codeTextBox.Location = new System.Drawing.Point(903, 60);
             this.codeTextBox.Name = "codeTextBox";
             this.codeTextBox.Size = new System.Drawing.Size(469, 655);
             this.codeTextBox.TabIndex = 11;
             this.codeTextBox.Text = "";
             // 
-            // button1
+            // codeBtn
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(903, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 38);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Code";
-            this.button1.UseVisualStyleBackColor = false;
+            this.codeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.codeBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.codeBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.codeBtn.Location = new System.Drawing.Point(903, 13);
+            this.codeBtn.Name = "codeBtn";
+            this.codeBtn.Size = new System.Drawing.Size(113, 38);
+            this.codeBtn.TabIndex = 12;
+            this.codeBtn.Text = "Code";
+            this.codeBtn.UseVisualStyleBackColor = false;
+            this.codeBtn.Click += new System.EventHandler(this.codeBtn_Click);
             // 
             // Form1
             // 
@@ -231,7 +233,7 @@ namespace VoiceScript
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(1384, 728);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.codeBtn);
             this.Controls.Add(this.codeTextBox);
             this.Controls.Add(this.gViewer);
             this.Controls.Add(this.diagramBtn);
@@ -265,7 +267,7 @@ namespace VoiceScript
         private System.Windows.Forms.Button diagramBtn;
         private Microsoft.Msagl.GraphViewerGdi.GViewer gViewer;
         private RichTextBox codeTextBox;
-        private Button button1;
+        private Button codeBtn;
     }
 }
 
