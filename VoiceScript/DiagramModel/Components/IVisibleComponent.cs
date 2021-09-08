@@ -1,6 +1,6 @@
 ﻿namespace VoiceScript.DiagramModel.Components
 {
-    interface IVisibleComponent
+    public interface IVisibleComponent
     {
         Visibility GetVisibility();
     }

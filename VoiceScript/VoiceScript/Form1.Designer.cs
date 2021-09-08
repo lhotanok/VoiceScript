@@ -91,7 +91,7 @@ namespace VoiceScript
             | System.Windows.Forms.AnchorStyles.Left)));
             this.richTextBox.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.richTextBox.EnableAutoDragDrop = true;
-            this.richTextBox.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.richTextBox.Font = new System.Drawing.Font("Consolas", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.richTextBox.Location = new System.Drawing.Point(12, 114);
             this.richTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox.Name = "richTextBox";
@@ -188,7 +188,7 @@ namespace VoiceScript
             this.gViewer.SaveButtonVisible = true;
             this.gViewer.SaveGraphButtonVisible = true;
             this.gViewer.SaveInVectorFormatEnabled = true;
-            this.gViewer.Size = new System.Drawing.Size(447, 656);
+            this.gViewer.Size = new System.Drawing.Size(376, 656);
             this.gViewer.TabIndex = 10;
             this.gViewer.TightOffsetForRouting = 0.125D;
             this.gViewer.ToolBarIsVisible = true;
@@ -204,12 +204,13 @@ namespace VoiceScript
             this.codeTextBox.AcceptsTab = true;
             this.codeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.codeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.codeTextBox.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.codeTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.codeTextBox.Location = new System.Drawing.Point(903, 60);
+            this.codeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.codeTextBox.EnableAutoDragDrop = true;
+            this.codeTextBox.Font = new System.Drawing.Font("Consolas", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.codeTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.codeTextBox.Location = new System.Drawing.Point(840, 60);
             this.codeTextBox.Name = "codeTextBox";
-            this.codeTextBox.Size = new System.Drawing.Size(469, 655);
+            this.codeTextBox.Size = new System.Drawing.Size(532, 655);
             this.codeTextBox.TabIndex = 11;
             this.codeTextBox.Text = "";
             // 
@@ -218,7 +219,7 @@ namespace VoiceScript
             this.codeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.codeBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.codeBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.codeBtn.Location = new System.Drawing.Point(903, 13);
+            this.codeBtn.Location = new System.Drawing.Point(840, 11);
             this.codeBtn.Name = "codeBtn";
             this.codeBtn.Size = new System.Drawing.Size(113, 38);
             this.codeBtn.TabIndex = 12;

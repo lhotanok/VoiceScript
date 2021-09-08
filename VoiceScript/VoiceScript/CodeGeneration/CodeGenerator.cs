@@ -10,7 +10,12 @@ namespace VoiceScript.CodeGeneration
     class CodeGenerator
     {
         static readonly string newLine = Environment.NewLine;
+        static readonly string semicolon = ";";
         static readonly int tabSpaces = 4;
+        static readonly List<string> keywordTypenames = new()
+        {
+            "int", "string", "object", "float", "double", "default", "null", "void"
+        };
 
         readonly Diagram diagram;
         readonly RichTextBox textBox;
@@ -29,26 +34,114 @@ namespace VoiceScript.CodeGeneration
 
             foreach (var cls in classes)
             {
-                GenerateClassCode(cls);
+                GenerateClassCode(cls, 0);
             }
 
         }
 
-        public void GenerateClassCode(Class cls)
+        public void GenerateClassCode(Class cls, int indentation = 0)
         {
-            WriteText("class", CodeColor.KeywordColor);
+            WriteKeyword("class ");
+            WriteClassTypename(cls.Name);
+            WriteNewLine();
+
+            WriteCurlyBracket("{", indentation);
+
+            foreach (var field in cls.GetFields())
+            {
+                GenerateFieldCode(field, indentation + 1);
+            }
+
+            WriteNewLine();
+
+            foreach (var method in cls.GetMethods())
+            {
+                GenerateMethodCode(method, indentation + 1);
+            }
+
+            WriteCurlyBracket("}", indentation);
+            WriteNewLine();
+        }
+
+        public void GenerateFieldCode(Field field, int indentation = 1)
+        {
+            WriteIndentation(indentation);
+
+            WriteVisibility(field);
             WriteWhiteSpaceChar();
-            WriteText(cls.Name, CodeColor.TypeColor);
-            WriteWhiteSpaceChar(newLine);
 
-            WriteText("{", CodeColor.Default);
-            WriteWhiteSpaceChar(newLine);
+            WriteTypename(field.GetFieldType().Name);
+            WriteWhiteSpaceChar();
 
-            // fields, methods
+            WriteFieldName(field);
+            WriteSemicolon();
+            WriteNewLine();
+        }
 
-            WriteText("}", CodeColor.Default);
-            WriteWhiteSpaceChar(newLine);
+        public void GenerateMethodCode(Method method, int indentation = 1)
+        {
+            WriteIndentation(indentation);
 
+            WriteVisibility(method);
+            WriteWhiteSpaceChar();
+
+            WriteTypename(method.GetReturnType().Name);
+            WriteWhiteSpaceChar();
+
+            WriteText(method.Name, CodeColor.MethodColor);
+            GenerateParametersCode(method);
+            WriteNewLine();
+
+            WriteCurlyBracket("{", indentation);
+            GenerateExceptionCode("NotImplementedException", indentation + 1);
+            WriteCurlyBracket("}", indentation);
+        }
+
+        public void GenerateParametersCode(Method method)
+        {
+            var parameters = new List<Parameter>();
+
+            WriteDefault("(");
+
+            parameters.AddRange(method.GetRequiredParameters());
+            parameters.AddRange(method.GetOptionalParameters());
+
+            for (int i = 0; i < parameters.Count; i++)
+            {
+                var parameter = parameters[i];
+                if (i != 0) WriteDefault(", ");
+                GenerateParameterCode(parameter);
+            }
+
+            WriteDefault(")");
+        }
+
+        public void GenerateParameterCode(Parameter parameter)
+        {
+            WriteTypename(parameter.GetParameterType().Name);
+            WriteWhiteSpaceChar();
+
+            var name = ParseCamelCase(parameter.Name);
+            WriteText(name, CodeColor.ParameterColor);
+
+            if (!parameter.IsRequired)
+            {
+                WriteDefault(" = ");
+                WriteKeyword("default");
+            }
+        }
+
+        public void GenerateExceptionCode(string exceptionName, int indentation = 2)
+        {
+            WriteIndentation(indentation);
+
+            WriteText("throw ", CodeColor.ThrowKeywordColor);
+
+            WriteKeyword("new ");
+
+            WriteClassTypename(exceptionName);
+            WriteDefault("();");
+            WriteNewLine();
         }
 
         void WriteText(string text, Color color)
@@ -57,7 +150,61 @@ namespace VoiceScript.CodeGeneration
             textBox.SelectedText = text;
         }
 
+        void WriteKeyword(string keyword) => WriteText(keyword, CodeColor.KeywordColor);
+
+        void WriteClassTypename(string typename) => WriteText(typename, CodeColor.ClassTypeColor);
+
+        void WriteDefault(string text) => WriteText(text, CodeColor.Default);
+
+        void WriteTypename(string typename)
+        {
+            var lowerTypename = typename.ToLower();
+            if (lowerTypename == "integer") lowerTypename = "int";
+
+            if (keywordTypenames.Contains(lowerTypename))
+            {
+                WriteText(lowerTypename, CodeColor.KeywordColor);
+            }
+            else
+            {
+                WriteClassTypename(typename);
+            }
+        }
+
+        void WriteFieldName(Field field)
+        {
+            var fieldName = field.Name;
+
+            if (field.GetVisibility().Name.ToLower() != "public")
+            {
+                fieldName = ParseCamelCase(fieldName);
+            }
+
+            WriteDefault(fieldName);
+        }
+
+        void WriteVisibility(IVisibleComponent component) => WriteKeyword(component.GetVisibility().Name);
+
         void WriteTab() => WriteWhiteSpaceChar(" ", tabSpaces);
+
+        void WriteNewLine() => WriteWhiteSpaceChar(newLine);
+
+        void WriteSemicolon() => WriteText(semicolon, CodeColor.Default);
+
+        void WriteCurlyBracket(string curlyBracket, int indentation)
+        {
+            WriteIndentation(indentation);
+            WriteDefault(curlyBracket);
+            WriteNewLine();
+        }
+
+        void WriteIndentation(int indentation)
+        {
+            for (int i = 0; i < indentation; i++)
+            {
+                WriteTab();
+            }
+        }
 
         void WriteWhiteSpaceChar(string character = " ", int count = 1)
         {
@@ -66,21 +213,15 @@ namespace VoiceScript.CodeGeneration
                 textBox.AppendText(character);
             }
         }
-    }
 
-    class Person
-    {
-        public int Age;
-        protected string name;
-
-        public string GetName()
+        static string ParseCamelCase(string pascalCaseWord)
         {
-            throw new NotImplementedException();
-        }
+            if (pascalCaseWord.Length == 0) return pascalCaseWord;
 
-        public void SetName(string name)
-        {
-            throw new NotImplementedException();
+            var firstLetter = pascalCaseWord[0].ToString().ToLower();
+            var remainingLetters = pascalCaseWord[1..];
+
+            return firstLetter + remainingLetters;
         }
     }
 }
