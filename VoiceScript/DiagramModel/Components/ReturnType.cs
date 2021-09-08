@@ -16,5 +16,7 @@
             return clone;
         }
         public static new string DefaultName => defName;
+
+        public override string Name { get => base.Name; set => base.Name = value.ToLower() == "void" ? "void" : value; }
     }
 }

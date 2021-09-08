@@ -33,6 +33,16 @@ namespace VoiceScript.DiagramModel.Commands
             return parsedCommands;
         }
 
+        public static string ParseCamelCase(string pascalCaseWord)
+        {
+            if (pascalCaseWord.Length == 0) return pascalCaseWord;
+
+            var firstLetter = pascalCaseWord[0].ToString().ToLower();
+            var remainingLetters = pascalCaseWord[1..];
+
+            return firstLetter + remainingLetters;
+        }
+
         Command GetNextCommand()
         {
             var commandName = GetCommandName();
@@ -100,7 +110,7 @@ namespace VoiceScript.DiagramModel.Commands
                 word = GetNextWord();
             }
 
-            return ConvertToPascalCase(nameParts);
+            return ParsePascalCase(nameParts);
         }
 
         string GetNextWord() => parsedOffset < parsedWords.Length ? parsedWords[parsedOffset] : string.Empty;
@@ -109,7 +119,7 @@ namespace VoiceScript.DiagramModel.Commands
         static bool IncompleteCommandTarget(string targetType, string targetName)
             => targetType == string.Empty || targetName == string.Empty;
 
-        static string ConvertToPascalCase(IEnumerable<string> words)
+        static string ParsePascalCase(IEnumerable<string> words)
         {
             var pascalCaseWord = new StringBuilder();
 

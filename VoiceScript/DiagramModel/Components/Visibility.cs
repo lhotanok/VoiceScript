@@ -10,13 +10,9 @@ namespace VoiceScript.DiagramModel.Components
         readonly static List<string> validNames = new() { "public", "private", "protected", "internal" };
         readonly static string defaultName = "public";
         public Visibility(Component parent) : this(defaultName, parent) { }
-        public Visibility(string name, Component parent) : base(name, parent, validChildTypes)
+        public Visibility(string name, Component parent) : base(name.ToLower(), parent, validChildTypes)
         {
-            if (!validNames.Contains(name.ToLower()))
-            {
-                var validNamesJoined = GetValidNamesJoined(", ");
-                throw new InvalidOperationException($"Invalid name of visibility level provided. Valid values are: {validNamesJoined}.");
-            }
+            CheckValidName(Name);
         }
         public static string TypeName { get => nameof(Visibility).ToLower(); }
 
@@ -34,6 +30,17 @@ namespace VoiceScript.DiagramModel.Components
             return clone;
         }
 
+        public override string Name
+        {
+            get => base.Name;
+            set
+            {
+                var name = value.ToLower();
+                CheckValidName(name);
+                base.Name = name;
+            }
+        }
+
         static string GetValidNamesJoined(string separator)
         {
             var validVisibilityValues = new StringBuilder();
@@ -45,6 +52,15 @@ namespace VoiceScript.DiagramModel.Components
             }
 
             return validVisibilityValues.ToString();
+        }
+
+        static void CheckValidName(string name)
+        {
+            if (!validNames.Contains(name))
+            {
+                var validNamesJoined = GetValidNamesJoined(", ");
+                throw new InvalidOperationException($"Invalid name of visibility level provided. Valid values are: {validNamesJoined}.");
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using VoiceScript.DiagramModel.Commands;
 
 namespace VoiceScript.DiagramModel.Components
 {
@@ -7,7 +8,10 @@ namespace VoiceScript.DiagramModel.Components
     {
         readonly static List<string> validChildTypes = new() { Visibility.TypeName, FieldType.TypeName };
 
-        public Field(string name, Component parent) : base(name, parent, validChildTypes) { }
+        public Field(string name, Component parent) : base(name, parent, validChildTypes)
+        {
+            Name = name;
+        }
 
         public static string TypeName { get => nameof(Field).ToLower(); }
 
@@ -38,6 +42,19 @@ namespace VoiceScript.DiagramModel.Components
             CloneChildrenInto(clone);
 
             return clone;
+        }
+
+        public override string Name
+        {
+            get
+            {
+                if (GetVisibility().Name != "public")
+                {
+                    return CommandParser.ParseCamelCase(base.Name);
+                }
+                return base.Name;
+            }
+            set => base.Name = value;
         }
     }
 }

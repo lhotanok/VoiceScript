@@ -7,10 +7,11 @@ namespace VoiceScript.DiagramModel.Components
     {
         protected readonly List<Component> children;
         readonly ICollection<string> validChildrenTypes;
+        string name;
         public Component(string name, Component parent, ICollection<string> validChildren)
         {
+            this.name = name;
             Parent = parent;
-            Name = name;
             children = new List<Component>();
             validChildrenTypes = validChildren;
         }
@@ -22,7 +23,7 @@ namespace VoiceScript.DiagramModel.Components
 
         public ICollection<string> ValidChildrenTypes { get => validChildrenTypes; }
 
-        public virtual string Name { get; set; }
+        public virtual string Name { get => name; set => name = value; }
         public abstract Component Clone();
 
         public virtual void AddChild(Component child) => children.Add(child);
@@ -89,11 +90,13 @@ namespace VoiceScript.DiagramModel.Components
 
         int GetChildIndex(string childType, string childName)
         {
+            var lowerChildName = childName.ToLower();
+
             for (int i = 0; i < children.Count; i++)
             {
                 var child = children[i];
 
-                if (child.GetUniqueTypeName() == childType && child.Name == childName)
+                if (child.GetUniqueTypeName() == childType && child.Name.ToLower() == lowerChildName)
                 {
                     return i;
                 }

@@ -72,9 +72,9 @@ namespace DiagramModel_UnitTests.CommandExecutionTests
         [Test]
         public void AddParameter_CheckThatMethodHasParameterWithCorrectName()
         {
-            ExecuteCommands("add class car add method set color add parameter color");
+            ExecuteCommands("add class car add method set color add parameter my color");
 
-            Assert.AreEqual("Color", diagram.GetClasses()[0].GetMethods()[0].GetParameters()[0].Name);
+            Assert.AreEqual("myColor", diagram.GetClasses()[0].GetMethods()[0].GetParameters()[0].Name);
         }
 
         [Test]
@@ -98,7 +98,7 @@ namespace DiagramModel_UnitTests.CommandExecutionTests
         {
             ExecuteCommands("add class car add field color add visibility protected");
 
-            Assert.AreEqual("Protected", diagram.GetClasses()[0].GetFields()[0].GetVisibility().Name);
+            Assert.AreEqual("protected", diagram.GetClasses()[0].GetFields()[0].GetVisibility().Name);
         }
 
         [Test]
@@ -106,7 +106,7 @@ namespace DiagramModel_UnitTests.CommandExecutionTests
         {
             ExecuteCommands("add class car add method get color add visibility public");
 
-            Assert.AreEqual("Public", diagram.GetClasses()[0].GetMethods()[0].GetVisibility().Name);
+            Assert.AreEqual("public", diagram.GetClasses()[0].GetMethods()[0].GetVisibility().Name);
         }
 
         [Test]

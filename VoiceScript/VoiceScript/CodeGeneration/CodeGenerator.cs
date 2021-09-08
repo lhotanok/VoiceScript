@@ -73,7 +73,7 @@ namespace VoiceScript.CodeGeneration
             WriteTypename(field.GetFieldType().Name);
             WriteWhiteSpaceChar();
 
-            WriteFieldName(field);
+            WriteDefault(field.Name);
             WriteSemicolon();
             WriteNewLine();
         }
@@ -121,8 +121,7 @@ namespace VoiceScript.CodeGeneration
             WriteTypename(parameter.GetParameterType().Name);
             WriteWhiteSpaceChar();
 
-            var name = ParseCamelCase(parameter.Name);
-            WriteText(name, CodeColor.ParameterColor);
+            WriteText(parameter.Name, CodeColor.ParameterColor);
 
             if (!parameter.IsRequired)
             {
@@ -171,18 +170,6 @@ namespace VoiceScript.CodeGeneration
             }
         }
 
-        void WriteFieldName(Field field)
-        {
-            var fieldName = field.Name;
-
-            if (field.GetVisibility().Name.ToLower() != "public")
-            {
-                fieldName = ParseCamelCase(fieldName);
-            }
-
-            WriteDefault(fieldName);
-        }
-
         void WriteVisibility(IVisibleComponent component) => WriteKeyword(component.GetVisibility().Name);
 
         void WriteTab() => WriteWhiteSpaceChar(" ", tabSpaces);
@@ -212,16 +199,6 @@ namespace VoiceScript.CodeGeneration
             {
                 textBox.AppendText(character);
             }
-        }
-
-        static string ParseCamelCase(string pascalCaseWord)
-        {
-            if (pascalCaseWord.Length == 0) return pascalCaseWord;
-
-            var firstLetter = pascalCaseWord[0].ToString().ToLower();
-            var remainingLetters = pascalCaseWord[1..];
-
-            return firstLetter + remainingLetters;
         }
     }
 }

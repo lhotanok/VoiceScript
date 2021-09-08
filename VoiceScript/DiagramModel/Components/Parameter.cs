@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using VoiceScript.DiagramModel.Commands;
 
 namespace VoiceScript.DiagramModel.Components
 {
     public class Parameter : Component
     {
         readonly static List<string> validChildTypes = new() { ParameterType.TypeName, Required.TypeName };
-        public Parameter(string name, Component parent) : base(name, parent, validChildTypes) { }
+        public Parameter(string name, Component parent) : base(CommandParser.ParseCamelCase(name), parent, validChildTypes) { }
         public static string TypeName { get => nameof(Parameter).ToLower(); }
 
         /// <summary>
@@ -36,5 +37,7 @@ namespace VoiceScript.DiagramModel.Components
 
             return clone;
         }
+
+        public override string Name { get => base.Name; set => base.Name = CommandParser.ParseCamelCase(value); }
     }
 }
