@@ -19,9 +19,4 @@ namespace VoiceScript.VoiceTranscription
         public override string LanguageCode => LanguageCodes.Czech.CzechRepublic;
         public override string Name => "Czech";
     }
-    public class German : Language
-    {
-        public override string LanguageCode => LanguageCodes.German.Germany;
-        public override string Name => "German";
-    }
 }

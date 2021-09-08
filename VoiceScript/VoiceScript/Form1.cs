@@ -57,7 +57,7 @@ namespace VoiceScript
             codeGenerator = new CodeGenerator(diagram, codeTextBox);
 
             appState = ApplicationState.Waiting;
-            //DisableButtons(convertBtn, playBtn, realTimeTranscBtn, diagramBtn); // bug with not initialized button
+            // DisableButtons(convertBtn, playBtn, realTimeTranscBtn, diagramBtn); // bug with not initialized button
         }
 
         #region Button control settings
@@ -89,7 +89,6 @@ namespace VoiceScript
             {
                 new English(),
                 new Czech(),
-                new German()
             });
 
             languages.SelectedIndexChanged += (sender, e)
@@ -213,6 +212,15 @@ namespace VoiceScript
         void codeBtn_Click(object sender, EventArgs e)
         {
             codeGenerator.GenerateCode();
+        }
+
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            diagram.Clear();
+
+            gViewer.Graph = designer.CreateGraphDiagram(diagram.GetClasses());
+            ResumeLayout();
         }
 
         void PlaybackStoppedCallback()

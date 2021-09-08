@@ -45,7 +45,7 @@ namespace VoiceScript.DiagramDesign
                 ProcessNode(graph, classes[i]);
             }
 
-            ProcessNode(graph, classes[classes.Count - 1]);
+            if (classes.Count != 0) ProcessNode(graph, classes[classes.Count - 1]);
 
             return graph;
         }

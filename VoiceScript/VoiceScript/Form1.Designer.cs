@@ -44,6 +44,7 @@ namespace VoiceScript
             this.gViewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             this.codeTextBox = new System.Windows.Forms.RichTextBox();
             this.codeBtn = new System.Windows.Forms.Button();
+            this.clearBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // recordBtn
@@ -135,10 +136,10 @@ namespace VoiceScript
             // 
             this.realTimeTranscBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.realTimeTranscBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.realTimeTranscBtn.Location = new System.Drawing.Point(129, 12);
+            this.realTimeTranscBtn.Location = new System.Drawing.Point(129, 11);
             this.realTimeTranscBtn.Margin = new System.Windows.Forms.Padding(2);
             this.realTimeTranscBtn.Name = "realTimeTranscBtn";
-            this.realTimeTranscBtn.Size = new System.Drawing.Size(240, 39);
+            this.realTimeTranscBtn.Size = new System.Drawing.Size(240, 40);
             this.realTimeTranscBtn.TabIndex = 8;
             this.realTimeTranscBtn.Text = "Real-time transcription";
             this.realTimeTranscBtn.UseVisualStyleBackColor = false;
@@ -148,9 +149,9 @@ namespace VoiceScript
             // 
             this.diagramBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.diagramBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.diagramBtn.Location = new System.Drawing.Point(410, 12);
+            this.diagramBtn.Location = new System.Drawing.Point(410, 11);
             this.diagramBtn.Name = "diagramBtn";
-            this.diagramBtn.Size = new System.Drawing.Size(113, 39);
+            this.diagramBtn.Size = new System.Drawing.Size(115, 40);
             this.diagramBtn.TabIndex = 9;
             this.diagramBtn.Text = "Diagram";
             this.diagramBtn.UseVisualStyleBackColor = false;
@@ -164,6 +165,7 @@ namespace VoiceScript
             this.gViewer.ArrowheadLength = 10D;
             this.gViewer.AsyncLayout = false;
             this.gViewer.AutoScroll = true;
+            this.gViewer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.gViewer.BackwardEnabled = false;
             this.gViewer.BuildHitTree = true;
             this.gViewer.CurrentLayoutMethod = Microsoft.Msagl.GraphViewerGdi.LayoutMethod.UseSettingsOfTheGraph;
@@ -188,7 +190,7 @@ namespace VoiceScript
             this.gViewer.SaveButtonVisible = true;
             this.gViewer.SaveGraphButtonVisible = true;
             this.gViewer.SaveInVectorFormatEnabled = true;
-            this.gViewer.Size = new System.Drawing.Size(376, 656);
+            this.gViewer.Size = new System.Drawing.Size(393, 656);
             this.gViewer.TabIndex = 10;
             this.gViewer.TightOffsetForRouting = 0.125D;
             this.gViewer.ToolBarIsVisible = true;
@@ -208,9 +210,9 @@ namespace VoiceScript
             this.codeTextBox.EnableAutoDragDrop = true;
             this.codeTextBox.Font = new System.Drawing.Font("Consolas", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.codeTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.codeTextBox.Location = new System.Drawing.Point(840, 60);
+            this.codeTextBox.Location = new System.Drawing.Point(850, 60);
             this.codeTextBox.Name = "codeTextBox";
-            this.codeTextBox.Size = new System.Drawing.Size(532, 655);
+            this.codeTextBox.Size = new System.Drawing.Size(522, 655);
             this.codeTextBox.TabIndex = 11;
             this.codeTextBox.Text = "";
             // 
@@ -219,7 +221,7 @@ namespace VoiceScript
             this.codeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.codeBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.codeBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.codeBtn.Location = new System.Drawing.Point(840, 11);
+            this.codeBtn.Location = new System.Drawing.Point(850, 11);
             this.codeBtn.Name = "codeBtn";
             this.codeBtn.Size = new System.Drawing.Size(113, 38);
             this.codeBtn.TabIndex = 12;
@@ -227,13 +229,26 @@ namespace VoiceScript
             this.codeBtn.UseVisualStyleBackColor = false;
             this.codeBtn.Click += new System.EventHandler(this.codeBtn_Click);
             // 
+            // clearBtn
+            // 
+            this.clearBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.clearBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.clearBtn.Location = new System.Drawing.Point(531, 11);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(115, 40);
+            this.clearBtn.TabIndex = 13;
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.UseVisualStyleBackColor = false;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(1384, 728);
+            this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.codeBtn);
             this.Controls.Add(this.codeTextBox);
             this.Controls.Add(this.gViewer);
@@ -269,6 +284,7 @@ namespace VoiceScript
         private Microsoft.Msagl.GraphViewerGdi.GViewer gViewer;
         private RichTextBox codeTextBox;
         private Button codeBtn;
+        private Button clearBtn;
     }
 }
 
