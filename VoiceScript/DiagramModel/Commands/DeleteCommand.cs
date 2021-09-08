@@ -6,7 +6,7 @@ namespace VoiceScript.DiagramModel.Commands
     {
         static readonly string defaultFormat = "delete";
         public static string DefaultFormat { get => defaultFormat; }
-        public DeleteCommand(string targetType, string targetName) : base(targetType, targetName) { }
+        public DeleteCommand(string name, string targetType, string targetName) : base(name, targetType, targetName) { }
 
         protected override void ProcessCommand(CommandExecutionContext context)
         {

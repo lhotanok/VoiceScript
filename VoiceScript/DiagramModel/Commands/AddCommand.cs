@@ -7,7 +7,8 @@ namespace VoiceScript.DiagramModel.Commands
     {
         static readonly string defaultFormat = "add";
         public static string DefaultFormat { get => defaultFormat; }
-        public AddCommand(string targetType, string targetName) : base(targetType, targetName) { }
+
+        public AddCommand(string name, string targetType, string targetName) : base(name, targetType, targetName) { }
 
         protected override void ProcessCommand(CommandExecutionContext context)
         {

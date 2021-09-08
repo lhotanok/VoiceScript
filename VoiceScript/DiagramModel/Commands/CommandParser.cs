@@ -27,7 +27,15 @@ namespace VoiceScript.DiagramModel.Commands
             while (command != null)
             {
                 parsedCommands.Add(command);
-                command = GetNextCommand();
+                try
+                {
+                    command = GetNextCommand();
+                }
+                catch (Exception ex)
+                {
+                    throw new InvalidOperationException(ex.Message + $" Successfully parsed commands: {parsedCommands.Count}.");
+                }
+                
             }
 
             return parsedCommands;
@@ -60,7 +68,8 @@ namespace VoiceScript.DiagramModel.Commands
                 throw new InvalidOperationException("Invalid command.");
             }
 
-            return CommandFactory.GetCommandCtor(commandName)(targetType, targetName);
+            // key for getting ctor is command default name, parameter for ctor should be actual command name
+            return CommandFactory.GetCommandCtor(commandName)(commandName, targetType, targetName);
         }
 
         string GetCommandName()
@@ -125,15 +134,14 @@ namespace VoiceScript.DiagramModel.Commands
 
             foreach (var word in words)
             {
-                var lowerCaseWord = word.ToLower();
-                var firstLetter = lowerCaseWord[0].ToString().ToUpper();
-                pascalCaseWord.Append(firstLetter + lowerCaseWord[1..]);
+                var firstLetter = word[0].ToString().ToUpper();
+                pascalCaseWord.Append(firstLetter + word[1..]);
             }
 
             return pascalCaseWord.ToString();
         }
 
-        string GetWordBeforeLineFeed(string word)
+        static string GetWordBeforeLineFeed(string word)
         {
             var substring = new StringBuilder();
 
@@ -146,7 +154,8 @@ namespace VoiceScript.DiagramModel.Commands
 
             return substring.ToString();
         }
-        string GetWordAfterLineFeed(string word)
+
+        static string GetWordAfterLineFeed(string word)
         {
             var wordFragments = word.Split('\n');
             var substring = string.Empty;

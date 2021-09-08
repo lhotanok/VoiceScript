@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 using VoiceScript.DiagramModel.Components;
 
@@ -21,18 +22,16 @@ namespace VoiceScript.CodeGeneration
         };
 
         readonly Diagram diagram;
-        readonly RichTextBox textBox;
+        readonly Action<string, Color> textCallback;
 
-        public CodeGenerator(Diagram diagramModel, RichTextBox richTextBox)
+        public CodeGenerator(Diagram diagramModel, Action<string, Color> writeTextCallback)
         {
             diagram = diagramModel;
-            textBox = richTextBox;
+            textCallback = writeTextCallback;
         }
 
         public void GenerateCode()
         {
-            textBox.Clear();
-
             var classes = diagram.GetClasses();
 
             foreach (var cls in classes)
@@ -94,7 +93,7 @@ namespace VoiceScript.CodeGeneration
             WriteTypename(GetReturnTypename(method.GetReturnType()));
             WriteWhiteSpaceChar();
 
-            WriteText(method.Name, CodeColor.MethodColor);
+            textCallback(method.Name, CodeColor.MethodColor);
             GenerateParametersCode(method);
             WriteNewLine();
 
@@ -124,7 +123,7 @@ namespace VoiceScript.CodeGeneration
             WriteTypename(GetTypename(parameter.GetParameterType()));
             WriteWhiteSpaceChar();
 
-            WriteText(parameter.Name, CodeColor.ParameterColor);
+            textCallback(parameter.Name, CodeColor.ParameterColor);
 
             if (!parameter.IsRequired)
             {
@@ -137,7 +136,7 @@ namespace VoiceScript.CodeGeneration
         {
             WriteIndentation(indentation);
 
-            WriteText("throw ", CodeColor.ThrowKeywordColor);
+            textCallback("throw ", CodeColor.ThrowKeywordColor);
 
             WriteKeyword("new ");
 
@@ -149,17 +148,11 @@ namespace VoiceScript.CodeGeneration
         static string GetTypename(Component typeComponent) => typeComponent == null ? defaultTypename : typeComponent.Name;
         static string GetReturnTypename(Component typeComponent) => typeComponent == null ? defaultReturnTypename : typeComponent.Name;
 
-        void WriteText(string text, Color color)
-        {
-            textBox.SelectionColor = color;
-            textBox.SelectedText = text;
-        }
+        void WriteKeyword(string keyword) => textCallback(keyword, CodeColor.KeywordColor);
 
-        void WriteKeyword(string keyword) => WriteText(keyword, CodeColor.KeywordColor);
+        void WriteClassTypename(string typename) => textCallback(typename, CodeColor.ClassTypeColor);
 
-        void WriteClassTypename(string typename) => WriteText(typename, CodeColor.ClassTypeColor);
-
-        void WriteDefault(string text) => WriteText(text, CodeColor.Default);
+        void WriteDefault(string text) => textCallback(text, CodeColor.Default);
 
         void WriteTypename(string typename)
         {
@@ -168,7 +161,7 @@ namespace VoiceScript.CodeGeneration
 
             if (keywordTypenames.Contains(lowerTypename))
             {
-                WriteText(lowerTypename, CodeColor.KeywordColor);
+                textCallback(lowerTypename, CodeColor.KeywordColor);
             }
             else
             {
@@ -182,7 +175,7 @@ namespace VoiceScript.CodeGeneration
 
         void WriteNewLine() => WriteWhiteSpaceChar(newLine);
 
-        void WriteSemicolon() => WriteText(semicolon, CodeColor.Default);
+        void WriteSemicolon() => textCallback(semicolon, CodeColor.Default);
 
         void WriteCurlyBracket(string curlyBracket, int indentation)
         {
@@ -201,10 +194,14 @@ namespace VoiceScript.CodeGeneration
 
         void WriteWhiteSpaceChar(string character = " ", int count = 1)
         {
+            var whitespaces = new StringBuilder();
+
             for (int i = 0; i < count; i++)
             {
-                textBox.AppendText(character);
+                whitespaces.Append(character);
             }
+
+            WriteDefault(whitespaces.ToString());
         }
     }
 }

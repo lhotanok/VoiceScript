@@ -4,9 +4,9 @@ namespace VoiceScript.DiagramModel.Commands
 {
     public class EditCommand : Command
     {
-        static readonly string defaulFormat = "edit";
-        public static string DefaultFormat { get => defaulFormat; }
-        public EditCommand(string targetType, string targetName) : base(targetType, targetName) { }
+        static readonly string defaultFormat = "edit";
+        public static string DefaultFormat { get => defaultFormat; }
+        public EditCommand(string name, string targetType, string targetName) : base(name, targetType, targetName) { }
 
         public override void Execute(CommandExecutionContext context)
         {

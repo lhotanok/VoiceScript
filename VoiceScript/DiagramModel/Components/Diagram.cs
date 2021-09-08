@@ -29,10 +29,19 @@ namespace VoiceScript.DiagramModel.Components
             return classes;
         }
 
-        public void ConvertTextToDiagram(string text)
+        public IList<Command> GetParsedCommands(string text)
         {
             var parser = new CommandParser();
-            var parsedCommands = parser.GetParsedCommands(text);
+            
+            return parser.GetParsedCommands(text);
+        }
+
+        public void ConvertTextToDiagram(string text, IList<Command> parsedCommands = null)
+        {
+            if (parsedCommands == null)
+            {
+                parsedCommands = GetParsedCommands(text);
+            }
 
             ExecuteCommands(parsedCommands);
         }

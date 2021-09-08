@@ -6,14 +6,16 @@ namespace VoiceScript.DiagramModel.Commands
 {
     public abstract class Command
     {
-        protected readonly string targetType, targetValue;
+        protected readonly string name, targetType, targetValue;
 
-        public Command(string commandTargetType, string commandTargetValue)
+        public Command(string commandName, string commandTargetType, string commandTargetValue)
         {
+            name = commandName;
             targetType = commandTargetType;
             targetValue = commandTargetValue;
         }
 
+        public string Name { get => name; }
         public string TargetType { get => targetType; }
         public string TargetValue { get => targetValue; }
 

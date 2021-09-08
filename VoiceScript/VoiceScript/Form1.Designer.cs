@@ -35,15 +35,14 @@ namespace VoiceScript
             this.recordBtn = new System.Windows.Forms.Button();
             this.convertBtn = new System.Windows.Forms.Button();
             this.playBtn = new System.Windows.Forms.Button();
-            this.richTextBox = new System.Windows.Forms.RichTextBox();
+            this.commandTextBox = new System.Windows.Forms.RichTextBox();
             this.recordingTimer = new System.Windows.Forms.Timer(this.components);
             this.stopBtn = new System.Windows.Forms.Button();
             this.languages = new System.Windows.Forms.ListBox();
             this.realTimeTranscBtn = new System.Windows.Forms.Button();
-            this.diagramBtn = new System.Windows.Forms.Button();
+            this.compileBtn = new System.Windows.Forms.Button();
             this.gViewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             this.codeTextBox = new System.Windows.Forms.RichTextBox();
-            this.codeBtn = new System.Windows.Forms.Button();
             this.clearBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -86,19 +85,19 @@ namespace VoiceScript
             this.playBtn.UseVisualStyleBackColor = false;
             this.playBtn.Click += new System.EventHandler(this.playBtn_Click);
             // 
-            // richTextBox
+            // commandTextBox
             // 
-            this.richTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.commandTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.richTextBox.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.richTextBox.EnableAutoDragDrop = true;
-            this.richTextBox.Font = new System.Drawing.Font("Consolas", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.richTextBox.Location = new System.Drawing.Point(12, 114);
-            this.richTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(357, 603);
-            this.richTextBox.TabIndex = 4;
-            this.richTextBox.Text = "";
+            this.commandTextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.commandTextBox.EnableAutoDragDrop = true;
+            this.commandTextBox.Font = new System.Drawing.Font("Consolas", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.commandTextBox.Location = new System.Drawing.Point(12, 114);
+            this.commandTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.commandTextBox.Name = "commandTextBox";
+            this.commandTextBox.Size = new System.Drawing.Size(357, 603);
+            this.commandTextBox.TabIndex = 4;
+            this.commandTextBox.Text = "";
             // 
             // recordingTimer
             // 
@@ -145,17 +144,17 @@ namespace VoiceScript
             this.realTimeTranscBtn.UseVisualStyleBackColor = false;
             this.realTimeTranscBtn.Click += new System.EventHandler(this.realTimeTranscBtn_Click);
             // 
-            // diagramBtn
+            // compileBtn
             // 
-            this.diagramBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.diagramBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.diagramBtn.Location = new System.Drawing.Point(410, 11);
-            this.diagramBtn.Name = "diagramBtn";
-            this.diagramBtn.Size = new System.Drawing.Size(115, 40);
-            this.diagramBtn.TabIndex = 9;
-            this.diagramBtn.Text = "Diagram";
-            this.diagramBtn.UseVisualStyleBackColor = false;
-            this.diagramBtn.Click += new System.EventHandler(this.diagramBtn_Click);
+            this.compileBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.compileBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.compileBtn.Location = new System.Drawing.Point(410, 11);
+            this.compileBtn.Name = "compileBtn";
+            this.compileBtn.Size = new System.Drawing.Size(115, 40);
+            this.compileBtn.TabIndex = 9;
+            this.compileBtn.Text = "Compile";
+            this.compileBtn.UseVisualStyleBackColor = false;
+            this.compileBtn.Click += new System.EventHandler(this.compileBtn_Click);
             // 
             // gViewer
             // 
@@ -216,19 +215,6 @@ namespace VoiceScript
             this.codeTextBox.TabIndex = 11;
             this.codeTextBox.Text = "";
             // 
-            // codeBtn
-            // 
-            this.codeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.codeBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.codeBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.codeBtn.Location = new System.Drawing.Point(850, 11);
-            this.codeBtn.Name = "codeBtn";
-            this.codeBtn.Size = new System.Drawing.Size(113, 38);
-            this.codeBtn.TabIndex = 12;
-            this.codeBtn.Text = "Code";
-            this.codeBtn.UseVisualStyleBackColor = false;
-            this.codeBtn.Click += new System.EventHandler(this.codeBtn_Click);
-            // 
             // clearBtn
             // 
             this.clearBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -249,14 +235,13 @@ namespace VoiceScript
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(1384, 728);
             this.Controls.Add(this.clearBtn);
-            this.Controls.Add(this.codeBtn);
             this.Controls.Add(this.codeTextBox);
             this.Controls.Add(this.gViewer);
-            this.Controls.Add(this.diagramBtn);
+            this.Controls.Add(this.compileBtn);
             this.Controls.Add(this.realTimeTranscBtn);
             this.Controls.Add(this.languages);
             this.Controls.Add(this.stopBtn);
-            this.Controls.Add(this.richTextBox);
+            this.Controls.Add(this.commandTextBox);
             this.Controls.Add(this.playBtn);
             this.Controls.Add(this.convertBtn);
             this.Controls.Add(this.recordBtn);
@@ -275,15 +260,14 @@ namespace VoiceScript
         private System.Windows.Forms.Button recordBtn;
         private System.Windows.Forms.Button convertBtn;
         private System.Windows.Forms.Button playBtn;
-        private System.Windows.Forms.RichTextBox richTextBox;
+        private System.Windows.Forms.RichTextBox commandTextBox;
         private System.Windows.Forms.Timer recordingTimer;
         private System.Windows.Forms.Button stopBtn;
         private System.Windows.Forms.ListBox languages;
         private System.Windows.Forms.Button realTimeTranscBtn;
-        private System.Windows.Forms.Button diagramBtn;
+        private System.Windows.Forms.Button compileBtn;
         private Microsoft.Msagl.GraphViewerGdi.GViewer gViewer;
         private RichTextBox codeTextBox;
-        private Button codeBtn;
         private Button clearBtn;
     }
 }

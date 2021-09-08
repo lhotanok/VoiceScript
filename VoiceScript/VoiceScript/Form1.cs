@@ -6,6 +6,8 @@ using VoiceScript.VoiceTranscription;
 using VoiceScript.DiagramDesign;
 using VoiceScript.DiagramModel.Components;
 using VoiceScript.CodeGeneration;
+using System.Drawing;
+using VoiceScript.CommandDesign;
 
 namespace VoiceScript
 {
@@ -16,7 +18,9 @@ namespace VoiceScript
         readonly AudioPlayer audioPlayer;
 
         readonly Diagram diagram;
-        readonly DiagramDesigner designer;
+        readonly DiagramDesigner diagramDesigner;
+
+        readonly CommandDesigner commandDesigner;
 
         readonly CodeGenerator codeGenerator;
 
@@ -47,14 +51,15 @@ namespace VoiceScript
             }
             
             recordingTimer.Tick += (sender, e) 
-                => voiceTranscriptor.DoRealTimeTranscription(voiceCommand => AppendToTextbox(richTextBox, voiceCommand));
+                => voiceTranscriptor.DoRealTimeTranscription(voiceCommand => AppendToTextbox(commandTextBox, voiceCommand));
             SetLanguages();
             #endregion
 
             diagram = new Diagram();
-            designer = new DiagramDesigner();
+            diagramDesigner = new DiagramDesigner();
 
-            codeGenerator = new CodeGenerator(diagram, codeTextBox);
+            codeGenerator = new CodeGenerator(diagram, (text, color) => AppendToTextbox(codeTextBox, text, color));
+            commandDesigner = new CommandDesigner((text, color) => AppendToTextbox(commandTextBox, text, color));
 
             appState = ApplicationState.Waiting;
             // DisableButtons(convertBtn, playBtn, realTimeTranscBtn, diagramBtn); // bug with not initialized button
@@ -96,25 +101,33 @@ namespace VoiceScript
         }
 
         /// <summary>
-        /// Write converted speech from audio file into <see cref="richTextBox"/>.
+        /// Write converted speech from audio file into <see cref="commandTextBox"/>.
         /// </summary>
         /// <param name="filename"></param>
-        /// <param name="append">If set to false, <see cref="richTextBox"/> content is overwritten.</param>
+        /// <param name="append">If set to false, <see cref="commandTextBox"/> content is overwritten.</param>
         async void WriteTranscriptToTextbox(string filename, bool append = true)
         {
-            if (!append) richTextBox.Text = string.Empty;
-            if (richTextBox.TextLength != 0) richTextBox.AppendText(Environment.NewLine);
+            if (!append) commandTextBox.Text = string.Empty;
+            if (commandTextBox.TextLength != 0) commandTextBox.AppendText(Environment.NewLine);
 
             await voiceTranscriptor.CreateTranscriptionTask(filename,
                 transcript => {
-                    AppendToTextbox(richTextBox, transcript);
-                    EnableButtons(diagramBtn);
+                    AppendToTextbox(commandTextBox, transcript);
+                    EnableButtons(compileBtn);
                 });
         }
 
         static void AppendToTextbox(RichTextBox textBox, string text)
         {
             textBox.Invoke((MethodInvoker)(() => textBox.AppendText(text + ' ')));
+        }
+
+        static void AppendToTextbox(RichTextBox textBox, string text, Color color)
+        {
+            textBox.Invoke((MethodInvoker)(() => {
+                textBox.SelectionColor = color;
+                textBox.SelectedText = text;
+            }));
         }
 
         /// <summary>
@@ -147,7 +160,7 @@ namespace VoiceScript
             if (appState == ApplicationState.Recording)
             {
                 recordingTimer.Enabled = true;
-                if (richTextBox.TextLength > 0) richTextBox.AppendText(Environment.NewLine);
+                if (commandTextBox.TextLength > 0) commandTextBox.AppendText(Environment.NewLine);
             }
         }
 
@@ -190,17 +203,28 @@ namespace VoiceScript
             }
         }
 
-        void diagramBtn_Click(object sender, EventArgs e)
+        void compileBtn_Click(object sender, EventArgs e)
         {
             try
             {
-                diagram.ConvertTextToDiagram(richTextBox.Text);
+                var parsedCommands = diagram.GetParsedCommands(commandTextBox.Text);
+
+                // compile commands
+                commandTextBox.Clear();
+                commandDesigner.DesignCommands(parsedCommands);
+
+                // execute commands
+                diagram.ConvertTextToDiagram(commandTextBox.Text, parsedCommands);
                 var classes = diagram.GetClasses();
 
-                // show classes
+                // show diagram
                 gViewer.Visible = true;
-                gViewer.Graph = designer.CreateGraphDiagram(classes);
+                gViewer.Graph = diagramDesigner.CreateGraphDiagram(classes);
                 ResumeLayout();
+
+                // generate and show code
+                codeTextBox.Clear();
+                codeGenerator.GenerateCode();
 
             }
             catch (Exception ex)
@@ -209,17 +233,13 @@ namespace VoiceScript
             }
         }
 
-        void codeBtn_Click(object sender, EventArgs e)
-        {
-            codeGenerator.GenerateCode();
-        }
-
-
         private void clearBtn_Click(object sender, EventArgs e)
         {
             diagram.Clear();
 
-            gViewer.Graph = designer.CreateGraphDiagram(diagram.GetClasses());
+            codeTextBox.Clear();
+
+            gViewer.Graph = diagramDesigner.CreateGraphDiagram(diagram.GetClasses());
             ResumeLayout();
         }
 
@@ -228,5 +248,6 @@ namespace VoiceScript
             appState = ApplicationState.Waiting;
             EnableButtons(recordBtn);
         }
+
     }
 }
