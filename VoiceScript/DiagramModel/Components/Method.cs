@@ -18,9 +18,17 @@ namespace VoiceScript.DiagramModel.Components
         /// <summary>
         /// If return type is not defined return default return type.
         /// </summary>
-        /// <returns>Defined value of return type or default.</returns>
-        public ReturnType GetReturnType() => GetUniqueChild<ReturnType>() ?? new ReturnType(this);
-        public IReadOnlyList<Parameter> GetParameters() => GetTypeFilteredChildren<Parameter>();
+        /// <returns>Defined value of return type or null.</returns>
+        public ReturnType GetReturnType() => GetUniqueChild<ReturnType>();
+        public IReadOnlyList<Parameter> GetParameters()
+        {
+            var parameters = new List<Parameter>();
+
+            parameters.AddRange(GetRequiredParameters());
+            parameters.AddRange(GetOptionalParameters());
+
+            return parameters;
+        }
         public IReadOnlyList<Parameter> GetRequiredParameters()
             => GetFilteredParameters(parameter => parameter.GetRequireInfo().Value);
 

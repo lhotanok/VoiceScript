@@ -24,8 +24,8 @@ namespace VoiceScript.DiagramModel.Components
         /// <summary>
         /// If field type is not defined return default field type.
         /// </summary>
-        /// <returns>Defined value of field type or default.</returns>
-        public FieldType GetFieldType() => GetUniqueChild<FieldType>() ?? new FieldType(this);
+        /// <returns>Defined value of field type or null.</returns>
+        public FieldType GetFieldType() => GetUniqueChild<FieldType>();
         
         public override string GetUniqueTypeName() => TypeName;
 

@@ -44,27 +44,25 @@ namespace VoiceScript.DiagramDesign
             cells.Add(cell);
         }
 
-        public void AddFieldsCell(IReadOnlyList<Field> fields,
-            bool showVisibility = true, bool showType = true)
+        public void AddFieldsCell(IReadOnlyList<Field> fields)
         {
             var fieldsCell = new ClassDiagramCell();
 
             foreach (var field in fields)
             {
-                fieldsCell.AddLine(BuildFieldLine(field, showVisibility, showType));
+                fieldsCell.AddLine(BuildFieldLine(field));
             }
 
             cells.Add(fieldsCell);
         }
 
-        public void AddMethodsCell(IReadOnlyList<Method> methods,
-            bool showVisibility = true, bool showReturnType = true, bool showParameterTypes = true)
+        public void AddMethodsCell(IReadOnlyList<Method> methods)
         {
             var methodsCell = new ClassDiagramCell();
 
             foreach (var method in methods)
             {
-                methodsCell.AddLine(BuildMethodLine(method, showVisibility, showReturnType, showParameterTypes));
+                methodsCell.AddLine(BuildMethodLine(method));
             }
 
             cells.Add(methodsCell);
@@ -95,60 +93,52 @@ namespace VoiceScript.DiagramDesign
             return separator.ToString();
         }
 
-        string BuildFieldLine(Field field, bool showVisibility, bool showType)
+        string BuildFieldLine(Field field)
         {
             var fieldLine = new StringBuilder();
 
-            if (showVisibility)
-            {
-                var symbol = GetVisibilitySymbol(field.GetVisibility().Name);
-                if (symbol != string.Empty) fieldLine.Append(symbol + ' ');
-            }
+            var symbol = GetVisibilitySymbol(field.GetVisibility().Name);
+            if (symbol != string.Empty) fieldLine.Append(symbol + ' ');
 
             AddComponentName(field, fieldLine);
 
-            if (showType) fieldLine.Append($" : {field.GetFieldType().Name}");
+            var fieldType = field.GetFieldType();
+            if (fieldType != null) fieldLine.Append($" : {fieldType.Name}");
 
             return fieldLine.ToString();
         }
 
-        string BuildMethodLine(Method method, bool showVisibility, bool showReturnType, bool showParameterTypes)
+        string BuildMethodLine(Method method)
         {
             var methodLine = new StringBuilder();
 
-            if (showVisibility)
-            {
-                var symbol = GetVisibilitySymbol(method.GetVisibility().Name);
-                if (symbol != string.Empty) methodLine.Append(symbol + ' ');
-            }
+            var symbol = GetVisibilitySymbol(method.GetVisibility().Name);
+            if (symbol != string.Empty) methodLine.Append(symbol + ' ');
 
             AddComponentName(method, methodLine);
 
-            methodLine.Append(BuildParametersText(method.GetParameters(), showParameterTypes));
+            methodLine.Append(BuildParametersText(method.GetParameters()));
 
-            if (showReturnType) methodLine.Append($" : {method.GetReturnType().Name}");
+            var returnType = method.GetReturnType();
+            if (returnType != null) methodLine.Append($" : {returnType.Name}");
 
             return methodLine.ToString();
         }
 
-        string BuildParametersText(IReadOnlyList<Parameter> parameters, bool showParameterTypes)
+        string BuildParametersText(IReadOnlyList<Parameter> parameters)
         {
             var line = new StringBuilder();
             line.Append('(');
 
-            for (int i = 0; i < parameters.Count - 1; i++)
+            for (int i = 0; i < parameters.Count; i++)
             {
                 var parameter = parameters[i];
-                AddComponentName(parameter, line);
-                if (showParameterTypes) line.Append($" : {parameter.GetParameterType().Name}");
-                line.Append(", ");
-            }
+                if (i != 0) line.Append(", ");
 
-            if (parameters.Count != 0)
-            {
-                var parameter = parameters[^1];
                 AddComponentName(parameter, line);
-                if (showParameterTypes) line.Append($" : {parameter.GetParameterType().Name}");
+
+                var parameterType = parameter.GetParameterType();
+                if (parameterType != null) line.Append($" : {parameterType.Name}");
             }
 
             line.Append(')');

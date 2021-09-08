@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using VoiceScript.DiagramModel.Components;
 
@@ -12,6 +11,10 @@ namespace VoiceScript.CodeGeneration
         static readonly string newLine = Environment.NewLine;
         static readonly string semicolon = ";";
         static readonly int tabSpaces = 4;
+
+        static readonly string defaultTypename = "object";
+        static readonly string defaultReturnTypename = "void";
+
         static readonly List<string> keywordTypenames = new()
         {
             "int", "string", "object", "float", "double", "default", "null", "void"
@@ -52,7 +55,10 @@ namespace VoiceScript.CodeGeneration
                 GenerateFieldCode(field, indentation + 1);
             }
 
-            WriteNewLine();
+            if (cls.GetFields().Count != 0 && cls.GetMethods().Count != 0)
+            {
+                WriteNewLine();
+            }
 
             foreach (var method in cls.GetMethods())
             {
@@ -70,7 +76,7 @@ namespace VoiceScript.CodeGeneration
             WriteVisibility(field);
             WriteWhiteSpaceChar();
 
-            WriteTypename(field.GetFieldType().Name);
+            WriteTypename(GetTypename(field.GetFieldType()));
             WriteWhiteSpaceChar();
 
             WriteDefault(field.Name);
@@ -85,7 +91,7 @@ namespace VoiceScript.CodeGeneration
             WriteVisibility(method);
             WriteWhiteSpaceChar();
 
-            WriteTypename(method.GetReturnType().Name);
+            WriteTypename(GetReturnTypename(method.GetReturnType()));
             WriteWhiteSpaceChar();
 
             WriteText(method.Name, CodeColor.MethodColor);
@@ -99,12 +105,9 @@ namespace VoiceScript.CodeGeneration
 
         public void GenerateParametersCode(Method method)
         {
-            var parameters = new List<Parameter>();
+            var parameters = method.GetParameters();
 
             WriteDefault("(");
-
-            parameters.AddRange(method.GetRequiredParameters());
-            parameters.AddRange(method.GetOptionalParameters());
 
             for (int i = 0; i < parameters.Count; i++)
             {
@@ -118,7 +121,7 @@ namespace VoiceScript.CodeGeneration
 
         public void GenerateParameterCode(Parameter parameter)
         {
-            WriteTypename(parameter.GetParameterType().Name);
+            WriteTypename(GetTypename(parameter.GetParameterType()));
             WriteWhiteSpaceChar();
 
             WriteText(parameter.Name, CodeColor.ParameterColor);
@@ -142,6 +145,9 @@ namespace VoiceScript.CodeGeneration
             WriteDefault("();");
             WriteNewLine();
         }
+
+        static string GetTypename(Component typeComponent) => typeComponent == null ? defaultTypename : typeComponent.Name;
+        static string GetReturnTypename(Component typeComponent) => typeComponent == null ? defaultReturnTypename : typeComponent.Name;
 
         void WriteText(string text, Color color)
         {

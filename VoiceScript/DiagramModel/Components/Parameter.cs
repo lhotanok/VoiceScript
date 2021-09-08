@@ -12,8 +12,8 @@ namespace VoiceScript.DiagramModel.Components
         /// <summary>
         /// If parameter type is not defined return default required value.
         /// </summary>
-        /// <returns>Defined value of parameter type or default.</returns>
-        public ParameterType GetParameterType() => GetUniqueChild<ParameterType>() ?? new ParameterType(this);
+        /// <returns>Defined value of parameter type or null.</returns>
+        public ParameterType GetParameterType() => GetUniqueChild<ParameterType>();
 
         /// <summary>
         /// If required value is not defined return default required value.

@@ -38,9 +38,11 @@ namespace VoiceScript.DiagramModel.Commands
 
         static Component GetChildWithSameName(string childName, Component parent)
         {
+            var lowerChildName = childName.ToLower();
+
             foreach (var child in parent.Children)
             {
-                if (child.Name == childName) return child;
+                if (child.Name.ToLower() == lowerChildName) return child;
             }
 
             return null;

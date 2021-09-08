@@ -2,12 +2,7 @@
 {
     public class ParameterType : Type
     {
-        static readonly string defName = "Object";
-        public ParameterType(Component parent) : this(defName, parent) { }
-        public ParameterType(string name, Component parent) : base(name, parent)
-        {
-            defaultName = defName;
-        }
+        public ParameterType(string name, Component parent) : base(name, parent) { }
         public override Component Clone()
         {
             var clone = new ParameterType(Name, Parent);
@@ -15,7 +10,5 @@
 
             return clone;
         }
-
-        public static new string DefaultName => defName;
     }
 }

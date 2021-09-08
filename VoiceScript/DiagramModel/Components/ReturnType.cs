@@ -2,12 +2,7 @@
 {
     public class ReturnType : Type
     {
-        static readonly string defName = "void";
-        public ReturnType(Component parent) : this(defName, parent) { }
-        public ReturnType(string name, Component parent) : base(name, parent)
-        {
-            defaultName = defName;
-        }
+        public ReturnType(string name, Component parent) : base(name, parent) { }
         public override Component Clone()
         {
             var clone = new ReturnType(Name, Parent);
@@ -15,8 +10,6 @@
 
             return clone;
         }
-        public static new string DefaultName => defName;
-
         public override string Name { get => base.Name; set => base.Name = value.ToLower() == "void" ? "void" : value; }
     }
 }
