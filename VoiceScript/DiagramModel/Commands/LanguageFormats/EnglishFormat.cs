@@ -17,11 +17,23 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
             { DeleteCommand.DefaultFormat, new() { DeleteCommand.DefaultFormat, "erase", "cut", "remove" } }
         };
 
+        static readonly Dictionary<string, string> boolValues = new()
+        {
+            { "true", "true" },
+            { "yes", "true" },
+            { "false", "false" },
+            { "no", "false" },
+        };
+
         public override Dictionary<string, List<string>> CommandFormats { get => commandFormats; }
 
-        public override string DelimiterFormat => DelimiterWrapper.CommandDefaultFormat;
+        public override string DelimiterFormat => "escape";
 
         public static string GetCode() => code;
         public override string Code { get => code; }
+
+        public override string ComponentNameFormat { get => "name"; }
+
+        public override Dictionary<string, string> BoolValues { get => boolValues; }
     }
 }

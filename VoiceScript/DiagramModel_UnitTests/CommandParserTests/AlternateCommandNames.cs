@@ -8,6 +8,7 @@ namespace DiagramModel_UnitTests.CommandParserTests
     [TestFixture("attach class person attach field name attach method get name")]
     [TestFixture("attach class person annex field name insert method get name")]
     [TestFixture("attach class person add field name insert method get name")]
+    [TestFixture("Attach class person Annex field name INSERT method get name")]
     public class EnglishAddCommands
     {
         readonly CommandParser parser;

@@ -213,6 +213,9 @@ namespace VoiceScript
                 var currentLanguageCode = voiceTranscriptor.Configuration.LanguageCode;
                 var parsedCommands = diagram.GetParsedCommands(commandTextBox.Text, currentLanguageCode);
 
+                if (parsedCommands.Count == 0)
+                    throw new InvalidOperationException("No command recognized. Nothing to compile.");
+
                 // compile commands
                 commandTextBox.Clear();
                 commandDesigner.DesignCommands(parsedCommands);
@@ -228,6 +231,7 @@ namespace VoiceScript
 
                 // generate and show code
                 codeTextBox.Clear();
+                codeTextBox.Visible = true;
                 codeGenerator.GenerateCode();
 
             }

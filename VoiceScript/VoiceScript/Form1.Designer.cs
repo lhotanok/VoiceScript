@@ -214,6 +214,7 @@ namespace VoiceScript
             this.codeTextBox.Size = new System.Drawing.Size(522, 655);
             this.codeTextBox.TabIndex = 11;
             this.codeTextBox.Text = "";
+            this.codeTextBox.Visible = false;
             // 
             // clearBtn
             // 

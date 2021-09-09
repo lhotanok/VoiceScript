@@ -1,15 +1,18 @@
-﻿namespace VoiceScript.DiagramModel.Commands
+﻿using VoiceScript.DiagramModel.Commands.LanguageFormats;
+
+namespace VoiceScript.DiagramModel.Commands
 {
     class DelimiterWrapper
     {
-        readonly static string command = "escape";
+        readonly string command;
         bool delimiterSet, delimiterPreviouslySet;
-        public DelimiterWrapper()
+        public DelimiterWrapper(LanguageFormat languageFormat)
         {
             (delimiterSet, delimiterPreviouslySet) = (false, false);
+            command = languageFormat.DelimiterFormat;
         }
-        public static string CommandDefaultFormat { get => command; }
-        public static bool IsDelimiter(string word) => word.ToLower() == command;
+        public string CommandDefaultFormat { get => command; }
+        public bool IsDelimiter(string word) => word.ToLower() == command;
 
         public bool DelimiterSet {
             get => delimiterSet;

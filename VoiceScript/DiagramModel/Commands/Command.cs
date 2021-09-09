@@ -1,5 +1,5 @@
 ﻿using System;
-
+using VoiceScript.DiagramModel.Commands.LanguageFormats;
 using VoiceScript.DiagramModel.Components;
 
 namespace VoiceScript.DiagramModel.Commands
@@ -8,11 +8,30 @@ namespace VoiceScript.DiagramModel.Commands
     {
         protected readonly string name, targetType, targetValue;
 
-        public Command(string commandName, string commandTargetType, string commandTargetValue)
+        protected readonly string translatedTargetType;
+        protected readonly string translatedTargetValue;
+
+        protected readonly LanguageFormat language;
+        public Command(string commandName, string commandTargetType, string commandTargetValue, LanguageFormat languageFormat)
         {
             name = commandName;
             targetType = commandTargetType;
             targetValue = commandTargetValue;
+            language = languageFormat;
+
+            translatedTargetType = null;
+            translatedTargetValue = null;
+
+            if (language.ComponentNames.ContainsKey(targetType))
+            {
+                translatedTargetType = language.ComponentNames[targetType];
+            }
+
+            var lowerTargetValue = targetValue.ToLower();
+            if (language.BoolValues.ContainsKey(lowerTargetValue))
+            {
+                translatedTargetValue = language.BoolValues[lowerTargetValue];
+            }
         }
 
         public string Name { get => name; }
@@ -21,9 +40,12 @@ namespace VoiceScript.DiagramModel.Commands
 
         public virtual void Execute(CommandExecutionContext context)
         {
+            if (translatedTargetType == null)
+                throw new InvalidOperationException($"Unsupported component type with name: {targetType}.");
+
             while (context.CurrentComponent != null && !context.CommandExecuted)
             {
-                if (IsChildComponentTypeCompatible(context.CurrentComponent, targetType))
+                if (IsChildComponentTypeCompatible(context.CurrentComponent, translatedTargetType))
                 {
                     ProcessCommand(context);
                 }
@@ -36,8 +58,10 @@ namespace VoiceScript.DiagramModel.Commands
             if (context.CurrentComponent == null)
                 throw new InvalidOperationException("Command can not be executed in the current context.");
         }
-        protected static bool IsChildComponentTypeCompatible(Component component, string componentChildType)
-            => component.ValidChildrenTypes.Contains(componentChildType);
+        protected bool IsChildComponentTypeCompatible(Component component, string componentChildType)
+        {
+            return component.ValidChildrenTypes.Contains(componentChildType);
+        }
 
         /// <summary>
         /// Tries to execute command.

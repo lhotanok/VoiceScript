@@ -6,11 +6,11 @@ namespace VoiceScript.DiagramModel.Commands
 {
     public class CommandFactory
     {
-        static readonly Dictionary<string, Func<string, string, string, Command>> commandCtors = new()
+        static readonly Dictionary<string, Func<string, string, string, LanguageFormat, Command>> commandCtors = new()
         {
-            { AddCommand.DefaultFormat, (name, targetType, targetValue) => new AddCommand(name, targetType, targetValue) },
-            { EditCommand.DefaultFormat, (name, targetType, targetValue) => new EditCommand(name, targetType, targetValue) },
-            { DeleteCommand.DefaultFormat, (name, targetType, targetValue) => new DeleteCommand(name, targetType, targetValue) }
+            { AddCommand.DefaultFormat, (name, targetType, targetValue, language) => new AddCommand(name, targetType, targetValue, language) },
+            { EditCommand.DefaultFormat, (name, targetType, targetValue, language) => new EditCommand(name, targetType, targetValue, language) },
+            { DeleteCommand.DefaultFormat, (name, targetType, targetValue, language) => new DeleteCommand(name, targetType, targetValue, language) }
         };
 
         public static Command CreateCommand(string commandName, string targetType, string targetValue, LanguageFormat language)
@@ -23,7 +23,7 @@ namespace VoiceScript.DiagramModel.Commands
                 {
                     if (command.Value.Contains(commandName))
                     {
-                        return commandCtors[command.Key](commandName, targetType, targetValue);
+                        return commandCtors[command.Key](commandName, targetType, targetValue, language);
                     }
                 }
             }

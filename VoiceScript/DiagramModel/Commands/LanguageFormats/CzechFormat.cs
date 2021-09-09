@@ -19,14 +19,22 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
 
         static readonly Dictionary<string, string> componentNames = new()
         {
-            { Diagram.TypeName, "diagram" },
-            { Class.TypeName, "třídu"},
-            { Field.TypeName, "člen" },
-            { Method.TypeName, "metodu" },
-            { Type.TypeName, "typ" },
-            { Parameter.TypeName, "parametr" },
-            { Required.TypeName, "povinnost" },
-            { Visibility.TypeName, "viditelnost" }
+            { "diagram", Diagram.TypeName },
+            { "třídu", Class.TypeName},
+            { "člen", Field.TypeName },
+            { "metodu", Method.TypeName },
+            { "druh", Type.TypeName },
+            { "parametr", Parameter.TypeName },
+            { "povinnost", Required.TypeName },
+            { "viditelnost", Visibility.TypeName }
+        };
+
+        static readonly Dictionary<string, string> boolValues = new()
+        {
+            { "pravda", "true" },
+            { "ano", "true" },
+            { "nepravda", "false" },
+            { "ne", "false" },
         };
 
         static readonly string delimiterFormat = "přepni";
@@ -36,5 +44,8 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
         public override string DelimiterFormat => delimiterFormat;
         public static string GetCode() => code;
         public override string Code { get => code; }
+        public override string ComponentNameFormat { get => "jméno"; }
+
+        public override Dictionary<string, string> BoolValues { get => boolValues; }
     }
 }

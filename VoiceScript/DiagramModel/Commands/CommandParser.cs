@@ -123,7 +123,7 @@ namespace VoiceScript.DiagramModel.Commands
         string GetTargetName()
         {
             var nameParts = new List<string>();
-            var delimiter = new DelimiterWrapper();
+            var delimiter = new DelimiterWrapper(language);
 
             var word = GetNextWord();
 

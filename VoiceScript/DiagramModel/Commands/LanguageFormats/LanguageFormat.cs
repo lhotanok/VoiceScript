@@ -19,8 +19,10 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
         };
         public abstract string Code { get; }
         public abstract Dictionary<string, List<string>> CommandFormats { get; }
-        public virtual Dictionary<string, string> ComponentNames { get => componentNames; }
         public abstract string DelimiterFormat { get; }
+        public abstract string ComponentNameFormat { get; }
+        public abstract Dictionary<string, string> BoolValues { get; }
+        public virtual Dictionary<string, string> ComponentNames { get => componentNames; }
 
         /// <summary>
         /// Get list of possible command formats.

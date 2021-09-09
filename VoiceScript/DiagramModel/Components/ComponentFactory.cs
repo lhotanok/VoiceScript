@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using VoiceScript.DiagramModel.Commands.LanguageFormats;
 
 namespace VoiceScript.DiagramModel.Components
 {
@@ -19,10 +17,10 @@ namespace VoiceScript.DiagramModel.Components
             { Type.TypeName, (childName, parent) => new Type(childName, parent) },
             { Visibility.TypeName, (childName, parent) => new Visibility(childName, parent) }
         };
-        public static bool CanCreateComponent(string componentType) => componentCtors.ContainsKey(componentType);
-        public static Component CreateComponent(string type, string name, Component parent)
-        {
-            return componentCtors[type](name, parent);
-        }
+
+        public static bool CanCreateComponent(string type) => componentCtors.ContainsKey(type);
+
+        public static Component CreateComponent(string type, string name, Component parent) => componentCtors[type](name, parent);
+
     }
 }

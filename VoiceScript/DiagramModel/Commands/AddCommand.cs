@@ -1,4 +1,5 @@
 ﻿using System;
+using VoiceScript.DiagramModel.Commands.LanguageFormats;
 using VoiceScript.DiagramModel.Components;
 
 namespace VoiceScript.DiagramModel.Commands
@@ -8,17 +9,20 @@ namespace VoiceScript.DiagramModel.Commands
         static readonly string defaultFormat = "add";
         public static string DefaultFormat { get => defaultFormat; }
 
-        public AddCommand(string name, string targetType, string targetName) : base(name, targetType, targetName) { }
+        public AddCommand(string name, string targetType, string targetName, LanguageFormat languageFormat)
+            : base(name, targetType, targetName, languageFormat) { }
 
         protected override void ProcessCommand(CommandExecutionContext context)
         {
-            if (ComponentFactory.CanCreateComponent(targetType))
+            if (ComponentFactory.CanCreateComponent(translatedTargetType))
             {
-                var sameNameChild = GetChildWithSameName(targetValue, context.CurrentComponent);
+                var validTargetValue = translatedTargetValue ?? targetValue;
+
+                var sameNameChild = GetChildWithSameName(validTargetValue, context.CurrentComponent);
 
                 if (sameNameChild == null)
                 {
-                    var childComponent = ComponentFactory.CreateComponent(targetType, targetValue, context.CurrentComponent);
+                    var childComponent = ComponentFactory.CreateComponent(translatedTargetType, validTargetValue, context.CurrentComponent);
 
                     context.CurrentComponent.AddChild(childComponent);
                     context.TargetComponent = childComponent;
@@ -47,5 +51,6 @@ namespace VoiceScript.DiagramModel.Commands
 
             return null;
         }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using VoiceScript.DiagramModel.Commands.LanguageFormats;
 
 namespace VoiceScript.DiagramModel.Commands
 {
@@ -6,13 +7,14 @@ namespace VoiceScript.DiagramModel.Commands
     {
         static readonly string defaultFormat = "edit";
         public static string DefaultFormat { get => defaultFormat; }
-        public EditCommand(string name, string targetType, string targetName) : base(name, targetType, targetName) { }
+        public EditCommand(string name, string targetType, string targetName, LanguageFormat languageFormat)
+            : base(name, targetType, targetName, languageFormat) { }
 
         public override void Execute(CommandExecutionContext context)
         {
             while (context.CurrentComponent != null && !context.CommandExecuted)
             {
-                if (IsEditNameCommand() || IsChildComponentTypeCompatible(context.CurrentComponent, targetType))
+                if (IsEditNameCommand() || IsChildComponentTypeCompatible(context.CurrentComponent, translatedTargetType))
                 {
                     ProcessCommand(context);
                 }
@@ -31,11 +33,13 @@ namespace VoiceScript.DiagramModel.Commands
             else EnterEditedComponentContext(context);
         }
 
-        bool IsEditNameCommand() => targetType == "name";
+        bool IsEditNameCommand() => targetType == language.ComponentNameFormat;
 
         void ChangeEditedComponentName(CommandExecutionContext context)
         {
-            context.CurrentComponent.Name = targetValue;
+            var validTargetValue = translatedTargetValue ?? targetValue;
+
+            context.CurrentComponent.Name = validTargetValue;
             context.CommandExecuted = true;
         }
 
@@ -43,7 +47,8 @@ namespace VoiceScript.DiagramModel.Commands
         {
             while (context.CurrentComponent != null && !context.CommandExecuted)
             {
-                var childToEdit = context.CurrentComponent.FindChild(targetType, targetValue);
+                var validTargetValue = translatedTargetValue ?? targetValue;
+                var childToEdit = context.CurrentComponent.FindChild(translatedTargetType, validTargetValue);
 
                 if (childToEdit != null)
                 {

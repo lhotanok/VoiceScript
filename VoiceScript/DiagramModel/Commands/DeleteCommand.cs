@@ -1,4 +1,5 @@
 ﻿using System;
+using VoiceScript.DiagramModel.Commands.LanguageFormats;
 
 namespace VoiceScript.DiagramModel.Commands
 {
@@ -6,13 +7,16 @@ namespace VoiceScript.DiagramModel.Commands
     {
         static readonly string defaultFormat = "delete";
         public static string DefaultFormat { get => defaultFormat; }
-        public DeleteCommand(string name, string targetType, string targetName) : base(name, targetType, targetName) { }
+        public DeleteCommand(string name, string targetType, string targetName, LanguageFormat languageFormat)
+            : base(name, targetType, targetName, languageFormat) { }
 
         protected override void ProcessCommand(CommandExecutionContext context)
         {
             while (context.CurrentComponent != null && !context.CommandExecuted)
             {
-                if (context.CurrentComponent.TryDeleteChild(targetType, targetValue))
+                var validTargetValue = translatedTargetValue ?? targetValue;
+
+                if (context.CurrentComponent.TryDeleteChild(translatedTargetType, validTargetValue))
                 {
                     context.TargetComponent = context.CurrentComponent;
                     context.CommandExecuted = true;
