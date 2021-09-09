@@ -4,9 +4,9 @@ using VoiceScript.DiagramModel.Components;
 
 namespace VoiceScript.DiagramModel.Commands.LanguageFormats
 {
-    abstract class Format
+    public abstract class LanguageFormat
     {
-        Dictionary<string, string> componentNames = new()
+        readonly Dictionary<string, string> componentNames = new()
         {
             { Diagram.TypeName, Diagram.TypeName },
             { Class.TypeName, Class.TypeName },
@@ -17,9 +17,11 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
             { Required.TypeName, Required.TypeName },
             { Visibility.TypeName, Visibility.TypeName }
         };
+        public abstract string Code { get; }
         public abstract Dictionary<string, List<string>> CommandFormats { get; }
         public virtual Dictionary<string, string> ComponentNames { get => componentNames; }
         public abstract string DelimiterFormat { get; }
+
         /// <summary>
         /// Get list of possible command formats.
         /// </summary>
@@ -31,6 +33,20 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
             return CommandFormats.ContainsKey(commandDefault)
                     ? CommandFormats[commandDefault]
                     : null;
+        }
+
+        public IList<string> GetAllCommandFormats()
+        {
+            var commandFormats = new List<string>();
+
+            var commandFormatValues = CommandFormats.Values;
+
+            foreach (var commandFormat in commandFormatValues)
+            {
+                commandFormats.AddRange(commandFormat);
+            }
+
+            return commandFormats;
         }
     }
 }

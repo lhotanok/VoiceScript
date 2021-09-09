@@ -100,6 +100,7 @@ namespace VoiceScript
                 => voiceTranscriptor.Configuration.LanguageCode = ((Language)languages.SelectedItem).LanguageCode;
         }
 
+        #region Textbox manipulation
         /// <summary>
         /// Write converted speech from audio file into <see cref="commandTextBox"/>.
         /// </summary>
@@ -129,7 +130,9 @@ namespace VoiceScript
                 textBox.SelectedText = text;
             }));
         }
+        #endregion
 
+        #region Button click events callbacks
         /// <summary>
         /// Start speech recording.
         /// </summary>
@@ -207,7 +210,8 @@ namespace VoiceScript
         {
             try
             {
-                var parsedCommands = diagram.GetParsedCommands(commandTextBox.Text);
+                var currentLanguageCode = voiceTranscriptor.Configuration.LanguageCode;
+                var parsedCommands = diagram.GetParsedCommands(commandTextBox.Text, currentLanguageCode);
 
                 // compile commands
                 commandTextBox.Clear();
@@ -236,13 +240,13 @@ namespace VoiceScript
         private void clearBtn_Click(object sender, EventArgs e)
         {
             diagram.Clear();
-
             codeTextBox.Clear();
 
             gViewer.Graph = diagramDesigner.CreateGraphDiagram(diagram.GetClasses());
             ResumeLayout();
         }
-
+        #endregion
+        
         void PlaybackStoppedCallback()
         {
             appState = ApplicationState.Waiting;

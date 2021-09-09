@@ -20,6 +20,9 @@ namespace VoiceScript.DiagramModel.Components
             { Visibility.TypeName, (childName, parent) => new Visibility(childName, parent) }
         };
         public static bool CanCreateComponent(string componentType) => componentCtors.ContainsKey(componentType);
-        public static Func<string, Component, Component> GetComponentCtor(string componentType) => componentCtors[componentType];
+        public static Component CreateComponent(string type, string name, Component parent)
+        {
+            return componentCtors[type](name, parent);
+        }
     }
 }

@@ -4,14 +4,15 @@ using VoiceScript.DiagramModel.Components;
 
 namespace VoiceScript.DiagramModel.Commands.LanguageFormats
 {
-    class CzechFormat : Format
+    public class CzechFormat : LanguageFormat
     {
+        static readonly string code = "cs-CZ";
         /// <summary>
         /// Key is default command format, values are all possible formats.
         /// </summary>
         static readonly Dictionary<string, List<string>> commandFormats = new()
         {
-            { AddCommand.DefaultFormat, new() { "přidej", "vlož", "připoj" } },
+            { AddCommand.DefaultFormat, new() { "přidej", "vlož", "připoj", "vytvoř" } },
             { EditCommand.DefaultFormat, new() { "uprav", "oprav", "změň", "edituj" } },
             { DeleteCommand.DefaultFormat, new() { "smaž", "vymaž", "odstraň", "vystřihni" } }
         };
@@ -19,9 +20,9 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
         static readonly Dictionary<string, string> componentNames = new()
         {
             { Diagram.TypeName, "diagram" },
-            { Class.TypeName, "tříd"},
+            { Class.TypeName, "třídu"},
             { Field.TypeName, "člen" },
-            { Method.TypeName, "metod" },
+            { Method.TypeName, "metodu" },
             { Type.TypeName, "typ" },
             { Parameter.TypeName, "parametr" },
             { Required.TypeName, "povinnost" },
@@ -33,5 +34,7 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
         public override Dictionary<string, List<string>> CommandFormats { get => commandFormats; }
         public override Dictionary<string, string> ComponentNames => componentNames;
         public override string DelimiterFormat => delimiterFormat;
+        public static string GetCode() => code;
+        public override string Code { get => code; }
     }
 }

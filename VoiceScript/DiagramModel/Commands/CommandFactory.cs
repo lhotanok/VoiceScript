@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using VoiceScript.DiagramModel.Commands.LanguageFormats;
 
 namespace VoiceScript.DiagramModel.Commands
 {
@@ -11,7 +12,23 @@ namespace VoiceScript.DiagramModel.Commands
             { EditCommand.DefaultFormat, (name, targetType, targetValue) => new EditCommand(name, targetType, targetValue) },
             { DeleteCommand.DefaultFormat, (name, targetType, targetValue) => new DeleteCommand(name, targetType, targetValue) }
         };
-        public static bool CanCreateCommand(string commandName) => commandCtors.ContainsKey(commandName);
-        public static Func<string, string, string, Command> GetCommandCtor(string commandName) => commandCtors[commandName];
+
+        public static Command CreateCommand(string commandName, string targetType, string targetValue, LanguageFormat language)
+        {
+            var possibleCommands = language.CommandFormats;
+
+            foreach (var command in possibleCommands)
+            {
+                if (commandCtors.ContainsKey(command.Key))
+                {
+                    if (command.Value.Contains(commandName))
+                    {
+                        return commandCtors[command.Key](commandName, targetType, targetValue);
+                    }
+                }
+            }
+
+            return null;
+        }
     }
 }

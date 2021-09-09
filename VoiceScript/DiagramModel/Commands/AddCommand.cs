@@ -18,8 +18,7 @@ namespace VoiceScript.DiagramModel.Commands
 
                 if (sameNameChild == null)
                 {
-                    var childComponentCtor = ComponentFactory.GetComponentCtor(targetType);
-                    var childComponent = childComponentCtor(targetValue, context.CurrentComponent);
+                    var childComponent = ComponentFactory.CreateComponent(targetType, targetValue, context.CurrentComponent);
 
                     context.CurrentComponent.AddChild(childComponent);
                     context.TargetComponent = childComponent;

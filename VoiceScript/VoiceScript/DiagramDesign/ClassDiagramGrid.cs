@@ -20,7 +20,7 @@ namespace VoiceScript.DiagramDesign
         public string BuildGridText()
         {
             var gridText = new StringBuilder();
-            var maxLineLength = (GetMaxLineLength() / 4) * 3;
+            var maxLineLength = (GetMaxLineLength() / 6) * 5;
 
             for (int i = 0; i < cells.Count - 1; i++)
             {

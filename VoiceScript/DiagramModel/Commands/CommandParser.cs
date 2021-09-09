@@ -1,20 +1,37 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
+using VoiceScript.DiagramModel.Commands.LanguageFormats;
 
 namespace VoiceScript.DiagramModel.Commands
 {
     public class CommandParser
     {
-        readonly static List<string> validKeywords = new() {
-            AddCommand.DefaultFormat,
-            EditCommand.DefaultFormat,
-            DeleteCommand.DefaultFormat,
-            DelimiterWrapper.CommandDefaultFormat
-        };
+        readonly LanguageFormat language;
 
         string[] parsedWords;
         int parsedOffset;
+
+        public CommandParser(string languageCode = null)
+        {
+            if (languageCode == null) languageCode = EnglishFormat.GetCode();
+
+            language = LanguageFormatFactory.CreateLanguageFormat(languageCode);
+
+            #region Handle invalid language code
+            if (language == null)
+            {
+                var exceptionMessage = $"Unsupported language format: {languageCode}. Supported formats are: ";
+                var supportedFormats = LanguageFormatFactory.GetSupportedFormats();
+                for (int i = 0; i < supportedFormats.Count; i++)
+                {
+                    if (i != 0) exceptionMessage += ", ";
+                    exceptionMessage += supportedFormats[i];
+                }
+                throw new InvalidOperationException(exceptionMessage);
+            }
+            #endregion
+        }
 
         public IList<Command> GetParsedCommands(string inputText)
         {
@@ -51,6 +68,19 @@ namespace VoiceScript.DiagramModel.Commands
             return firstLetter + remainingLetters;
         }
 
+        public static string ParsePascalCase(IEnumerable<string> wordFragments)
+        {
+            var pascalCaseWord = new StringBuilder();
+
+            foreach (var fragment in wordFragments)
+            {
+                var firstLetter = fragment[0].ToString().ToUpper();
+                pascalCaseWord.Append(firstLetter + fragment[1..]);
+            }
+
+            return pascalCaseWord.ToString();
+        }
+
         Command GetNextCommand()
         {
             var commandName = GetCommandName();
@@ -63,13 +93,15 @@ namespace VoiceScript.DiagramModel.Commands
 
             var targetName = GetTargetName();
 
-            if (IncompleteCommandTarget(targetType, targetName) || !CommandFactory.CanCreateCommand(commandName))
-            {
-                throw new InvalidOperationException("Invalid command.");
-            }
+            if (IncompleteCommandTarget(targetType, targetName))
+                throw new InvalidOperationException("Incomplete command target provided.");
 
-            // key for getting ctor is command default name, parameter for ctor should be actual command name
-            return CommandFactory.GetCommandCtor(commandName)(commandName, targetType, targetName);
+            var command = CommandFactory.CreateCommand(commandName, targetType, targetName, language);
+
+            if (command == null)
+                throw new InvalidOperationException($"Unsupported command name: {commandName}.");
+
+            return command;
         }
 
         string GetCommandName()
@@ -124,22 +156,16 @@ namespace VoiceScript.DiagramModel.Commands
 
         string GetNextWord() => parsedOffset < parsedWords.Length ? parsedWords[parsedOffset] : string.Empty;
 
-        static bool IsKeyword(string word) => validKeywords.Contains(word.ToLower());
+        bool IsKeyword(string word)
+        {
+            var lowerWord = word.ToLower();
+
+            return language.GetAllCommandFormats().Contains(lowerWord)
+                || language.DelimiterFormat == lowerWord;
+        }
+
         static bool IncompleteCommandTarget(string targetType, string targetName)
             => targetType == string.Empty || targetName == string.Empty;
-
-        static string ParsePascalCase(IEnumerable<string> words)
-        {
-            var pascalCaseWord = new StringBuilder();
-
-            foreach (var word in words)
-            {
-                var firstLetter = word[0].ToString().ToUpper();
-                pascalCaseWord.Append(firstLetter + word[1..]);
-            }
-
-            return pascalCaseWord.ToString();
-        }
 
         static string GetWordBeforeLineFeed(string word)
         {
