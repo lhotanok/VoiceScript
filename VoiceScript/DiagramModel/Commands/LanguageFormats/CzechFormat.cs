@@ -58,6 +58,11 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
             { "privátní", "private" }
         };
 
+        static readonly Dictionary<string, string> valuesToReplace = new()
+        {
+            { "pole", "array" },
+        };
+
         static readonly string delimiterFormat = "přepni";
 
         public override Dictionary<string, List<string>> CommandFormats { get => commandFormats; }
@@ -68,5 +73,6 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
         public override string ComponentNameFormat { get => "jméno"; }
 
         public override Dictionary<string, string> ValueConstants { get => constantValues; }
+        public override Dictionary<string, string> ValuesToReplace { get => valuesToReplace; }
     }
 }

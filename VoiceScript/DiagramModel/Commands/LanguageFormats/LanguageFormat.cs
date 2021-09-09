@@ -12,6 +12,7 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
         public abstract string ComponentNameFormat { get; }
         public abstract Dictionary<string, string> ValueConstants { get; }
         public abstract Dictionary<string, string> ComponentNames { get; }
+        public virtual Dictionary<string, string> ValuesToReplace { get => new(); }
 
         /// <summary>
         /// Get list of possible command formats.

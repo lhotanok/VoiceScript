@@ -168,11 +168,11 @@ namespace VoiceScript.DiagramModel.Commands
                     delimiter.UpdateDelimiterContext(word);
                     if (!delimiter.Escape() && !delimiter.DelimiterSet) break;
 
-                    if (delimiter.Escape()) nameParts.Add(word);
+                    if (delimiter.Escape()) AddWordToNameParts(word, nameParts);
                 }
                 else
                 {
-                    nameParts.Add(word);
+                    AddWordToNameParts(word, nameParts);
                 }
 
                 parsedOffset++;
@@ -180,6 +180,17 @@ namespace VoiceScript.DiagramModel.Commands
             }
 
             return ParsePascalCase(nameParts);
+        }
+
+        void AddWordToNameParts(string word, List<string> nameParts)
+        {
+            var lowerWord = word.ToLower();
+            if (language.ValuesToReplace.ContainsKey(lowerWord))
+            {
+                word = language.ValuesToReplace[lowerWord];
+            }
+
+            nameParts.Add(word);
         }
 
         string GetNextWord() => parsedOffset < parsedWords.Count ? parsedWords[parsedOffset] : string.Empty;
