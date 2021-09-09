@@ -85,4 +85,25 @@ namespace DiagramModel_UnitTests.CommandExecutionTests
             Assert.AreEqual(1, diagram.GetClasses()[0].GetMethods().Count);
         }
     }
+
+    public class AdditionOfArrayTypeComponent : CommandExecution
+    {
+        [TestCase("add class person add method get phone numbers add parameter phone numbers add type array of integer", "Integer[]")]
+        [TestCase("add class person add method get phone numbers add parameter phone numbers add type array integer", "Integer[]")]
+        public void AddArrayTypeComponent_CheckThatTypenameWasParsedToArrayStyle(string inputText, string arrayTypename)
+        {
+            diagram.ConvertTextToDiagram(inputText);
+
+            Assert.AreEqual(arrayTypename, diagram.GetClasses()[0].GetMethods()[0].GetParameters()[0].GetParameterType().Name);
+        }
+
+        [TestCase("add class person add method get home addresses add parameter addresses add type array home address", "HomeAddress[]")]
+        [TestCase("add class person add method get home addresses add parameter addresses add type array of home address", "HomeAddress[]")]
+        public void AddArrayTypeComponent_CheckThatMultipleWordTypenameWasParsedToArrayStyle(string inputText, string arrayTypename)
+        {
+            diagram.ConvertTextToDiagram(inputText);
+
+            Assert.AreEqual(arrayTypename, diagram.GetClasses()[0].GetMethods()[0].GetParameters()[0].GetParameterType().Name);
+        }
+    }
 }
