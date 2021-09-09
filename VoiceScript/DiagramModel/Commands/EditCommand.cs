@@ -25,7 +25,7 @@ namespace VoiceScript.DiagramModel.Commands
             }
 
             if (context.CurrentComponent == null)
-                throw new InvalidOperationException("Command can not be executed in the current context.");
+                throw new CommandExecutionException("Edit command can not be executed in the current context.");
         }
         protected override void ProcessCommand(CommandExecutionContext context)
         {
@@ -62,7 +62,7 @@ namespace VoiceScript.DiagramModel.Commands
                 }
             }
 
-            throw new InvalidOperationException("Component can not be edited. It does not exist in the current context.");
+            throw new CommandExecutionException("Component can not be edited. It does not exist in the current context.");
         }
     }
 }

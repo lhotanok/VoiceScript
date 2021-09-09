@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using VoiceScript.DiagramModel.Commands;
 
 namespace DiagramModel_UnitTests.CommandExecutionTests
 {
@@ -112,14 +113,14 @@ namespace DiagramModel_UnitTests.CommandExecutionTests
         [Test]
         public void TryAddVisibilityWithInvalidName_CheckThatExceptionIsThrown()
         {
-            Assert.Throws<InvalidOperationException>(
+            Assert.Throws<CommandExecutionException>(
                 () => ExecuteCommands("add class car add method get color add visibility specific"));
         }
 
         [Test]
         public void ExecuteAddUndefinedCommand_CheckThatExceptionIsThrownIfTargetTypeIsUnknown()
         {
-            Assert.Throws<InvalidOperationException>(() => ExecuteCommands("add undefined car"));
+            Assert.Throws<CommandExecutionException>(() => ExecuteCommands("add undefined car"));
         }
 
         void ExecuteCommands(string inputText)

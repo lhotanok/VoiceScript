@@ -28,7 +28,7 @@ namespace VoiceScript.DiagramModel.Commands
                     if (i != 0) exceptionMessage += ", ";
                     exceptionMessage += supportedFormats[i];
                 }
-                throw new InvalidOperationException(exceptionMessage);
+                throw new CommandParseException(exceptionMessage);
             }
             #endregion
         }
@@ -53,7 +53,7 @@ namespace VoiceScript.DiagramModel.Commands
                 }
                 catch (Exception ex)
                 {
-                    ThrowParseErrorException(ex, parsedCommands, offsetBeforeCommand);
+                    ThrowParseException(ex, parsedCommands, offsetBeforeCommand);
                 }
                 
             }
@@ -105,27 +105,16 @@ namespace VoiceScript.DiagramModel.Commands
             parsedOffset = 0;
         }
 
-        void ThrowParseErrorException(Exception ex, List<Command> parsedCommands, int successParsedOffset)
+        void ThrowParseException(Exception ex, List<Command> parsedCommands, int successParsedOffset)
         {
-            // handle problematic words containing newline character(s)
-            if (parsedCommands.Count != 0)
-            {
-                var lastParsedCommand = parsedCommands[^1];
-                var lastCommandTargetValue = lastParsedCommand.TargetValue;
-                if (lastCommandTargetValue.Contains('\n')) successParsedOffset++;
-            }
-
             var unparsedWords = new List<string>();
             for (int i = successParsedOffset; i < parsedWords.Count; i++)
             {
                 unparsedWords.Add(parsedWords[i]);
             }
 
-            var exc = new InvalidOperationException(ex.Message + $" Successfully parsed commands: {parsedCommands.Count}.");
-            exc.Data.Add("parsedCommands", parsedCommands);
-            exc.Data.Add("unparsedWords", unparsedWords);
-
-            throw exc;
+            var message = $"Successfully parsed {parsedCommands.Count} commands.\n\n" + ex.Message;
+            throw new CommandParseException(message, parsedCommands, unparsedWords);
         }
 
         Command GetNextCommand()
@@ -133,7 +122,7 @@ namespace VoiceScript.DiagramModel.Commands
             var commandName = GetCommandName();
             parsedOffset++;
 
-            if (!IsKeyword(commandName)) return null;
+            if (!IsCommandKeyword(commandName)) return null;
 
             var targetType = GetNextWord().ToLower();
             parsedOffset++;
@@ -141,12 +130,13 @@ namespace VoiceScript.DiagramModel.Commands
             var targetName = GetTargetName();
 
             if (IncompleteCommandTarget(targetType, targetName))
-                throw new InvalidOperationException("Incomplete command target provided.");
+                throw new CommandParseException("Incomplete command target in next command."
+                     + "\nCommand format is: NAME  TARGET_TYPE  TARGET_VALUE");
 
             var command = CommandFactory.CreateCommand(commandName, targetType, targetName, language);
 
             if (command == null)
-                throw new InvalidOperationException($"Unsupported command name: {commandName}.");
+                throw new CommandParseException($"Unsupported command name: {commandName}.");
 
             return command;
         }
@@ -155,7 +145,7 @@ namespace VoiceScript.DiagramModel.Commands
         {
             var word = GetNextWord();
 
-            while (word != string.Empty && !IsKeyword(word))
+            while (word != string.Empty && !IsCommandKeyword(word))
             {
                 parsedOffset++;
                 word = GetNextWord();
@@ -173,7 +163,7 @@ namespace VoiceScript.DiagramModel.Commands
 
             while (word != string.Empty)
             {
-                if (IsKeyword(word))
+                if (IsCommandKeyword(word))
                 {
                     delimiter.UpdateDelimiterContext(word);
                     if (!delimiter.Escape() && !delimiter.DelimiterSet) break;
@@ -194,7 +184,7 @@ namespace VoiceScript.DiagramModel.Commands
 
         string GetNextWord() => parsedOffset < parsedWords.Count ? parsedWords[parsedOffset] : string.Empty;
 
-        bool IsKeyword(string word)
+        bool IsCommandKeyword(string word)
         {
             var lowerWord = word.ToLower();
 

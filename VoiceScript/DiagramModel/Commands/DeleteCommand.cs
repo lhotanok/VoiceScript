@@ -28,7 +28,7 @@ namespace VoiceScript.DiagramModel.Commands
                 }
             }
 
-            throw new InvalidOperationException("Component can not be deleted. It does not exist in the current context.");
+            throw new CommandExecutionException("Component can not be deleted. It does not exist in the current context.");
         }
     }
 }

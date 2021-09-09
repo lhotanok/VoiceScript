@@ -216,17 +216,25 @@ namespace VoiceScript
                 var parsedCommands = diagram.GetParsedCommands(commandTextBox.Text, currentLanguageCode);
 
                 if (parsedCommands.Count == 0)
-                    throw new InvalidOperationException("No command recognized. Nothing to compile.");
+                    throw new CommandParseException("No command recognized. Nothing to compile.");
 
                 CompileParsedCommands(parsedCommands);
                 GenerateDiagram(parsedCommands);
                 GenerateCode();
 
             }
+            catch (CommandParseException ex)
+            {
+                ProcessParsingError(ex);
+                MessageBox.Show(ex.Message, "Command Parse Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (CommandExecutionException ex)
+            {
+                MessageBox.Show(ex.Message, "Command Execution Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             catch (Exception ex)
             {
-                TryProcessParsingError(ex);
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Unknown Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -255,22 +263,17 @@ namespace VoiceScript
             codeGenerator.GenerateCode();
         }
 
-        void TryProcessParsingError(Exception ex)
+        void ProcessParsingError(CommandParseException ex)
         {
-            if (ex.Data.Contains("parsedCommands"))
+            if (ex.ParsedCommands.Count != 0)
             {
-                var parsedCommands = (List<Command>)ex.Data["parsedCommands"];
-                if (parsedCommands.Count != 0)
-                {
-                    CompileParsedCommands(parsedCommands);
-                    AppendToTextbox(commandTextBox, Environment.NewLine);
-                }
+                CompileParsedCommands(ex.ParsedCommands);
+                commandTextBox.AppendText(Environment.NewLine);
+            }
 
-                var unparsedWords = (List<string>)ex.Data["unparsedWords"];
-                foreach (var word in unparsedWords)
-                {
-                    AppendToTextbox(commandTextBox, word);
-                }
+            foreach (var word in ex.UnparsedWords)
+            {
+                AppendToTextbox(commandTextBox, word);
             }
         }
         #endregion

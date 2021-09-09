@@ -40,7 +40,7 @@ namespace DiagramModel_UnitTests.CommandParserTests
         [TestCase("add")]
         public void TryParseCommand_CheckThatExceptionIsThrown(string inputText)
         {
-            Assert.Throws<InvalidOperationException>(() => parser.GetParsedCommands(inputText));
+            Assert.Throws<CommandParseException>(() => parser.GetParsedCommands(inputText));
         }
     }
 }

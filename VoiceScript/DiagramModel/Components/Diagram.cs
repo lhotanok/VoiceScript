@@ -58,6 +58,7 @@ namespace VoiceScript.DiagramModel.Components
         {
 
             var clonedDiagram = Clone();
+            var currentCommandNumber = 1;
 
             try
             {
@@ -65,12 +66,14 @@ namespace VoiceScript.DiagramModel.Components
                 {
                     InitializeCommandExecutionContext(context.TargetComponent);
                     command.Execute(context);
+
+                    currentCommandNumber++;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 RevertChanges(clonedDiagram);
-                throw;
+                throw new CommandExecutionException($"Error while executing {currentCommandNumber}. command.\n\n" + ex.Message);
             }
             
         }

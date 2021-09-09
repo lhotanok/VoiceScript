@@ -14,30 +14,29 @@ namespace VoiceScript.DiagramModel.Commands
 
         protected override void ProcessCommand(CommandExecutionContext context)
         {
-            if (ComponentFactory.CanCreateComponent(translatedTargetType))
+            if (!ComponentFactory.CanCreateComponent(translatedTargetType))
             {
-                var validTargetValue = translatedTargetValue ?? targetValue;
+                throw new CommandExecutionException("Invalid component type given.\n" +
+                    $"Original type: {targetType}.\nDerived type: {translatedTargetType}");
+            }
+            
+            var validTargetValue = translatedTargetValue ?? targetValue;
 
-                var sameNameChild = GetChildWithSameName(validTargetValue, context.CurrentComponent);
+            var sameNameChild = GetChildWithSameName(validTargetValue, context.CurrentComponent);
 
-                if (sameNameChild == null)
-                {
-                    var childComponent = ComponentFactory.CreateComponent(translatedTargetType, validTargetValue, context.CurrentComponent);
+            if (sameNameChild == null)
+            {
+                var childComponent = ComponentFactory.CreateComponent(translatedTargetType, validTargetValue, context.CurrentComponent);
 
-                    context.CurrentComponent.AddChild(childComponent);
-                    context.TargetComponent = childComponent;
-                }
-                else
-                {
-                    context.TargetComponent = sameNameChild;
-                }
-
-                context.CommandExecuted = true;
+                context.CurrentComponent.AddChild(childComponent);
+                context.TargetComponent = childComponent;
             }
             else
             {
-                throw new InvalidOperationException("Invalid component type given.");
+                context.TargetComponent = sameNameChild;
             }
+
+            context.CommandExecuted = true;
         }
 
         static Component GetChildWithSameName(string childName, Component parent)

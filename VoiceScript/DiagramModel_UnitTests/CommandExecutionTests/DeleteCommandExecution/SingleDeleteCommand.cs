@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using VoiceScript.DiagramModel.Commands;
 
 namespace DiagramModel_UnitTests.CommandExecutionTests
 {
@@ -22,7 +23,7 @@ namespace DiagramModel_UnitTests.CommandExecutionTests
         [TestCase("add class person add field name add type string add method get name add visibility public delete type string")]
         public void TryExecuteDeleteCommandWithInvalidTargetTypeInCurrentContext_CheckThatExceptionIsThrown(string inputText)
         {
-            Assert.Throws<InvalidOperationException>(() => diagram.ConvertTextToDiagram(inputText));
+            Assert.Throws<CommandExecutionException>(() => diagram.ConvertTextToDiagram(inputText));
         }
     }
 }

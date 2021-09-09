@@ -1,5 +1,4 @@
-﻿using System;
-using VoiceScript.DiagramModel.Commands.LanguageFormats;
+﻿using VoiceScript.DiagramModel.Commands.LanguageFormats;
 using VoiceScript.DiagramModel.Components;
 
 namespace VoiceScript.DiagramModel.Commands
@@ -41,7 +40,7 @@ namespace VoiceScript.DiagramModel.Commands
         public virtual void Execute(CommandExecutionContext context)
         {
             if (translatedTargetType == null)
-                throw new InvalidOperationException($"Unsupported component type with name: {targetType}.");
+                throw new CommandExecutionException($"Unsupported component type: {targetType}.");
 
             while (context.CurrentComponent != null && !context.CommandExecuted)
             {
@@ -56,7 +55,7 @@ namespace VoiceScript.DiagramModel.Commands
             }
 
             if (context.CurrentComponent == null)
-                throw new InvalidOperationException("Command can not be executed in the current context.");
+                throw new CommandExecutionException("Command can not be executed in the current context.");
         }
         protected bool IsChildComponentTypeCompatible(Component component, string componentChildType)
         {

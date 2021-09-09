@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using VoiceScript.DiagramModel.Commands;
 
 namespace DiagramModel_UnitTests.CommandExecutionTests
 {
@@ -32,7 +33,7 @@ namespace DiagramModel_UnitTests.CommandExecutionTests
             var parsedCommands = parser.GetParsedCommands(inputText);
             InitializeCommandExecutionContext(diagram);
 
-            Assert.Throws<InvalidOperationException>(() => parsedCommands[0].Execute(context));
+            Assert.Throws<CommandExecutionException>(() => parsedCommands[0].Execute(context));
         }
 
         [TestCase("add field name")]
@@ -40,7 +41,7 @@ namespace DiagramModel_UnitTests.CommandExecutionTests
         [TestCase("Add diagram my diagram")]
         public void TryExecuteAddCommandUsingDiagramAPIWithInvalidTargetTypeInCurrentContext_CheckThatExceptionIsThrown(string inputText)
         {
-            Assert.Throws<InvalidOperationException>(() => diagram.ConvertTextToDiagram(inputText));
+            Assert.Throws<CommandExecutionException>(() => diagram.ConvertTextToDiagram(inputText));
         }
     }
 }
