@@ -9,7 +9,7 @@ namespace VoiceScript.DiagramModel.Commands
     {
         readonly LanguageFormat language;
 
-        string[] parsedWords;
+        List<string> parsedWords;
         int parsedOffset;
 
         public CommandParser(string languageCode = null)
@@ -35,22 +35,25 @@ namespace VoiceScript.DiagramModel.Commands
 
         public IList<Command> GetParsedCommands(string inputText)
         {
-            parsedWords = inputText.Split(' ');
-            parsedOffset = 0;
+            ParseIntoWords(inputText);
 
             var parsedCommands = new List<Command>();
+
+            var offsetBeforeCommand = parsedOffset;
             var command = GetNextCommand();
 
             while (command != null)
             {
                 parsedCommands.Add(command);
+
                 try
                 {
+                    offsetBeforeCommand = parsedOffset;
                     command = GetNextCommand();
                 }
                 catch (Exception ex)
                 {
-                    throw new InvalidOperationException(ex.Message + $" Successfully parsed commands: {parsedCommands.Count}.");
+                    ThrowParseErrorException(ex, parsedCommands, offsetBeforeCommand);
                 }
                 
             }
@@ -81,6 +84,50 @@ namespace VoiceScript.DiagramModel.Commands
             return pascalCaseWord.ToString();
         }
 
+        void ParseIntoWords(string inputText)
+        {
+            parsedWords = new List<string>();
+
+            var splitWords = inputText.Split(' ');
+
+            foreach (var word in splitWords)
+            {
+                var fragments = word.Split('\n');
+                foreach (var fragment in fragments)
+                {
+                    if (fragment != string.Empty)
+                    {
+                        parsedWords.Add(fragment);
+                    }
+                }
+            }
+
+            parsedOffset = 0;
+        }
+
+        void ThrowParseErrorException(Exception ex, List<Command> parsedCommands, int successParsedOffset)
+        {
+            // handle problematic words containing newline character(s)
+            if (parsedCommands.Count != 0)
+            {
+                var lastParsedCommand = parsedCommands[^1];
+                var lastCommandTargetValue = lastParsedCommand.TargetValue;
+                if (lastCommandTargetValue.Contains('\n')) successParsedOffset++;
+            }
+
+            var unparsedWords = new List<string>();
+            for (int i = successParsedOffset; i < parsedWords.Count; i++)
+            {
+                unparsedWords.Add(parsedWords[i]);
+            }
+
+            var exc = new InvalidOperationException(ex.Message + $" Successfully parsed commands: {parsedCommands.Count}.");
+            exc.Data.Add("parsedCommands", parsedCommands);
+            exc.Data.Add("unparsedWords", unparsedWords);
+
+            throw exc;
+        }
+
         Command GetNextCommand()
         {
             var commandName = GetCommandName();
@@ -108,13 +155,10 @@ namespace VoiceScript.DiagramModel.Commands
         {
             var word = GetNextWord();
 
-            if (word.Contains('\n')) word = GetWordAfterLineFeed(word);
-
             while (word != string.Empty && !IsKeyword(word))
             {
                 parsedOffset++;
                 word = GetNextWord();
-                if (word.Contains('\n')) word = GetWordAfterLineFeed(word);
             }
 
             return word.ToLower();
@@ -129,12 +173,6 @@ namespace VoiceScript.DiagramModel.Commands
 
             while (word != string.Empty)
             {
-                if (word.Contains('\n'))
-                {
-                    word = GetWordBeforeLineFeed(word);
-                    if (word != string.Empty) nameParts.Add(word);
-                    break;
-                }
                 if (IsKeyword(word))
                 {
                     delimiter.UpdateDelimiterContext(word);
@@ -154,7 +192,7 @@ namespace VoiceScript.DiagramModel.Commands
             return ParsePascalCase(nameParts);
         }
 
-        string GetNextWord() => parsedOffset < parsedWords.Length ? parsedWords[parsedOffset] : string.Empty;
+        string GetNextWord() => parsedOffset < parsedWords.Count ? parsedWords[parsedOffset] : string.Empty;
 
         bool IsKeyword(string word)
         {
@@ -166,36 +204,5 @@ namespace VoiceScript.DiagramModel.Commands
 
         static bool IncompleteCommandTarget(string targetType, string targetName)
             => targetType == string.Empty || targetName == string.Empty;
-
-        static string GetWordBeforeLineFeed(string word)
-        {
-            var substring = new StringBuilder();
-
-            int index = 0;
-            while (index < word.Length && word[index] != '\n')
-            {
-                substring.Append(word[index]);
-                index++;
-            }
-
-            return substring.ToString();
-        }
-
-        static string GetWordAfterLineFeed(string word)
-        {
-            var wordFragments = word.Split('\n');
-            var substring = string.Empty;
-
-            for (int i = wordFragments.Length - 1; i >= 0; i--)
-            {
-                if (wordFragments[i] != string.Empty)
-                {
-                    substring = wordFragments[i];
-                    break;
-                }
-            }
-
-            return substring;
-        }
     }
 }

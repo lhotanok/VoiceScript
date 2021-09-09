@@ -28,9 +28,9 @@ namespace VoiceScript.DiagramModel.Commands
             }
 
             var lowerTargetValue = targetValue.ToLower();
-            if (language.BoolValues.ContainsKey(lowerTargetValue))
+            if (language.ValueConstants.ContainsKey(lowerTargetValue))
             {
-                translatedTargetValue = language.BoolValues[lowerTargetValue];
+                translatedTargetValue = language.ValueConstants[lowerTargetValue];
             }
         }
 

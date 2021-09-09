@@ -18,10 +18,15 @@ namespace VoiceScript.CommandDesign
         {
             foreach (var command in commands)
             {
-                textCallback(command.Name + " ", CommandColor.NameColor);
-                textCallback(command.TargetType + " ", CommandColor.TargetTypeColor);
-                textCallback(command.TargetValue + Environment.NewLine, CommandColor.TargetValueColor);
+                DesignCommand(command);
             }
+        }
+
+        public void DesignCommand(Command command)
+        {
+            textCallback(command.Name + " ", CommandColor.NameColor);
+            textCallback(command.TargetType + " ", CommandColor.TargetTypeColor);
+            textCallback(command.TargetValue + Environment.NewLine, CommandColor.TargetValueColor);
         }
     }
 }

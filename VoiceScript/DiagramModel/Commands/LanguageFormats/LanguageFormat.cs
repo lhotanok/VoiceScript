@@ -6,23 +6,12 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
 {
     public abstract class LanguageFormat
     {
-        readonly Dictionary<string, string> componentNames = new()
-        {
-            { Diagram.TypeName, Diagram.TypeName },
-            { Class.TypeName, Class.TypeName },
-            { Field.TypeName, Field.TypeName },
-            { Method.TypeName, Method.TypeName },
-            { Type.TypeName, Type.TypeName },
-            { Parameter.TypeName, Parameter.TypeName },
-            { Required.TypeName, Required.TypeName },
-            { Visibility.TypeName, Visibility.TypeName }
-        };
         public abstract string Code { get; }
         public abstract Dictionary<string, List<string>> CommandFormats { get; }
         public abstract string DelimiterFormat { get; }
         public abstract string ComponentNameFormat { get; }
-        public abstract Dictionary<string, string> BoolValues { get; }
-        public virtual Dictionary<string, string> ComponentNames { get => componentNames; }
+        public abstract Dictionary<string, string> ValueConstants { get; }
+        public abstract Dictionary<string, string> ComponentNames { get; }
 
         /// <summary>
         /// Get list of possible command formats.

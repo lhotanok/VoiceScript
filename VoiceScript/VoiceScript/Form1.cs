@@ -8,6 +8,8 @@ using VoiceScript.DiagramModel.Components;
 using VoiceScript.CodeGeneration;
 using System.Drawing;
 using VoiceScript.CommandDesign;
+using System.Collections.Generic;
+using VoiceScript.DiagramModel.Commands;
 
 namespace VoiceScript
 {
@@ -169,7 +171,6 @@ namespace VoiceScript
 
         void convertBtn_Click(object sender, EventArgs e)
         {
-            DisableButtons(convertBtn);
             EnableButtons(recordBtn, playBtn);
 
             if (File.Exists(audioFilename)) WriteTranscriptToTextbox(audioFilename);
@@ -206,6 +207,7 @@ namespace VoiceScript
             }
         }
 
+        #region Compile button handling
         void compileBtn_Click(object sender, EventArgs e)
         {
             try
@@ -216,32 +218,64 @@ namespace VoiceScript
                 if (parsedCommands.Count == 0)
                     throw new InvalidOperationException("No command recognized. Nothing to compile.");
 
-                // compile commands
-                commandTextBox.Clear();
-                commandDesigner.DesignCommands(parsedCommands);
-
-                // execute commands
-                diagram.ConvertTextToDiagram(commandTextBox.Text, parsedCommands);
-                var classes = diagram.GetClasses();
-
-                // show diagram
-                gViewer.Visible = true;
-                gViewer.Graph = diagramDesigner.CreateGraphDiagram(classes);
-                ResumeLayout();
-
-                // generate and show code
-                codeTextBox.Clear();
-                codeTextBox.Visible = true;
-                codeGenerator.GenerateCode();
+                CompileParsedCommands(parsedCommands);
+                GenerateDiagram(parsedCommands);
+                GenerateCode();
 
             }
             catch (Exception ex)
             {
+                TryProcessParsingError(ex);
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void clearBtn_Click(object sender, EventArgs e)
+        void CompileParsedCommands(IList<Command> commands)
+        {
+            commandTextBox.Clear();
+            commandDesigner.DesignCommands(commands);
+        }
+
+        void GenerateDiagram(IList<Command> parsedCommands)
+        {
+            // execute commands
+            diagram.ConvertTextToDiagram(commandTextBox.Text, parsedCommands);
+            var classes = diagram.GetClasses();
+
+            // show diagram
+            gViewer.Visible = true;
+            gViewer.Graph = diagramDesigner.CreateGraphDiagram(classes);
+            ResumeLayout();
+        }
+
+        void GenerateCode()
+        {
+            codeTextBox.Clear();
+            codeTextBox.Visible = true;
+            codeGenerator.GenerateCode();
+        }
+
+        void TryProcessParsingError(Exception ex)
+        {
+            if (ex.Data.Contains("parsedCommands"))
+            {
+                var parsedCommands = (List<Command>)ex.Data["parsedCommands"];
+                if (parsedCommands.Count != 0)
+                {
+                    CompileParsedCommands(parsedCommands);
+                    AppendToTextbox(commandTextBox, Environment.NewLine);
+                }
+
+                var unparsedWords = (List<string>)ex.Data["unparsedWords"];
+                foreach (var word in unparsedWords)
+                {
+                    AppendToTextbox(commandTextBox, word);
+                }
+            }
+        }
+        #endregion
+
+        void clearBtn_Click(object sender, EventArgs e)
         {
             diagram.Clear();
             codeTextBox.Clear();

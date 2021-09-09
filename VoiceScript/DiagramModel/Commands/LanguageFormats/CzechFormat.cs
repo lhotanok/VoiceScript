@@ -7,6 +7,7 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
     public class CzechFormat : LanguageFormat
     {
         static readonly string code = "cs-CZ";
+
         /// <summary>
         /// Key is default command format, values are all possible formats.
         /// </summary>
@@ -21,20 +22,40 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
         {
             { "diagram", Diagram.TypeName },
             { "třídu", Class.TypeName},
+
             { "člen", Field.TypeName },
+            { "atribut", Field.TypeName },
+
             { "metodu", Method.TypeName },
+            { "funkci", Method.TypeName },
+
+            { "typ", Type.TypeName },
             { "druh", Type.TypeName },
+            { "tip", Type.TypeName }, // Google's speech-to-text often chooses "tip" over "typ" in this context 
+
             { "parametr", Parameter.TypeName },
+            { "parameter", Parameter.TypeName },
+
             { "povinnost", Required.TypeName },
-            { "viditelnost", Visibility.TypeName }
+
+            { "viditelnost", Visibility.TypeName },
+            { "ochranu", Visibility.TypeName }
         };
 
-        static readonly Dictionary<string, string> boolValues = new()
+        static readonly Dictionary<string, string> constantValues = new()
         {
             { "pravda", "true" },
             { "ano", "true" },
             { "nepravda", "false" },
+            { "lež", "false" },
             { "ne", "false" },
+
+            { "řetězec", "string" },
+
+            { "veřejná", "public" },
+            { "interní", "internal" },
+            { "chráněná", "protected" },
+            { "privátní", "private" }
         };
 
         static readonly string delimiterFormat = "přepni";
@@ -46,6 +67,6 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
         public override string Code { get => code; }
         public override string ComponentNameFormat { get => "jméno"; }
 
-        public override Dictionary<string, string> BoolValues { get => boolValues; }
+        public override Dictionary<string, string> ValueConstants { get => constantValues; }
     }
 }

@@ -47,8 +47,8 @@ namespace VoiceScript.DiagramModel.Components
 
             for (int i = 0; i < validNames.Count; i++)
             {
+                if (i != 0) validVisibilityValues.Append(separator);
                 validVisibilityValues.Append(validNames[i]);
-                if (i != validNames.Count - 1) validVisibilityValues.Append(separator);
             }
 
             return validVisibilityValues.ToString();
@@ -59,7 +59,7 @@ namespace VoiceScript.DiagramModel.Components
             if (!validNames.Contains(name))
             {
                 var validNamesJoined = GetValidNamesJoined(", ");
-                throw new InvalidOperationException($"Invalid name of visibility level provided. Valid values are: {validNamesJoined}.");
+                throw new InvalidOperationException($"Invalid name of visibility level provided: {name}. Valid values are: {validNamesJoined}.");
             }
         }
     }
