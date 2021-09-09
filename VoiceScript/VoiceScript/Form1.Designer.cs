@@ -44,6 +44,11 @@ namespace VoiceScript
             this.gViewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             this.codeTextBox = new System.Windows.Forms.RichTextBox();
             this.clearBtn = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // recordBtn
@@ -175,7 +180,7 @@ namespace VoiceScript
             this.gViewer.InsertingEdge = false;
             this.gViewer.LayoutAlgorithmSettingsButtonVisible = false;
             this.gViewer.LayoutEditingEnabled = true;
-            this.gViewer.Location = new System.Drawing.Point(410, 61);
+            this.gViewer.Location = new System.Drawing.Point(0, 0);
             this.gViewer.LooseOffsetForRouting = 0.25D;
             this.gViewer.MouseHitDistance = 0.05D;
             this.gViewer.Name = "gViewer";
@@ -189,7 +194,7 @@ namespace VoiceScript
             this.gViewer.SaveButtonVisible = true;
             this.gViewer.SaveGraphButtonVisible = true;
             this.gViewer.SaveInVectorFormatEnabled = true;
-            this.gViewer.Size = new System.Drawing.Size(393, 656);
+            this.gViewer.Size = new System.Drawing.Size(447, 644);
             this.gViewer.TabIndex = 10;
             this.gViewer.TightOffsetForRouting = 0.125D;
             this.gViewer.ToolBarIsVisible = true;
@@ -203,15 +208,16 @@ namespace VoiceScript
             // codeTextBox
             // 
             this.codeTextBox.AcceptsTab = true;
-            this.codeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.codeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.codeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.codeTextBox.EnableAutoDragDrop = true;
             this.codeTextBox.Font = new System.Drawing.Font("Consolas", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.codeTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.codeTextBox.Location = new System.Drawing.Point(850, 60);
+            this.codeTextBox.Location = new System.Drawing.Point(3, 0);
             this.codeTextBox.Name = "codeTextBox";
-            this.codeTextBox.Size = new System.Drawing.Size(522, 655);
+            this.codeTextBox.Size = new System.Drawing.Size(482, 644);
             this.codeTextBox.TabIndex = 11;
             this.codeTextBox.Text = "";
             this.codeTextBox.Visible = false;
@@ -228,6 +234,26 @@ namespace VoiceScript
             this.clearBtn.UseVisualStyleBackColor = false;
             this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Location = new System.Drawing.Point(410, 73);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.gViewer);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.codeTextBox);
+            this.splitContainer1.Size = new System.Drawing.Size(961, 644);
+            this.splitContainer1.SplitterDistance = 450;
+            this.splitContainer1.SplitterWidth = 35;
+            this.splitContainer1.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -236,8 +262,6 @@ namespace VoiceScript
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(1384, 728);
             this.Controls.Add(this.clearBtn);
-            this.Controls.Add(this.codeTextBox);
-            this.Controls.Add(this.gViewer);
             this.Controls.Add(this.compileBtn);
             this.Controls.Add(this.realTimeTranscBtn);
             this.Controls.Add(this.languages);
@@ -246,12 +270,17 @@ namespace VoiceScript
             this.Controls.Add(this.playBtn);
             this.Controls.Add(this.convertBtn);
             this.Controls.Add(this.recordBtn);
+            this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VoiceScript";
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -270,6 +299,7 @@ namespace VoiceScript
         private Microsoft.Msagl.GraphViewerGdi.GViewer gViewer;
         private RichTextBox codeTextBox;
         private Button clearBtn;
+        private SplitContainer splitContainer1;
     }
 }
 
