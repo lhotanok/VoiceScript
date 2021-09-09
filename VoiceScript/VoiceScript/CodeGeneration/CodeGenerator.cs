@@ -156,17 +156,33 @@ namespace VoiceScript.CodeGeneration
 
         void WriteTypename(string typename)
         {
-            var lowerTypename = typename.ToLower();
+            var isArray = TryParseArray(ref typename);
+
+            var lowerTypename = typename.ToLower(); 
             if (lowerTypename == "integer") lowerTypename = "int";
 
             if (keywordTypenames.Contains(lowerTypename))
-            {
+            {            
                 textCallback(lowerTypename, CodeColor.KeywordColor);
             }
             else
             {
                 WriteClassTypename(typename);
             }
+
+            if (isArray) WriteDefault("[]");
+        }
+
+        static bool TryParseArray(ref string typename)
+        {
+            var suffix = "[]";
+            if (typename.Contains(suffix))
+            {
+                typename = typename.Substring(0, typename.Length - suffix.Length);
+                return true;
+            }
+
+            return false;
         }
 
         void WriteVisibility(IVisibleComponent component) => WriteKeyword(component.GetVisibility().Name);
