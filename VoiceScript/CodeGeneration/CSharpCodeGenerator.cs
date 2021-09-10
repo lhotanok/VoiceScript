@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Text;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
+
 using DiagramModel.Components;
 
-namespace VoiceScript.CodeGeneration
+namespace CodeGeneration
 {
-    class CodeGenerator
+    public class CSharpCodeGenerator : ICodeGenerator
     {
         static readonly string newLine = Environment.NewLine;
         static readonly string semicolon = ";";
@@ -23,7 +24,7 @@ namespace VoiceScript.CodeGeneration
         readonly Diagram diagram;
         readonly Action<string, Color> textCallback;
 
-        public CodeGenerator(Diagram diagramModel, Action<string, Color> writeTextCallback)
+        public CSharpCodeGenerator(Diagram diagramModel, Action<string, Color> writeTextCallback)
         {
             diagram = diagramModel;
             textCallback = writeTextCallback;
@@ -118,7 +119,7 @@ namespace VoiceScript.CodeGeneration
             WriteDefault(")");
         }
 
-        public void GenerateParameterCode(Parameter parameter)
+        public void GenerateParameterCode(Parameter parameter, int indentation = 0)
         {
             WriteTypename(GetTypename(parameter.GetParameterType()));
             WriteWhiteSpaceChar();

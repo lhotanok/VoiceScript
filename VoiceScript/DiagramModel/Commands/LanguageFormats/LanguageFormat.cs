@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 
-using DiagramModel.Components;
-
 namespace DiagramModel.Commands.LanguageFormats
 {
     public abstract class LanguageFormat

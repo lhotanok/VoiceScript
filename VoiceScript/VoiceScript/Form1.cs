@@ -7,12 +7,12 @@ using System.Windows.Forms;
 using DiagramModel.Components;
 using DiagramModel.Commands;
 
+using CodeGeneration;
+
 using VoiceScript.CommandDesign;
 using VoiceScript.DiagramDesign;
 
 using VoiceScript.VoiceTranscription;
-
-using VoiceScript.CodeGeneration;
 
 namespace VoiceScript
 {
@@ -27,7 +27,7 @@ namespace VoiceScript
 
         readonly CommandDesigner commandDesigner;
 
-        readonly CodeGenerator codeGenerator;
+        readonly ICodeGenerator codeGenerator;
 
         readonly string audioFilename;
 
@@ -63,7 +63,7 @@ namespace VoiceScript
             diagram = new Diagram();
             diagramDesigner = new DiagramDesigner();
 
-            codeGenerator = new CodeGenerator(diagram, (text, color) => AppendToTextbox(codeTextBox, text, color));
+            codeGenerator = new CSharpCodeGenerator(diagram, (text, color) => AppendToTextbox(codeTextBox, text, color));
             commandDesigner = new CommandDesigner((text, color) => AppendToTextbox(commandTextBox, text, color));
 
             appState = ApplicationState.Waiting;

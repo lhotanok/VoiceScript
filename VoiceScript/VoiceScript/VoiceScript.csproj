@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CodeGeneration\CodeGeneration.csproj" />
     <ProjectReference Include="..\DiagramModel\DiagramModel.csproj" />
     <ProjectReference Include="..\VoiceTranscription\VoiceTranscription.csproj" />
   </ItemGroup>

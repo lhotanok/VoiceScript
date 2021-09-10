@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace VoiceScript.CodeGeneration
+namespace CodeGeneration
 {
     class CodeColor
     {
