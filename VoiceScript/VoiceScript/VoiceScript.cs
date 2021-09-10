@@ -16,7 +16,7 @@ using VoiceScript.VoiceTranscription;
 
 namespace VoiceScript
 {
-    public partial class Form1 : Form
+    public partial class VoiceScript : Form
     {
         readonly IAudioRecorder audioRecorder;
         readonly IVoiceTranscriptor voiceTranscriptor;
@@ -33,7 +33,7 @@ namespace VoiceScript
 
         ApplicationState appState;
 
-        public Form1()
+        public VoiceScript()
         {
             InitializeComponent();
 

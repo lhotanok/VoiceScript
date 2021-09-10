@@ -2,7 +2,7 @@
 
 namespace VoiceScript
 {
-    partial class Form1
+    partial class VoiceScript
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,7 +31,7 @@ namespace VoiceScript
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VoiceScript));
             this.recordBtn = new System.Windows.Forms.Button();
             this.convertBtn = new System.Windows.Forms.Button();
             this.playBtn = new System.Windows.Forms.Button();
@@ -217,7 +217,7 @@ namespace VoiceScript
             this.codeTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.codeTextBox.Location = new System.Drawing.Point(3, 0);
             this.codeTextBox.Name = "codeTextBox";
-            this.codeTextBox.Size = new System.Drawing.Size(482, 644);
+            this.codeTextBox.Size = new System.Drawing.Size(451, 644);
             this.codeTextBox.TabIndex = 11;
             this.codeTextBox.Text = "";
             this.codeTextBox.Visible = false;
@@ -254,7 +254,7 @@ namespace VoiceScript
             this.splitContainer1.SplitterWidth = 35;
             this.splitContainer1.TabIndex = 14;
             // 
-            // Form1
+            // VoiceScript
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -274,7 +274,7 @@ namespace VoiceScript
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
+            this.Name = "VoiceScript";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VoiceScript";
             this.splitContainer1.Panel1.ResumeLayout(false);
