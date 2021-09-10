@@ -62,7 +62,7 @@ namespace VoiceScript
             this.recordBtn.TabIndex = 0;
             this.recordBtn.Text = "Record";
             this.recordBtn.UseVisualStyleBackColor = false;
-            this.recordBtn.Click += new System.EventHandler(this.recordBtn_Click);
+            this.recordBtn.Click += new System.EventHandler(this.RecordBtnClickCallback);
             // 
             // convertBtn
             // 
@@ -75,7 +75,7 @@ namespace VoiceScript
             this.convertBtn.TabIndex = 2;
             this.convertBtn.Text = "Convert";
             this.convertBtn.UseVisualStyleBackColor = false;
-            this.convertBtn.Click += new System.EventHandler(this.convertBtn_Click);
+            this.convertBtn.Click += new System.EventHandler(this.ConvertBtnClickCallback);
             // 
             // playBtn
             // 
@@ -88,7 +88,7 @@ namespace VoiceScript
             this.playBtn.TabIndex = 3;
             this.playBtn.Text = "Play";
             this.playBtn.UseVisualStyleBackColor = false;
-            this.playBtn.Click += new System.EventHandler(this.playBtn_Click);
+            this.playBtn.Click += new System.EventHandler(this.PlayBtnClickCallback);
             // 
             // commandTextBox
             // 
@@ -122,7 +122,7 @@ namespace VoiceScript
             this.stopBtn.Text = "Stop";
             this.stopBtn.UseVisualStyleBackColor = false;
             this.stopBtn.Visible = false;
-            this.stopBtn.Click += new System.EventHandler(this.stopBtn_Click);
+            this.stopBtn.Click += new System.EventHandler(this.StopBtnClickCallback);
             // 
             // languages
             // 
@@ -147,7 +147,7 @@ namespace VoiceScript
             this.realTimeTranscBtn.TabIndex = 8;
             this.realTimeTranscBtn.Text = "Real-time transcription";
             this.realTimeTranscBtn.UseVisualStyleBackColor = false;
-            this.realTimeTranscBtn.Click += new System.EventHandler(this.realTimeTranscBtn_Click);
+            this.realTimeTranscBtn.Click += new System.EventHandler(this.RealTimeTranscBtnClickCallback);
             // 
             // compileBtn
             // 
@@ -159,7 +159,7 @@ namespace VoiceScript
             this.compileBtn.TabIndex = 9;
             this.compileBtn.Text = "Compile";
             this.compileBtn.UseVisualStyleBackColor = false;
-            this.compileBtn.Click += new System.EventHandler(this.compileBtn_Click);
+            this.compileBtn.Click += new System.EventHandler(this.CompileBtnClickCallback);
             // 
             // gViewer
             // 
@@ -232,7 +232,7 @@ namespace VoiceScript
             this.clearBtn.TabIndex = 13;
             this.clearBtn.Text = "Clear";
             this.clearBtn.UseVisualStyleBackColor = false;
-            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            this.clearBtn.Click += new System.EventHandler(this.ClearBtnClickCallback);
             // 
             // splitContainer1
             // 

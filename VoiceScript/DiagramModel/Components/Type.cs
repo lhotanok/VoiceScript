@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace VoiceScript.DiagramModel.Components
+namespace DiagramModel.Components
 {
     public class Type : Component
     {

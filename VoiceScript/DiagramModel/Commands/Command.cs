@@ -1,7 +1,7 @@
-﻿using VoiceScript.DiagramModel.Commands.LanguageFormats;
-using VoiceScript.DiagramModel.Components;
+﻿using DiagramModel.Commands.LanguageFormats;
+using DiagramModel.Components;
 
-namespace VoiceScript.DiagramModel.Commands
+namespace DiagramModel.Commands
 {
     public abstract class Command
     {
@@ -57,7 +57,7 @@ namespace VoiceScript.DiagramModel.Commands
             if (context.CurrentComponent == null)
                 throw new CommandExecutionException("Command can not be executed in the current context.");
         }
-        protected bool IsChildComponentTypeCompatible(Component component, string componentChildType)
+        protected static bool IsChildComponentTypeCompatible(Component component, string componentChildType)
         {
             return component.ValidChildrenTypes.Contains(componentChildType);
         }

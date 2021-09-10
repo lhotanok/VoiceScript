@@ -1,15 +1,18 @@
 ﻿using System;
 using System.IO;
+using System.Drawing;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
-using VoiceScript.VoiceTranscription;
-using VoiceScript.DiagramDesign;
-using VoiceScript.DiagramModel.Components;
-using VoiceScript.CodeGeneration;
-using System.Drawing;
+using DiagramModel.Components;
+using DiagramModel.Commands;
+
 using VoiceScript.CommandDesign;
-using System.Collections.Generic;
-using VoiceScript.DiagramModel.Commands;
+using VoiceScript.DiagramDesign;
+
+using VoiceScript.VoiceTranscription;
+
+using VoiceScript.CodeGeneration;
 
 namespace VoiceScript
 {
@@ -148,7 +151,7 @@ namespace VoiceScript
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void recordBtn_Click(object sender, EventArgs e)
+        void RecordBtnClickCallback(object sender, EventArgs e)
         {
             if (audioRecorder.RecordingDeviceAvailable() && appState == ApplicationState.Waiting)
             {
@@ -168,7 +171,7 @@ namespace VoiceScript
                 else MessageBox.Show("You can not start recording in the current state.");
             }
         }
-        void realTimeTranscBtn_Click(object sender, EventArgs e)
+        void RealTimeTranscBtnClickCallback(object sender, EventArgs e)
         {
             if (appState == ApplicationState.Recording)
             {
@@ -177,7 +180,7 @@ namespace VoiceScript
             }
         }
 
-        void convertBtn_Click(object sender, EventArgs e)
+        void ConvertBtnClickCallback(object sender, EventArgs e)
         {
             EnableButtons(recordBtn, playBtn);
 
@@ -185,7 +188,7 @@ namespace VoiceScript
             else MessageBox.Show("No audio file found.");
         }
 
-        void playBtn_Click(object sender, EventArgs e)
+        void PlayBtnClickCallback(object sender, EventArgs e)
         {
             if (File.Exists(audioFilename))
             {
@@ -196,7 +199,7 @@ namespace VoiceScript
             else MessageBox.Show("No audio file found.");
         }
 
-        void stopBtn_Click(object sender, EventArgs e)
+        void StopBtnClickCallback(object sender, EventArgs e)
         {
             if (appState == ApplicationState.Recording)
             {
@@ -216,12 +219,12 @@ namespace VoiceScript
         }
 
         #region Compile button handling
-        void compileBtn_Click(object sender, EventArgs e)
+        void CompileBtnClickCallback(object sender, EventArgs e)
         {
             try
             {
                 var currentLanguageCode = voiceTranscriptor.Configuration.LanguageCode;
-                var parsedCommands = diagram.GetParsedCommands(commandTextBox.Text, currentLanguageCode);
+                var parsedCommands = Diagram.GetParsedCommands(commandTextBox.Text, currentLanguageCode);
 
                 if (parsedCommands.Count == 0)
                     throw new CommandParseException("No command recognized. Nothing to compile.");
@@ -286,7 +289,7 @@ namespace VoiceScript
         }
         #endregion
 
-        void clearBtn_Click(object sender, EventArgs e)
+        void ClearBtnClickCallback(object sender, EventArgs e)
         {
             diagram.Clear();
             codeTextBox.Clear();

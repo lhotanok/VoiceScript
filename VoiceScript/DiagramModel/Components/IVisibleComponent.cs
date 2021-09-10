@@ -1,4 +1,4 @@
-﻿namespace VoiceScript.DiagramModel.Components
+﻿namespace DiagramModel.Components
 {
     public interface IVisibleComponent
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
-using VoiceScript.DiagramModel.Commands.LanguageFormats;
+using DiagramModel.Commands.LanguageFormats;
 
-namespace VoiceScript.DiagramModel.Commands
+namespace DiagramModel.Commands
 {
     public class CommandParser
     {
@@ -167,23 +167,35 @@ namespace VoiceScript.DiagramModel.Commands
 
             while (word != string.Empty)
             {
-                if (IsCommandKeyword(word))
+                var addToTargetName = false;
+
+                #region Break if new un-escaped command is detected, update escaping context
+                if (!IsCommandKeyword(word))
                 {
-                    var autoEscaping = (nameParts.Count == 0) && (word.ToLower() != currentCommandName);
-
-                    delimiter.UpdateDelimiterContext(word);
-
-                    // new command detected
-                    if (!delimiter.Escape() && !delimiter.DelimiterSet && !autoEscaping) break;
-
-                    // escaped command detected
-                    if (autoEscaping || delimiter.Escape()) AddWordToNameParts(word, nameParts);
-                    delimiter.DelimiterSet = false;
+                    addToTargetName = true;
                 }
                 else
                 {
-                    AddWordToNameParts(word, nameParts);
+                    if (IsAutoEscaping(word, currentCommandName, nameParts) && !delimiter.DelimiterSet)
+                    {
+                        addToTargetName = true;
+                    }
+                    else
+                    {
+                        #region Handle manual escaping
+                        delimiter.TryConsumeDelimiter();
+
+                        if (IsNewCommand(word, delimiter)) break; // we need to avoid shifting parsed offset
+
+                        else if (delimiter.DelimiterConsumed) addToTargetName = true;
+
+                        else if (delimiter.IsDelimiter(word)) delimiter.DelimiterSet = true;
+                        #endregion
+                    }
                 }
+                #endregion
+
+                if (addToTargetName == true) AddWordToNameParts(word, nameParts);
 
                 parsedOffset++;
                 word = GetNextWord();
@@ -212,7 +224,16 @@ namespace VoiceScript.DiagramModel.Commands
 
             return isCommandKeyword || language.DelimiterFormat == lowerWord;
         }
-
+        
+        bool IsAutoEscaping(string word, string currentCommand, List<string> nameParts)
+        {
+            var lowerWord = word.ToLower();
+            return (nameParts.Count == 0) && (lowerWord != currentCommand) && (lowerWord != language.DelimiterFormat);
+        }
+        static bool IsNewCommand(string word, DelimiterWrapper delimiter)
+        {
+            return !delimiter.IsDelimiter(word) && !delimiter.DelimiterConsumed;
+        }
         static bool IncompleteCommandTarget(string targetType, string targetName)
             => targetType == string.Empty || targetName == string.Empty;
     }

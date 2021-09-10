@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using VoiceScript.DiagramModel.Commands.LanguageFormats;
+using DiagramModel.Commands.LanguageFormats;
 
-namespace VoiceScript.DiagramModel.Commands
+namespace DiagramModel.Commands
 {
     public class CommandFactory
     {

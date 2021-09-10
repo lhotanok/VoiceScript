@@ -1,39 +1,28 @@
-﻿using VoiceScript.DiagramModel.Commands.LanguageFormats;
+﻿using DiagramModel.Commands.LanguageFormats;
 
-namespace VoiceScript.DiagramModel.Commands
+namespace DiagramModel.Commands
 {
     class DelimiterWrapper
     {
-        readonly string command;
-        bool delimiterSet, delimiterPreviouslySet;
+        readonly string escapeCommand;
         public DelimiterWrapper(LanguageFormat languageFormat)
         {
-            (delimiterSet, delimiterPreviouslySet) = (false, false);
-            command = languageFormat.DelimiterFormat;
+            escapeCommand = languageFormat.DelimiterFormat;
+            DelimiterSet = false;
         }
-        public string CommandDefaultFormat { get => command; }
-        public bool IsDelimiter(string word) => word.ToLower() == command;
+        public string CommandDefaultFormat { get => escapeCommand; }
+        public bool IsDelimiter(string word) => word.ToLower() == escapeCommand;
 
-        public bool DelimiterSet {
-            get => delimiterSet;
-
-            set {
-                delimiterPreviouslySet = delimiterSet;
-                delimiterSet = value;
-            }
-        }
-
-        public bool Escape() => delimiterPreviouslySet;
-
-        public void UpdateDelimiterContext(string word)
+        public bool DelimiterSet { get; set; }
+        public bool DelimiterConsumed { get; private set; }
+        public void TryConsumeDelimiter()
         {
-            if (IsDelimiter(word) && !DelimiterSet)
+            DelimiterConsumed = false;
+
+            if (DelimiterSet)
             {
-                DelimiterSet = true; // set delimiter for the next run
-            }
-            else if (DelimiterSet)
-            {
-                DelimiterSet = false; // consume delimiter
+                DelimiterSet = false;
+                DelimiterConsumed = true;
             }
         }
     }

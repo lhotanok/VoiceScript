@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Msagl.Drawing;
 
-using VoiceScript.DiagramModel.Components;
+using DiagramModel.Components;
 
 namespace VoiceScript.DiagramDesign
 {

@@ -66,6 +66,8 @@ namespace VoiceScript.VoiceTranscription
             StopRecording();
             writer?.Dispose();
             waveIn?.Dispose();
+
+            GC.SuppressFinalize(this);
         }
 
         public double GetFileSecondsLength(string audioFilename) => new AudioFileReader(audioFilename).TotalTime.TotalSeconds;

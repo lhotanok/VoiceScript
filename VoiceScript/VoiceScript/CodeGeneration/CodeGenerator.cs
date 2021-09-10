@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
-using VoiceScript.DiagramModel.Components;
+using DiagramModel.Components;
 
 namespace VoiceScript.CodeGeneration
 {

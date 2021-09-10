@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using VoiceScript.DiagramModel.Commands;
+using DiagramModel.Commands;
 
 namespace VoiceScript.CommandDesign
 {

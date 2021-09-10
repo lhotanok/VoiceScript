@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace VoiceScript.DiagramModel.Components
+namespace DiagramModel.Components
 {
     public class Visibility : Component
     {
@@ -18,7 +18,7 @@ namespace VoiceScript.DiagramModel.Components
 
         public static string DefaultName { get => defaultName; }
 
-        public IEnumerable<string> ValidNames { get => validNames; }
+        public static IEnumerable<string> ValidNames { get => validNames; }
 
         public override string GetUniqueTypeName() => TypeName;
 

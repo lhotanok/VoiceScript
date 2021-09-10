@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
-using VoiceScript.DiagramModel.Components;
+
+using DiagramModel.Components;
 
 namespace VoiceScript.DiagramDesign
 {
@@ -125,7 +125,7 @@ namespace VoiceScript.DiagramDesign
             return methodLine.ToString();
         }
 
-        string BuildParametersText(IReadOnlyList<Parameter> parameters)
+        static string BuildParametersText(IReadOnlyList<Parameter> parameters)
         {
             var line = new StringBuilder();
             line.Append('(');

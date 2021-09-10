@@ -1,6 +1,6 @@
-﻿using VoiceScript.DiagramModel.Components;
+﻿using DiagramModel.Components;
 
-namespace VoiceScript.DiagramModel.Commands
+namespace DiagramModel.Commands
 {
     public class CommandExecutionContext
     {

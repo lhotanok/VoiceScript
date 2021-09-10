@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-using VoiceScript.DiagramModel.Components;
+using DiagramModel.Components;
 
-namespace VoiceScript.DiagramModel.Commands.LanguageFormats
+namespace DiagramModel.Commands.LanguageFormats
 {
     public abstract class LanguageFormat
     {

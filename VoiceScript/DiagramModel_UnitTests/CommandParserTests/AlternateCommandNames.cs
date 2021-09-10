@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 
-using VoiceScript.DiagramModel.Commands;
-using VoiceScript.DiagramModel.Commands.LanguageFormats;
+using DiagramModel.Commands;
+using DiagramModel.Commands.LanguageFormats;
 
 namespace DiagramModel_UnitTests.CommandParserTests
 {

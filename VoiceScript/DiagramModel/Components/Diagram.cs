@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using VoiceScript.DiagramModel.Commands;
+using DiagramModel.Commands;
 
-namespace VoiceScript.DiagramModel.Components
+namespace DiagramModel.Components
 {
     public class Diagram : Component
     {
@@ -29,7 +29,7 @@ namespace VoiceScript.DiagramModel.Components
             return classes;
         }
 
-        public IList<Command> GetParsedCommands(string text, string languageCode = null)
+        public static IList<Command> GetParsedCommands(string text, string languageCode = null)
         {
             var parser = new CommandParser(languageCode);
 

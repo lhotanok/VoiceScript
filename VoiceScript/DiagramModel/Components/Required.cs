@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace VoiceScript.DiagramModel.Components
+namespace DiagramModel.Components
 {
     public class Required : Component
     {

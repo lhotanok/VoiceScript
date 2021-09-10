@@ -14,9 +14,10 @@ namespace VoiceScript.VoiceTranscription
     {
         readonly IAudioRecorder recorder;
         readonly StreamRecognizer streamRecognizer;
-        readonly LongRunningRecognizer longRunningRecognizer;
         readonly RecognitionConfig configuration;
         readonly int shortAudioFileSeconds = 30;
+
+        // readonly LongRunningRecognizer longRunningRecognizer;
 
         public VoiceTranscriptor(IAudioRecorder audioRecorder)
         {
@@ -31,7 +32,7 @@ namespace VoiceScript.VoiceTranscription
 
             recorder = audioRecorder;
             streamRecognizer = new StreamRecognizer(configuration, recorder);
-            longRunningRecognizer = new LongRunningRecognizer(configuration);
+            // longRunningRecognizer = new LongRunningRecognizer(configuration);
 
             SetGoogleCloudCredentialsPath();
         }

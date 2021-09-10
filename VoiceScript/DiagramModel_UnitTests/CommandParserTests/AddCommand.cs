@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using NUnit.Framework;
 
-using VoiceScript.DiagramModel.Commands;
+using DiagramModel.Commands;
 
 namespace DiagramModel_UnitTests.CommandParserTests
 {

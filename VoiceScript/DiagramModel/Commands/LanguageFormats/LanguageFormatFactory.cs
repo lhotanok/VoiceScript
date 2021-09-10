@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace VoiceScript.DiagramModel.Commands.LanguageFormats
+namespace DiagramModel.Commands.LanguageFormats
 {
     class LanguageFormatFactory
     {

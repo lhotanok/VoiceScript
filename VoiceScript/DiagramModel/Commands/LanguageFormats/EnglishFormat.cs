@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using VoiceScript.DiagramModel.Components;
 
-namespace VoiceScript.DiagramModel.Commands.LanguageFormats
+using DiagramModel.Components;
+
+namespace DiagramModel.Commands.LanguageFormats
 {
     public class EnglishFormat : LanguageFormat
     {

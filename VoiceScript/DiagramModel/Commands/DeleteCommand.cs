@@ -1,7 +1,6 @@
-﻿using System;
-using VoiceScript.DiagramModel.Commands.LanguageFormats;
+﻿using DiagramModel.Commands.LanguageFormats;
 
-namespace VoiceScript.DiagramModel.Commands
+namespace DiagramModel.Commands
 {
     public class DeleteCommand : Command
     {

@@ -1,6 +1,5 @@
-﻿using System;
-using NUnit.Framework;
-using VoiceScript.DiagramModel.Commands;
+﻿using NUnit.Framework;
+using DiagramModel.Commands;
 
 namespace DiagramModel_UnitTests.CommandExecutionTests
 {

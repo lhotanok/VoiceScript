@@ -1,8 +1,7 @@
-﻿using System;
-using VoiceScript.DiagramModel.Commands.LanguageFormats;
-using VoiceScript.DiagramModel.Components;
+﻿using DiagramModel.Commands.LanguageFormats;
+using DiagramModel.Components;
 
-namespace VoiceScript.DiagramModel.Commands
+namespace DiagramModel.Commands
 {
     public class AddCommand : Command
     {

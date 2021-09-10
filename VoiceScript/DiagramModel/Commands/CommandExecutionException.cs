@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VoiceScript.DiagramModel.Commands
+namespace DiagramModel.Commands
 {
     public class CommandExecutionException : InvalidOperationException
     {

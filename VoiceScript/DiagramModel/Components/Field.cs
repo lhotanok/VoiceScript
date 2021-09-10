@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using VoiceScript.DiagramModel.Commands;
 
-namespace VoiceScript.DiagramModel.Components
+using DiagramModel.Commands;
+
+namespace DiagramModel.Components
 {
     public class Field : Component, IVisibleComponent
     {
