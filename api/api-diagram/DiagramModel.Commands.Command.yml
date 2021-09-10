@@ -1,0 +1,836 @@
+### YamlMime:ManagedReference
+items:
+- uid: DiagramModel.Commands.Command
+  commentId: T:DiagramModel.Commands.Command
+  id: Command
+  parent: DiagramModel.Commands
+  children:
+  - DiagramModel.Commands.Command.#ctor(System.String,System.String,System.String,DiagramModel.Commands.LanguageFormats.LanguageFormat)
+  - DiagramModel.Commands.Command.Execute(DiagramModel.Commands.CommandExecutionContext)
+  - DiagramModel.Commands.Command.IsChildComponentTypeCompatible(DiagramModel.Components.Component,System.String)
+  - DiagramModel.Commands.Command.language
+  - DiagramModel.Commands.Command.name
+  - DiagramModel.Commands.Command.Name
+  - DiagramModel.Commands.Command.ProcessCommand(DiagramModel.Commands.CommandExecutionContext)
+  - DiagramModel.Commands.Command.targetType
+  - DiagramModel.Commands.Command.TargetType
+  - DiagramModel.Commands.Command.targetValue
+  - DiagramModel.Commands.Command.TargetValue
+  - DiagramModel.Commands.Command.translatedTargetType
+  - DiagramModel.Commands.Command.translatedTargetValue
+  langs:
+  - csharp
+  - vb
+  name: Command
+  nameWithType: Command
+  fullName: DiagramModel.Commands.Command
+  type: Class
+  source:
+    id: Command
+    path: ''
+    startLine: 60
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public abstract class Command
+    content.vb: Public MustInherit Class Command
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - DiagramModel.Commands.AddCommand
+  - DiagramModel.Commands.DeleteCommand
+  - DiagramModel.Commands.EditCommand
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: DiagramModel.Commands.Command.name
+  commentId: F:DiagramModel.Commands.Command.name
+  id: name
+  parent: DiagramModel.Commands.Command
+  langs:
+  - csharp
+  - vb
+  name: name
+  nameWithType: Command.name
+  fullName: DiagramModel.Commands.Command.name
+  type: Field
+  source:
+    id: name
+    path: ''
+    startLine: 62
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: protected readonly string name
+    return:
+      type: System.String
+    content.vb: Protected ReadOnly name As String
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: DiagramModel.Commands.Command.targetType
+  commentId: F:DiagramModel.Commands.Command.targetType
+  id: targetType
+  parent: DiagramModel.Commands.Command
+  langs:
+  - csharp
+  - vb
+  name: targetType
+  nameWithType: Command.targetType
+  fullName: DiagramModel.Commands.Command.targetType
+  type: Field
+  source:
+    id: targetType
+    path: ''
+    startLine: 62
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: protected readonly string targetType
+    return:
+      type: System.String
+    content.vb: Protected ReadOnly targetType As String
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: DiagramModel.Commands.Command.targetValue
+  commentId: F:DiagramModel.Commands.Command.targetValue
+  id: targetValue
+  parent: DiagramModel.Commands.Command
+  langs:
+  - csharp
+  - vb
+  name: targetValue
+  nameWithType: Command.targetValue
+  fullName: DiagramModel.Commands.Command.targetValue
+  type: Field
+  source:
+    id: targetValue
+    path: ''
+    startLine: 62
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: protected readonly string targetValue
+    return:
+      type: System.String
+    content.vb: Protected ReadOnly targetValue As String
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: DiagramModel.Commands.Command.translatedTargetType
+  commentId: F:DiagramModel.Commands.Command.translatedTargetType
+  id: translatedTargetType
+  parent: DiagramModel.Commands.Command
+  langs:
+  - csharp
+  - vb
+  name: translatedTargetType
+  nameWithType: Command.translatedTargetType
+  fullName: DiagramModel.Commands.Command.translatedTargetType
+  type: Field
+  source:
+    id: translatedTargetType
+    path: ''
+    startLine: 64
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: protected readonly string translatedTargetType
+    return:
+      type: System.String
+    content.vb: Protected ReadOnly translatedTargetType As String
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: DiagramModel.Commands.Command.translatedTargetValue
+  commentId: F:DiagramModel.Commands.Command.translatedTargetValue
+  id: translatedTargetValue
+  parent: DiagramModel.Commands.Command
+  langs:
+  - csharp
+  - vb
+  name: translatedTargetValue
+  nameWithType: Command.translatedTargetValue
+  fullName: DiagramModel.Commands.Command.translatedTargetValue
+  type: Field
+  source:
+    id: translatedTargetValue
+    path: ''
+    startLine: 65
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: protected readonly string translatedTargetValue
+    return:
+      type: System.String
+    content.vb: Protected ReadOnly translatedTargetValue As String
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: DiagramModel.Commands.Command.language
+  commentId: F:DiagramModel.Commands.Command.language
+  id: language
+  parent: DiagramModel.Commands.Command
+  langs:
+  - csharp
+  - vb
+  name: language
+  nameWithType: Command.language
+  fullName: DiagramModel.Commands.Command.language
+  type: Field
+  source:
+    id: language
+    path: ''
+    startLine: 67
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: protected readonly LanguageFormat language
+    return:
+      type: DiagramModel.Commands.LanguageFormats.LanguageFormat
+    content.vb: Protected ReadOnly language As LanguageFormat
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: DiagramModel.Commands.Command.#ctor(System.String,System.String,System.String,DiagramModel.Commands.LanguageFormats.LanguageFormat)
+  commentId: M:DiagramModel.Commands.Command.#ctor(System.String,System.String,System.String,DiagramModel.Commands.LanguageFormats.LanguageFormat)
+  id: '#ctor(System.String,System.String,System.String,DiagramModel.Commands.LanguageFormats.LanguageFormat)'
+  parent: DiagramModel.Commands.Command
+  langs:
+  - csharp
+  - vb
+  name: Command(String, String, String, LanguageFormat)
+  nameWithType: Command.Command(String, String, String, LanguageFormat)
+  fullName: DiagramModel.Commands.Command.Command(System.String, System.String, System.String, DiagramModel.Commands.LanguageFormats.LanguageFormat)
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 68
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public Command(string commandName, string commandTargetType, string commandTargetValue, LanguageFormat languageFormat)
+    parameters:
+    - id: commandName
+      type: System.String
+    - id: commandTargetType
+      type: System.String
+    - id: commandTargetValue
+      type: System.String
+    - id: languageFormat
+      type: DiagramModel.Commands.LanguageFormats.LanguageFormat
+    content.vb: Public Sub New(commandName As String, commandTargetType As String, commandTargetValue As String, languageFormat As LanguageFormat)
+  overload: DiagramModel.Commands.Command.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DiagramModel.Commands.Command.Name
+  commentId: P:DiagramModel.Commands.Command.Name
+  id: Name
+  parent: DiagramModel.Commands.Command
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Command.Name
+  fullName: DiagramModel.Commands.Command.Name
+  type: Property
+  source:
+    id: Name
+    path: ''
+    startLine: 90
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: DiagramModel.Commands.Command.Name*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DiagramModel.Commands.Command.TargetType
+  commentId: P:DiagramModel.Commands.Command.TargetType
+  id: TargetType
+  parent: DiagramModel.Commands.Command
+  langs:
+  - csharp
+  - vb
+  name: TargetType
+  nameWithType: Command.TargetType
+  fullName: DiagramModel.Commands.Command.TargetType
+  type: Property
+  source:
+    id: TargetType
+    path: ''
+    startLine: 91
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public string TargetType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property TargetType As String
+  overload: DiagramModel.Commands.Command.TargetType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DiagramModel.Commands.Command.TargetValue
+  commentId: P:DiagramModel.Commands.Command.TargetValue
+  id: TargetValue
+  parent: DiagramModel.Commands.Command
+  langs:
+  - csharp
+  - vb
+  name: TargetValue
+  nameWithType: Command.TargetValue
+  fullName: DiagramModel.Commands.Command.TargetValue
+  type: Property
+  source:
+    id: TargetValue
+    path: ''
+    startLine: 92
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public string TargetValue { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property TargetValue As String
+  overload: DiagramModel.Commands.Command.TargetValue*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DiagramModel.Commands.Command.Execute(DiagramModel.Commands.CommandExecutionContext)
+  commentId: M:DiagramModel.Commands.Command.Execute(DiagramModel.Commands.CommandExecutionContext)
+  id: Execute(DiagramModel.Commands.CommandExecutionContext)
+  parent: DiagramModel.Commands.Command
+  langs:
+  - csharp
+  - vb
+  name: Execute(CommandExecutionContext)
+  nameWithType: Command.Execute(CommandExecutionContext)
+  fullName: DiagramModel.Commands.Command.Execute(DiagramModel.Commands.CommandExecutionContext)
+  type: Method
+  source:
+    id: Execute
+    path: ''
+    startLine: 94
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public virtual void Execute(CommandExecutionContext context)
+    parameters:
+    - id: context
+      type: DiagramModel.Commands.CommandExecutionContext
+    content.vb: Public Overridable Sub Execute(context As CommandExecutionContext)
+  overload: DiagramModel.Commands.Command.Execute*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: DiagramModel.Commands.Command.IsChildComponentTypeCompatible(DiagramModel.Components.Component,System.String)
+  commentId: M:DiagramModel.Commands.Command.IsChildComponentTypeCompatible(DiagramModel.Components.Component,System.String)
+  id: IsChildComponentTypeCompatible(DiagramModel.Components.Component,System.String)
+  parent: DiagramModel.Commands.Command
+  langs:
+  - csharp
+  - vb
+  name: IsChildComponentTypeCompatible(Component, String)
+  nameWithType: Command.IsChildComponentTypeCompatible(Component, String)
+  fullName: DiagramModel.Commands.Command.IsChildComponentTypeCompatible(DiagramModel.Components.Component, System.String)
+  type: Method
+  source:
+    id: IsChildComponentTypeCompatible
+    path: ''
+    startLine: 114
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: protected static bool IsChildComponentTypeCompatible(Component component, string componentChildType)
+    parameters:
+    - id: component
+      type: DiagramModel.Components.Component
+    - id: componentChildType
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Protected Shared Function IsChildComponentTypeCompatible(component As Component, componentChildType As String) As Boolean
+  overload: DiagramModel.Commands.Command.IsChildComponentTypeCompatible*
+  modifiers.csharp:
+  - protected
+  - static
+  modifiers.vb:
+  - Protected
+  - Shared
+- uid: DiagramModel.Commands.Command.ProcessCommand(DiagramModel.Commands.CommandExecutionContext)
+  commentId: M:DiagramModel.Commands.Command.ProcessCommand(DiagramModel.Commands.CommandExecutionContext)
+  id: ProcessCommand(DiagramModel.Commands.CommandExecutionContext)
+  parent: DiagramModel.Commands.Command
+  langs:
+  - csharp
+  - vb
+  name: ProcessCommand(CommandExecutionContext)
+  nameWithType: Command.ProcessCommand(CommandExecutionContext)
+  fullName: DiagramModel.Commands.Command.ProcessCommand(DiagramModel.Commands.CommandExecutionContext)
+  type: Method
+  source:
+    id: ProcessCommand
+    path: ''
+    startLine: 124
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  summary: "\nTries to execute command.\nThrows an exception if command can not be executed.\n"
+  example: []
+  syntax:
+    content: protected abstract void ProcessCommand(CommandExecutionContext context)
+    parameters:
+    - id: context
+      type: DiagramModel.Commands.CommandExecutionContext
+      description: ''
+    content.vb: Protected MustOverride Sub ProcessCommand(context As CommandExecutionContext)
+  overload: DiagramModel.Commands.Command.ProcessCommand*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+references:
+- uid: DiagramModel.Commands
+  commentId: N:DiagramModel.Commands
+  name: DiagramModel.Commands
+  nameWithType: DiagramModel.Commands
+  fullName: DiagramModel.Commands
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat
+  commentId: T:DiagramModel.Commands.LanguageFormats.LanguageFormat
+  parent: DiagramModel.Commands.LanguageFormats
+  name: LanguageFormat
+  nameWithType: LanguageFormat
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat
+- uid: DiagramModel.Commands.LanguageFormats
+  commentId: N:DiagramModel.Commands.LanguageFormats
+  name: DiagramModel.Commands.LanguageFormats
+  nameWithType: DiagramModel.Commands.LanguageFormats
+  fullName: DiagramModel.Commands.LanguageFormats
+- uid: DiagramModel.Commands.Command.#ctor*
+  commentId: Overload:DiagramModel.Commands.Command.#ctor
+  name: Command
+  nameWithType: Command.Command
+  fullName: DiagramModel.Commands.Command.Command
+- uid: DiagramModel.Commands.Command.Name*
+  commentId: Overload:DiagramModel.Commands.Command.Name
+  name: Name
+  nameWithType: Command.Name
+  fullName: DiagramModel.Commands.Command.Name
+- uid: DiagramModel.Commands.Command.TargetType*
+  commentId: Overload:DiagramModel.Commands.Command.TargetType
+  name: TargetType
+  nameWithType: Command.TargetType
+  fullName: DiagramModel.Commands.Command.TargetType
+- uid: DiagramModel.Commands.Command.TargetValue*
+  commentId: Overload:DiagramModel.Commands.Command.TargetValue
+  name: TargetValue
+  nameWithType: Command.TargetValue
+  fullName: DiagramModel.Commands.Command.TargetValue
+- uid: DiagramModel.Commands.Command.Execute*
+  commentId: Overload:DiagramModel.Commands.Command.Execute
+  name: Execute
+  nameWithType: Command.Execute
+  fullName: DiagramModel.Commands.Command.Execute
+- uid: DiagramModel.Commands.CommandExecutionContext
+  commentId: T:DiagramModel.Commands.CommandExecutionContext
+  parent: DiagramModel.Commands
+  name: CommandExecutionContext
+  nameWithType: CommandExecutionContext
+  fullName: DiagramModel.Commands.CommandExecutionContext
+- uid: DiagramModel.Commands.Command.IsChildComponentTypeCompatible*
+  commentId: Overload:DiagramModel.Commands.Command.IsChildComponentTypeCompatible
+  name: IsChildComponentTypeCompatible
+  nameWithType: Command.IsChildComponentTypeCompatible
+  fullName: DiagramModel.Commands.Command.IsChildComponentTypeCompatible
+- uid: DiagramModel.Components.Component
+  commentId: T:DiagramModel.Components.Component
+  parent: DiagramModel.Components
+  name: Component
+  nameWithType: Component
+  fullName: DiagramModel.Components.Component
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: DiagramModel.Components
+  commentId: N:DiagramModel.Components
+  name: DiagramModel.Components
+  nameWithType: DiagramModel.Components
+  fullName: DiagramModel.Components
+- uid: DiagramModel.Commands.Command.ProcessCommand*
+  commentId: Overload:DiagramModel.Commands.Command.ProcessCommand
+  name: ProcessCommand
+  nameWithType: Command.ProcessCommand
+  fullName: DiagramModel.Commands.Command.ProcessCommand

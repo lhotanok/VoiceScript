@@ -1,0 +1,12 @@
+- name: Documentation
+  href: documentation/
+  homepage: documentation/intro.md
+- name: VoiceScript API
+  href: api/api-voice-script/
+- name: Voice Transcription API
+  href: api/api-voice-transcript/
+- name: Diagram Model API
+  href: api/api-diagram/
+- name: Code Generation API
+  href: api/api-code-gen/
+

@@ -1,0 +1,40 @@
+### YamlMime:ManagedReference
+items:
+- uid: DiagramModel.Commands.LanguageFormats
+  commentId: N:DiagramModel.Commands.LanguageFormats
+  id: DiagramModel.Commands.LanguageFormats
+  children:
+  - DiagramModel.Commands.LanguageFormats.CzechFormat
+  - DiagramModel.Commands.LanguageFormats.EnglishFormat
+  - DiagramModel.Commands.LanguageFormats.LanguageFormat
+  langs:
+  - csharp
+  - vb
+  name: DiagramModel.Commands.LanguageFormats
+  nameWithType: DiagramModel.Commands.LanguageFormats
+  fullName: DiagramModel.Commands.LanguageFormats
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+references:
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat
+  commentId: T:DiagramModel.Commands.LanguageFormats.CzechFormat
+  name: CzechFormat
+  nameWithType: CzechFormat
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat
+- uid: DiagramModel.Commands.LanguageFormats.EnglishFormat
+  commentId: T:DiagramModel.Commands.LanguageFormats.EnglishFormat
+  name: EnglishFormat
+  nameWithType: EnglishFormat
+  fullName: DiagramModel.Commands.LanguageFormats.EnglishFormat
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat
+  commentId: T:DiagramModel.Commands.LanguageFormats.LanguageFormat
+  parent: DiagramModel.Commands.LanguageFormats
+  name: LanguageFormat
+  nameWithType: LanguageFormat
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat
+- uid: DiagramModel.Commands.LanguageFormats
+  commentId: N:DiagramModel.Commands.LanguageFormats
+  name: DiagramModel.Commands.LanguageFormats
+  nameWithType: DiagramModel.Commands.LanguageFormats
+  fullName: DiagramModel.Commands.LanguageFormats

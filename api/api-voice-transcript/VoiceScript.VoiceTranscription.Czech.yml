@@ -1,0 +1,443 @@
+### YamlMime:ManagedReference
+items:
+- uid: VoiceScript.VoiceTranscription.Czech
+  commentId: T:VoiceScript.VoiceTranscription.Czech
+  id: Czech
+  parent: VoiceScript.VoiceTranscription
+  children:
+  - VoiceScript.VoiceTranscription.Czech.LanguageCode
+  - VoiceScript.VoiceTranscription.Czech.Name
+  langs:
+  - csharp
+  - vb
+  name: Czech
+  nameWithType: Czech
+  fullName: VoiceScript.VoiceTranscription.Czech
+  type: Class
+  source:
+    id: Czech
+    path: ''
+    startLine: 277
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: 'public class Czech : Language'
+    content.vb: >-
+      Public Class Czech
+          Inherits Language
+  inheritance:
+  - System.Object
+  - VoiceScript.VoiceTranscription.Language
+  inheritedMembers:
+  - VoiceScript.VoiceTranscription.Language.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: VoiceScript.VoiceTranscription.Czech.LanguageCode
+  commentId: P:VoiceScript.VoiceTranscription.Czech.LanguageCode
+  id: LanguageCode
+  parent: VoiceScript.VoiceTranscription.Czech
+  langs:
+  - csharp
+  - vb
+  name: LanguageCode
+  nameWithType: Czech.LanguageCode
+  fullName: VoiceScript.VoiceTranscription.Czech.LanguageCode
+  type: Property
+  source:
+    id: LanguageCode
+    path: ''
+    startLine: 279
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: public override string LanguageCode { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides ReadOnly Property LanguageCode As String
+  overridden: VoiceScript.VoiceTranscription.Language.LanguageCode
+  overload: VoiceScript.VoiceTranscription.Czech.LanguageCode*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: VoiceScript.VoiceTranscription.Czech.Name
+  commentId: P:VoiceScript.VoiceTranscription.Czech.Name
+  id: Name
+  parent: VoiceScript.VoiceTranscription.Czech
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Czech.Name
+  fullName: VoiceScript.VoiceTranscription.Czech.Name
+  type: Property
+  source:
+    id: Name
+    path: ''
+    startLine: 280
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: public override string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides ReadOnly Property Name As String
+  overridden: VoiceScript.VoiceTranscription.Language.Name
+  overload: VoiceScript.VoiceTranscription.Czech.Name*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+references:
+- uid: VoiceScript.VoiceTranscription
+  commentId: N:VoiceScript.VoiceTranscription
+  name: VoiceScript.VoiceTranscription
+  nameWithType: VoiceScript.VoiceTranscription
+  fullName: VoiceScript.VoiceTranscription
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: VoiceScript.VoiceTranscription.Language
+  commentId: T:VoiceScript.VoiceTranscription.Language
+  parent: VoiceScript.VoiceTranscription
+  name: Language
+  nameWithType: Language
+  fullName: VoiceScript.VoiceTranscription.Language
+- uid: VoiceScript.VoiceTranscription.Language.ToString
+  commentId: M:VoiceScript.VoiceTranscription.Language.ToString
+  parent: VoiceScript.VoiceTranscription.Language
+  name: ToString()
+  nameWithType: Language.ToString()
+  fullName: VoiceScript.VoiceTranscription.Language.ToString()
+  spec.csharp:
+  - uid: VoiceScript.VoiceTranscription.Language.ToString
+    name: ToString
+    nameWithType: Language.ToString
+    fullName: VoiceScript.VoiceTranscription.Language.ToString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: VoiceScript.VoiceTranscription.Language.ToString
+    name: ToString
+    nameWithType: Language.ToString
+    fullName: VoiceScript.VoiceTranscription.Language.ToString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VoiceScript.VoiceTranscription.Language.LanguageCode
+  commentId: P:VoiceScript.VoiceTranscription.Language.LanguageCode
+  parent: VoiceScript.VoiceTranscription.Language
+  name: LanguageCode
+  nameWithType: Language.LanguageCode
+  fullName: VoiceScript.VoiceTranscription.Language.LanguageCode
+- uid: VoiceScript.VoiceTranscription.Czech.LanguageCode*
+  commentId: Overload:VoiceScript.VoiceTranscription.Czech.LanguageCode
+  name: LanguageCode
+  nameWithType: Czech.LanguageCode
+  fullName: VoiceScript.VoiceTranscription.Czech.LanguageCode
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: VoiceScript.VoiceTranscription.Language.Name
+  commentId: P:VoiceScript.VoiceTranscription.Language.Name
+  parent: VoiceScript.VoiceTranscription.Language
+  name: Name
+  nameWithType: Language.Name
+  fullName: VoiceScript.VoiceTranscription.Language.Name
+- uid: VoiceScript.VoiceTranscription.Czech.Name*
+  commentId: Overload:VoiceScript.VoiceTranscription.Czech.Name
+  name: Name
+  nameWithType: Czech.Name
+  fullName: VoiceScript.VoiceTranscription.Czech.Name

@@ -1,0 +1,72 @@
+### YamlMime:ManagedReference
+items:
+- uid: DiagramModel.Components.IVisibleComponent
+  commentId: T:DiagramModel.Components.IVisibleComponent
+  id: IVisibleComponent
+  parent: DiagramModel.Components
+  children:
+  - DiagramModel.Components.IVisibleComponent.GetVisibility
+  langs:
+  - csharp
+  - vb
+  name: IVisibleComponent
+  nameWithType: IVisibleComponent
+  fullName: DiagramModel.Components.IVisibleComponent
+  type: Interface
+  source:
+    id: IVisibleComponent
+    path: ''
+    startLine: 1178
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Components
+  syntax:
+    content: public interface IVisibleComponent
+    content.vb: Public Interface IVisibleComponent
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: DiagramModel.Components.IVisibleComponent.GetVisibility
+  commentId: M:DiagramModel.Components.IVisibleComponent.GetVisibility
+  id: GetVisibility
+  parent: DiagramModel.Components.IVisibleComponent
+  langs:
+  - csharp
+  - vb
+  name: GetVisibility()
+  nameWithType: IVisibleComponent.GetVisibility()
+  fullName: DiagramModel.Components.IVisibleComponent.GetVisibility()
+  type: Method
+  source:
+    id: GetVisibility
+    path: ''
+    startLine: 1180
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Components
+  syntax:
+    content: Visibility GetVisibility()
+    return:
+      type: DiagramModel.Components.Visibility
+    content.vb: Function GetVisibility As Visibility
+  overload: DiagramModel.Components.IVisibleComponent.GetVisibility*
+references:
+- uid: DiagramModel.Components
+  commentId: N:DiagramModel.Components
+  name: DiagramModel.Components
+  nameWithType: DiagramModel.Components
+  fullName: DiagramModel.Components
+- uid: DiagramModel.Components.IVisibleComponent.GetVisibility*
+  commentId: Overload:DiagramModel.Components.IVisibleComponent.GetVisibility
+  name: GetVisibility
+  nameWithType: IVisibleComponent.GetVisibility
+  fullName: DiagramModel.Components.IVisibleComponent.GetVisibility
+- uid: DiagramModel.Components.Visibility
+  commentId: T:DiagramModel.Components.Visibility
+  parent: DiagramModel.Components
+  name: Visibility
+  nameWithType: Visibility
+  fullName: DiagramModel.Components.Visibility

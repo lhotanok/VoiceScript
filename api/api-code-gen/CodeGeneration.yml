@@ -1,0 +1,34 @@
+### YamlMime:ManagedReference
+items:
+- uid: CodeGeneration
+  commentId: N:CodeGeneration
+  id: CodeGeneration
+  children:
+  - CodeGeneration.CSharpCodeGenerator
+  - CodeGeneration.ICodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: CodeGeneration
+  nameWithType: CodeGeneration
+  fullName: CodeGeneration
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+references:
+- uid: CodeGeneration.CSharpCodeGenerator
+  commentId: T:CodeGeneration.CSharpCodeGenerator
+  name: CSharpCodeGenerator
+  nameWithType: CSharpCodeGenerator
+  fullName: CodeGeneration.CSharpCodeGenerator
+- uid: CodeGeneration.ICodeGenerator
+  commentId: T:CodeGeneration.ICodeGenerator
+  parent: CodeGeneration
+  name: ICodeGenerator
+  nameWithType: ICodeGenerator
+  fullName: CodeGeneration.ICodeGenerator
+- uid: CodeGeneration
+  commentId: N:CodeGeneration
+  name: CodeGeneration
+  nameWithType: CodeGeneration
+  fullName: CodeGeneration

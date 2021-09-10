@@ -1,0 +1,658 @@
+### YamlMime:ManagedReference
+items:
+- uid: DiagramModel.Commands.CommandParser
+  commentId: T:DiagramModel.Commands.CommandParser
+  id: CommandParser
+  parent: DiagramModel.Commands
+  children:
+  - DiagramModel.Commands.CommandParser.#ctor(System.String)
+  - DiagramModel.Commands.CommandParser.GetParsedCommands(System.String)
+  - DiagramModel.Commands.CommandParser.ParseCamelCase(System.String)
+  - DiagramModel.Commands.CommandParser.ParsePascalCase(IEnumerable{System.String})
+  langs:
+  - csharp
+  - vb
+  name: CommandParser
+  nameWithType: CommandParser
+  fullName: DiagramModel.Commands.CommandParser
+  type: Class
+  source:
+    id: CommandParser
+    path: ''
+    startLine: 216
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public class CommandParser
+    content.vb: Public Class CommandParser
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: DiagramModel.Commands.CommandParser.#ctor(System.String)
+  commentId: M:DiagramModel.Commands.CommandParser.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: DiagramModel.Commands.CommandParser
+  langs:
+  - csharp
+  - vb
+  name: CommandParser(String)
+  nameWithType: CommandParser.CommandParser(String)
+  fullName: DiagramModel.Commands.CommandParser.CommandParser(System.String)
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 223
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public CommandParser(string languageCode = null)
+    parameters:
+    - id: languageCode
+      type: System.String
+    content.vb: Public Sub New(languageCode As String = Nothing)
+  overload: DiagramModel.Commands.CommandParser.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DiagramModel.Commands.CommandParser.GetParsedCommands(System.String)
+  commentId: M:DiagramModel.Commands.CommandParser.GetParsedCommands(System.String)
+  id: GetParsedCommands(System.String)
+  parent: DiagramModel.Commands.CommandParser
+  langs:
+  - csharp
+  - vb
+  name: GetParsedCommands(String)
+  nameWithType: CommandParser.GetParsedCommands(String)
+  fullName: DiagramModel.Commands.CommandParser.GetParsedCommands(System.String)
+  type: Method
+  source:
+    id: GetParsedCommands
+    path: ''
+    startLine: 244
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public IList<Command> GetParsedCommands(string inputText)
+    parameters:
+    - id: inputText
+      type: System.String
+    return:
+      type: IList{DiagramModel.Commands.Command}
+    content.vb: Public Function GetParsedCommands(inputText As String) As IList(Of Command)
+  overload: DiagramModel.Commands.CommandParser.GetParsedCommands*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DiagramModel.Commands.CommandParser.ParseCamelCase(System.String)
+  commentId: M:DiagramModel.Commands.CommandParser.ParseCamelCase(System.String)
+  id: ParseCamelCase(System.String)
+  parent: DiagramModel.Commands.CommandParser
+  langs:
+  - csharp
+  - vb
+  name: ParseCamelCase(String)
+  nameWithType: CommandParser.ParseCamelCase(String)
+  fullName: DiagramModel.Commands.CommandParser.ParseCamelCase(System.String)
+  type: Method
+  source:
+    id: ParseCamelCase
+    path: ''
+    startLine: 272
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public static string ParseCamelCase(string pascalCaseWord)
+    parameters:
+    - id: pascalCaseWord
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Public Shared Function ParseCamelCase(pascalCaseWord As String) As String
+  overload: DiagramModel.Commands.CommandParser.ParseCamelCase*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: DiagramModel.Commands.CommandParser.ParsePascalCase(IEnumerable{System.String})
+  commentId: M:DiagramModel.Commands.CommandParser.ParsePascalCase(IEnumerable{System.String})
+  id: ParsePascalCase(IEnumerable{System.String})
+  parent: DiagramModel.Commands.CommandParser
+  langs:
+  - csharp
+  - vb
+  name: ParsePascalCase(IEnumerable<String>)
+  nameWithType: CommandParser.ParsePascalCase(IEnumerable<String>)
+  fullName: DiagramModel.Commands.CommandParser.ParsePascalCase(IEnumerable<System.String>)
+  type: Method
+  source:
+    id: ParsePascalCase
+    path: ''
+    startLine: 282
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public static string ParsePascalCase(IEnumerable<string> wordFragments)
+    parameters:
+    - id: wordFragments
+      type: IEnumerable{System.String}
+    return:
+      type: System.String
+    content.vb: Public Shared Function ParsePascalCase(wordFragments As IEnumerable(Of String)) As String
+  overload: DiagramModel.Commands.CommandParser.ParsePascalCase*
+  nameWithType.vb: CommandParser.ParsePascalCase(IEnumerable(Of String))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: DiagramModel.Commands.CommandParser.ParsePascalCase(IEnumerable(Of System.String))
+  name.vb: ParsePascalCase(IEnumerable(Of String))
+references:
+- uid: DiagramModel.Commands
+  commentId: N:DiagramModel.Commands
+  name: DiagramModel.Commands
+  nameWithType: DiagramModel.Commands
+  fullName: DiagramModel.Commands
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DiagramModel.Commands.CommandParser.#ctor*
+  commentId: Overload:DiagramModel.Commands.CommandParser.#ctor
+  name: CommandParser
+  nameWithType: CommandParser.CommandParser
+  fullName: DiagramModel.Commands.CommandParser.CommandParser
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: DiagramModel.Commands.CommandParser.GetParsedCommands*
+  commentId: Overload:DiagramModel.Commands.CommandParser.GetParsedCommands
+  name: GetParsedCommands
+  nameWithType: CommandParser.GetParsedCommands
+  fullName: DiagramModel.Commands.CommandParser.GetParsedCommands
+- uid: IList{DiagramModel.Commands.Command}
+  commentId: '!:IList{DiagramModel.Commands.Command}'
+  definition: IList`1
+  name: IList<Command>
+  nameWithType: IList<Command>
+  fullName: IList<DiagramModel.Commands.Command>
+  nameWithType.vb: IList(Of Command)
+  fullName.vb: IList(Of DiagramModel.Commands.Command)
+  name.vb: IList(Of Command)
+  spec.csharp:
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: DiagramModel.Commands.Command
+    name: Command
+    nameWithType: Command
+    fullName: DiagramModel.Commands.Command
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: DiagramModel.Commands.Command
+    name: Command
+    nameWithType: Command
+    fullName: DiagramModel.Commands.Command
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IList`1
+  isExternal: true
+  name: IList<>
+  nameWithType: IList<>
+  fullName: IList<>
+  nameWithType.vb: IList(Of )
+  fullName.vb: IList(Of )
+  name.vb: IList(Of )
+  spec.csharp:
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DiagramModel.Commands.CommandParser.ParseCamelCase*
+  commentId: Overload:DiagramModel.Commands.CommandParser.ParseCamelCase
+  name: ParseCamelCase
+  nameWithType: CommandParser.ParseCamelCase
+  fullName: DiagramModel.Commands.CommandParser.ParseCamelCase
+- uid: DiagramModel.Commands.CommandParser.ParsePascalCase*
+  commentId: Overload:DiagramModel.Commands.CommandParser.ParsePascalCase
+  name: ParsePascalCase
+  nameWithType: CommandParser.ParsePascalCase
+  fullName: DiagramModel.Commands.CommandParser.ParsePascalCase
+- uid: IEnumerable{System.String}
+  commentId: '!:IEnumerable{System.String}'
+  definition: IEnumerable`1
+  name: IEnumerable<String>
+  nameWithType: IEnumerable<String>
+  fullName: IEnumerable<System.String>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: IEnumerable(Of System.String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

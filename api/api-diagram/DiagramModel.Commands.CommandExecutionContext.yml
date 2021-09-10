@@ -1,0 +1,467 @@
+### YamlMime:ManagedReference
+items:
+- uid: DiagramModel.Commands.CommandExecutionContext
+  commentId: T:DiagramModel.Commands.CommandExecutionContext
+  id: CommandExecutionContext
+  parent: DiagramModel.Commands
+  children:
+  - DiagramModel.Commands.CommandExecutionContext.CommandExecuted
+  - DiagramModel.Commands.CommandExecutionContext.CurrentComponent
+  - DiagramModel.Commands.CommandExecutionContext.TargetComponent
+  langs:
+  - csharp
+  - vb
+  name: CommandExecutionContext
+  nameWithType: CommandExecutionContext
+  fullName: DiagramModel.Commands.CommandExecutionContext
+  type: Class
+  source:
+    id: CommandExecutionContext
+    path: ''
+    startLine: 132
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public class CommandExecutionContext
+    content.vb: Public Class CommandExecutionContext
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: DiagramModel.Commands.CommandExecutionContext.CurrentComponent
+  commentId: P:DiagramModel.Commands.CommandExecutionContext.CurrentComponent
+  id: CurrentComponent
+  parent: DiagramModel.Commands.CommandExecutionContext
+  langs:
+  - csharp
+  - vb
+  name: CurrentComponent
+  nameWithType: CommandExecutionContext.CurrentComponent
+  fullName: DiagramModel.Commands.CommandExecutionContext.CurrentComponent
+  type: Property
+  source:
+    id: CurrentComponent
+    path: ''
+    startLine: 134
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public Component CurrentComponent { get; set; }
+    parameters: []
+    return:
+      type: DiagramModel.Components.Component
+    content.vb: Public Property CurrentComponent As Component
+  overload: DiagramModel.Commands.CommandExecutionContext.CurrentComponent*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: DiagramModel.Commands.CommandExecutionContext.TargetComponent
+  commentId: P:DiagramModel.Commands.CommandExecutionContext.TargetComponent
+  id: TargetComponent
+  parent: DiagramModel.Commands.CommandExecutionContext
+  langs:
+  - csharp
+  - vb
+  name: TargetComponent
+  nameWithType: CommandExecutionContext.TargetComponent
+  fullName: DiagramModel.Commands.CommandExecutionContext.TargetComponent
+  type: Property
+  source:
+    id: TargetComponent
+    path: ''
+    startLine: 135
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public Component TargetComponent { get; set; }
+    parameters: []
+    return:
+      type: DiagramModel.Components.Component
+    content.vb: Public Property TargetComponent As Component
+  overload: DiagramModel.Commands.CommandExecutionContext.TargetComponent*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: DiagramModel.Commands.CommandExecutionContext.CommandExecuted
+  commentId: P:DiagramModel.Commands.CommandExecutionContext.CommandExecuted
+  id: CommandExecuted
+  parent: DiagramModel.Commands.CommandExecutionContext
+  langs:
+  - csharp
+  - vb
+  name: CommandExecuted
+  nameWithType: CommandExecutionContext.CommandExecuted
+  fullName: DiagramModel.Commands.CommandExecutionContext.CommandExecuted
+  type: Property
+  source:
+    id: CommandExecuted
+    path: ''
+    startLine: 136
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public bool CommandExecuted { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property CommandExecuted As Boolean
+  overload: DiagramModel.Commands.CommandExecutionContext.CommandExecuted*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: DiagramModel.Commands
+  commentId: N:DiagramModel.Commands
+  name: DiagramModel.Commands
+  nameWithType: DiagramModel.Commands
+  fullName: DiagramModel.Commands
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DiagramModel.Commands.CommandExecutionContext.CurrentComponent*
+  commentId: Overload:DiagramModel.Commands.CommandExecutionContext.CurrentComponent
+  name: CurrentComponent
+  nameWithType: CommandExecutionContext.CurrentComponent
+  fullName: DiagramModel.Commands.CommandExecutionContext.CurrentComponent
+- uid: DiagramModel.Components.Component
+  commentId: T:DiagramModel.Components.Component
+  parent: DiagramModel.Components
+  name: Component
+  nameWithType: Component
+  fullName: DiagramModel.Components.Component
+- uid: DiagramModel.Components
+  commentId: N:DiagramModel.Components
+  name: DiagramModel.Components
+  nameWithType: DiagramModel.Components
+  fullName: DiagramModel.Components
+- uid: DiagramModel.Commands.CommandExecutionContext.TargetComponent*
+  commentId: Overload:DiagramModel.Commands.CommandExecutionContext.TargetComponent
+  name: TargetComponent
+  nameWithType: CommandExecutionContext.TargetComponent
+  fullName: DiagramModel.Commands.CommandExecutionContext.TargetComponent
+- uid: DiagramModel.Commands.CommandExecutionContext.CommandExecuted*
+  commentId: Overload:DiagramModel.Commands.CommandExecutionContext.CommandExecuted
+  name: CommandExecuted
+  nameWithType: CommandExecutionContext.CommandExecuted
+  fullName: DiagramModel.Commands.CommandExecutionContext.CommandExecuted
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

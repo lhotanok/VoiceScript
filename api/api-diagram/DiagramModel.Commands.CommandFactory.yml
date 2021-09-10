@@ -1,0 +1,407 @@
+### YamlMime:ManagedReference
+items:
+- uid: DiagramModel.Commands.CommandFactory
+  commentId: T:DiagramModel.Commands.CommandFactory
+  id: CommandFactory
+  parent: DiagramModel.Commands
+  children:
+  - DiagramModel.Commands.CommandFactory.CreateCommand(System.String,System.String,System.String,DiagramModel.Commands.LanguageFormats.LanguageFormat)
+  langs:
+  - csharp
+  - vb
+  name: CommandFactory
+  nameWithType: CommandFactory
+  fullName: DiagramModel.Commands.CommandFactory
+  type: Class
+  source:
+    id: CommandFactory
+    path: ''
+    startLine: 160
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public class CommandFactory
+    content.vb: Public Class CommandFactory
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: DiagramModel.Commands.CommandFactory.CreateCommand(System.String,System.String,System.String,DiagramModel.Commands.LanguageFormats.LanguageFormat)
+  commentId: M:DiagramModel.Commands.CommandFactory.CreateCommand(System.String,System.String,System.String,DiagramModel.Commands.LanguageFormats.LanguageFormat)
+  id: CreateCommand(System.String,System.String,System.String,DiagramModel.Commands.LanguageFormats.LanguageFormat)
+  parent: DiagramModel.Commands.CommandFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateCommand(String, String, String, LanguageFormat)
+  nameWithType: CommandFactory.CreateCommand(String, String, String, LanguageFormat)
+  fullName: DiagramModel.Commands.CommandFactory.CreateCommand(System.String, System.String, System.String, DiagramModel.Commands.LanguageFormats.LanguageFormat)
+  type: Method
+  source:
+    id: CreateCommand
+    path: ''
+    startLine: 169
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public static Command CreateCommand(string commandName, string targetType, string targetValue, LanguageFormat language)
+    parameters:
+    - id: commandName
+      type: System.String
+    - id: targetType
+      type: System.String
+    - id: targetValue
+      type: System.String
+    - id: language
+      type: DiagramModel.Commands.LanguageFormats.LanguageFormat
+    return:
+      type: DiagramModel.Commands.Command
+    content.vb: Public Shared Function CreateCommand(commandName As String, targetType As String, targetValue As String, language As LanguageFormat) As Command
+  overload: DiagramModel.Commands.CommandFactory.CreateCommand*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: DiagramModel.Commands
+  commentId: N:DiagramModel.Commands
+  name: DiagramModel.Commands
+  nameWithType: DiagramModel.Commands
+  fullName: DiagramModel.Commands
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DiagramModel.Commands.CommandFactory.CreateCommand*
+  commentId: Overload:DiagramModel.Commands.CommandFactory.CreateCommand
+  name: CreateCommand
+  nameWithType: CommandFactory.CreateCommand
+  fullName: DiagramModel.Commands.CommandFactory.CreateCommand
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat
+  commentId: T:DiagramModel.Commands.LanguageFormats.LanguageFormat
+  parent: DiagramModel.Commands.LanguageFormats
+  name: LanguageFormat
+  nameWithType: LanguageFormat
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat
+- uid: DiagramModel.Commands.Command
+  commentId: T:DiagramModel.Commands.Command
+  parent: DiagramModel.Commands
+  name: Command
+  nameWithType: Command
+  fullName: DiagramModel.Commands.Command
+- uid: DiagramModel.Commands.LanguageFormats
+  commentId: N:DiagramModel.Commands.LanguageFormats
+  name: DiagramModel.Commands.LanguageFormats
+  nameWithType: DiagramModel.Commands.LanguageFormats
+  fullName: DiagramModel.Commands.LanguageFormats

@@ -1,0 +1,77 @@
+### YamlMime:ManagedReference
+items:
+- uid: DiagramModel.Commands
+  commentId: N:DiagramModel.Commands
+  id: DiagramModel.Commands
+  children:
+  - DiagramModel.Commands.AddCommand
+  - DiagramModel.Commands.Command
+  - DiagramModel.Commands.CommandExecutionContext
+  - DiagramModel.Commands.CommandExecutionException
+  - DiagramModel.Commands.CommandFactory
+  - DiagramModel.Commands.CommandParseException
+  - DiagramModel.Commands.CommandParser
+  - DiagramModel.Commands.DeleteCommand
+  - DiagramModel.Commands.EditCommand
+  langs:
+  - csharp
+  - vb
+  name: DiagramModel.Commands
+  nameWithType: DiagramModel.Commands
+  fullName: DiagramModel.Commands
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+references:
+- uid: DiagramModel.Commands.AddCommand
+  commentId: T:DiagramModel.Commands.AddCommand
+  name: AddCommand
+  nameWithType: AddCommand
+  fullName: DiagramModel.Commands.AddCommand
+- uid: DiagramModel.Commands.Command
+  commentId: T:DiagramModel.Commands.Command
+  parent: DiagramModel.Commands
+  name: Command
+  nameWithType: Command
+  fullName: DiagramModel.Commands.Command
+- uid: DiagramModel.Commands.CommandExecutionContext
+  commentId: T:DiagramModel.Commands.CommandExecutionContext
+  parent: DiagramModel.Commands
+  name: CommandExecutionContext
+  nameWithType: CommandExecutionContext
+  fullName: DiagramModel.Commands.CommandExecutionContext
+- uid: DiagramModel.Commands.CommandExecutionException
+  commentId: T:DiagramModel.Commands.CommandExecutionException
+  name: CommandExecutionException
+  nameWithType: CommandExecutionException
+  fullName: DiagramModel.Commands.CommandExecutionException
+- uid: DiagramModel.Commands.CommandFactory
+  commentId: T:DiagramModel.Commands.CommandFactory
+  name: CommandFactory
+  nameWithType: CommandFactory
+  fullName: DiagramModel.Commands.CommandFactory
+- uid: DiagramModel.Commands.CommandParseException
+  commentId: T:DiagramModel.Commands.CommandParseException
+  name: CommandParseException
+  nameWithType: CommandParseException
+  fullName: DiagramModel.Commands.CommandParseException
+- uid: DiagramModel.Commands.CommandParser
+  commentId: T:DiagramModel.Commands.CommandParser
+  name: CommandParser
+  nameWithType: CommandParser
+  fullName: DiagramModel.Commands.CommandParser
+- uid: DiagramModel.Commands.DeleteCommand
+  commentId: T:DiagramModel.Commands.DeleteCommand
+  name: DeleteCommand
+  nameWithType: DeleteCommand
+  fullName: DiagramModel.Commands.DeleteCommand
+- uid: DiagramModel.Commands.EditCommand
+  commentId: T:DiagramModel.Commands.EditCommand
+  name: EditCommand
+  nameWithType: EditCommand
+  fullName: DiagramModel.Commands.EditCommand
+- uid: DiagramModel.Commands
+  commentId: N:DiagramModel.Commands
+  name: DiagramModel.Commands
+  nameWithType: DiagramModel.Commands
+  fullName: DiagramModel.Commands

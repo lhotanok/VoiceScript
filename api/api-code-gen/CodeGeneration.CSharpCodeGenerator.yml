@@ -1,0 +1,1146 @@
+### YamlMime:ManagedReference
+items:
+- uid: CodeGeneration.CSharpCodeGenerator
+  commentId: T:CodeGeneration.CSharpCodeGenerator
+  id: CSharpCodeGenerator
+  parent: CodeGeneration
+  children:
+  - CodeGeneration.CSharpCodeGenerator.#ctor(Diagram,Action{System.String,Color})
+  - CodeGeneration.CSharpCodeGenerator.GenerateClassCode(Class,System.Int32)
+  - CodeGeneration.CSharpCodeGenerator.GenerateCode
+  - CodeGeneration.CSharpCodeGenerator.GenerateExceptionCode(System.String,System.Int32)
+  - CodeGeneration.CSharpCodeGenerator.GenerateFieldCode(Field,System.Int32)
+  - CodeGeneration.CSharpCodeGenerator.GenerateMethodCode(Method,System.Int32)
+  - CodeGeneration.CSharpCodeGenerator.GenerateParameterCode(Parameter,System.Int32)
+  - CodeGeneration.CSharpCodeGenerator.GenerateParametersCode(Method)
+  langs:
+  - csharp
+  - vb
+  name: CSharpCodeGenerator
+  nameWithType: CSharpCodeGenerator
+  fullName: CodeGeneration.CSharpCodeGenerator
+  type: Class
+  source:
+    id: CSharpCodeGenerator
+    path: ''
+    startLine: 32
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: 'public class CSharpCodeGenerator : ICodeGenerator'
+    content.vb: >-
+      Public Class CSharpCodeGenerator
+          Implements ICodeGenerator
+  inheritance:
+  - System.Object
+  implements:
+  - CodeGeneration.ICodeGenerator
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CodeGeneration.CSharpCodeGenerator.#ctor(Diagram,Action{System.String,Color})
+  commentId: M:CodeGeneration.CSharpCodeGenerator.#ctor(Diagram,Action{System.String,Color})
+  id: '#ctor(Diagram,Action{System.String,Color})'
+  parent: CodeGeneration.CSharpCodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: CSharpCodeGenerator(Diagram, Action<String, Color>)
+  nameWithType: CSharpCodeGenerator.CSharpCodeGenerator(Diagram, Action<String, Color>)
+  fullName: CodeGeneration.CSharpCodeGenerator.CSharpCodeGenerator(Diagram, Action<System.String, Color>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 49
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: public CSharpCodeGenerator(Diagram diagramModel, Action<string, Color> writeTextCallback)
+    parameters:
+    - id: diagramModel
+      type: Diagram
+    - id: writeTextCallback
+      type: Action{System.String,Color}
+    content.vb: Public Sub New(diagramModel As Diagram, writeTextCallback As Action(Of String, Color))
+  overload: CodeGeneration.CSharpCodeGenerator.#ctor*
+  nameWithType.vb: CSharpCodeGenerator.CSharpCodeGenerator(Diagram, Action(Of String, Color))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CodeGeneration.CSharpCodeGenerator.CSharpCodeGenerator(Diagram, Action(Of System.String, Color))
+  name.vb: CSharpCodeGenerator(Diagram, Action(Of String, Color))
+- uid: CodeGeneration.CSharpCodeGenerator.GenerateCode
+  commentId: M:CodeGeneration.CSharpCodeGenerator.GenerateCode
+  id: GenerateCode
+  parent: CodeGeneration.CSharpCodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateCode()
+  nameWithType: CSharpCodeGenerator.GenerateCode()
+  fullName: CodeGeneration.CSharpCodeGenerator.GenerateCode()
+  type: Method
+  source:
+    id: GenerateCode
+    path: ''
+    startLine: 55
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: public void GenerateCode()
+    content.vb: Public Sub GenerateCode
+  overload: CodeGeneration.CSharpCodeGenerator.GenerateCode*
+  implements:
+  - CodeGeneration.ICodeGenerator.GenerateCode
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CodeGeneration.CSharpCodeGenerator.GenerateClassCode(Class,System.Int32)
+  commentId: M:CodeGeneration.CSharpCodeGenerator.GenerateClassCode(Class,System.Int32)
+  id: GenerateClassCode(Class,System.Int32)
+  parent: CodeGeneration.CSharpCodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateClassCode(Class, Int32)
+  nameWithType: CSharpCodeGenerator.GenerateClassCode(Class, Int32)
+  fullName: CodeGeneration.CSharpCodeGenerator.GenerateClassCode(Class, System.Int32)
+  type: Method
+  source:
+    id: GenerateClassCode
+    path: ''
+    startLine: 66
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: public void GenerateClassCode(Class cls, int indentation = 0)
+    parameters:
+    - id: cls
+      type: Class
+    - id: indentation
+      type: System.Int32
+    content.vb: Public Sub GenerateClassCode(cls As  Class, indentation As Integer = 0)
+  overload: CodeGeneration.CSharpCodeGenerator.GenerateClassCode*
+  implements:
+  - CodeGeneration.ICodeGenerator.GenerateClassCode(Class,System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CodeGeneration.CSharpCodeGenerator.GenerateFieldCode(Field,System.Int32)
+  commentId: M:CodeGeneration.CSharpCodeGenerator.GenerateFieldCode(Field,System.Int32)
+  id: GenerateFieldCode(Field,System.Int32)
+  parent: CodeGeneration.CSharpCodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateFieldCode(Field, Int32)
+  nameWithType: CSharpCodeGenerator.GenerateFieldCode(Field, Int32)
+  fullName: CodeGeneration.CSharpCodeGenerator.GenerateFieldCode(Field, System.Int32)
+  type: Method
+  source:
+    id: GenerateFieldCode
+    path: ''
+    startLine: 94
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: public void GenerateFieldCode(Field field, int indentation = 1)
+    parameters:
+    - id: field
+      type: Field
+    - id: indentation
+      type: System.Int32
+    content.vb: Public Sub GenerateFieldCode(field As Field, indentation As Integer = 1)
+  overload: CodeGeneration.CSharpCodeGenerator.GenerateFieldCode*
+  implements:
+  - CodeGeneration.ICodeGenerator.GenerateFieldCode(Field,System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CodeGeneration.CSharpCodeGenerator.GenerateMethodCode(Method,System.Int32)
+  commentId: M:CodeGeneration.CSharpCodeGenerator.GenerateMethodCode(Method,System.Int32)
+  id: GenerateMethodCode(Method,System.Int32)
+  parent: CodeGeneration.CSharpCodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateMethodCode(Method, Int32)
+  nameWithType: CSharpCodeGenerator.GenerateMethodCode(Method, Int32)
+  fullName: CodeGeneration.CSharpCodeGenerator.GenerateMethodCode(Method, System.Int32)
+  type: Method
+  source:
+    id: GenerateMethodCode
+    path: ''
+    startLine: 109
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: public void GenerateMethodCode(Method method, int indentation = 1)
+    parameters:
+    - id: method
+      type: Method
+    - id: indentation
+      type: System.Int32
+    content.vb: Public Sub GenerateMethodCode(method As Method, indentation As Integer = 1)
+  overload: CodeGeneration.CSharpCodeGenerator.GenerateMethodCode*
+  implements:
+  - CodeGeneration.ICodeGenerator.GenerateMethodCode(Method,System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CodeGeneration.CSharpCodeGenerator.GenerateParametersCode(Method)
+  commentId: M:CodeGeneration.CSharpCodeGenerator.GenerateParametersCode(Method)
+  id: GenerateParametersCode(Method)
+  parent: CodeGeneration.CSharpCodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateParametersCode(Method)
+  nameWithType: CSharpCodeGenerator.GenerateParametersCode(Method)
+  fullName: CodeGeneration.CSharpCodeGenerator.GenerateParametersCode(Method)
+  type: Method
+  source:
+    id: GenerateParametersCode
+    path: ''
+    startLine: 128
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: public void GenerateParametersCode(Method method)
+    parameters:
+    - id: method
+      type: Method
+    content.vb: Public Sub GenerateParametersCode(method As Method)
+  overload: CodeGeneration.CSharpCodeGenerator.GenerateParametersCode*
+  implements:
+  - CodeGeneration.ICodeGenerator.GenerateParametersCode(Method)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CodeGeneration.CSharpCodeGenerator.GenerateParameterCode(Parameter,System.Int32)
+  commentId: M:CodeGeneration.CSharpCodeGenerator.GenerateParameterCode(Parameter,System.Int32)
+  id: GenerateParameterCode(Parameter,System.Int32)
+  parent: CodeGeneration.CSharpCodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateParameterCode(Parameter, Int32)
+  nameWithType: CSharpCodeGenerator.GenerateParameterCode(Parameter, Int32)
+  fullName: CodeGeneration.CSharpCodeGenerator.GenerateParameterCode(Parameter, System.Int32)
+  type: Method
+  source:
+    id: GenerateParameterCode
+    path: ''
+    startLine: 144
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: public void GenerateParameterCode(Parameter parameter, int indentation = 0)
+    parameters:
+    - id: parameter
+      type: Parameter
+    - id: indentation
+      type: System.Int32
+    content.vb: Public Sub GenerateParameterCode(parameter As Parameter, indentation As Integer = 0)
+  overload: CodeGeneration.CSharpCodeGenerator.GenerateParameterCode*
+  implements:
+  - CodeGeneration.ICodeGenerator.GenerateParameterCode(Parameter,System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CodeGeneration.CSharpCodeGenerator.GenerateExceptionCode(System.String,System.Int32)
+  commentId: M:CodeGeneration.CSharpCodeGenerator.GenerateExceptionCode(System.String,System.Int32)
+  id: GenerateExceptionCode(System.String,System.Int32)
+  parent: CodeGeneration.CSharpCodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateExceptionCode(String, Int32)
+  nameWithType: CSharpCodeGenerator.GenerateExceptionCode(String, Int32)
+  fullName: CodeGeneration.CSharpCodeGenerator.GenerateExceptionCode(System.String, System.Int32)
+  type: Method
+  source:
+    id: GenerateExceptionCode
+    path: ''
+    startLine: 158
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: public void GenerateExceptionCode(string exceptionName, int indentation = 2)
+    parameters:
+    - id: exceptionName
+      type: System.String
+    - id: indentation
+      type: System.Int32
+    content.vb: Public Sub GenerateExceptionCode(exceptionName As String, indentation As Integer = 2)
+  overload: CodeGeneration.CSharpCodeGenerator.GenerateExceptionCode*
+  implements:
+  - CodeGeneration.ICodeGenerator.GenerateExceptionCode(System.String,System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: CodeGeneration
+  commentId: N:CodeGeneration
+  name: CodeGeneration
+  nameWithType: CodeGeneration
+  fullName: CodeGeneration
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CodeGeneration.ICodeGenerator
+  commentId: T:CodeGeneration.ICodeGenerator
+  parent: CodeGeneration
+  name: ICodeGenerator
+  nameWithType: ICodeGenerator
+  fullName: CodeGeneration.ICodeGenerator
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CodeGeneration.CSharpCodeGenerator.#ctor*
+  commentId: Overload:CodeGeneration.CSharpCodeGenerator.#ctor
+  name: CSharpCodeGenerator
+  nameWithType: CSharpCodeGenerator.CSharpCodeGenerator
+  fullName: CodeGeneration.CSharpCodeGenerator.CSharpCodeGenerator
+- uid: Diagram
+  commentId: '!:Diagram'
+  isExternal: true
+  name: Diagram
+  nameWithType: Diagram
+  fullName: Diagram
+- uid: Action{System.String,Color}
+  commentId: '!:Action{System.String,Color}'
+  definition: Action`2
+  name: Action<String, Color>
+  nameWithType: Action<String, Color>
+  fullName: Action<System.String, Color>
+  nameWithType.vb: Action(Of String, Color)
+  fullName.vb: Action(Of System.String, Color)
+  name.vb: Action(Of String, Color)
+  spec.csharp:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Color
+    name: Color
+    nameWithType: Color
+    fullName: Color
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Color
+    name: Color
+    nameWithType: Color
+    fullName: Color
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Action`2
+  commentId: '!:Action`2'
+  isExternal: true
+  name: Action<, >
+  nameWithType: Action<, >
+  fullName: Action<, >
+  nameWithType.vb: Action(Of , )
+  fullName.vb: Action(Of , )
+  name.vb: Action(Of , )
+  spec.csharp:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CodeGeneration.CSharpCodeGenerator.GenerateCode*
+  commentId: Overload:CodeGeneration.CSharpCodeGenerator.GenerateCode
+  name: GenerateCode
+  nameWithType: CSharpCodeGenerator.GenerateCode
+  fullName: CodeGeneration.CSharpCodeGenerator.GenerateCode
+- uid: CodeGeneration.ICodeGenerator.GenerateCode
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateCode
+  parent: CodeGeneration.ICodeGenerator
+  name: GenerateCode()
+  nameWithType: ICodeGenerator.GenerateCode()
+  fullName: CodeGeneration.ICodeGenerator.GenerateCode()
+  spec.csharp:
+  - uid: CodeGeneration.ICodeGenerator.GenerateCode
+    name: GenerateCode
+    nameWithType: ICodeGenerator.GenerateCode
+    fullName: CodeGeneration.ICodeGenerator.GenerateCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CodeGeneration.ICodeGenerator.GenerateCode
+    name: GenerateCode
+    nameWithType: ICodeGenerator.GenerateCode
+    fullName: CodeGeneration.ICodeGenerator.GenerateCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CodeGeneration.CSharpCodeGenerator.GenerateClassCode*
+  commentId: Overload:CodeGeneration.CSharpCodeGenerator.GenerateClassCode
+  name: GenerateClassCode
+  nameWithType: CSharpCodeGenerator.GenerateClassCode
+  fullName: CodeGeneration.CSharpCodeGenerator.GenerateClassCode
+- uid: CodeGeneration.ICodeGenerator.GenerateClassCode(Class,System.Int32)
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateClassCode(Class,System.Int32)
+  parent: CodeGeneration.ICodeGenerator
+  isExternal: true
+  name: GenerateClassCode(Class, Int32)
+  nameWithType: ICodeGenerator.GenerateClassCode(Class, Int32)
+  fullName: CodeGeneration.ICodeGenerator.GenerateClassCode(Class, System.Int32)
+  spec.csharp:
+  - uid: CodeGeneration.ICodeGenerator.GenerateClassCode(Class,System.Int32)
+    name: GenerateClassCode
+    nameWithType: ICodeGenerator.GenerateClassCode
+    fullName: CodeGeneration.ICodeGenerator.GenerateClassCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Class
+    name: Class
+    nameWithType: Class
+    fullName: Class
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CodeGeneration.ICodeGenerator.GenerateClassCode(Class,System.Int32)
+    name: GenerateClassCode
+    nameWithType: ICodeGenerator.GenerateClassCode
+    fullName: CodeGeneration.ICodeGenerator.GenerateClassCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Class
+    name: Class
+    nameWithType: Class
+    fullName: Class
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Class
+  isExternal: true
+  name: Class
+  nameWithType: Class
+  fullName: Class
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CodeGeneration.CSharpCodeGenerator.GenerateFieldCode*
+  commentId: Overload:CodeGeneration.CSharpCodeGenerator.GenerateFieldCode
+  name: GenerateFieldCode
+  nameWithType: CSharpCodeGenerator.GenerateFieldCode
+  fullName: CodeGeneration.CSharpCodeGenerator.GenerateFieldCode
+- uid: CodeGeneration.ICodeGenerator.GenerateFieldCode(Field,System.Int32)
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateFieldCode(Field,System.Int32)
+  parent: CodeGeneration.ICodeGenerator
+  isExternal: true
+  name: GenerateFieldCode(Field, Int32)
+  nameWithType: ICodeGenerator.GenerateFieldCode(Field, Int32)
+  fullName: CodeGeneration.ICodeGenerator.GenerateFieldCode(Field, System.Int32)
+  spec.csharp:
+  - uid: CodeGeneration.ICodeGenerator.GenerateFieldCode(Field,System.Int32)
+    name: GenerateFieldCode
+    nameWithType: ICodeGenerator.GenerateFieldCode
+    fullName: CodeGeneration.ICodeGenerator.GenerateFieldCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Field
+    name: Field
+    nameWithType: Field
+    fullName: Field
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CodeGeneration.ICodeGenerator.GenerateFieldCode(Field,System.Int32)
+    name: GenerateFieldCode
+    nameWithType: ICodeGenerator.GenerateFieldCode
+    fullName: CodeGeneration.ICodeGenerator.GenerateFieldCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Field
+    name: Field
+    nameWithType: Field
+    fullName: Field
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Field
+  isExternal: true
+  name: Field
+  nameWithType: Field
+  fullName: Field
+- uid: CodeGeneration.CSharpCodeGenerator.GenerateMethodCode*
+  commentId: Overload:CodeGeneration.CSharpCodeGenerator.GenerateMethodCode
+  name: GenerateMethodCode
+  nameWithType: CSharpCodeGenerator.GenerateMethodCode
+  fullName: CodeGeneration.CSharpCodeGenerator.GenerateMethodCode
+- uid: CodeGeneration.ICodeGenerator.GenerateMethodCode(Method,System.Int32)
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateMethodCode(Method,System.Int32)
+  parent: CodeGeneration.ICodeGenerator
+  isExternal: true
+  name: GenerateMethodCode(Method, Int32)
+  nameWithType: ICodeGenerator.GenerateMethodCode(Method, Int32)
+  fullName: CodeGeneration.ICodeGenerator.GenerateMethodCode(Method, System.Int32)
+  spec.csharp:
+  - uid: CodeGeneration.ICodeGenerator.GenerateMethodCode(Method,System.Int32)
+    name: GenerateMethodCode
+    nameWithType: ICodeGenerator.GenerateMethodCode
+    fullName: CodeGeneration.ICodeGenerator.GenerateMethodCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Method
+    name: Method
+    nameWithType: Method
+    fullName: Method
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CodeGeneration.ICodeGenerator.GenerateMethodCode(Method,System.Int32)
+    name: GenerateMethodCode
+    nameWithType: ICodeGenerator.GenerateMethodCode
+    fullName: CodeGeneration.ICodeGenerator.GenerateMethodCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Method
+    name: Method
+    nameWithType: Method
+    fullName: Method
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Method
+  isExternal: true
+  name: Method
+  nameWithType: Method
+  fullName: Method
+- uid: CodeGeneration.CSharpCodeGenerator.GenerateParametersCode*
+  commentId: Overload:CodeGeneration.CSharpCodeGenerator.GenerateParametersCode
+  name: GenerateParametersCode
+  nameWithType: CSharpCodeGenerator.GenerateParametersCode
+  fullName: CodeGeneration.CSharpCodeGenerator.GenerateParametersCode
+- uid: CodeGeneration.ICodeGenerator.GenerateParametersCode(Method)
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateParametersCode(Method)
+  parent: CodeGeneration.ICodeGenerator
+  isExternal: true
+  name: GenerateParametersCode(Method)
+  nameWithType: ICodeGenerator.GenerateParametersCode(Method)
+  fullName: CodeGeneration.ICodeGenerator.GenerateParametersCode(Method)
+  spec.csharp:
+  - uid: CodeGeneration.ICodeGenerator.GenerateParametersCode(Method)
+    name: GenerateParametersCode
+    nameWithType: ICodeGenerator.GenerateParametersCode
+    fullName: CodeGeneration.ICodeGenerator.GenerateParametersCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Method
+    name: Method
+    nameWithType: Method
+    fullName: Method
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CodeGeneration.ICodeGenerator.GenerateParametersCode(Method)
+    name: GenerateParametersCode
+    nameWithType: ICodeGenerator.GenerateParametersCode
+    fullName: CodeGeneration.ICodeGenerator.GenerateParametersCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Method
+    name: Method
+    nameWithType: Method
+    fullName: Method
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CodeGeneration.CSharpCodeGenerator.GenerateParameterCode*
+  commentId: Overload:CodeGeneration.CSharpCodeGenerator.GenerateParameterCode
+  name: GenerateParameterCode
+  nameWithType: CSharpCodeGenerator.GenerateParameterCode
+  fullName: CodeGeneration.CSharpCodeGenerator.GenerateParameterCode
+- uid: CodeGeneration.ICodeGenerator.GenerateParameterCode(Parameter,System.Int32)
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateParameterCode(Parameter,System.Int32)
+  parent: CodeGeneration.ICodeGenerator
+  isExternal: true
+  name: GenerateParameterCode(Parameter, Int32)
+  nameWithType: ICodeGenerator.GenerateParameterCode(Parameter, Int32)
+  fullName: CodeGeneration.ICodeGenerator.GenerateParameterCode(Parameter, System.Int32)
+  spec.csharp:
+  - uid: CodeGeneration.ICodeGenerator.GenerateParameterCode(Parameter,System.Int32)
+    name: GenerateParameterCode
+    nameWithType: ICodeGenerator.GenerateParameterCode
+    fullName: CodeGeneration.ICodeGenerator.GenerateParameterCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Parameter
+    name: Parameter
+    nameWithType: Parameter
+    fullName: Parameter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CodeGeneration.ICodeGenerator.GenerateParameterCode(Parameter,System.Int32)
+    name: GenerateParameterCode
+    nameWithType: ICodeGenerator.GenerateParameterCode
+    fullName: CodeGeneration.ICodeGenerator.GenerateParameterCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Parameter
+    name: Parameter
+    nameWithType: Parameter
+    fullName: Parameter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Parameter
+  isExternal: true
+  name: Parameter
+  nameWithType: Parameter
+  fullName: Parameter
+- uid: CodeGeneration.CSharpCodeGenerator.GenerateExceptionCode*
+  commentId: Overload:CodeGeneration.CSharpCodeGenerator.GenerateExceptionCode
+  name: GenerateExceptionCode
+  nameWithType: CSharpCodeGenerator.GenerateExceptionCode
+  fullName: CodeGeneration.CSharpCodeGenerator.GenerateExceptionCode
+- uid: CodeGeneration.ICodeGenerator.GenerateExceptionCode(System.String,System.Int32)
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateExceptionCode(System.String,System.Int32)
+  parent: CodeGeneration.ICodeGenerator
+  isExternal: true
+  name: GenerateExceptionCode(String, Int32)
+  nameWithType: ICodeGenerator.GenerateExceptionCode(String, Int32)
+  fullName: CodeGeneration.ICodeGenerator.GenerateExceptionCode(System.String, System.Int32)
+  spec.csharp:
+  - uid: CodeGeneration.ICodeGenerator.GenerateExceptionCode(System.String,System.Int32)
+    name: GenerateExceptionCode
+    nameWithType: ICodeGenerator.GenerateExceptionCode
+    fullName: CodeGeneration.ICodeGenerator.GenerateExceptionCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CodeGeneration.ICodeGenerator.GenerateExceptionCode(System.String,System.Int32)
+    name: GenerateExceptionCode
+    nameWithType: ICodeGenerator.GenerateExceptionCode
+    fullName: CodeGeneration.ICodeGenerator.GenerateExceptionCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

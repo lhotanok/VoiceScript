@@ -1,0 +1,141 @@
+### YamlMime:ManagedReference
+items:
+- uid: DiagramModel.Commands.CommandExecutionException
+  commentId: T:DiagramModel.Commands.CommandExecutionException
+  id: CommandExecutionException
+  parent: DiagramModel.Commands
+  children:
+  - DiagramModel.Commands.CommandExecutionException.#ctor(System.String,System.Int32)
+  - DiagramModel.Commands.CommandExecutionException.CommandNumber
+  langs:
+  - csharp
+  - vb
+  name: CommandExecutionException
+  nameWithType: CommandExecutionException
+  fullName: DiagramModel.Commands.CommandExecutionException
+  type: Class
+  source:
+    id: CommandExecutionException
+    path: ''
+    startLine: 144
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: 'public class CommandExecutionException : InvalidOperationException'
+    content.vb: >-
+      Public Class CommandExecutionException
+          Inherits InvalidOperationException
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: DiagramModel.Commands.CommandExecutionException.#ctor(System.String,System.Int32)
+  commentId: M:DiagramModel.Commands.CommandExecutionException.#ctor(System.String,System.Int32)
+  id: '#ctor(System.String,System.Int32)'
+  parent: DiagramModel.Commands.CommandExecutionException
+  langs:
+  - csharp
+  - vb
+  name: CommandExecutionException(String, Int32)
+  nameWithType: CommandExecutionException.CommandExecutionException(String, Int32)
+  fullName: DiagramModel.Commands.CommandExecutionException.CommandExecutionException(System.String, System.Int32)
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 146
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public CommandExecutionException(string message, int commandOrderNumber = 0)
+    parameters:
+    - id: message
+      type: System.String
+    - id: commandOrderNumber
+      type: System.Int32
+    content.vb: Public Sub New(message As String, commandOrderNumber As Integer = 0)
+  overload: DiagramModel.Commands.CommandExecutionException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DiagramModel.Commands.CommandExecutionException.CommandNumber
+  commentId: P:DiagramModel.Commands.CommandExecutionException.CommandNumber
+  id: CommandNumber
+  parent: DiagramModel.Commands.CommandExecutionException
+  langs:
+  - csharp
+  - vb
+  name: CommandNumber
+  nameWithType: CommandExecutionException.CommandNumber
+  fullName: DiagramModel.Commands.CommandExecutionException.CommandNumber
+  type: Property
+  source:
+    id: CommandNumber
+    path: ''
+    startLine: 151
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public int CommandNumber { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property CommandNumber As Integer
+  overload: DiagramModel.Commands.CommandExecutionException.CommandNumber*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: DiagramModel.Commands
+  commentId: N:DiagramModel.Commands
+  name: DiagramModel.Commands
+  nameWithType: DiagramModel.Commands
+  fullName: DiagramModel.Commands
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DiagramModel.Commands.CommandExecutionException.#ctor*
+  commentId: Overload:DiagramModel.Commands.CommandExecutionException.#ctor
+  name: CommandExecutionException
+  nameWithType: CommandExecutionException.CommandExecutionException
+  fullName: DiagramModel.Commands.CommandExecutionException.CommandExecutionException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: DiagramModel.Commands.CommandExecutionException.CommandNumber*
+  commentId: Overload:DiagramModel.Commands.CommandExecutionException.CommandNumber
+  name: CommandNumber
+  nameWithType: CommandExecutionException.CommandNumber
+  fullName: DiagramModel.Commands.CommandExecutionException.CommandNumber

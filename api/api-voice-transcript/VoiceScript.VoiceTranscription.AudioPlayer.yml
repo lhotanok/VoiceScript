@@ -1,0 +1,522 @@
+### YamlMime:ManagedReference
+items:
+- uid: VoiceScript.VoiceTranscription.AudioPlayer
+  commentId: T:VoiceScript.VoiceTranscription.AudioPlayer
+  id: AudioPlayer
+  parent: VoiceScript.VoiceTranscription
+  children:
+  - VoiceScript.VoiceTranscription.AudioPlayer.Play(System.String,System.Action)
+  - VoiceScript.VoiceTranscription.AudioPlayer.Stop
+  langs:
+  - csharp
+  - vb
+  name: AudioPlayer
+  nameWithType: AudioPlayer
+  fullName: VoiceScript.VoiceTranscription.AudioPlayer
+  type: Class
+  source:
+    id: AudioPlayer
+    path: ''
+    startLine: 52
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: 'public class AudioPlayer : IAudioPlayer'
+    content.vb: >-
+      Public Class AudioPlayer
+          Implements IAudioPlayer
+  inheritance:
+  - System.Object
+  implements:
+  - VoiceScript.VoiceTranscription.IAudioPlayer
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: VoiceScript.VoiceTranscription.AudioPlayer.Play(System.String,System.Action)
+  commentId: M:VoiceScript.VoiceTranscription.AudioPlayer.Play(System.String,System.Action)
+  id: Play(System.String,System.Action)
+  parent: VoiceScript.VoiceTranscription.AudioPlayer
+  langs:
+  - csharp
+  - vb
+  name: Play(String, Action)
+  nameWithType: AudioPlayer.Play(String, Action)
+  fullName: VoiceScript.VoiceTranscription.AudioPlayer.Play(System.String, System.Action)
+  type: Method
+  source:
+    id: Play
+    path: ''
+    startLine: 63
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  summary: "\nStart audio playing from the given file.\n"
+  example: []
+  syntax:
+    content: public void Play(string audioFilename, Action PlaybackStoppedCallback = null)
+    parameters:
+    - id: audioFilename
+      type: System.String
+      description: ''
+    - id: PlaybackStoppedCallback
+      type: System.Action
+      description: ''
+    content.vb: Public Sub Play(audioFilename As String, PlaybackStoppedCallback As Action = Nothing)
+  overload: VoiceScript.VoiceTranscription.AudioPlayer.Play*
+  implements:
+  - VoiceScript.VoiceTranscription.IAudioPlayer.Play(System.String,System.Action)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: VoiceScript.VoiceTranscription.AudioPlayer.Stop
+  commentId: M:VoiceScript.VoiceTranscription.AudioPlayer.Stop
+  id: Stop
+  parent: VoiceScript.VoiceTranscription.AudioPlayer
+  langs:
+  - csharp
+  - vb
+  name: Stop()
+  nameWithType: AudioPlayer.Stop()
+  fullName: VoiceScript.VoiceTranscription.AudioPlayer.Stop()
+  type: Method
+  source:
+    id: Stop
+    path: ''
+    startLine: 74
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: public void Stop()
+    content.vb: Public Sub Stop
+  overload: VoiceScript.VoiceTranscription.AudioPlayer.Stop*
+  implements:
+  - VoiceScript.VoiceTranscription.IAudioPlayer.Stop
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: VoiceScript.VoiceTranscription
+  commentId: N:VoiceScript.VoiceTranscription
+  name: VoiceScript.VoiceTranscription
+  nameWithType: VoiceScript.VoiceTranscription
+  fullName: VoiceScript.VoiceTranscription
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: VoiceScript.VoiceTranscription.IAudioPlayer
+  commentId: T:VoiceScript.VoiceTranscription.IAudioPlayer
+  parent: VoiceScript.VoiceTranscription
+  name: IAudioPlayer
+  nameWithType: IAudioPlayer
+  fullName: VoiceScript.VoiceTranscription.IAudioPlayer
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VoiceScript.VoiceTranscription.AudioPlayer.Play*
+  commentId: Overload:VoiceScript.VoiceTranscription.AudioPlayer.Play
+  name: Play
+  nameWithType: AudioPlayer.Play
+  fullName: VoiceScript.VoiceTranscription.AudioPlayer.Play
+- uid: VoiceScript.VoiceTranscription.IAudioPlayer.Play(System.String,System.Action)
+  commentId: M:VoiceScript.VoiceTranscription.IAudioPlayer.Play(System.String,System.Action)
+  parent: VoiceScript.VoiceTranscription.IAudioPlayer
+  isExternal: true
+  name: Play(String, Action)
+  nameWithType: IAudioPlayer.Play(String, Action)
+  fullName: VoiceScript.VoiceTranscription.IAudioPlayer.Play(System.String, System.Action)
+  spec.csharp:
+  - uid: VoiceScript.VoiceTranscription.IAudioPlayer.Play(System.String,System.Action)
+    name: Play
+    nameWithType: IAudioPlayer.Play
+    fullName: VoiceScript.VoiceTranscription.IAudioPlayer.Play
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Action
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: VoiceScript.VoiceTranscription.IAudioPlayer.Play(System.String,System.Action)
+    name: Play
+    nameWithType: IAudioPlayer.Play
+    fullName: VoiceScript.VoiceTranscription.IAudioPlayer.Play
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Action
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: VoiceScript.VoiceTranscription.AudioPlayer.Stop*
+  commentId: Overload:VoiceScript.VoiceTranscription.AudioPlayer.Stop
+  name: Stop
+  nameWithType: AudioPlayer.Stop
+  fullName: VoiceScript.VoiceTranscription.AudioPlayer.Stop
+- uid: VoiceScript.VoiceTranscription.IAudioPlayer.Stop
+  commentId: M:VoiceScript.VoiceTranscription.IAudioPlayer.Stop
+  parent: VoiceScript.VoiceTranscription.IAudioPlayer
+  name: Stop()
+  nameWithType: IAudioPlayer.Stop()
+  fullName: VoiceScript.VoiceTranscription.IAudioPlayer.Stop()
+  spec.csharp:
+  - uid: VoiceScript.VoiceTranscription.IAudioPlayer.Stop
+    name: Stop
+    nameWithType: IAudioPlayer.Stop
+    fullName: VoiceScript.VoiceTranscription.IAudioPlayer.Stop
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: VoiceScript.VoiceTranscription.IAudioPlayer.Stop
+    name: Stop
+    nameWithType: IAudioPlayer.Stop
+    fullName: VoiceScript.VoiceTranscription.IAudioPlayer.Stop
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

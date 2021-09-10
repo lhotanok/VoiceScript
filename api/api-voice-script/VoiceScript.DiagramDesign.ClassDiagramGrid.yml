@@ -1,0 +1,614 @@
+### YamlMime:ManagedReference
+items:
+- uid: VoiceScript.DiagramDesign.ClassDiagramGrid
+  commentId: T:VoiceScript.DiagramDesign.ClassDiagramGrid
+  id: ClassDiagramGrid
+  parent: VoiceScript.DiagramDesign
+  children:
+  - VoiceScript.DiagramDesign.ClassDiagramGrid.AddFieldsCell(IReadOnlyList{Field})
+  - VoiceScript.DiagramDesign.ClassDiagramGrid.AddMethodsCell(IReadOnlyList{Method})
+  - VoiceScript.DiagramDesign.ClassDiagramGrid.AddNameCell(System.String)
+  - VoiceScript.DiagramDesign.ClassDiagramGrid.BuildGridText
+  langs:
+  - csharp
+  - vb
+  name: ClassDiagramGrid
+  nameWithType: ClassDiagramGrid
+  fullName: VoiceScript.DiagramDesign.ClassDiagramGrid
+  type: Class
+  source:
+    id: ClassDiagramGrid
+    path: ''
+    startLine: 766
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.DiagramDesign
+  syntax:
+    content: public class ClassDiagramGrid
+    content.vb: Public Class ClassDiagramGrid
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: VoiceScript.DiagramDesign.ClassDiagramGrid.BuildGridText
+  commentId: M:VoiceScript.DiagramDesign.ClassDiagramGrid.BuildGridText
+  id: BuildGridText
+  parent: VoiceScript.DiagramDesign.ClassDiagramGrid
+  langs:
+  - csharp
+  - vb
+  name: BuildGridText()
+  nameWithType: ClassDiagramGrid.BuildGridText()
+  fullName: VoiceScript.DiagramDesign.ClassDiagramGrid.BuildGridText()
+  type: Method
+  source:
+    id: BuildGridText
+    path: ''
+    startLine: 778
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.DiagramDesign
+  syntax:
+    content: public string BuildGridText()
+    return:
+      type: System.String
+    content.vb: Public Function BuildGridText As String
+  overload: VoiceScript.DiagramDesign.ClassDiagramGrid.BuildGridText*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: VoiceScript.DiagramDesign.ClassDiagramGrid.AddNameCell(System.String)
+  commentId: M:VoiceScript.DiagramDesign.ClassDiagramGrid.AddNameCell(System.String)
+  id: AddNameCell(System.String)
+  parent: VoiceScript.DiagramDesign.ClassDiagramGrid
+  langs:
+  - csharp
+  - vb
+  name: AddNameCell(String)
+  nameWithType: ClassDiagramGrid.AddNameCell(String)
+  fullName: VoiceScript.DiagramDesign.ClassDiagramGrid.AddNameCell(System.String)
+  type: Method
+  source:
+    id: AddNameCell
+    path: ''
+    startLine: 798
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.DiagramDesign
+  syntax:
+    content: public void AddNameCell(string name)
+    parameters:
+    - id: name
+      type: System.String
+    content.vb: Public Sub AddNameCell(name As String)
+  overload: VoiceScript.DiagramDesign.ClassDiagramGrid.AddNameCell*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: VoiceScript.DiagramDesign.ClassDiagramGrid.AddFieldsCell(IReadOnlyList{Field})
+  commentId: M:VoiceScript.DiagramDesign.ClassDiagramGrid.AddFieldsCell(IReadOnlyList{Field})
+  id: AddFieldsCell(IReadOnlyList{Field})
+  parent: VoiceScript.DiagramDesign.ClassDiagramGrid
+  langs:
+  - csharp
+  - vb
+  name: AddFieldsCell(IReadOnlyList<Field>)
+  nameWithType: ClassDiagramGrid.AddFieldsCell(IReadOnlyList<Field>)
+  fullName: VoiceScript.DiagramDesign.ClassDiagramGrid.AddFieldsCell(IReadOnlyList<Field>)
+  type: Method
+  source:
+    id: AddFieldsCell
+    path: ''
+    startLine: 805
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.DiagramDesign
+  syntax:
+    content: public void AddFieldsCell(IReadOnlyList<Field> fields)
+    parameters:
+    - id: fields
+      type: IReadOnlyList{Field}
+    content.vb: Public Sub AddFieldsCell(fields As IReadOnlyList(Of Field))
+  overload: VoiceScript.DiagramDesign.ClassDiagramGrid.AddFieldsCell*
+  nameWithType.vb: ClassDiagramGrid.AddFieldsCell(IReadOnlyList(Of Field))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: VoiceScript.DiagramDesign.ClassDiagramGrid.AddFieldsCell(IReadOnlyList(Of Field))
+  name.vb: AddFieldsCell(IReadOnlyList(Of Field))
+- uid: VoiceScript.DiagramDesign.ClassDiagramGrid.AddMethodsCell(IReadOnlyList{Method})
+  commentId: M:VoiceScript.DiagramDesign.ClassDiagramGrid.AddMethodsCell(IReadOnlyList{Method})
+  id: AddMethodsCell(IReadOnlyList{Method})
+  parent: VoiceScript.DiagramDesign.ClassDiagramGrid
+  langs:
+  - csharp
+  - vb
+  name: AddMethodsCell(IReadOnlyList<Method>)
+  nameWithType: ClassDiagramGrid.AddMethodsCell(IReadOnlyList<Method>)
+  fullName: VoiceScript.DiagramDesign.ClassDiagramGrid.AddMethodsCell(IReadOnlyList<Method>)
+  type: Method
+  source:
+    id: AddMethodsCell
+    path: ''
+    startLine: 817
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.DiagramDesign
+  syntax:
+    content: public void AddMethodsCell(IReadOnlyList<Method> methods)
+    parameters:
+    - id: methods
+      type: IReadOnlyList{Method}
+    content.vb: Public Sub AddMethodsCell(methods As IReadOnlyList(Of Method))
+  overload: VoiceScript.DiagramDesign.ClassDiagramGrid.AddMethodsCell*
+  nameWithType.vb: ClassDiagramGrid.AddMethodsCell(IReadOnlyList(Of Method))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: VoiceScript.DiagramDesign.ClassDiagramGrid.AddMethodsCell(IReadOnlyList(Of Method))
+  name.vb: AddMethodsCell(IReadOnlyList(Of Method))
+references:
+- uid: VoiceScript.DiagramDesign
+  commentId: N:VoiceScript.DiagramDesign
+  name: VoiceScript.DiagramDesign
+  nameWithType: VoiceScript.DiagramDesign
+  fullName: VoiceScript.DiagramDesign
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VoiceScript.DiagramDesign.ClassDiagramGrid.BuildGridText*
+  commentId: Overload:VoiceScript.DiagramDesign.ClassDiagramGrid.BuildGridText
+  name: BuildGridText
+  nameWithType: ClassDiagramGrid.BuildGridText
+  fullName: VoiceScript.DiagramDesign.ClassDiagramGrid.BuildGridText
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: VoiceScript.DiagramDesign.ClassDiagramGrid.AddNameCell*
+  commentId: Overload:VoiceScript.DiagramDesign.ClassDiagramGrid.AddNameCell
+  name: AddNameCell
+  nameWithType: ClassDiagramGrid.AddNameCell
+  fullName: VoiceScript.DiagramDesign.ClassDiagramGrid.AddNameCell
+- uid: VoiceScript.DiagramDesign.ClassDiagramGrid.AddFieldsCell*
+  commentId: Overload:VoiceScript.DiagramDesign.ClassDiagramGrid.AddFieldsCell
+  name: AddFieldsCell
+  nameWithType: ClassDiagramGrid.AddFieldsCell
+  fullName: VoiceScript.DiagramDesign.ClassDiagramGrid.AddFieldsCell
+- uid: IReadOnlyList{Field}
+  commentId: '!:IReadOnlyList{Field}'
+  definition: IReadOnlyList`1
+  name: IReadOnlyList<Field>
+  nameWithType: IReadOnlyList<Field>
+  fullName: IReadOnlyList<Field>
+  nameWithType.vb: IReadOnlyList(Of Field)
+  fullName.vb: IReadOnlyList(Of Field)
+  name.vb: IReadOnlyList(Of Field)
+  spec.csharp:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Field
+    name: Field
+    nameWithType: Field
+    fullName: Field
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Field
+    name: Field
+    nameWithType: Field
+    fullName: Field
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IReadOnlyList`1
+  isExternal: true
+  name: IReadOnlyList<>
+  nameWithType: IReadOnlyList<>
+  fullName: IReadOnlyList<>
+  nameWithType.vb: IReadOnlyList(Of )
+  fullName.vb: IReadOnlyList(Of )
+  name.vb: IReadOnlyList(Of )
+  spec.csharp:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: VoiceScript.DiagramDesign.ClassDiagramGrid.AddMethodsCell*
+  commentId: Overload:VoiceScript.DiagramDesign.ClassDiagramGrid.AddMethodsCell
+  name: AddMethodsCell
+  nameWithType: ClassDiagramGrid.AddMethodsCell
+  fullName: VoiceScript.DiagramDesign.ClassDiagramGrid.AddMethodsCell
+- uid: IReadOnlyList{Method}
+  commentId: '!:IReadOnlyList{Method}'
+  definition: IReadOnlyList`1
+  name: IReadOnlyList<Method>
+  nameWithType: IReadOnlyList<Method>
+  fullName: IReadOnlyList<Method>
+  nameWithType.vb: IReadOnlyList(Of Method)
+  fullName.vb: IReadOnlyList(Of Method)
+  name.vb: IReadOnlyList(Of Method)
+  spec.csharp:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Method
+    name: Method
+    nameWithType: Method
+    fullName: Method
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Method
+    name: Method
+    nameWithType: Method
+    fullName: Method
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

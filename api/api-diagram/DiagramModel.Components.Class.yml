@@ -1,0 +1,1110 @@
+### YamlMime:ManagedReference
+items:
+- uid: DiagramModel.Components.Class
+  commentId: T:DiagramModel.Components.Class
+  id: Class
+  parent: DiagramModel.Components
+  children:
+  - DiagramModel.Components.Class.#ctor(System.String,DiagramModel.Components.Component)
+  - DiagramModel.Components.Class.AddChild(DiagramModel.Components.Component)
+  - DiagramModel.Components.Class.Clone
+  - DiagramModel.Components.Class.GetFields
+  - DiagramModel.Components.Class.GetInheritanceParent
+  - DiagramModel.Components.Class.GetMethods
+  - DiagramModel.Components.Class.GetUniqueTypeName
+  - DiagramModel.Components.Class.TypeName
+  langs:
+  - csharp
+  - vb
+  name: Class
+  nameWithType: Class
+  fullName: DiagramModel.Components.Class
+  type: Class
+  source:
+    id: Class
+    path: ''
+    startLine: 818
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Components
+  syntax:
+    content: 'public class Class : Component'
+    content.vb: >-
+      Public Class Class
+          Inherits Component
+  inheritance:
+  - System.Object
+  - DiagramModel.Components.Component
+  inheritedMembers:
+  - DiagramModel.Components.Component.children
+  - DiagramModel.Components.Component.Parent
+  - DiagramModel.Components.Component.Children
+  - DiagramModel.Components.Component.ValidChildrenTypes
+  - DiagramModel.Components.Component.Name
+  - DiagramModel.Components.Component.TryDeleteChild(System.String,System.String)
+  - DiagramModel.Components.Component.FindChild(System.String,System.String)
+  - DiagramModel.Components.Component.GetTypeFilteredChildren``1
+  - DiagramModel.Components.Component.GetUniqueChild``1
+  - DiagramModel.Components.Component.CloneChildrenInto(DiagramModel.Components.Component)
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: DiagramModel.Components.Class.#ctor(System.String,DiagramModel.Components.Component)
+  commentId: M:DiagramModel.Components.Class.#ctor(System.String,DiagramModel.Components.Component)
+  id: '#ctor(System.String,DiagramModel.Components.Component)'
+  parent: DiagramModel.Components.Class
+  langs:
+  - csharp
+  - vb
+  name: Class(String, Component)
+  nameWithType: Class.Class(String, Component)
+  fullName: DiagramModel.Components.Class.Class(System.String, DiagramModel.Components.Component)
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 824
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Components
+  syntax:
+    content: public Class(string name, Component parent)
+    parameters:
+    - id: name
+      type: System.String
+    - id: parent
+      type: DiagramModel.Components.Component
+    content.vb: Public Sub New(name As String, parent As Component)
+  overload: DiagramModel.Components.Class.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DiagramModel.Components.Class.TypeName
+  commentId: P:DiagramModel.Components.Class.TypeName
+  id: TypeName
+  parent: DiagramModel.Components.Class
+  langs:
+  - csharp
+  - vb
+  name: TypeName
+  nameWithType: Class.TypeName
+  fullName: DiagramModel.Components.Class.TypeName
+  type: Property
+  source:
+    id: TypeName
+    path: ''
+    startLine: 826
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Components
+  syntax:
+    content: public static string TypeName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property TypeName As String
+  overload: DiagramModel.Components.Class.TypeName*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: DiagramModel.Components.Class.GetFields
+  commentId: M:DiagramModel.Components.Class.GetFields
+  id: GetFields
+  parent: DiagramModel.Components.Class
+  langs:
+  - csharp
+  - vb
+  name: GetFields()
+  nameWithType: Class.GetFields()
+  fullName: DiagramModel.Components.Class.GetFields()
+  type: Method
+  source:
+    id: GetFields
+    path: ''
+    startLine: 828
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Components
+  syntax:
+    content: public IReadOnlyList<Field> GetFields()
+    return:
+      type: IReadOnlyList{DiagramModel.Components.Field}
+    content.vb: Public Function GetFields As IReadOnlyList(Of Field)
+  overload: DiagramModel.Components.Class.GetFields*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DiagramModel.Components.Class.GetMethods
+  commentId: M:DiagramModel.Components.Class.GetMethods
+  id: GetMethods
+  parent: DiagramModel.Components.Class
+  langs:
+  - csharp
+  - vb
+  name: GetMethods()
+  nameWithType: Class.GetMethods()
+  fullName: DiagramModel.Components.Class.GetMethods()
+  type: Method
+  source:
+    id: GetMethods
+    path: ''
+    startLine: 830
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Components
+  syntax:
+    content: public IReadOnlyList<Method> GetMethods()
+    return:
+      type: IReadOnlyList{DiagramModel.Components.Method}
+    content.vb: Public Function GetMethods As IReadOnlyList(Of Method)
+  overload: DiagramModel.Components.Class.GetMethods*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DiagramModel.Components.Class.GetUniqueTypeName
+  commentId: M:DiagramModel.Components.Class.GetUniqueTypeName
+  id: GetUniqueTypeName
+  parent: DiagramModel.Components.Class
+  langs:
+  - csharp
+  - vb
+  name: GetUniqueTypeName()
+  nameWithType: Class.GetUniqueTypeName()
+  fullName: DiagramModel.Components.Class.GetUniqueTypeName()
+  type: Method
+  source:
+    id: GetUniqueTypeName
+    path: ''
+    startLine: 832
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Components
+  syntax:
+    content: public override string GetUniqueTypeName()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function GetUniqueTypeName As String
+  overridden: DiagramModel.Components.Component.GetUniqueTypeName
+  overload: DiagramModel.Components.Class.GetUniqueTypeName*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: DiagramModel.Components.Class.Clone
+  commentId: M:DiagramModel.Components.Class.Clone
+  id: Clone
+  parent: DiagramModel.Components.Class
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Class.Clone()
+  fullName: DiagramModel.Components.Class.Clone()
+  type: Method
+  source:
+    id: Clone
+    path: ''
+    startLine: 833
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Components
+  syntax:
+    content: public override Component Clone()
+    return:
+      type: DiagramModel.Components.Component
+    content.vb: Public Overrides Function Clone As Component
+  overridden: DiagramModel.Components.Component.Clone
+  overload: DiagramModel.Components.Class.Clone*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: DiagramModel.Components.Class.GetInheritanceParent
+  commentId: M:DiagramModel.Components.Class.GetInheritanceParent
+  id: GetInheritanceParent
+  parent: DiagramModel.Components.Class
+  langs:
+  - csharp
+  - vb
+  name: GetInheritanceParent()
+  nameWithType: Class.GetInheritanceParent()
+  fullName: DiagramModel.Components.Class.GetInheritanceParent()
+  type: Method
+  source:
+    id: GetInheritanceParent
+    path: ''
+    startLine: 841
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Components
+  syntax:
+    content: public Parent GetInheritanceParent()
+    return:
+      type: DiagramModel.Components.Parent
+    content.vb: Public Function GetInheritanceParent As Parent
+  overload: DiagramModel.Components.Class.GetInheritanceParent*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DiagramModel.Components.Class.AddChild(DiagramModel.Components.Component)
+  commentId: M:DiagramModel.Components.Class.AddChild(DiagramModel.Components.Component)
+  id: AddChild(DiagramModel.Components.Component)
+  parent: DiagramModel.Components.Class
+  langs:
+  - csharp
+  - vb
+  name: AddChild(Component)
+  nameWithType: Class.AddChild(Component)
+  fullName: DiagramModel.Components.Class.AddChild(DiagramModel.Components.Component)
+  type: Method
+  source:
+    id: AddChild
+    path: ''
+    startLine: 843
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Components
+  syntax:
+    content: public override void AddChild(Component child)
+    parameters:
+    - id: child
+      type: DiagramModel.Components.Component
+    content.vb: Public Overrides Sub AddChild(child As Component)
+  overridden: DiagramModel.Components.Component.AddChild(DiagramModel.Components.Component)
+  overload: DiagramModel.Components.Class.AddChild*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: DiagramModel.Components
+  commentId: N:DiagramModel.Components
+  name: DiagramModel.Components
+  nameWithType: DiagramModel.Components
+  fullName: DiagramModel.Components
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: DiagramModel.Components.Component
+  commentId: T:DiagramModel.Components.Component
+  parent: DiagramModel.Components
+  name: Component
+  nameWithType: Component
+  fullName: DiagramModel.Components.Component
+- uid: DiagramModel.Components.Component.children
+  commentId: F:DiagramModel.Components.Component.children
+  parent: DiagramModel.Components.Component
+  name: children
+  nameWithType: Component.children
+  fullName: DiagramModel.Components.Component.children
+- uid: DiagramModel.Components.Component.Parent
+  commentId: P:DiagramModel.Components.Component.Parent
+  parent: DiagramModel.Components.Component
+  name: Parent
+  nameWithType: Component.Parent
+  fullName: DiagramModel.Components.Component.Parent
+- uid: DiagramModel.Components.Component.Children
+  commentId: P:DiagramModel.Components.Component.Children
+  parent: DiagramModel.Components.Component
+  name: Children
+  nameWithType: Component.Children
+  fullName: DiagramModel.Components.Component.Children
+- uid: DiagramModel.Components.Component.ValidChildrenTypes
+  commentId: P:DiagramModel.Components.Component.ValidChildrenTypes
+  parent: DiagramModel.Components.Component
+  name: ValidChildrenTypes
+  nameWithType: Component.ValidChildrenTypes
+  fullName: DiagramModel.Components.Component.ValidChildrenTypes
+- uid: DiagramModel.Components.Component.Name
+  commentId: P:DiagramModel.Components.Component.Name
+  parent: DiagramModel.Components.Component
+  name: Name
+  nameWithType: Component.Name
+  fullName: DiagramModel.Components.Component.Name
+- uid: DiagramModel.Components.Component.TryDeleteChild(System.String,System.String)
+  commentId: M:DiagramModel.Components.Component.TryDeleteChild(System.String,System.String)
+  parent: DiagramModel.Components.Component
+  isExternal: true
+  name: TryDeleteChild(String, String)
+  nameWithType: Component.TryDeleteChild(String, String)
+  fullName: DiagramModel.Components.Component.TryDeleteChild(System.String, System.String)
+  spec.csharp:
+  - uid: DiagramModel.Components.Component.TryDeleteChild(System.String,System.String)
+    name: TryDeleteChild
+    nameWithType: Component.TryDeleteChild
+    fullName: DiagramModel.Components.Component.TryDeleteChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DiagramModel.Components.Component.TryDeleteChild(System.String,System.String)
+    name: TryDeleteChild
+    nameWithType: Component.TryDeleteChild
+    fullName: DiagramModel.Components.Component.TryDeleteChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DiagramModel.Components.Component.FindChild(System.String,System.String)
+  commentId: M:DiagramModel.Components.Component.FindChild(System.String,System.String)
+  parent: DiagramModel.Components.Component
+  isExternal: true
+  name: FindChild(String, String)
+  nameWithType: Component.FindChild(String, String)
+  fullName: DiagramModel.Components.Component.FindChild(System.String, System.String)
+  spec.csharp:
+  - uid: DiagramModel.Components.Component.FindChild(System.String,System.String)
+    name: FindChild
+    nameWithType: Component.FindChild
+    fullName: DiagramModel.Components.Component.FindChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DiagramModel.Components.Component.FindChild(System.String,System.String)
+    name: FindChild
+    nameWithType: Component.FindChild
+    fullName: DiagramModel.Components.Component.FindChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DiagramModel.Components.Component.GetTypeFilteredChildren``1
+  commentId: M:DiagramModel.Components.Component.GetTypeFilteredChildren``1
+  parent: DiagramModel.Components.Component
+  name: GetTypeFilteredChildren<T>()
+  nameWithType: Component.GetTypeFilteredChildren<T>()
+  fullName: DiagramModel.Components.Component.GetTypeFilteredChildren<T>()
+  nameWithType.vb: Component.GetTypeFilteredChildren(Of T)()
+  fullName.vb: DiagramModel.Components.Component.GetTypeFilteredChildren(Of T)()
+  name.vb: GetTypeFilteredChildren(Of T)()
+  spec.csharp:
+  - uid: DiagramModel.Components.Component.GetTypeFilteredChildren``1
+    name: GetTypeFilteredChildren<T>
+    nameWithType: Component.GetTypeFilteredChildren<T>
+    fullName: DiagramModel.Components.Component.GetTypeFilteredChildren<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DiagramModel.Components.Component.GetTypeFilteredChildren``1
+    name: GetTypeFilteredChildren(Of T)
+    nameWithType: Component.GetTypeFilteredChildren(Of T)
+    fullName: DiagramModel.Components.Component.GetTypeFilteredChildren(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DiagramModel.Components.Component.GetUniqueChild``1
+  commentId: M:DiagramModel.Components.Component.GetUniqueChild``1
+  parent: DiagramModel.Components.Component
+  name: GetUniqueChild<T>()
+  nameWithType: Component.GetUniqueChild<T>()
+  fullName: DiagramModel.Components.Component.GetUniqueChild<T>()
+  nameWithType.vb: Component.GetUniqueChild(Of T)()
+  fullName.vb: DiagramModel.Components.Component.GetUniqueChild(Of T)()
+  name.vb: GetUniqueChild(Of T)()
+  spec.csharp:
+  - uid: DiagramModel.Components.Component.GetUniqueChild``1
+    name: GetUniqueChild<T>
+    nameWithType: Component.GetUniqueChild<T>
+    fullName: DiagramModel.Components.Component.GetUniqueChild<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DiagramModel.Components.Component.GetUniqueChild``1
+    name: GetUniqueChild(Of T)
+    nameWithType: Component.GetUniqueChild(Of T)
+    fullName: DiagramModel.Components.Component.GetUniqueChild(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DiagramModel.Components.Component.CloneChildrenInto(DiagramModel.Components.Component)
+  commentId: M:DiagramModel.Components.Component.CloneChildrenInto(DiagramModel.Components.Component)
+  parent: DiagramModel.Components.Component
+  name: CloneChildrenInto(Component)
+  nameWithType: Component.CloneChildrenInto(Component)
+  fullName: DiagramModel.Components.Component.CloneChildrenInto(DiagramModel.Components.Component)
+  spec.csharp:
+  - uid: DiagramModel.Components.Component.CloneChildrenInto(DiagramModel.Components.Component)
+    name: CloneChildrenInto
+    nameWithType: Component.CloneChildrenInto
+    fullName: DiagramModel.Components.Component.CloneChildrenInto
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DiagramModel.Components.Component
+    name: Component
+    nameWithType: Component
+    fullName: DiagramModel.Components.Component
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DiagramModel.Components.Component.CloneChildrenInto(DiagramModel.Components.Component)
+    name: CloneChildrenInto
+    nameWithType: Component.CloneChildrenInto
+    fullName: DiagramModel.Components.Component.CloneChildrenInto
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DiagramModel.Components.Component
+    name: Component
+    nameWithType: Component
+    fullName: DiagramModel.Components.Component
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DiagramModel.Components.Class.#ctor*
+  commentId: Overload:DiagramModel.Components.Class.#ctor
+  name: Class
+  nameWithType: Class.Class
+  fullName: DiagramModel.Components.Class.Class
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: DiagramModel.Components.Class.TypeName*
+  commentId: Overload:DiagramModel.Components.Class.TypeName
+  name: TypeName
+  nameWithType: Class.TypeName
+  fullName: DiagramModel.Components.Class.TypeName
+- uid: DiagramModel.Components.Class.GetFields*
+  commentId: Overload:DiagramModel.Components.Class.GetFields
+  name: GetFields
+  nameWithType: Class.GetFields
+  fullName: DiagramModel.Components.Class.GetFields
+- uid: IReadOnlyList{DiagramModel.Components.Field}
+  commentId: '!:IReadOnlyList{DiagramModel.Components.Field}'
+  definition: IReadOnlyList`1
+  name: IReadOnlyList<Field>
+  nameWithType: IReadOnlyList<Field>
+  fullName: IReadOnlyList<DiagramModel.Components.Field>
+  nameWithType.vb: IReadOnlyList(Of Field)
+  fullName.vb: IReadOnlyList(Of DiagramModel.Components.Field)
+  name.vb: IReadOnlyList(Of Field)
+  spec.csharp:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: DiagramModel.Components.Field
+    name: Field
+    nameWithType: Field
+    fullName: DiagramModel.Components.Field
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: DiagramModel.Components.Field
+    name: Field
+    nameWithType: Field
+    fullName: DiagramModel.Components.Field
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IReadOnlyList`1
+  isExternal: true
+  name: IReadOnlyList<>
+  nameWithType: IReadOnlyList<>
+  fullName: IReadOnlyList<>
+  nameWithType.vb: IReadOnlyList(Of )
+  fullName.vb: IReadOnlyList(Of )
+  name.vb: IReadOnlyList(Of )
+  spec.csharp:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DiagramModel.Components.Class.GetMethods*
+  commentId: Overload:DiagramModel.Components.Class.GetMethods
+  name: GetMethods
+  nameWithType: Class.GetMethods
+  fullName: DiagramModel.Components.Class.GetMethods
+- uid: IReadOnlyList{DiagramModel.Components.Method}
+  commentId: '!:IReadOnlyList{DiagramModel.Components.Method}'
+  definition: IReadOnlyList`1
+  name: IReadOnlyList<Method>
+  nameWithType: IReadOnlyList<Method>
+  fullName: IReadOnlyList<DiagramModel.Components.Method>
+  nameWithType.vb: IReadOnlyList(Of Method)
+  fullName.vb: IReadOnlyList(Of DiagramModel.Components.Method)
+  name.vb: IReadOnlyList(Of Method)
+  spec.csharp:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: DiagramModel.Components.Method
+    name: Method
+    nameWithType: Method
+    fullName: DiagramModel.Components.Method
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: DiagramModel.Components.Method
+    name: Method
+    nameWithType: Method
+    fullName: DiagramModel.Components.Method
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DiagramModel.Components.Component.GetUniqueTypeName
+  commentId: M:DiagramModel.Components.Component.GetUniqueTypeName
+  parent: DiagramModel.Components.Component
+  name: GetUniqueTypeName()
+  nameWithType: Component.GetUniqueTypeName()
+  fullName: DiagramModel.Components.Component.GetUniqueTypeName()
+  spec.csharp:
+  - uid: DiagramModel.Components.Component.GetUniqueTypeName
+    name: GetUniqueTypeName
+    nameWithType: Component.GetUniqueTypeName
+    fullName: DiagramModel.Components.Component.GetUniqueTypeName
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DiagramModel.Components.Component.GetUniqueTypeName
+    name: GetUniqueTypeName
+    nameWithType: Component.GetUniqueTypeName
+    fullName: DiagramModel.Components.Component.GetUniqueTypeName
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DiagramModel.Components.Class.GetUniqueTypeName*
+  commentId: Overload:DiagramModel.Components.Class.GetUniqueTypeName
+  name: GetUniqueTypeName
+  nameWithType: Class.GetUniqueTypeName
+  fullName: DiagramModel.Components.Class.GetUniqueTypeName
+- uid: DiagramModel.Components.Component.Clone
+  commentId: M:DiagramModel.Components.Component.Clone
+  parent: DiagramModel.Components.Component
+  name: Clone()
+  nameWithType: Component.Clone()
+  fullName: DiagramModel.Components.Component.Clone()
+  spec.csharp:
+  - uid: DiagramModel.Components.Component.Clone
+    name: Clone
+    nameWithType: Component.Clone
+    fullName: DiagramModel.Components.Component.Clone
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DiagramModel.Components.Component.Clone
+    name: Clone
+    nameWithType: Component.Clone
+    fullName: DiagramModel.Components.Component.Clone
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DiagramModel.Components.Class.Clone*
+  commentId: Overload:DiagramModel.Components.Class.Clone
+  name: Clone
+  nameWithType: Class.Clone
+  fullName: DiagramModel.Components.Class.Clone
+- uid: DiagramModel.Components.Class.GetInheritanceParent*
+  commentId: Overload:DiagramModel.Components.Class.GetInheritanceParent
+  name: GetInheritanceParent
+  nameWithType: Class.GetInheritanceParent
+  fullName: DiagramModel.Components.Class.GetInheritanceParent
+- uid: DiagramModel.Components.Parent
+  commentId: T:DiagramModel.Components.Parent
+  parent: DiagramModel.Components
+  name: Parent
+  nameWithType: Parent
+  fullName: DiagramModel.Components.Parent
+- uid: DiagramModel.Components.Component.AddChild(DiagramModel.Components.Component)
+  commentId: M:DiagramModel.Components.Component.AddChild(DiagramModel.Components.Component)
+  parent: DiagramModel.Components.Component
+  name: AddChild(Component)
+  nameWithType: Component.AddChild(Component)
+  fullName: DiagramModel.Components.Component.AddChild(DiagramModel.Components.Component)
+  spec.csharp:
+  - uid: DiagramModel.Components.Component.AddChild(DiagramModel.Components.Component)
+    name: AddChild
+    nameWithType: Component.AddChild
+    fullName: DiagramModel.Components.Component.AddChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DiagramModel.Components.Component
+    name: Component
+    nameWithType: Component
+    fullName: DiagramModel.Components.Component
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DiagramModel.Components.Component.AddChild(DiagramModel.Components.Component)
+    name: AddChild
+    nameWithType: Component.AddChild
+    fullName: DiagramModel.Components.Component.AddChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DiagramModel.Components.Component
+    name: Component
+    nameWithType: Component
+    fullName: DiagramModel.Components.Component
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DiagramModel.Components.Class.AddChild*
+  commentId: Overload:DiagramModel.Components.Class.AddChild
+  name: AddChild
+  nameWithType: Class.AddChild
+  fullName: DiagramModel.Components.Class.AddChild

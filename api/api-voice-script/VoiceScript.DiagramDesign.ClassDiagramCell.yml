@@ -1,0 +1,533 @@
+### YamlMime:ManagedReference
+items:
+- uid: VoiceScript.DiagramDesign.ClassDiagramCell
+  commentId: T:VoiceScript.DiagramDesign.ClassDiagramCell
+  id: ClassDiagramCell
+  parent: VoiceScript.DiagramDesign
+  children:
+  - VoiceScript.DiagramDesign.ClassDiagramCell.AddLine(System.String)
+  - VoiceScript.DiagramDesign.ClassDiagramCell.BuildCellText
+  - VoiceScript.DiagramDesign.ClassDiagramCell.GetMaxLineLength
+  - VoiceScript.DiagramDesign.ClassDiagramCell.MarginHorizontal
+  - VoiceScript.DiagramDesign.ClassDiagramCell.MarginVertical
+  langs:
+  - csharp
+  - vb
+  name: ClassDiagramCell
+  nameWithType: ClassDiagramCell
+  fullName: VoiceScript.DiagramDesign.ClassDiagramCell
+  type: Class
+  source:
+    id: ClassDiagramCell
+    path: ''
+    startLine: 718
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.DiagramDesign
+  syntax:
+    content: public class ClassDiagramCell
+    content.vb: Public Class ClassDiagramCell
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: VoiceScript.DiagramDesign.ClassDiagramCell.MarginHorizontal
+  commentId: P:VoiceScript.DiagramDesign.ClassDiagramCell.MarginHorizontal
+  id: MarginHorizontal
+  parent: VoiceScript.DiagramDesign.ClassDiagramCell
+  langs:
+  - csharp
+  - vb
+  name: MarginHorizontal
+  nameWithType: ClassDiagramCell.MarginHorizontal
+  fullName: VoiceScript.DiagramDesign.ClassDiagramCell.MarginHorizontal
+  type: Property
+  source:
+    id: MarginHorizontal
+    path: ''
+    startLine: 723
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.DiagramDesign
+  syntax:
+    content: public static string MarginHorizontal { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property MarginHorizontal As String
+  overload: VoiceScript.DiagramDesign.ClassDiagramCell.MarginHorizontal*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: VoiceScript.DiagramDesign.ClassDiagramCell.MarginVertical
+  commentId: P:VoiceScript.DiagramDesign.ClassDiagramCell.MarginVertical
+  id: MarginVertical
+  parent: VoiceScript.DiagramDesign.ClassDiagramCell
+  langs:
+  - csharp
+  - vb
+  name: MarginVertical
+  nameWithType: ClassDiagramCell.MarginVertical
+  fullName: VoiceScript.DiagramDesign.ClassDiagramCell.MarginVertical
+  type: Property
+  source:
+    id: MarginVertical
+    path: ''
+    startLine: 724
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.DiagramDesign
+  syntax:
+    content: public static string MarginVertical { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property MarginVertical As String
+  overload: VoiceScript.DiagramDesign.ClassDiagramCell.MarginVertical*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: VoiceScript.DiagramDesign.ClassDiagramCell.BuildCellText
+  commentId: M:VoiceScript.DiagramDesign.ClassDiagramCell.BuildCellText
+  id: BuildCellText
+  parent: VoiceScript.DiagramDesign.ClassDiagramCell
+  langs:
+  - csharp
+  - vb
+  name: BuildCellText()
+  nameWithType: ClassDiagramCell.BuildCellText()
+  fullName: VoiceScript.DiagramDesign.ClassDiagramCell.BuildCellText()
+  type: Method
+  source:
+    id: BuildCellText
+    path: ''
+    startLine: 725
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.DiagramDesign
+  syntax:
+    content: public string BuildCellText()
+    return:
+      type: System.String
+    content.vb: Public Function BuildCellText As String
+  overload: VoiceScript.DiagramDesign.ClassDiagramCell.BuildCellText*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: VoiceScript.DiagramDesign.ClassDiagramCell.AddLine(System.String)
+  commentId: M:VoiceScript.DiagramDesign.ClassDiagramCell.AddLine(System.String)
+  id: AddLine(System.String)
+  parent: VoiceScript.DiagramDesign.ClassDiagramCell
+  langs:
+  - csharp
+  - vb
+  name: AddLine(String)
+  nameWithType: ClassDiagramCell.AddLine(String)
+  fullName: VoiceScript.DiagramDesign.ClassDiagramCell.AddLine(System.String)
+  type: Method
+  source:
+    id: AddLine
+    path: ''
+    startLine: 740
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.DiagramDesign
+  syntax:
+    content: public void AddLine(string text)
+    parameters:
+    - id: text
+      type: System.String
+    content.vb: Public Sub AddLine(text As String)
+  overload: VoiceScript.DiagramDesign.ClassDiagramCell.AddLine*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: VoiceScript.DiagramDesign.ClassDiagramCell.GetMaxLineLength
+  commentId: M:VoiceScript.DiagramDesign.ClassDiagramCell.GetMaxLineLength
+  id: GetMaxLineLength
+  parent: VoiceScript.DiagramDesign.ClassDiagramCell
+  langs:
+  - csharp
+  - vb
+  name: GetMaxLineLength()
+  nameWithType: ClassDiagramCell.GetMaxLineLength()
+  fullName: VoiceScript.DiagramDesign.ClassDiagramCell.GetMaxLineLength()
+  type: Method
+  source:
+    id: GetMaxLineLength
+    path: ''
+    startLine: 745
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.DiagramDesign
+  syntax:
+    content: public int GetMaxLineLength()
+    return:
+      type: System.Int32
+    content.vb: Public Function GetMaxLineLength As Integer
+  overload: VoiceScript.DiagramDesign.ClassDiagramCell.GetMaxLineLength*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: VoiceScript.DiagramDesign
+  commentId: N:VoiceScript.DiagramDesign
+  name: VoiceScript.DiagramDesign
+  nameWithType: VoiceScript.DiagramDesign
+  fullName: VoiceScript.DiagramDesign
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VoiceScript.DiagramDesign.ClassDiagramCell.MarginHorizontal*
+  commentId: Overload:VoiceScript.DiagramDesign.ClassDiagramCell.MarginHorizontal
+  name: MarginHorizontal
+  nameWithType: ClassDiagramCell.MarginHorizontal
+  fullName: VoiceScript.DiagramDesign.ClassDiagramCell.MarginHorizontal
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: VoiceScript.DiagramDesign.ClassDiagramCell.MarginVertical*
+  commentId: Overload:VoiceScript.DiagramDesign.ClassDiagramCell.MarginVertical
+  name: MarginVertical
+  nameWithType: ClassDiagramCell.MarginVertical
+  fullName: VoiceScript.DiagramDesign.ClassDiagramCell.MarginVertical
+- uid: VoiceScript.DiagramDesign.ClassDiagramCell.BuildCellText*
+  commentId: Overload:VoiceScript.DiagramDesign.ClassDiagramCell.BuildCellText
+  name: BuildCellText
+  nameWithType: ClassDiagramCell.BuildCellText
+  fullName: VoiceScript.DiagramDesign.ClassDiagramCell.BuildCellText
+- uid: VoiceScript.DiagramDesign.ClassDiagramCell.AddLine*
+  commentId: Overload:VoiceScript.DiagramDesign.ClassDiagramCell.AddLine
+  name: AddLine
+  nameWithType: ClassDiagramCell.AddLine
+  fullName: VoiceScript.DiagramDesign.ClassDiagramCell.AddLine
+- uid: VoiceScript.DiagramDesign.ClassDiagramCell.GetMaxLineLength*
+  commentId: Overload:VoiceScript.DiagramDesign.ClassDiagramCell.GetMaxLineLength
+  name: GetMaxLineLength
+  nameWithType: ClassDiagramCell.GetMaxLineLength
+  fullName: VoiceScript.DiagramDesign.ClassDiagramCell.GetMaxLineLength
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32

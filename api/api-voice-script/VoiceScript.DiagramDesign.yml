@@ -1,0 +1,34 @@
+### YamlMime:ManagedReference
+items:
+- uid: VoiceScript.DiagramDesign
+  commentId: N:VoiceScript.DiagramDesign
+  id: VoiceScript.DiagramDesign
+  children:
+  - VoiceScript.DiagramDesign.ClassDiagramCell
+  - VoiceScript.DiagramDesign.ClassDiagramGrid
+  - VoiceScript.DiagramDesign.DiagramDesigner
+  langs:
+  - csharp
+  - vb
+  name: VoiceScript.DiagramDesign
+  nameWithType: VoiceScript.DiagramDesign
+  fullName: VoiceScript.DiagramDesign
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+references:
+- uid: VoiceScript.DiagramDesign.ClassDiagramCell
+  commentId: T:VoiceScript.DiagramDesign.ClassDiagramCell
+  name: ClassDiagramCell
+  nameWithType: ClassDiagramCell
+  fullName: VoiceScript.DiagramDesign.ClassDiagramCell
+- uid: VoiceScript.DiagramDesign.ClassDiagramGrid
+  commentId: T:VoiceScript.DiagramDesign.ClassDiagramGrid
+  name: ClassDiagramGrid
+  nameWithType: ClassDiagramGrid
+  fullName: VoiceScript.DiagramDesign.ClassDiagramGrid
+- uid: VoiceScript.DiagramDesign.DiagramDesigner
+  commentId: T:VoiceScript.DiagramDesign.DiagramDesigner
+  name: DiagramDesigner
+  nameWithType: DiagramDesigner
+  fullName: VoiceScript.DiagramDesign.DiagramDesigner

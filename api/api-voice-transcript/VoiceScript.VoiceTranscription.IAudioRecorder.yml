@@ -1,0 +1,424 @@
+### YamlMime:ManagedReference
+items:
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder
+  commentId: T:VoiceScript.VoiceTranscription.IAudioRecorder
+  id: IAudioRecorder
+  parent: VoiceScript.VoiceTranscription
+  children:
+  - VoiceScript.VoiceTranscription.IAudioRecorder.AudioStream
+  - VoiceScript.VoiceTranscription.IAudioRecorder.ConvertSecondsToBytes(System.Int32)
+  - VoiceScript.VoiceTranscription.IAudioRecorder.GetFileSecondsLength(System.String)
+  - VoiceScript.VoiceTranscription.IAudioRecorder.OutputFilename
+  - VoiceScript.VoiceTranscription.IAudioRecorder.Recording
+  - VoiceScript.VoiceTranscription.IAudioRecorder.RecordingDeviceAvailable
+  - VoiceScript.VoiceTranscription.IAudioRecorder.StartRecording(System.Action)
+  - VoiceScript.VoiceTranscription.IAudioRecorder.StopRecording
+  - VoiceScript.VoiceTranscription.IAudioRecorder.WaveProvider
+  langs:
+  - csharp
+  - vb
+  name: IAudioRecorder
+  nameWithType: IAudioRecorder
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder
+  type: Interface
+  source:
+    id: IAudioRecorder
+    path: ''
+    startLine: 226
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: 'public interface IAudioRecorder : IDisposable'
+    content.vb: >-
+      Public Interface IAudioRecorder
+          Inherits IDisposable
+  inheritedMembers:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.WaveProvider
+  commentId: P:VoiceScript.VoiceTranscription.IAudioRecorder.WaveProvider
+  id: WaveProvider
+  parent: VoiceScript.VoiceTranscription.IAudioRecorder
+  langs:
+  - csharp
+  - vb
+  name: WaveProvider
+  nameWithType: IAudioRecorder.WaveProvider
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.WaveProvider
+  type: Property
+  source:
+    id: WaveProvider
+    path: ''
+    startLine: 228
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: BufferedWaveProvider WaveProvider { get; }
+    parameters: []
+    return:
+      type: BufferedWaveProvider
+    content.vb: ReadOnly Property WaveProvider As BufferedWaveProvider
+  overload: VoiceScript.VoiceTranscription.IAudioRecorder.WaveProvider*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.AudioStream
+  commentId: P:VoiceScript.VoiceTranscription.IAudioRecorder.AudioStream
+  id: AudioStream
+  parent: VoiceScript.VoiceTranscription.IAudioRecorder
+  langs:
+  - csharp
+  - vb
+  name: AudioStream
+  nameWithType: IAudioRecorder.AudioStream
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.AudioStream
+  type: Property
+  source:
+    id: AudioStream
+    path: ''
+    startLine: 229
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: WaveFileWriter AudioStream { get; }
+    parameters: []
+    return:
+      type: WaveFileWriter
+    content.vb: ReadOnly Property AudioStream As WaveFileWriter
+  overload: VoiceScript.VoiceTranscription.IAudioRecorder.AudioStream*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.Recording
+  commentId: P:VoiceScript.VoiceTranscription.IAudioRecorder.Recording
+  id: Recording
+  parent: VoiceScript.VoiceTranscription.IAudioRecorder
+  langs:
+  - csharp
+  - vb
+  name: Recording
+  nameWithType: IAudioRecorder.Recording
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.Recording
+  type: Property
+  source:
+    id: Recording
+    path: ''
+    startLine: 230
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: bool Recording { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property Recording As Boolean
+  overload: VoiceScript.VoiceTranscription.IAudioRecorder.Recording*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.OutputFilename
+  commentId: P:VoiceScript.VoiceTranscription.IAudioRecorder.OutputFilename
+  id: OutputFilename
+  parent: VoiceScript.VoiceTranscription.IAudioRecorder
+  langs:
+  - csharp
+  - vb
+  name: OutputFilename
+  nameWithType: IAudioRecorder.OutputFilename
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.OutputFilename
+  type: Property
+  source:
+    id: OutputFilename
+    path: ''
+    startLine: 231
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: string OutputFilename { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property OutputFilename As String
+  overload: VoiceScript.VoiceTranscription.IAudioRecorder.OutputFilename*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.StartRecording(System.Action)
+  commentId: M:VoiceScript.VoiceTranscription.IAudioRecorder.StartRecording(System.Action)
+  id: StartRecording(System.Action)
+  parent: VoiceScript.VoiceTranscription.IAudioRecorder
+  langs:
+  - csharp
+  - vb
+  name: StartRecording(Action)
+  nameWithType: IAudioRecorder.StartRecording(Action)
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.StartRecording(System.Action)
+  type: Method
+  source:
+    id: StartRecording
+    path: ''
+    startLine: 232
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: void StartRecording(Action RecordingStoppedCallback = null)
+    parameters:
+    - id: RecordingStoppedCallback
+      type: System.Action
+    content.vb: Sub StartRecording(RecordingStoppedCallback As Action = Nothing)
+  overload: VoiceScript.VoiceTranscription.IAudioRecorder.StartRecording*
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.StopRecording
+  commentId: M:VoiceScript.VoiceTranscription.IAudioRecorder.StopRecording
+  id: StopRecording
+  parent: VoiceScript.VoiceTranscription.IAudioRecorder
+  langs:
+  - csharp
+  - vb
+  name: StopRecording()
+  nameWithType: IAudioRecorder.StopRecording()
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.StopRecording()
+  type: Method
+  source:
+    id: StopRecording
+    path: ''
+    startLine: 233
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: void StopRecording()
+    content.vb: Sub StopRecording
+  overload: VoiceScript.VoiceTranscription.IAudioRecorder.StopRecording*
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.GetFileSecondsLength(System.String)
+  commentId: M:VoiceScript.VoiceTranscription.IAudioRecorder.GetFileSecondsLength(System.String)
+  id: GetFileSecondsLength(System.String)
+  parent: VoiceScript.VoiceTranscription.IAudioRecorder
+  langs:
+  - csharp
+  - vb
+  name: GetFileSecondsLength(String)
+  nameWithType: IAudioRecorder.GetFileSecondsLength(String)
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.GetFileSecondsLength(System.String)
+  type: Method
+  source:
+    id: GetFileSecondsLength
+    path: ''
+    startLine: 234
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: double GetFileSecondsLength(string audioFilename)
+    parameters:
+    - id: audioFilename
+      type: System.String
+    return:
+      type: System.Double
+    content.vb: Function GetFileSecondsLength(audioFilename As String) As Double
+  overload: VoiceScript.VoiceTranscription.IAudioRecorder.GetFileSecondsLength*
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.ConvertSecondsToBytes(System.Int32)
+  commentId: M:VoiceScript.VoiceTranscription.IAudioRecorder.ConvertSecondsToBytes(System.Int32)
+  id: ConvertSecondsToBytes(System.Int32)
+  parent: VoiceScript.VoiceTranscription.IAudioRecorder
+  langs:
+  - csharp
+  - vb
+  name: ConvertSecondsToBytes(Int32)
+  nameWithType: IAudioRecorder.ConvertSecondsToBytes(Int32)
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.ConvertSecondsToBytes(System.Int32)
+  type: Method
+  source:
+    id: ConvertSecondsToBytes
+    path: ''
+    startLine: 235
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: int ConvertSecondsToBytes(int seconds)
+    parameters:
+    - id: seconds
+      type: System.Int32
+    return:
+      type: System.Int32
+    content.vb: Function ConvertSecondsToBytes(seconds As Integer) As Integer
+  overload: VoiceScript.VoiceTranscription.IAudioRecorder.ConvertSecondsToBytes*
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.RecordingDeviceAvailable
+  commentId: M:VoiceScript.VoiceTranscription.IAudioRecorder.RecordingDeviceAvailable
+  id: RecordingDeviceAvailable
+  parent: VoiceScript.VoiceTranscription.IAudioRecorder
+  langs:
+  - csharp
+  - vb
+  name: RecordingDeviceAvailable()
+  nameWithType: IAudioRecorder.RecordingDeviceAvailable()
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.RecordingDeviceAvailable()
+  type: Method
+  source:
+    id: RecordingDeviceAvailable
+    path: ''
+    startLine: 236
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: bool RecordingDeviceAvailable()
+    return:
+      type: System.Boolean
+    content.vb: Function RecordingDeviceAvailable As Boolean
+  overload: VoiceScript.VoiceTranscription.IAudioRecorder.RecordingDeviceAvailable*
+references:
+- uid: VoiceScript.VoiceTranscription
+  commentId: N:VoiceScript.VoiceTranscription
+  name: VoiceScript.VoiceTranscription
+  nameWithType: VoiceScript.VoiceTranscription
+  fullName: VoiceScript.VoiceTranscription
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.WaveProvider*
+  commentId: Overload:VoiceScript.VoiceTranscription.IAudioRecorder.WaveProvider
+  name: WaveProvider
+  nameWithType: IAudioRecorder.WaveProvider
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.WaveProvider
+- uid: BufferedWaveProvider
+  isExternal: true
+  name: BufferedWaveProvider
+  nameWithType: BufferedWaveProvider
+  fullName: BufferedWaveProvider
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.AudioStream*
+  commentId: Overload:VoiceScript.VoiceTranscription.IAudioRecorder.AudioStream
+  name: AudioStream
+  nameWithType: IAudioRecorder.AudioStream
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.AudioStream
+- uid: WaveFileWriter
+  isExternal: true
+  name: WaveFileWriter
+  nameWithType: WaveFileWriter
+  fullName: WaveFileWriter
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.Recording*
+  commentId: Overload:VoiceScript.VoiceTranscription.IAudioRecorder.Recording
+  name: Recording
+  nameWithType: IAudioRecorder.Recording
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.Recording
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.OutputFilename*
+  commentId: Overload:VoiceScript.VoiceTranscription.IAudioRecorder.OutputFilename
+  name: OutputFilename
+  nameWithType: IAudioRecorder.OutputFilename
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.OutputFilename
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.StartRecording*
+  commentId: Overload:VoiceScript.VoiceTranscription.IAudioRecorder.StartRecording
+  name: StartRecording
+  nameWithType: IAudioRecorder.StartRecording
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.StartRecording
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.StopRecording*
+  commentId: Overload:VoiceScript.VoiceTranscription.IAudioRecorder.StopRecording
+  name: StopRecording
+  nameWithType: IAudioRecorder.StopRecording
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.StopRecording
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.GetFileSecondsLength*
+  commentId: Overload:VoiceScript.VoiceTranscription.IAudioRecorder.GetFileSecondsLength
+  name: GetFileSecondsLength
+  nameWithType: IAudioRecorder.GetFileSecondsLength
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.GetFileSecondsLength
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.ConvertSecondsToBytes*
+  commentId: Overload:VoiceScript.VoiceTranscription.IAudioRecorder.ConvertSecondsToBytes
+  name: ConvertSecondsToBytes
+  nameWithType: IAudioRecorder.ConvertSecondsToBytes
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.ConvertSecondsToBytes
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder.RecordingDeviceAvailable*
+  commentId: Overload:VoiceScript.VoiceTranscription.IAudioRecorder.RecordingDeviceAvailable
+  name: RecordingDeviceAvailable
+  nameWithType: IAudioRecorder.RecordingDeviceAvailable
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder.RecordingDeviceAvailable

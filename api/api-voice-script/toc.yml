@@ -1,0 +1,22 @@
+### YamlMime:TableOfContent
+- uid: VoiceScript
+  name: VoiceScript
+  items:
+  - uid: VoiceScript.VoiceScript
+    name: VoiceScript
+- uid: VoiceScript.CommandDesign
+  name: VoiceScript.CommandDesign
+  items:
+  - uid: VoiceScript.CommandDesign.CommandColor
+    name: CommandColor
+  - uid: VoiceScript.CommandDesign.CommandDesigner
+    name: CommandDesigner
+- uid: VoiceScript.DiagramDesign
+  name: VoiceScript.DiagramDesign
+  items:
+  - uid: VoiceScript.DiagramDesign.ClassDiagramCell
+    name: ClassDiagramCell
+  - uid: VoiceScript.DiagramDesign.ClassDiagramGrid
+    name: ClassDiagramGrid
+  - uid: VoiceScript.DiagramDesign.DiagramDesigner
+    name: DiagramDesigner

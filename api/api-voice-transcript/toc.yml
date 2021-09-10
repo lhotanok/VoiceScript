@@ -1,0 +1,22 @@
+### YamlMime:TableOfContent
+- uid: VoiceScript.VoiceTranscription
+  name: VoiceScript.VoiceTranscription
+  items:
+  - uid: VoiceScript.VoiceTranscription.AudioPlayer
+    name: AudioPlayer
+  - uid: VoiceScript.VoiceTranscription.AudioRecorder
+    name: AudioRecorder
+  - uid: VoiceScript.VoiceTranscription.Czech
+    name: Czech
+  - uid: VoiceScript.VoiceTranscription.English
+    name: English
+  - uid: VoiceScript.VoiceTranscription.IAudioPlayer
+    name: IAudioPlayer
+  - uid: VoiceScript.VoiceTranscription.IAudioRecorder
+    name: IAudioRecorder
+  - uid: VoiceScript.VoiceTranscription.IVoiceTranscriptor
+    name: IVoiceTranscriptor
+  - uid: VoiceScript.VoiceTranscription.Language
+    name: Language
+  - uid: VoiceScript.VoiceTranscription.VoiceTranscriptor
+    name: VoiceTranscriptor

@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: VoiceScript
+  commentId: N:VoiceScript
+  id: VoiceScript
+  children:
+  - VoiceScript.VoiceScript
+  langs:
+  - csharp
+  - vb
+  name: VoiceScript
+  nameWithType: VoiceScript
+  fullName: VoiceScript
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+references:
+- uid: VoiceScript.VoiceScript
+  commentId: T:VoiceScript.VoiceScript
+  name: VoiceScript
+  nameWithType: VoiceScript
+  fullName: VoiceScript.VoiceScript

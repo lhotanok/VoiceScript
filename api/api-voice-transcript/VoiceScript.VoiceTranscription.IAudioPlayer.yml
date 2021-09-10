@@ -1,0 +1,117 @@
+### YamlMime:ManagedReference
+items:
+- uid: VoiceScript.VoiceTranscription.IAudioPlayer
+  commentId: T:VoiceScript.VoiceTranscription.IAudioPlayer
+  id: IAudioPlayer
+  parent: VoiceScript.VoiceTranscription
+  children:
+  - VoiceScript.VoiceTranscription.IAudioPlayer.Play(System.String,System.Action)
+  - VoiceScript.VoiceTranscription.IAudioPlayer.Stop
+  langs:
+  - csharp
+  - vb
+  name: IAudioPlayer
+  nameWithType: IAudioPlayer
+  fullName: VoiceScript.VoiceTranscription.IAudioPlayer
+  type: Interface
+  source:
+    id: IAudioPlayer
+    path: ''
+    startLine: 213
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: public interface IAudioPlayer
+    content.vb: Public Interface IAudioPlayer
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: VoiceScript.VoiceTranscription.IAudioPlayer.Play(System.String,System.Action)
+  commentId: M:VoiceScript.VoiceTranscription.IAudioPlayer.Play(System.String,System.Action)
+  id: Play(System.String,System.Action)
+  parent: VoiceScript.VoiceTranscription.IAudioPlayer
+  langs:
+  - csharp
+  - vb
+  name: Play(String, Action)
+  nameWithType: IAudioPlayer.Play(String, Action)
+  fullName: VoiceScript.VoiceTranscription.IAudioPlayer.Play(System.String, System.Action)
+  type: Method
+  source:
+    id: Play
+    path: ''
+    startLine: 215
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: void Play(string audioFilename, Action PlaybackStoppedCallback = null)
+    parameters:
+    - id: audioFilename
+      type: System.String
+    - id: PlaybackStoppedCallback
+      type: System.Action
+    content.vb: Sub Play(audioFilename As String, PlaybackStoppedCallback As Action = Nothing)
+  overload: VoiceScript.VoiceTranscription.IAudioPlayer.Play*
+- uid: VoiceScript.VoiceTranscription.IAudioPlayer.Stop
+  commentId: M:VoiceScript.VoiceTranscription.IAudioPlayer.Stop
+  id: Stop
+  parent: VoiceScript.VoiceTranscription.IAudioPlayer
+  langs:
+  - csharp
+  - vb
+  name: Stop()
+  nameWithType: IAudioPlayer.Stop()
+  fullName: VoiceScript.VoiceTranscription.IAudioPlayer.Stop()
+  type: Method
+  source:
+    id: Stop
+    path: ''
+    startLine: 216
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: void Stop()
+    content.vb: Sub Stop
+  overload: VoiceScript.VoiceTranscription.IAudioPlayer.Stop*
+references:
+- uid: VoiceScript.VoiceTranscription
+  commentId: N:VoiceScript.VoiceTranscription
+  name: VoiceScript.VoiceTranscription
+  nameWithType: VoiceScript.VoiceTranscription
+  fullName: VoiceScript.VoiceTranscription
+- uid: VoiceScript.VoiceTranscription.IAudioPlayer.Play*
+  commentId: Overload:VoiceScript.VoiceTranscription.IAudioPlayer.Play
+  name: Play
+  nameWithType: IAudioPlayer.Play
+  fullName: VoiceScript.VoiceTranscription.IAudioPlayer.Play
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VoiceScript.VoiceTranscription.IAudioPlayer.Stop*
+  commentId: Overload:VoiceScript.VoiceTranscription.IAudioPlayer.Stop
+  name: Stop
+  nameWithType: IAudioPlayer.Stop
+  fullName: VoiceScript.VoiceTranscription.IAudioPlayer.Stop

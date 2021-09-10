@@ -1,0 +1,971 @@
+### YamlMime:ManagedReference
+items:
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat
+  commentId: T:DiagramModel.Commands.LanguageFormats.CzechFormat
+  id: CzechFormat
+  parent: DiagramModel.Commands.LanguageFormats
+  children:
+  - DiagramModel.Commands.LanguageFormats.CzechFormat.Code
+  - DiagramModel.Commands.LanguageFormats.CzechFormat.CommandFormats
+  - DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNameFormat
+  - DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNames
+  - DiagramModel.Commands.LanguageFormats.CzechFormat.DelimiterFormat
+  - DiagramModel.Commands.LanguageFormats.CzechFormat.GetCode
+  - DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
+  - DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace
+  langs:
+  - csharp
+  - vb
+  name: CzechFormat
+  nameWithType: CzechFormat
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat
+  type: Class
+  source:
+    id: CzechFormat
+    path: ''
+    startLine: 589
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands.LanguageFormats
+  syntax:
+    content: 'public class CzechFormat : LanguageFormat'
+    content.vb: >-
+      Public Class CzechFormat
+          Inherits LanguageFormat
+  inheritance:
+  - System.Object
+  - DiagramModel.Commands.LanguageFormats.LanguageFormat
+  inheritedMembers:
+  - DiagramModel.Commands.LanguageFormats.LanguageFormat.GetFormats(System.String)
+  - DiagramModel.Commands.LanguageFormats.LanguageFormat.GetAllCommandFormats
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.CommandFormats
+  commentId: P:DiagramModel.Commands.LanguageFormats.CzechFormat.CommandFormats
+  id: CommandFormats
+  parent: DiagramModel.Commands.LanguageFormats.CzechFormat
+  langs:
+  - csharp
+  - vb
+  name: CommandFormats
+  nameWithType: CzechFormat.CommandFormats
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.CommandFormats
+  type: Property
+  source:
+    id: CommandFormats
+    path: ''
+    startLine: 654
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands.LanguageFormats
+  syntax:
+    content: public override Dictionary<string, List<string>> CommandFormats { get; }
+    parameters: []
+    return:
+      type: Dictionary{System.String,List{System.String}}
+    content.vb: Public Overrides ReadOnly Property CommandFormats As Dictionary(Of String, List(Of String))
+  overridden: DiagramModel.Commands.LanguageFormats.LanguageFormat.CommandFormats
+  overload: DiagramModel.Commands.LanguageFormats.CzechFormat.CommandFormats*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNames
+  commentId: P:DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNames
+  id: ComponentNames
+  parent: DiagramModel.Commands.LanguageFormats.CzechFormat
+  langs:
+  - csharp
+  - vb
+  name: ComponentNames
+  nameWithType: CzechFormat.ComponentNames
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNames
+  type: Property
+  source:
+    id: ComponentNames
+    path: ''
+    startLine: 655
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands.LanguageFormats
+  syntax:
+    content: public override Dictionary<string, string> ComponentNames { get; }
+    parameters: []
+    return:
+      type: Dictionary{System.String,System.String}
+    content.vb: Public Overrides ReadOnly Property ComponentNames As Dictionary(Of String, String)
+  overridden: DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNames
+  overload: DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNames*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.DelimiterFormat
+  commentId: P:DiagramModel.Commands.LanguageFormats.CzechFormat.DelimiterFormat
+  id: DelimiterFormat
+  parent: DiagramModel.Commands.LanguageFormats.CzechFormat
+  langs:
+  - csharp
+  - vb
+  name: DelimiterFormat
+  nameWithType: CzechFormat.DelimiterFormat
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.DelimiterFormat
+  type: Property
+  source:
+    id: DelimiterFormat
+    path: ''
+    startLine: 656
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands.LanguageFormats
+  syntax:
+    content: public override string DelimiterFormat { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides ReadOnly Property DelimiterFormat As String
+  overridden: DiagramModel.Commands.LanguageFormats.LanguageFormat.DelimiterFormat
+  overload: DiagramModel.Commands.LanguageFormats.CzechFormat.DelimiterFormat*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.GetCode
+  commentId: M:DiagramModel.Commands.LanguageFormats.CzechFormat.GetCode
+  id: GetCode
+  parent: DiagramModel.Commands.LanguageFormats.CzechFormat
+  langs:
+  - csharp
+  - vb
+  name: GetCode()
+  nameWithType: CzechFormat.GetCode()
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.GetCode()
+  type: Method
+  source:
+    id: GetCode
+    path: ''
+    startLine: 657
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands.LanguageFormats
+  syntax:
+    content: public static string GetCode()
+    return:
+      type: System.String
+    content.vb: Public Shared Function GetCode As String
+  overload: DiagramModel.Commands.LanguageFormats.CzechFormat.GetCode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.Code
+  commentId: P:DiagramModel.Commands.LanguageFormats.CzechFormat.Code
+  id: Code
+  parent: DiagramModel.Commands.LanguageFormats.CzechFormat
+  langs:
+  - csharp
+  - vb
+  name: Code
+  nameWithType: CzechFormat.Code
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.Code
+  type: Property
+  source:
+    id: Code
+    path: ''
+    startLine: 658
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands.LanguageFormats
+  syntax:
+    content: public override string Code { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides ReadOnly Property Code As String
+  overridden: DiagramModel.Commands.LanguageFormats.LanguageFormat.Code
+  overload: DiagramModel.Commands.LanguageFormats.CzechFormat.Code*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNameFormat
+  commentId: P:DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNameFormat
+  id: ComponentNameFormat
+  parent: DiagramModel.Commands.LanguageFormats.CzechFormat
+  langs:
+  - csharp
+  - vb
+  name: ComponentNameFormat
+  nameWithType: CzechFormat.ComponentNameFormat
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNameFormat
+  type: Property
+  source:
+    id: ComponentNameFormat
+    path: ''
+    startLine: 659
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands.LanguageFormats
+  syntax:
+    content: public override string ComponentNameFormat { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides ReadOnly Property ComponentNameFormat As String
+  overridden: DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNameFormat
+  overload: DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNameFormat*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
+  commentId: P:DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
+  id: ValueConstants
+  parent: DiagramModel.Commands.LanguageFormats.CzechFormat
+  langs:
+  - csharp
+  - vb
+  name: ValueConstants
+  nameWithType: CzechFormat.ValueConstants
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
+  type: Property
+  source:
+    id: ValueConstants
+    path: ''
+    startLine: 661
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands.LanguageFormats
+  syntax:
+    content: public override Dictionary<string, string> ValueConstants { get; }
+    parameters: []
+    return:
+      type: Dictionary{System.String,System.String}
+    content.vb: Public Overrides ReadOnly Property ValueConstants As Dictionary(Of String, String)
+  overridden: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
+  overload: DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace
+  commentId: P:DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace
+  id: ValuesToReplace
+  parent: DiagramModel.Commands.LanguageFormats.CzechFormat
+  langs:
+  - csharp
+  - vb
+  name: ValuesToReplace
+  nameWithType: CzechFormat.ValuesToReplace
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace
+  type: Property
+  source:
+    id: ValuesToReplace
+    path: ''
+    startLine: 662
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands.LanguageFormats
+  syntax:
+    content: public override Dictionary<string, string> ValuesToReplace { get; }
+    parameters: []
+    return:
+      type: Dictionary{System.String,System.String}
+    content.vb: Public Overrides ReadOnly Property ValuesToReplace As Dictionary(Of String, String)
+  overridden: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
+  overload: DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+references:
+- uid: DiagramModel.Commands.LanguageFormats
+  commentId: N:DiagramModel.Commands.LanguageFormats
+  name: DiagramModel.Commands.LanguageFormats
+  nameWithType: DiagramModel.Commands.LanguageFormats
+  fullName: DiagramModel.Commands.LanguageFormats
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat
+  commentId: T:DiagramModel.Commands.LanguageFormats.LanguageFormat
+  parent: DiagramModel.Commands.LanguageFormats
+  name: LanguageFormat
+  nameWithType: LanguageFormat
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.GetFormats(System.String)
+  commentId: M:DiagramModel.Commands.LanguageFormats.LanguageFormat.GetFormats(System.String)
+  parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
+  isExternal: true
+  name: GetFormats(String)
+  nameWithType: LanguageFormat.GetFormats(String)
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.GetFormats(System.String)
+  spec.csharp:
+  - uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.GetFormats(System.String)
+    name: GetFormats
+    nameWithType: LanguageFormat.GetFormats
+    fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.GetFormats
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.GetFormats(System.String)
+    name: GetFormats
+    nameWithType: LanguageFormat.GetFormats
+    fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.GetFormats
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.GetAllCommandFormats
+  commentId: M:DiagramModel.Commands.LanguageFormats.LanguageFormat.GetAllCommandFormats
+  parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
+  name: GetAllCommandFormats()
+  nameWithType: LanguageFormat.GetAllCommandFormats()
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.GetAllCommandFormats()
+  spec.csharp:
+  - uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.GetAllCommandFormats
+    name: GetAllCommandFormats
+    nameWithType: LanguageFormat.GetAllCommandFormats
+    fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.GetAllCommandFormats
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.GetAllCommandFormats
+    name: GetAllCommandFormats
+    nameWithType: LanguageFormat.GetAllCommandFormats
+    fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.GetAllCommandFormats
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.CommandFormats
+  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.CommandFormats
+  parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
+  name: CommandFormats
+  nameWithType: LanguageFormat.CommandFormats
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.CommandFormats
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.CommandFormats*
+  commentId: Overload:DiagramModel.Commands.LanguageFormats.CzechFormat.CommandFormats
+  name: CommandFormats
+  nameWithType: CzechFormat.CommandFormats
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.CommandFormats
+- uid: Dictionary{System.String,List{System.String}}
+  commentId: '!:Dictionary{System.String,List{System.String}}'
+  definition: Dictionary`2
+  name: Dictionary<String, List<String>>
+  nameWithType: Dictionary<String, List<String>>
+  fullName: Dictionary<System.String, List<System.String>>
+  nameWithType.vb: Dictionary(Of String, List(Of String))
+  fullName.vb: Dictionary(Of System.String, List(Of System.String))
+  name.vb: Dictionary(Of String, List(Of String))
+  spec.csharp:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Dictionary`2
+  isExternal: true
+  name: Dictionary<, >
+  nameWithType: Dictionary<, >
+  fullName: Dictionary<, >
+  nameWithType.vb: Dictionary(Of , )
+  fullName.vb: Dictionary(Of , )
+  name.vb: Dictionary(Of , )
+  spec.csharp:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNames
+  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNames
+  parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
+  name: ComponentNames
+  nameWithType: LanguageFormat.ComponentNames
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNames
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNames*
+  commentId: Overload:DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNames
+  name: ComponentNames
+  nameWithType: CzechFormat.ComponentNames
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNames
+- uid: Dictionary{System.String,System.String}
+  commentId: '!:Dictionary{System.String,System.String}'
+  definition: Dictionary`2
+  name: Dictionary<String, String>
+  nameWithType: Dictionary<String, String>
+  fullName: Dictionary<System.String, System.String>
+  nameWithType.vb: Dictionary(Of String, String)
+  fullName.vb: Dictionary(Of System.String, System.String)
+  name.vb: Dictionary(Of String, String)
+  spec.csharp:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.DelimiterFormat
+  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.DelimiterFormat
+  parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
+  name: DelimiterFormat
+  nameWithType: LanguageFormat.DelimiterFormat
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.DelimiterFormat
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.DelimiterFormat*
+  commentId: Overload:DiagramModel.Commands.LanguageFormats.CzechFormat.DelimiterFormat
+  name: DelimiterFormat
+  nameWithType: CzechFormat.DelimiterFormat
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.DelimiterFormat
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.GetCode*
+  commentId: Overload:DiagramModel.Commands.LanguageFormats.CzechFormat.GetCode
+  name: GetCode
+  nameWithType: CzechFormat.GetCode
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.GetCode
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.Code
+  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.Code
+  parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
+  name: Code
+  nameWithType: LanguageFormat.Code
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.Code
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.Code*
+  commentId: Overload:DiagramModel.Commands.LanguageFormats.CzechFormat.Code
+  name: Code
+  nameWithType: CzechFormat.Code
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.Code
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNameFormat
+  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNameFormat
+  parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
+  name: ComponentNameFormat
+  nameWithType: LanguageFormat.ComponentNameFormat
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNameFormat
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNameFormat*
+  commentId: Overload:DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNameFormat
+  name: ComponentNameFormat
+  nameWithType: CzechFormat.ComponentNameFormat
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNameFormat
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
+  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
+  parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
+  name: ValueConstants
+  nameWithType: LanguageFormat.ValueConstants
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants*
+  commentId: Overload:DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
+  name: ValueConstants
+  nameWithType: CzechFormat.ValueConstants
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
+  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
+  parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
+  name: ValuesToReplace
+  nameWithType: LanguageFormat.ValuesToReplace
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace*
+  commentId: Overload:DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace
+  name: ValuesToReplace
+  nameWithType: CzechFormat.ValuesToReplace
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace

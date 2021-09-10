@@ -1,0 +1,328 @@
+### YamlMime:ManagedReference
+items:
+- uid: DiagramModel.Commands.CommandParseException
+  commentId: T:DiagramModel.Commands.CommandParseException
+  id: CommandParseException
+  parent: DiagramModel.Commands
+  children:
+  - DiagramModel.Commands.CommandParseException.#ctor(System.String)
+  - DiagramModel.Commands.CommandParseException.#ctor(System.String,List{DiagramModel.Commands.Command},List{System.String})
+  - DiagramModel.Commands.CommandParseException.ParsedCommands
+  - DiagramModel.Commands.CommandParseException.UnparsedWords
+  langs:
+  - csharp
+  - vb
+  name: CommandParseException
+  nameWithType: CommandParseException
+  fullName: DiagramModel.Commands.CommandParseException
+  type: Class
+  source:
+    id: CommandParseException
+    path: ''
+    startLine: 194
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: 'public class CommandParseException : InvalidOperationException'
+    content.vb: >-
+      Public Class CommandParseException
+          Inherits InvalidOperationException
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: DiagramModel.Commands.CommandParseException.#ctor(System.String,List{DiagramModel.Commands.Command},List{System.String})
+  commentId: M:DiagramModel.Commands.CommandParseException.#ctor(System.String,List{DiagramModel.Commands.Command},List{System.String})
+  id: '#ctor(System.String,List{DiagramModel.Commands.Command},List{System.String})'
+  parent: DiagramModel.Commands.CommandParseException
+  langs:
+  - csharp
+  - vb
+  name: CommandParseException(String, List<Command>, List<String>)
+  nameWithType: CommandParseException.CommandParseException(String, List<Command>, List<String>)
+  fullName: DiagramModel.Commands.CommandParseException.CommandParseException(System.String, List<DiagramModel.Commands.Command>, List<System.String>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 196
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public CommandParseException(string message, List<Command> parsedCommands, List<string> unparsedWords)
+    parameters:
+    - id: message
+      type: System.String
+    - id: parsedCommands
+      type: List{DiagramModel.Commands.Command}
+    - id: unparsedWords
+      type: List{System.String}
+    content.vb: Public Sub New(message As String, parsedCommands As List(Of Command), unparsedWords As List(Of String))
+  overload: DiagramModel.Commands.CommandParseException.#ctor*
+  nameWithType.vb: CommandParseException.CommandParseException(String, List(Of Command), List(Of String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DiagramModel.Commands.CommandParseException.CommandParseException(System.String, List(Of DiagramModel.Commands.Command), List(Of System.String))
+  name.vb: CommandParseException(String, List(Of Command), List(Of String))
+- uid: DiagramModel.Commands.CommandParseException.#ctor(System.String)
+  commentId: M:DiagramModel.Commands.CommandParseException.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: DiagramModel.Commands.CommandParseException
+  langs:
+  - csharp
+  - vb
+  name: CommandParseException(String)
+  nameWithType: CommandParseException.CommandParseException(String)
+  fullName: DiagramModel.Commands.CommandParseException.CommandParseException(System.String)
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 202
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public CommandParseException(string message)
+    parameters:
+    - id: message
+      type: System.String
+    content.vb: Public Sub New(message As String)
+  overload: DiagramModel.Commands.CommandParseException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DiagramModel.Commands.CommandParseException.ParsedCommands
+  commentId: P:DiagramModel.Commands.CommandParseException.ParsedCommands
+  id: ParsedCommands
+  parent: DiagramModel.Commands.CommandParseException
+  langs:
+  - csharp
+  - vb
+  name: ParsedCommands
+  nameWithType: CommandParseException.ParsedCommands
+  fullName: DiagramModel.Commands.CommandParseException.ParsedCommands
+  type: Property
+  source:
+    id: ParsedCommands
+    path: ''
+    startLine: 204
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public List<Command> ParsedCommands { get; }
+    parameters: []
+    return:
+      type: List{DiagramModel.Commands.Command}
+    content.vb: Public ReadOnly Property ParsedCommands As List(Of Command)
+  overload: DiagramModel.Commands.CommandParseException.ParsedCommands*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DiagramModel.Commands.CommandParseException.UnparsedWords
+  commentId: P:DiagramModel.Commands.CommandParseException.UnparsedWords
+  id: UnparsedWords
+  parent: DiagramModel.Commands.CommandParseException
+  langs:
+  - csharp
+  - vb
+  name: UnparsedWords
+  nameWithType: CommandParseException.UnparsedWords
+  fullName: DiagramModel.Commands.CommandParseException.UnparsedWords
+  type: Property
+  source:
+    id: UnparsedWords
+    path: ''
+    startLine: 205
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Commands
+  syntax:
+    content: public List<string> UnparsedWords { get; }
+    parameters: []
+    return:
+      type: List{System.String}
+    content.vb: Public ReadOnly Property UnparsedWords As List(Of String)
+  overload: DiagramModel.Commands.CommandParseException.UnparsedWords*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: DiagramModel.Commands
+  commentId: N:DiagramModel.Commands
+  name: DiagramModel.Commands
+  nameWithType: DiagramModel.Commands
+  fullName: DiagramModel.Commands
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DiagramModel.Commands.CommandParseException.#ctor*
+  commentId: Overload:DiagramModel.Commands.CommandParseException.#ctor
+  name: CommandParseException
+  nameWithType: CommandParseException.CommandParseException
+  fullName: DiagramModel.Commands.CommandParseException.CommandParseException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: List{DiagramModel.Commands.Command}
+  commentId: '!:List{DiagramModel.Commands.Command}'
+  definition: List`1
+  name: List<Command>
+  nameWithType: List<Command>
+  fullName: List<DiagramModel.Commands.Command>
+  nameWithType.vb: List(Of Command)
+  fullName.vb: List(Of DiagramModel.Commands.Command)
+  name.vb: List(Of Command)
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: DiagramModel.Commands.Command
+    name: Command
+    nameWithType: Command
+    fullName: DiagramModel.Commands.Command
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: DiagramModel.Commands.Command
+    name: Command
+    nameWithType: Command
+    fullName: DiagramModel.Commands.Command
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: List{System.String}
+  commentId: '!:List{System.String}'
+  definition: List`1
+  name: List<String>
+  nameWithType: List<String>
+  fullName: List<System.String>
+  nameWithType.vb: List(Of String)
+  fullName.vb: List(Of System.String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: List`1
+  isExternal: true
+  name: List<>
+  nameWithType: List<>
+  fullName: List<>
+  nameWithType.vb: List(Of )
+  fullName.vb: List(Of )
+  name.vb: List(Of )
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DiagramModel.Commands.CommandParseException.ParsedCommands*
+  commentId: Overload:DiagramModel.Commands.CommandParseException.ParsedCommands
+  name: ParsedCommands
+  nameWithType: CommandParseException.ParsedCommands
+  fullName: DiagramModel.Commands.CommandParseException.ParsedCommands
+- uid: DiagramModel.Commands.CommandParseException.UnparsedWords*
+  commentId: Overload:DiagramModel.Commands.CommandParseException.UnparsedWords
+  name: UnparsedWords
+  nameWithType: CommandParseException.UnparsedWords
+  fullName: DiagramModel.Commands.CommandParseException.UnparsedWords

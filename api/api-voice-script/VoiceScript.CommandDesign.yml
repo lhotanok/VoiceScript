@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: VoiceScript.CommandDesign
+  commentId: N:VoiceScript.CommandDesign
+  id: VoiceScript.CommandDesign
+  children:
+  - VoiceScript.CommandDesign.CommandColor
+  - VoiceScript.CommandDesign.CommandDesigner
+  langs:
+  - csharp
+  - vb
+  name: VoiceScript.CommandDesign
+  nameWithType: VoiceScript.CommandDesign
+  fullName: VoiceScript.CommandDesign
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+references:
+- uid: VoiceScript.CommandDesign.CommandColor
+  commentId: T:VoiceScript.CommandDesign.CommandColor
+  name: CommandColor
+  nameWithType: CommandColor
+  fullName: VoiceScript.CommandDesign.CommandColor
+- uid: VoiceScript.CommandDesign.CommandDesigner
+  commentId: T:VoiceScript.CommandDesign.CommandDesigner
+  name: CommandDesigner
+  nameWithType: CommandDesigner
+  fullName: VoiceScript.CommandDesign.CommandDesigner

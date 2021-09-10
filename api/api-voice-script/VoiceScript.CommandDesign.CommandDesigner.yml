@@ -1,0 +1,647 @@
+### YamlMime:ManagedReference
+items:
+- uid: VoiceScript.CommandDesign.CommandDesigner
+  commentId: T:VoiceScript.CommandDesign.CommandDesigner
+  id: CommandDesigner
+  parent: VoiceScript.CommandDesign
+  children:
+  - VoiceScript.CommandDesign.CommandDesigner.#ctor(Action{System.String,Color})
+  - VoiceScript.CommandDesign.CommandDesigner.DesignCommand(Command)
+  - VoiceScript.CommandDesign.CommandDesigner.DesignCommands(IList{Command})
+  langs:
+  - csharp
+  - vb
+  name: CommandDesigner
+  nameWithType: CommandDesigner
+  fullName: VoiceScript.CommandDesign.CommandDesigner
+  type: Class
+  source:
+    id: CommandDesigner
+    path: ''
+    startLine: 686
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.CommandDesign
+  syntax:
+    content: public class CommandDesigner
+    content.vb: Public Class CommandDesigner
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: VoiceScript.CommandDesign.CommandDesigner.#ctor(Action{System.String,Color})
+  commentId: M:VoiceScript.CommandDesign.CommandDesigner.#ctor(Action{System.String,Color})
+  id: '#ctor(Action{System.String,Color})'
+  parent: VoiceScript.CommandDesign.CommandDesigner
+  langs:
+  - csharp
+  - vb
+  name: CommandDesigner(Action<String, Color>)
+  nameWithType: CommandDesigner.CommandDesigner(Action<String, Color>)
+  fullName: VoiceScript.CommandDesign.CommandDesigner.CommandDesigner(Action<System.String, Color>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 690
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.CommandDesign
+  syntax:
+    content: public CommandDesigner(Action<string, Color> writeTextCallback)
+    parameters:
+    - id: writeTextCallback
+      type: Action{System.String,Color}
+    content.vb: Public Sub New(writeTextCallback As Action(Of String, Color))
+  overload: VoiceScript.CommandDesign.CommandDesigner.#ctor*
+  nameWithType.vb: CommandDesigner.CommandDesigner(Action(Of String, Color))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: VoiceScript.CommandDesign.CommandDesigner.CommandDesigner(Action(Of System.String, Color))
+  name.vb: CommandDesigner(Action(Of String, Color))
+- uid: VoiceScript.CommandDesign.CommandDesigner.DesignCommands(IList{Command})
+  commentId: M:VoiceScript.CommandDesign.CommandDesigner.DesignCommands(IList{Command})
+  id: DesignCommands(IList{Command})
+  parent: VoiceScript.CommandDesign.CommandDesigner
+  langs:
+  - csharp
+  - vb
+  name: DesignCommands(IList<Command>)
+  nameWithType: CommandDesigner.DesignCommands(IList<Command>)
+  fullName: VoiceScript.CommandDesign.CommandDesigner.DesignCommands(IList<Command>)
+  type: Method
+  source:
+    id: DesignCommands
+    path: ''
+    startLine: 695
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.CommandDesign
+  syntax:
+    content: public void DesignCommands(IList<Command> commands)
+    parameters:
+    - id: commands
+      type: IList{Command}
+    content.vb: Public Sub DesignCommands(commands As IList(Of Command))
+  overload: VoiceScript.CommandDesign.CommandDesigner.DesignCommands*
+  nameWithType.vb: CommandDesigner.DesignCommands(IList(Of Command))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: VoiceScript.CommandDesign.CommandDesigner.DesignCommands(IList(Of Command))
+  name.vb: DesignCommands(IList(Of Command))
+- uid: VoiceScript.CommandDesign.CommandDesigner.DesignCommand(Command)
+  commentId: M:VoiceScript.CommandDesign.CommandDesigner.DesignCommand(Command)
+  id: DesignCommand(Command)
+  parent: VoiceScript.CommandDesign.CommandDesigner
+  langs:
+  - csharp
+  - vb
+  name: DesignCommand(Command)
+  nameWithType: CommandDesigner.DesignCommand(Command)
+  fullName: VoiceScript.CommandDesign.CommandDesigner.DesignCommand(Command)
+  type: Method
+  source:
+    id: DesignCommand
+    path: ''
+    startLine: 703
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.CommandDesign
+  syntax:
+    content: public void DesignCommand(Command command)
+    parameters:
+    - id: command
+      type: Command
+    content.vb: Public Sub DesignCommand(command As Command)
+  overload: VoiceScript.CommandDesign.CommandDesigner.DesignCommand*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: VoiceScript.CommandDesign
+  commentId: N:VoiceScript.CommandDesign
+  name: VoiceScript.CommandDesign
+  nameWithType: VoiceScript.CommandDesign
+  fullName: VoiceScript.CommandDesign
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VoiceScript.CommandDesign.CommandDesigner.#ctor*
+  commentId: Overload:VoiceScript.CommandDesign.CommandDesigner.#ctor
+  name: CommandDesigner
+  nameWithType: CommandDesigner.CommandDesigner
+  fullName: VoiceScript.CommandDesign.CommandDesigner.CommandDesigner
+- uid: Action{System.String,Color}
+  commentId: '!:Action{System.String,Color}'
+  definition: Action`2
+  name: Action<String, Color>
+  nameWithType: Action<String, Color>
+  fullName: Action<System.String, Color>
+  nameWithType.vb: Action(Of String, Color)
+  fullName.vb: Action(Of System.String, Color)
+  name.vb: Action(Of String, Color)
+  spec.csharp:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Color
+    name: Color
+    nameWithType: Color
+    fullName: Color
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Color
+    name: Color
+    nameWithType: Color
+    fullName: Color
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Action`2
+  commentId: '!:Action`2'
+  isExternal: true
+  name: Action<, >
+  nameWithType: Action<, >
+  fullName: Action<, >
+  nameWithType.vb: Action(Of , )
+  fullName.vb: Action(Of , )
+  name.vb: Action(Of , )
+  spec.csharp:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`2
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: VoiceScript.CommandDesign.CommandDesigner.DesignCommands*
+  commentId: Overload:VoiceScript.CommandDesign.CommandDesigner.DesignCommands
+  name: DesignCommands
+  nameWithType: CommandDesigner.DesignCommands
+  fullName: VoiceScript.CommandDesign.CommandDesigner.DesignCommands
+- uid: IList{Command}
+  commentId: '!:IList{Command}'
+  definition: IList`1
+  name: IList<Command>
+  nameWithType: IList<Command>
+  fullName: IList<Command>
+  nameWithType.vb: IList(Of Command)
+  fullName.vb: IList(Of Command)
+  name.vb: IList(Of Command)
+  spec.csharp:
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Command
+    name: Command
+    nameWithType: Command
+    fullName: Command
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Command
+    name: Command
+    nameWithType: Command
+    fullName: Command
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IList`1
+  commentId: '!:IList`1'
+  isExternal: true
+  name: IList<>
+  nameWithType: IList<>
+  fullName: IList<>
+  nameWithType.vb: IList(Of )
+  fullName.vb: IList(Of )
+  name.vb: IList(Of )
+  spec.csharp:
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: VoiceScript.CommandDesign.CommandDesigner.DesignCommand*
+  commentId: Overload:VoiceScript.CommandDesign.CommandDesigner.DesignCommand
+  name: DesignCommand
+  nameWithType: CommandDesigner.DesignCommand
+  fullName: VoiceScript.CommandDesign.CommandDesigner.DesignCommand
+- uid: Command
+  commentId: '!:Command'
+  isExternal: true
+  name: Command
+  nameWithType: Command
+  fullName: Command

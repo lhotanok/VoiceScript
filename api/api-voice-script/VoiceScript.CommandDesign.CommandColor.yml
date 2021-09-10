@@ -1,0 +1,460 @@
+### YamlMime:ManagedReference
+items:
+- uid: VoiceScript.CommandDesign.CommandColor
+  commentId: T:VoiceScript.CommandDesign.CommandColor
+  id: CommandColor
+  parent: VoiceScript.CommandDesign
+  children:
+  - VoiceScript.CommandDesign.CommandColor.NameColor
+  - VoiceScript.CommandDesign.CommandColor.TargetTypeColor
+  - VoiceScript.CommandDesign.CommandColor.TargetValueColor
+  langs:
+  - csharp
+  - vb
+  name: CommandColor
+  nameWithType: CommandColor
+  fullName: VoiceScript.CommandDesign.CommandColor
+  type: Class
+  source:
+    id: CommandColor
+    path: ''
+    startLine: 666
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.CommandDesign
+  syntax:
+    content: public class CommandColor
+    content.vb: Public Class CommandColor
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: VoiceScript.CommandDesign.CommandColor.NameColor
+  commentId: P:VoiceScript.CommandDesign.CommandColor.NameColor
+  id: NameColor
+  parent: VoiceScript.CommandDesign.CommandColor
+  langs:
+  - csharp
+  - vb
+  name: NameColor
+  nameWithType: CommandColor.NameColor
+  fullName: VoiceScript.CommandDesign.CommandColor.NameColor
+  type: Property
+  source:
+    id: NameColor
+    path: ''
+    startLine: 672
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.CommandDesign
+  syntax:
+    content: public static Color NameColor { get; }
+    parameters: []
+    return:
+      type: Color
+    content.vb: Public Shared ReadOnly Property NameColor As Color
+  overload: VoiceScript.CommandDesign.CommandColor.NameColor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: VoiceScript.CommandDesign.CommandColor.TargetTypeColor
+  commentId: P:VoiceScript.CommandDesign.CommandColor.TargetTypeColor
+  id: TargetTypeColor
+  parent: VoiceScript.CommandDesign.CommandColor
+  langs:
+  - csharp
+  - vb
+  name: TargetTypeColor
+  nameWithType: CommandColor.TargetTypeColor
+  fullName: VoiceScript.CommandDesign.CommandColor.TargetTypeColor
+  type: Property
+  source:
+    id: TargetTypeColor
+    path: ''
+    startLine: 673
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.CommandDesign
+  syntax:
+    content: public static Color TargetTypeColor { get; }
+    parameters: []
+    return:
+      type: Color
+    content.vb: Public Shared ReadOnly Property TargetTypeColor As Color
+  overload: VoiceScript.CommandDesign.CommandColor.TargetTypeColor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: VoiceScript.CommandDesign.CommandColor.TargetValueColor
+  commentId: P:VoiceScript.CommandDesign.CommandColor.TargetValueColor
+  id: TargetValueColor
+  parent: VoiceScript.CommandDesign.CommandColor
+  langs:
+  - csharp
+  - vb
+  name: TargetValueColor
+  nameWithType: CommandColor.TargetValueColor
+  fullName: VoiceScript.CommandDesign.CommandColor.TargetValueColor
+  type: Property
+  source:
+    id: TargetValueColor
+    path: ''
+    startLine: 674
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.CommandDesign
+  syntax:
+    content: public static Color TargetValueColor { get; }
+    parameters: []
+    return:
+      type: Color
+    content.vb: Public Shared ReadOnly Property TargetValueColor As Color
+  overload: VoiceScript.CommandDesign.CommandColor.TargetValueColor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: VoiceScript.CommandDesign
+  commentId: N:VoiceScript.CommandDesign
+  name: VoiceScript.CommandDesign
+  nameWithType: VoiceScript.CommandDesign
+  fullName: VoiceScript.CommandDesign
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VoiceScript.CommandDesign.CommandColor.NameColor*
+  commentId: Overload:VoiceScript.CommandDesign.CommandColor.NameColor
+  name: NameColor
+  nameWithType: CommandColor.NameColor
+  fullName: VoiceScript.CommandDesign.CommandColor.NameColor
+- uid: Color
+  isExternal: true
+  name: Color
+  nameWithType: Color
+  fullName: Color
+- uid: VoiceScript.CommandDesign.CommandColor.TargetTypeColor*
+  commentId: Overload:VoiceScript.CommandDesign.CommandColor.TargetTypeColor
+  name: TargetTypeColor
+  nameWithType: CommandColor.TargetTypeColor
+  fullName: VoiceScript.CommandDesign.CommandColor.TargetTypeColor
+- uid: VoiceScript.CommandDesign.CommandColor.TargetValueColor*
+  commentId: Overload:VoiceScript.CommandDesign.CommandColor.TargetValueColor
+  name: TargetValueColor
+  nameWithType: CommandColor.TargetValueColor
+  fullName: VoiceScript.CommandDesign.CommandColor.TargetValueColor

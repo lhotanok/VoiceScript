@@ -1,0 +1,8 @@
+### YamlMime:TableOfContent
+- uid: CodeGeneration
+  name: CodeGeneration
+  items:
+  - uid: CodeGeneration.CSharpCodeGenerator
+    name: CSharpCodeGenerator
+  - uid: CodeGeneration.ICodeGenerator
+    name: ICodeGenerator

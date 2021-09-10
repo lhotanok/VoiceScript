@@ -1,0 +1,300 @@
+### YamlMime:ManagedReference
+items:
+- uid: CodeGeneration.ICodeGenerator
+  commentId: T:CodeGeneration.ICodeGenerator
+  id: ICodeGenerator
+  parent: CodeGeneration
+  children:
+  - CodeGeneration.ICodeGenerator.GenerateClassCode(Class,System.Int32)
+  - CodeGeneration.ICodeGenerator.GenerateCode
+  - CodeGeneration.ICodeGenerator.GenerateExceptionCode(System.String,System.Int32)
+  - CodeGeneration.ICodeGenerator.GenerateFieldCode(Field,System.Int32)
+  - CodeGeneration.ICodeGenerator.GenerateMethodCode(Method,System.Int32)
+  - CodeGeneration.ICodeGenerator.GenerateParameterCode(Parameter,System.Int32)
+  - CodeGeneration.ICodeGenerator.GenerateParametersCode(Method)
+  langs:
+  - csharp
+  - vb
+  name: ICodeGenerator
+  nameWithType: ICodeGenerator
+  fullName: CodeGeneration.ICodeGenerator
+  type: Interface
+  source:
+    id: ICodeGenerator
+    path: ''
+    startLine: 263
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: public interface ICodeGenerator
+    content.vb: Public Interface ICodeGenerator
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CodeGeneration.ICodeGenerator.GenerateCode
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateCode
+  id: GenerateCode
+  parent: CodeGeneration.ICodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateCode()
+  nameWithType: ICodeGenerator.GenerateCode()
+  fullName: CodeGeneration.ICodeGenerator.GenerateCode()
+  type: Method
+  source:
+    id: GenerateCode
+    path: ''
+    startLine: 265
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: void GenerateCode()
+    content.vb: Sub GenerateCode
+  overload: CodeGeneration.ICodeGenerator.GenerateCode*
+- uid: CodeGeneration.ICodeGenerator.GenerateClassCode(Class,System.Int32)
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateClassCode(Class,System.Int32)
+  id: GenerateClassCode(Class,System.Int32)
+  parent: CodeGeneration.ICodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateClassCode(Class, Int32)
+  nameWithType: ICodeGenerator.GenerateClassCode(Class, Int32)
+  fullName: CodeGeneration.ICodeGenerator.GenerateClassCode(Class, System.Int32)
+  type: Method
+  source:
+    id: GenerateClassCode
+    path: ''
+    startLine: 266
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: void GenerateClassCode(Class cls, int indentation = 0)
+    parameters:
+    - id: cls
+      type: Class
+    - id: indentation
+      type: System.Int32
+    content.vb: Sub GenerateClassCode(cls As  Class, indentation As Integer = 0)
+  overload: CodeGeneration.ICodeGenerator.GenerateClassCode*
+- uid: CodeGeneration.ICodeGenerator.GenerateFieldCode(Field,System.Int32)
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateFieldCode(Field,System.Int32)
+  id: GenerateFieldCode(Field,System.Int32)
+  parent: CodeGeneration.ICodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateFieldCode(Field, Int32)
+  nameWithType: ICodeGenerator.GenerateFieldCode(Field, Int32)
+  fullName: CodeGeneration.ICodeGenerator.GenerateFieldCode(Field, System.Int32)
+  type: Method
+  source:
+    id: GenerateFieldCode
+    path: ''
+    startLine: 267
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: void GenerateFieldCode(Field field, int indentation = 1)
+    parameters:
+    - id: field
+      type: Field
+    - id: indentation
+      type: System.Int32
+    content.vb: Sub GenerateFieldCode(field As Field, indentation As Integer = 1)
+  overload: CodeGeneration.ICodeGenerator.GenerateFieldCode*
+- uid: CodeGeneration.ICodeGenerator.GenerateMethodCode(Method,System.Int32)
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateMethodCode(Method,System.Int32)
+  id: GenerateMethodCode(Method,System.Int32)
+  parent: CodeGeneration.ICodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateMethodCode(Method, Int32)
+  nameWithType: ICodeGenerator.GenerateMethodCode(Method, Int32)
+  fullName: CodeGeneration.ICodeGenerator.GenerateMethodCode(Method, System.Int32)
+  type: Method
+  source:
+    id: GenerateMethodCode
+    path: ''
+    startLine: 268
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: void GenerateMethodCode(Method method, int indentation = 1)
+    parameters:
+    - id: method
+      type: Method
+    - id: indentation
+      type: System.Int32
+    content.vb: Sub GenerateMethodCode(method As Method, indentation As Integer = 1)
+  overload: CodeGeneration.ICodeGenerator.GenerateMethodCode*
+- uid: CodeGeneration.ICodeGenerator.GenerateParametersCode(Method)
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateParametersCode(Method)
+  id: GenerateParametersCode(Method)
+  parent: CodeGeneration.ICodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateParametersCode(Method)
+  nameWithType: ICodeGenerator.GenerateParametersCode(Method)
+  fullName: CodeGeneration.ICodeGenerator.GenerateParametersCode(Method)
+  type: Method
+  source:
+    id: GenerateParametersCode
+    path: ''
+    startLine: 269
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: void GenerateParametersCode(Method method)
+    parameters:
+    - id: method
+      type: Method
+    content.vb: Sub GenerateParametersCode(method As Method)
+  overload: CodeGeneration.ICodeGenerator.GenerateParametersCode*
+- uid: CodeGeneration.ICodeGenerator.GenerateParameterCode(Parameter,System.Int32)
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateParameterCode(Parameter,System.Int32)
+  id: GenerateParameterCode(Parameter,System.Int32)
+  parent: CodeGeneration.ICodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateParameterCode(Parameter, Int32)
+  nameWithType: ICodeGenerator.GenerateParameterCode(Parameter, Int32)
+  fullName: CodeGeneration.ICodeGenerator.GenerateParameterCode(Parameter, System.Int32)
+  type: Method
+  source:
+    id: GenerateParameterCode
+    path: ''
+    startLine: 270
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: void GenerateParameterCode(Parameter parameter, int indentation = 0)
+    parameters:
+    - id: parameter
+      type: Parameter
+    - id: indentation
+      type: System.Int32
+    content.vb: Sub GenerateParameterCode(parameter As Parameter, indentation As Integer = 0)
+  overload: CodeGeneration.ICodeGenerator.GenerateParameterCode*
+- uid: CodeGeneration.ICodeGenerator.GenerateExceptionCode(System.String,System.Int32)
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateExceptionCode(System.String,System.Int32)
+  id: GenerateExceptionCode(System.String,System.Int32)
+  parent: CodeGeneration.ICodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateExceptionCode(String, Int32)
+  nameWithType: ICodeGenerator.GenerateExceptionCode(String, Int32)
+  fullName: CodeGeneration.ICodeGenerator.GenerateExceptionCode(System.String, System.Int32)
+  type: Method
+  source:
+    id: GenerateExceptionCode
+    path: ''
+    startLine: 271
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: void GenerateExceptionCode(string exceptionName, int indentation = 2)
+    parameters:
+    - id: exceptionName
+      type: System.String
+    - id: indentation
+      type: System.Int32
+    content.vb: Sub GenerateExceptionCode(exceptionName As String, indentation As Integer = 2)
+  overload: CodeGeneration.ICodeGenerator.GenerateExceptionCode*
+references:
+- uid: CodeGeneration
+  commentId: N:CodeGeneration
+  name: CodeGeneration
+  nameWithType: CodeGeneration
+  fullName: CodeGeneration
+- uid: CodeGeneration.ICodeGenerator.GenerateCode*
+  commentId: Overload:CodeGeneration.ICodeGenerator.GenerateCode
+  name: GenerateCode
+  nameWithType: ICodeGenerator.GenerateCode
+  fullName: CodeGeneration.ICodeGenerator.GenerateCode
+- uid: CodeGeneration.ICodeGenerator.GenerateClassCode*
+  commentId: Overload:CodeGeneration.ICodeGenerator.GenerateClassCode
+  name: GenerateClassCode
+  nameWithType: ICodeGenerator.GenerateClassCode
+  fullName: CodeGeneration.ICodeGenerator.GenerateClassCode
+- uid: Class
+  isExternal: true
+  name: Class
+  nameWithType: Class
+  fullName: Class
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CodeGeneration.ICodeGenerator.GenerateFieldCode*
+  commentId: Overload:CodeGeneration.ICodeGenerator.GenerateFieldCode
+  name: GenerateFieldCode
+  nameWithType: ICodeGenerator.GenerateFieldCode
+  fullName: CodeGeneration.ICodeGenerator.GenerateFieldCode
+- uid: Field
+  isExternal: true
+  name: Field
+  nameWithType: Field
+  fullName: Field
+- uid: CodeGeneration.ICodeGenerator.GenerateMethodCode*
+  commentId: Overload:CodeGeneration.ICodeGenerator.GenerateMethodCode
+  name: GenerateMethodCode
+  nameWithType: ICodeGenerator.GenerateMethodCode
+  fullName: CodeGeneration.ICodeGenerator.GenerateMethodCode
+- uid: Method
+  isExternal: true
+  name: Method
+  nameWithType: Method
+  fullName: Method
+- uid: CodeGeneration.ICodeGenerator.GenerateParametersCode*
+  commentId: Overload:CodeGeneration.ICodeGenerator.GenerateParametersCode
+  name: GenerateParametersCode
+  nameWithType: ICodeGenerator.GenerateParametersCode
+  fullName: CodeGeneration.ICodeGenerator.GenerateParametersCode
+- uid: CodeGeneration.ICodeGenerator.GenerateParameterCode*
+  commentId: Overload:CodeGeneration.ICodeGenerator.GenerateParameterCode
+  name: GenerateParameterCode
+  nameWithType: ICodeGenerator.GenerateParameterCode
+  fullName: CodeGeneration.ICodeGenerator.GenerateParameterCode
+- uid: Parameter
+  isExternal: true
+  name: Parameter
+  nameWithType: Parameter
+  fullName: Parameter
+- uid: CodeGeneration.ICodeGenerator.GenerateExceptionCode*
+  commentId: Overload:CodeGeneration.ICodeGenerator.GenerateExceptionCode
+  name: GenerateExceptionCode
+  nameWithType: ICodeGenerator.GenerateExceptionCode
+  fullName: CodeGeneration.ICodeGenerator.GenerateExceptionCode
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

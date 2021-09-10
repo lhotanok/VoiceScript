@@ -1,0 +1,62 @@
+### YamlMime:TableOfContent
+- uid: DiagramModel.Commands
+  name: DiagramModel.Commands
+  items:
+  - uid: DiagramModel.Commands.AddCommand
+    name: AddCommand
+  - uid: DiagramModel.Commands.Command
+    name: Command
+  - uid: DiagramModel.Commands.CommandExecutionContext
+    name: CommandExecutionContext
+  - uid: DiagramModel.Commands.CommandExecutionException
+    name: CommandExecutionException
+  - uid: DiagramModel.Commands.CommandFactory
+    name: CommandFactory
+  - uid: DiagramModel.Commands.CommandParseException
+    name: CommandParseException
+  - uid: DiagramModel.Commands.CommandParser
+    name: CommandParser
+  - uid: DiagramModel.Commands.DeleteCommand
+    name: DeleteCommand
+  - uid: DiagramModel.Commands.EditCommand
+    name: EditCommand
+- uid: DiagramModel.Commands.LanguageFormats
+  name: DiagramModel.Commands.LanguageFormats
+  items:
+  - uid: DiagramModel.Commands.LanguageFormats.CzechFormat
+    name: CzechFormat
+  - uid: DiagramModel.Commands.LanguageFormats.EnglishFormat
+    name: EnglishFormat
+  - uid: DiagramModel.Commands.LanguageFormats.LanguageFormat
+    name: LanguageFormat
+- uid: DiagramModel.Components
+  name: DiagramModel.Components
+  items:
+  - uid: DiagramModel.Components.Class
+    name: Class
+  - uid: DiagramModel.Components.Component
+    name: Component
+  - uid: DiagramModel.Components.Diagram
+    name: Diagram
+  - uid: DiagramModel.Components.Field
+    name: Field
+  - uid: DiagramModel.Components.FieldType
+    name: FieldType
+  - uid: DiagramModel.Components.IVisibleComponent
+    name: IVisibleComponent
+  - uid: DiagramModel.Components.Method
+    name: Method
+  - uid: DiagramModel.Components.Parameter
+    name: Parameter
+  - uid: DiagramModel.Components.ParameterType
+    name: ParameterType
+  - uid: DiagramModel.Components.Parent
+    name: Parent
+  - uid: DiagramModel.Components.Required
+    name: Required
+  - uid: DiagramModel.Components.ReturnType
+    name: ReturnType
+  - uid: DiagramModel.Components.Type
+    name: Type
+  - uid: DiagramModel.Components.Visibility
+    name: Visibility
