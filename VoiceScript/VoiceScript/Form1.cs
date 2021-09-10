@@ -64,7 +64,7 @@ namespace VoiceScript
             commandDesigner = new CommandDesigner((text, color) => AppendToTextbox(commandTextBox, text, color));
 
             appState = ApplicationState.Waiting;
-            // DisableButtons(convertBtn, playBtn, realTimeTranscBtn, diagramBtn); // bug with not initialized button
+            SetEnabilityThreadUnsafe(false, convertBtn, playBtn, realTimeTranscBtn);
         }
 
         #region Button control settings
@@ -73,6 +73,14 @@ namespace VoiceScript
             foreach (var button in buttons)
             {
                 button.Invoke((MethodInvoker)(() => button.Enabled = value));
+            }
+        }
+
+        static void SetEnabilityThreadUnsafe(bool value, params ButtonBase[] buttons)
+        {
+            foreach (var button in buttons)
+            {
+                button.Enabled = value;
             }
         }
 

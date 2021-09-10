@@ -13,7 +13,7 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
         /// </summary>
         static readonly Dictionary<string, List<string>> commandFormats = new()
         {
-            { AddCommand.DefaultFormat, new() { AddCommand.DefaultFormat, "attach", "annex", "insert" } },
+            { AddCommand.DefaultFormat, new() { AddCommand.DefaultFormat, "attach", "annex", "insert", "append" } },
             { EditCommand.DefaultFormat, new() { EditCommand.DefaultFormat, "change", "modify", "correct" } },
             { DeleteCommand.DefaultFormat, new() { DeleteCommand.DefaultFormat, "erase", "cut", "remove" } }
         };
@@ -21,6 +21,7 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
         readonly Dictionary<string, string> componentNames = new()
         {
             { Diagram.TypeName, Diagram.TypeName },
+
             { Class.TypeName, Class.TypeName },
 
             { Field.TypeName, Field.TypeName },
@@ -31,13 +32,17 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
             { "function", Method.TypeName },
 
             { Components.Type.TypeName, Components.Type.TypeName },
+
             { Parameter.TypeName, Parameter.TypeName },
 
             { Required.TypeName, Required.TypeName },
             { "mandatory", Required.TypeName },
 
             { Visibility.TypeName, Visibility.TypeName },
-            { "protection", Visibility.TypeName }
+            { "protection", Visibility.TypeName },
+
+            { Parent.TypeName, Parent.TypeName },
+            { "ancestor", Parent.TypeName }
         };
 
         static readonly Dictionary<string, string> constantValues = new()

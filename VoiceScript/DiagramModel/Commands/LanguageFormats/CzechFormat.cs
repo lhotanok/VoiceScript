@@ -21,6 +21,7 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
         static readonly Dictionary<string, string> componentNames = new()
         {
             { "diagram", Diagram.TypeName },
+
             { "třídu", Class.TypeName},
 
             { "člen", Field.TypeName },
@@ -39,19 +40,14 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
             { "povinnost", Required.TypeName },
 
             { "viditelnost", Visibility.TypeName },
-            { "ochranu", Visibility.TypeName }
+            { "ochranu", Visibility.TypeName },
+
+            { "rodiče", Parent.TypeName },
+            { "předka", Parent.TypeName }
         };
 
         static readonly Dictionary<string, string> constantValues = new()
         {
-            { "pravda", "true" },
-            { "ano", "true" },
-            { "nepravda", "false" },
-            { "lež", "false" },
-            { "ne", "false" },
-
-            { "řetězec", "string" },
-
             { "veřejná", "public" },
             { "interní", "internal" },
             { "chráněná", "protected" },
@@ -61,6 +57,14 @@ namespace VoiceScript.DiagramModel.Commands.LanguageFormats
         static readonly Dictionary<string, string> valuesToReplace = new()
         {
             { "pole", "array" },
+
+            { "pravda", "true" },
+            { "ano", "true" },
+            { "nepravda", "false" },
+            { "lež", "false" },
+            { "ne", "false" },
+
+            { "řetězec", "string" },
         };
 
         static readonly string delimiterFormat = "přepni";

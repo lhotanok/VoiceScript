@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
-using System.Windows.Forms;
 using VoiceScript.DiagramModel.Components;
 
 namespace VoiceScript.CodeGeneration
@@ -45,6 +44,7 @@ namespace VoiceScript.CodeGeneration
         {
             WriteKeyword("class ");
             WriteClassTypename(cls.Name);
+            WriteClassParent(cls);
             WriteNewLine();
 
             WriteCurlyBracket("{", indentation);
@@ -171,6 +171,17 @@ namespace VoiceScript.CodeGeneration
             }
 
             if (isArray) WriteDefault("[]");
+        }
+
+        void WriteClassParent(Class cls)
+        {
+            var parent = cls.GetInheritanceParent();
+
+            if (parent != null)
+            {
+                WriteDefault(" : ");
+                WriteClassTypename(parent.Name);
+            }
         }
 
         static bool TryParseArray(ref string typename)

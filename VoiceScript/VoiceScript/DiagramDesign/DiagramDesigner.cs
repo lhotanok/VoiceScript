@@ -55,6 +55,17 @@ namespace VoiceScript.DiagramDesign
             var node = graph.FindNode(nodeClass.Name);
             if (node == null) node = graph.AddNode(nodeClass.Name);
             node.UserData = nodeClass;
+
+            var classParent = nodeClass.GetInheritanceParent();
+            if (classParent != null)
+            {
+                var parentNode = graph.FindNode(classParent.Name);
+                if (parentNode != null)
+                {
+                    graph.AddEdge(node.Id, parentNode.Id);
+                }
+            }
+
             SetUpNodeDesign(node);
         }
 
