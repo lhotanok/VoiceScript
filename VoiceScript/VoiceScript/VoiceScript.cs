@@ -241,6 +241,7 @@ namespace VoiceScript
             }
             catch (CommandExecutionException ex)
             {
+                ProcessExecutionError(ex);
                 MessageBox.Show(ex.Message, "Command Execution Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
@@ -285,6 +286,18 @@ namespace VoiceScript
             foreach (var word in ex.UnparsedWords)
             {
                 AppendToTextbox(commandTextBox, word);
+            }
+        }
+
+        void ProcessExecutionError(CommandExecutionException ex)
+        {
+            if (ex.CommandNumber > 0)
+            {
+                var lineToSelect = commandTextBox.Lines[ex.CommandNumber - 1];
+                var firstLineChar = commandTextBox.GetFirstCharIndexFromLine(ex.CommandNumber - 1);
+
+                commandTextBox.Select(firstLineChar, lineToSelect.Length);
+                commandTextBox.SelectionBackColor = Color.LightGray;
             }
         }
         #endregion

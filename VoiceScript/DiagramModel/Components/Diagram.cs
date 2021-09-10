@@ -73,7 +73,8 @@ namespace DiagramModel.Components
             catch (Exception ex)
             {
                 RevertChanges(clonedDiagram);
-                throw new CommandExecutionException($"Error while executing {currentCommandNumber}. command.\n\n" + ex.Message);
+                throw new CommandExecutionException($"Error while executing {currentCommandNumber}. command.\n\n" + ex.Message,
+                    currentCommandNumber);
             }
             
         }
