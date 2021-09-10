@@ -17,7 +17,7 @@ namespace VoiceScript.DiagramModel.Commands
         public bool DelimiterSet {
             get => delimiterSet;
 
-            private set {
+            set {
                 delimiterPreviouslySet = delimiterSet;
                 delimiterSet = value;
             }

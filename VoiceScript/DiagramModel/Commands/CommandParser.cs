@@ -119,19 +119,23 @@ namespace VoiceScript.DiagramModel.Commands
 
         Command GetNextCommand()
         {
+            #region Parse command name
             var commandName = GetCommandName();
             parsedOffset++;
 
             if (!IsCommandKeyword(commandName)) return null;
+            #endregion
 
+            #region Parse command target
             var targetType = GetNextWord().ToLower();
             parsedOffset++;
 
-            var targetName = GetTargetName();
+            var targetName = GetTargetName(commandName);
 
             if (IncompleteCommandTarget(targetType, targetName))
                 throw new CommandParseException("Incomplete command target in next command."
                      + "\nCommand format is: NAME  TARGET_TYPE  TARGET_VALUE");
+            #endregion
 
             var command = CommandFactory.CreateCommand(commandName, targetType, targetName, language);
 
@@ -154,7 +158,7 @@ namespace VoiceScript.DiagramModel.Commands
             return word.ToLower();
         }
 
-        string GetTargetName()
+        string GetTargetName(string currentCommandName)
         {
             var nameParts = new List<string>();
             var delimiter = new DelimiterWrapper(language);
@@ -165,10 +169,16 @@ namespace VoiceScript.DiagramModel.Commands
             {
                 if (IsCommandKeyword(word))
                 {
-                    delimiter.UpdateDelimiterContext(word);
-                    if (!delimiter.Escape() && !delimiter.DelimiterSet) break;
+                    var autoEscaping = (nameParts.Count == 0) && (word.ToLower() != currentCommandName);
 
-                    if (delimiter.Escape()) AddWordToNameParts(word, nameParts);
+                    delimiter.UpdateDelimiterContext(word);
+
+                    // new command detected
+                    if (!delimiter.Escape() && !delimiter.DelimiterSet && !autoEscaping) break;
+
+                    // escaped command detected
+                    if (autoEscaping || delimiter.Escape()) AddWordToNameParts(word, nameParts);
+                    delimiter.DelimiterSet = false;
                 }
                 else
                 {
@@ -198,9 +208,9 @@ namespace VoiceScript.DiagramModel.Commands
         bool IsCommandKeyword(string word)
         {
             var lowerWord = word.ToLower();
+            var isCommandKeyword = language.GetAllCommandFormats().Contains(lowerWord);
 
-            return language.GetAllCommandFormats().Contains(lowerWord)
-                || language.DelimiterFormat == lowerWord;
+            return isCommandKeyword || language.DelimiterFormat == lowerWord;
         }
 
         static bool IncompleteCommandTarget(string targetType, string targetName)
