@@ -19,10 +19,10 @@ jobs:
         dotnet-version: '5.0'
     - name: Install dependencies
       run: dotnet restore
-      working-directory: /home/runner/work/VoiceScript/VoiceScript/VoiceScript/DiagramModel
+      working-directory: /home/runner/work/VoiceScript/VoiceScript/src/DiagramModel
     - name: Build
       run: dotnet build
-      working-directory: /home/runner/work/VoiceScript/VoiceScript/VoiceScript/DiagramModel
+      working-directory: /home/runner/work/VoiceScript/VoiceScript/src/DiagramModel
     - name: Test with the dotnet CLI
       run: dotnet test
-      working-directory: /home/runner/work/VoiceScript/VoiceScript/VoiceScript/DiagramModel_UnitTests
+      working-directory: /home/runner/work/VoiceScript/VoiceScript/src/DiagramModel_UnitTests
