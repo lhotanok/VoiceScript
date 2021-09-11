@@ -1,6 +1,6 @@
-- name: Documentation
-  href: documentation/
-  homepage: documentation/intro.md
+- name: Articles
+  href: articles/
+  homepage: articles/intro.md
 - name: VoiceScript API
   href: api/api-voice-script/
 - name: Voice Transcription API

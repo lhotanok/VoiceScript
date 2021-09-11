@@ -12,7 +12,7 @@
           "hash": "1/sU2KpWyLemEZ4Lhl+IiidxCgrRgO27qlFbqkB3/50="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -48,7 +48,7 @@
           "hash": "esCY3cwocT4sIZ6YZyDRZb/Jk9EjrbwKILxwPv6Rf5w="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -228,7 +228,7 @@
           "hash": "PfekzsF/X5s7y+MLKXLZj0oTSuAT/o6FRCQnLkO/qvA="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -528,7 +528,7 @@
           "hash": "WrQjgnNPYKxJhwyKtXpSi8X8P08y6obG3n7UCFtp6Qs="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -660,7 +660,7 @@
           "hash": "xgQH0w0uYNTqiMdJXxR3QjJjQ1IWxVQ/jDe9KV4SLrA="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -677,70 +677,70 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/code-generation.md",
+      "source_relative_path": "articles/code-generation.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/code-generation.html",
-          "hash": "VBCwrxEdIhhxDAV+69+EPczvS/f3rmv7whElqt5SH3M="
+          "relative_path": "articles/code-generation.html",
+          "hash": "KI+pR56QHK2eCdcdZ87ERVcpgUVXXvYvOTP35yOXWBM="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/commands.md",
+      "source_relative_path": "articles/commands.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/commands.html",
-          "hash": "vXWVpDJjoxk4C9Ht239P4rLu6D6fzFygnhJi1jqUG1Q="
+          "relative_path": "articles/commands.html",
+          "hash": "lG3DElwdNer6xLUDyNiwVNGN79nfwhCMgpvw/OCpuGg="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/components.md",
+      "source_relative_path": "articles/components.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/components.html",
-          "hash": "rzqPjdiJa8tcNCTK7vupZjh0ZJHFmTVmpM8/vobQTpo="
+          "relative_path": "articles/components.html",
+          "hash": "mRjHo3PVAnkqcjuRF/SeCHvWKZ/NfM9rSyew8MXGjQc="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/diagram-design.md",
+      "source_relative_path": "articles/diagram-design.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/diagram-design.html",
-          "hash": "iTd0EhmsouMu8LGmB3yl+4ZfD46Lgy445cHJODFjdDY="
+          "relative_path": "articles/diagram-design.html",
+          "hash": "vR1vDH2A8lQIbVysvBuL2B185SuDfucWj8qiNIME6Jo="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/intro.md",
+      "source_relative_path": "articles/intro.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/intro.html",
-          "hash": "hb4yLQVL9mteshE/OhjglRmcV3r/IFTkB3kKpbIAuwI="
+          "relative_path": "articles/intro.html",
+          "hash": "qLjQbZqwY2KIyQRDR9IonjVGpGAByikJMDS4uJrHBL4="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "Toc",
-      "source_relative_path": "documentation/toc.yml",
+      "source_relative_path": "articles/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "documentation/toc.html",
+          "relative_path": "articles/toc.html",
           "hash": "k7Cpiwj462oAtXlkuUpbpiputbQ3zvkhlFxW0XX7gUE="
         }
       },
@@ -749,14 +749,14 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/transcription.md",
+      "source_relative_path": "articles/transcription.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/transcription.html",
-          "hash": "38HRjMZP3O9PgjML9XaRJa68EeK3wc88hg2XGh3/UnA="
+          "relative_path": "articles/transcription.html",
+          "hash": "CHLYJaTm9CUFO3Vd1hmeEXuBxrOOjvkrD9aAxMX1pUs="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -887,7 +887,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "mtaEe4DIINtb/VWzR2e8UU72Izlb76RMK1U0gSR1zBU="
+          "hash": "dmwW9uwt/jhXagmixVP5FRiskIJCMvxAY5dy4wZqXOE="
         }
       },
       "is_incremental": false,
@@ -907,7 +907,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 8,
-          "skipped_file_count": 7
+          "skipped_file_count": 2
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
