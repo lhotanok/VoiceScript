@@ -1,4 +1,4 @@
-# <img src=".\images\banner_name_nobg.png" width="250" height="280" />
+# <img src=".\images\banner_name_nobg.png" style="zoom:40%;" />
 
 `WinForms` `Google Cloud Platform`  `Speech-to-Text`
 

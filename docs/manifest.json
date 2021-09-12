@@ -805,6 +805,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/banner_name_nobg_small.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/banner_name_nobg_small.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/favicon.ico",
       "output": {
         "resource": {
@@ -919,7 +930,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "6xliTQw5VKbBTqOg7SAJ3itaVobRLfT8PE0W3wAoOOk="
+          "hash": "o/a5jd+kZc+NYyp/9E2xcK4kIviGLL6DEOsCaxhOtNc="
         }
       },
       "is_incremental": false,
