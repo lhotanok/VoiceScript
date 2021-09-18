@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Google.Cloud.Speech.V1;
 
 namespace VoiceScript.VoiceTranscription
@@ -34,7 +35,7 @@ namespace VoiceScript.VoiceTranscription
             streamRecognizer = new StreamRecognizer(configuration, recorder);
             // longRunningRecognizer = new LongRunningRecognizer(configuration);
 
-            SetGoogleCloudCredentialsPath();
+            CheckGoogleCloudCredentials();
         }
 
         public RecognitionConfig Configuration => configuration;
@@ -59,7 +60,7 @@ namespace VoiceScript.VoiceTranscription
             });
         }
 
-        static void SetGoogleCloudCredentialsPath()
+        static void CheckGoogleCloudCredentials()
         {
             // path to Google Cloud speech-to-text api key
             var apiKeyPath = @"..\\..\\..\\..\\Keys\\vs_auth_key.json";
@@ -70,7 +71,23 @@ namespace VoiceScript.VoiceTranscription
             }
             else
             {
-                throw new Exception($"Invalid path to Google Cloud api key given. File not found at {apiKeyPath}");
+                MessageBox.Show("Google Cloud api key not found. Please, open file with your credentials.");
+
+                using var openFileDialog = new OpenFileDialog();
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "json files (*.json)|*.json|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    File.Copy(openFileDialog.FileName, apiKeyPath);
+                    System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", apiKeyPath);
+                }
+                else
+                {
+                    throw new Exception($"Invalid path to Google Cloud api key given. File not found at {openFileDialog.FileName}");
+                }
             }
         }
 

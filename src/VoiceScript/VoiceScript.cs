@@ -40,7 +40,7 @@ namespace VoiceScript
             #region Initialize audio management
             audioFilename = "audio.raw";
             audioPlayer = new AudioPlayer();
-            audioRecorder = new AudioRecorder(audioFilename, recordingTimer);
+            audioRecorder = new AudioRecorder(audioFilename, realTimeTranscriptTimer);
 
             FormClosing += (sender, e) => audioRecorder.Dispose();
             #endregion
@@ -55,8 +55,9 @@ namespace VoiceScript
                 MessageBox.Show(ex.Message);
             }
             
-            recordingTimer.Tick += (sender, e) 
+            realTimeTranscriptTimer.Tick += (sender, e) 
                 => voiceTranscriptor.DoRealTimeTranscription(voiceCommand => AppendToTextbox(commandTextBox, voiceCommand));
+
             SetLanguages();
             #endregion
 
@@ -175,7 +176,7 @@ namespace VoiceScript
         {
             if (appState == ApplicationState.Recording)
             {
-                recordingTimer.Enabled = true;
+                realTimeTranscriptTimer.Enabled = true;
                 if (commandTextBox.TextLength > 0) commandTextBox.AppendText(Environment.NewLine);
             }
         }
