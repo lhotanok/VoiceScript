@@ -16,7 +16,7 @@ items:
   source:
     id: DiagramDesigner
     path: ''
-    startLine: 930
+    startLine: 945
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.DiagramDesign
@@ -53,7 +53,7 @@ items:
   source:
     id: CreateGraphDiagram
     path: ''
-    startLine: 953
+    startLine: 968
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.DiagramDesign

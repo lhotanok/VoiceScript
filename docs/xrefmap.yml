@@ -7,21 +7,105 @@ references:
   commentId: N:CodeGeneration
   fullName: CodeGeneration
   nameWithType: CodeGeneration
+- uid: CodeGeneration.CSharpCodeColor
+  name: CSharpCodeColor
+  href: api/api-code-gen/CodeGeneration.CSharpCodeColor.html
+  commentId: T:CodeGeneration.CSharpCodeColor
+  fullName: CodeGeneration.CSharpCodeColor
+  nameWithType: CSharpCodeColor
+- uid: CodeGeneration.CSharpCodeColor.ClassTypeColor
+  name: ClassTypeColor
+  href: api/api-code-gen/CodeGeneration.CSharpCodeColor.html#CodeGeneration_CSharpCodeColor_ClassTypeColor
+  commentId: P:CodeGeneration.CSharpCodeColor.ClassTypeColor
+  fullName: CodeGeneration.CSharpCodeColor.ClassTypeColor
+  nameWithType: CSharpCodeColor.ClassTypeColor
+- uid: CodeGeneration.CSharpCodeColor.ClassTypeColor*
+  name: ClassTypeColor
+  href: api/api-code-gen/CodeGeneration.CSharpCodeColor.html#CodeGeneration_CSharpCodeColor_ClassTypeColor_
+  commentId: Overload:CodeGeneration.CSharpCodeColor.ClassTypeColor
+  isSpec: "True"
+  fullName: CodeGeneration.CSharpCodeColor.ClassTypeColor
+  nameWithType: CSharpCodeColor.ClassTypeColor
+- uid: CodeGeneration.CSharpCodeColor.Default
+  name: Default
+  href: api/api-code-gen/CodeGeneration.CSharpCodeColor.html#CodeGeneration_CSharpCodeColor_Default
+  commentId: P:CodeGeneration.CSharpCodeColor.Default
+  fullName: CodeGeneration.CSharpCodeColor.Default
+  nameWithType: CSharpCodeColor.Default
+- uid: CodeGeneration.CSharpCodeColor.Default*
+  name: Default
+  href: api/api-code-gen/CodeGeneration.CSharpCodeColor.html#CodeGeneration_CSharpCodeColor_Default_
+  commentId: Overload:CodeGeneration.CSharpCodeColor.Default
+  isSpec: "True"
+  fullName: CodeGeneration.CSharpCodeColor.Default
+  nameWithType: CSharpCodeColor.Default
+- uid: CodeGeneration.CSharpCodeColor.KeywordColor
+  name: KeywordColor
+  href: api/api-code-gen/CodeGeneration.CSharpCodeColor.html#CodeGeneration_CSharpCodeColor_KeywordColor
+  commentId: P:CodeGeneration.CSharpCodeColor.KeywordColor
+  fullName: CodeGeneration.CSharpCodeColor.KeywordColor
+  nameWithType: CSharpCodeColor.KeywordColor
+- uid: CodeGeneration.CSharpCodeColor.KeywordColor*
+  name: KeywordColor
+  href: api/api-code-gen/CodeGeneration.CSharpCodeColor.html#CodeGeneration_CSharpCodeColor_KeywordColor_
+  commentId: Overload:CodeGeneration.CSharpCodeColor.KeywordColor
+  isSpec: "True"
+  fullName: CodeGeneration.CSharpCodeColor.KeywordColor
+  nameWithType: CSharpCodeColor.KeywordColor
+- uid: CodeGeneration.CSharpCodeColor.MethodColor
+  name: MethodColor
+  href: api/api-code-gen/CodeGeneration.CSharpCodeColor.html#CodeGeneration_CSharpCodeColor_MethodColor
+  commentId: P:CodeGeneration.CSharpCodeColor.MethodColor
+  fullName: CodeGeneration.CSharpCodeColor.MethodColor
+  nameWithType: CSharpCodeColor.MethodColor
+- uid: CodeGeneration.CSharpCodeColor.MethodColor*
+  name: MethodColor
+  href: api/api-code-gen/CodeGeneration.CSharpCodeColor.html#CodeGeneration_CSharpCodeColor_MethodColor_
+  commentId: Overload:CodeGeneration.CSharpCodeColor.MethodColor
+  isSpec: "True"
+  fullName: CodeGeneration.CSharpCodeColor.MethodColor
+  nameWithType: CSharpCodeColor.MethodColor
+- uid: CodeGeneration.CSharpCodeColor.ParameterColor
+  name: ParameterColor
+  href: api/api-code-gen/CodeGeneration.CSharpCodeColor.html#CodeGeneration_CSharpCodeColor_ParameterColor
+  commentId: P:CodeGeneration.CSharpCodeColor.ParameterColor
+  fullName: CodeGeneration.CSharpCodeColor.ParameterColor
+  nameWithType: CSharpCodeColor.ParameterColor
+- uid: CodeGeneration.CSharpCodeColor.ParameterColor*
+  name: ParameterColor
+  href: api/api-code-gen/CodeGeneration.CSharpCodeColor.html#CodeGeneration_CSharpCodeColor_ParameterColor_
+  commentId: Overload:CodeGeneration.CSharpCodeColor.ParameterColor
+  isSpec: "True"
+  fullName: CodeGeneration.CSharpCodeColor.ParameterColor
+  nameWithType: CSharpCodeColor.ParameterColor
+- uid: CodeGeneration.CSharpCodeColor.ThrowKeywordColor
+  name: ThrowKeywordColor
+  href: api/api-code-gen/CodeGeneration.CSharpCodeColor.html#CodeGeneration_CSharpCodeColor_ThrowKeywordColor
+  commentId: P:CodeGeneration.CSharpCodeColor.ThrowKeywordColor
+  fullName: CodeGeneration.CSharpCodeColor.ThrowKeywordColor
+  nameWithType: CSharpCodeColor.ThrowKeywordColor
+- uid: CodeGeneration.CSharpCodeColor.ThrowKeywordColor*
+  name: ThrowKeywordColor
+  href: api/api-code-gen/CodeGeneration.CSharpCodeColor.html#CodeGeneration_CSharpCodeColor_ThrowKeywordColor_
+  commentId: Overload:CodeGeneration.CSharpCodeColor.ThrowKeywordColor
+  isSpec: "True"
+  fullName: CodeGeneration.CSharpCodeColor.ThrowKeywordColor
+  nameWithType: CSharpCodeColor.ThrowKeywordColor
 - uid: CodeGeneration.CSharpCodeGenerator
   name: CSharpCodeGenerator
   href: api/api-code-gen/CodeGeneration.CSharpCodeGenerator.html
   commentId: T:CodeGeneration.CSharpCodeGenerator
   fullName: CodeGeneration.CSharpCodeGenerator
   nameWithType: CSharpCodeGenerator
-- uid: CodeGeneration.CSharpCodeGenerator.#ctor(Diagram,Action{System.String,Color})
-  name: CSharpCodeGenerator(Diagram, Action<String, Color>)
-  href: api/api-code-gen/CodeGeneration.CSharpCodeGenerator.html#CodeGeneration_CSharpCodeGenerator__ctor_Diagram_Action_System_String_Color__
-  commentId: M:CodeGeneration.CSharpCodeGenerator.#ctor(Diagram,Action{System.String,Color})
-  name.vb: CSharpCodeGenerator(Diagram, Action(Of String, Color))
-  fullName: CodeGeneration.CSharpCodeGenerator.CSharpCodeGenerator(Diagram, Action<System.String, Color>)
-  fullName.vb: CodeGeneration.CSharpCodeGenerator.CSharpCodeGenerator(Diagram, Action(Of System.String, Color))
-  nameWithType: CSharpCodeGenerator.CSharpCodeGenerator(Diagram, Action<String, Color>)
-  nameWithType.vb: CSharpCodeGenerator.CSharpCodeGenerator(Diagram, Action(Of String, Color))
+- uid: CodeGeneration.CSharpCodeGenerator.#ctor(Action{System.String,Color})
+  name: CSharpCodeGenerator(Action<String, Color>)
+  href: api/api-code-gen/CodeGeneration.CSharpCodeGenerator.html#CodeGeneration_CSharpCodeGenerator__ctor_Action_System_String_Color__
+  commentId: M:CodeGeneration.CSharpCodeGenerator.#ctor(Action{System.String,Color})
+  name.vb: CSharpCodeGenerator(Action(Of String, Color))
+  fullName: CodeGeneration.CSharpCodeGenerator.CSharpCodeGenerator(Action<System.String, Color>)
+  fullName.vb: CodeGeneration.CSharpCodeGenerator.CSharpCodeGenerator(Action(Of System.String, Color))
+  nameWithType: CSharpCodeGenerator.CSharpCodeGenerator(Action<String, Color>)
+  nameWithType.vb: CSharpCodeGenerator.CSharpCodeGenerator(Action(Of String, Color))
 - uid: CodeGeneration.CSharpCodeGenerator.#ctor*
   name: CSharpCodeGenerator
   href: api/api-code-gen/CodeGeneration.CSharpCodeGenerator.html#CodeGeneration_CSharpCodeGenerator__ctor_
@@ -42,12 +126,12 @@ references:
   isSpec: "True"
   fullName: CodeGeneration.CSharpCodeGenerator.GenerateClassCode
   nameWithType: CSharpCodeGenerator.GenerateClassCode
-- uid: CodeGeneration.CSharpCodeGenerator.GenerateCode
-  name: GenerateCode()
-  href: api/api-code-gen/CodeGeneration.CSharpCodeGenerator.html#CodeGeneration_CSharpCodeGenerator_GenerateCode
-  commentId: M:CodeGeneration.CSharpCodeGenerator.GenerateCode
-  fullName: CodeGeneration.CSharpCodeGenerator.GenerateCode()
-  nameWithType: CSharpCodeGenerator.GenerateCode()
+- uid: CodeGeneration.CSharpCodeGenerator.GenerateCode(Diagram)
+  name: GenerateCode(Diagram)
+  href: api/api-code-gen/CodeGeneration.CSharpCodeGenerator.html#CodeGeneration_CSharpCodeGenerator_GenerateCode_Diagram_
+  commentId: M:CodeGeneration.CSharpCodeGenerator.GenerateCode(Diagram)
+  fullName: CodeGeneration.CSharpCodeGenerator.GenerateCode(Diagram)
+  nameWithType: CSharpCodeGenerator.GenerateCode(Diagram)
 - uid: CodeGeneration.CSharpCodeGenerator.GenerateCode*
   name: GenerateCode
   href: api/api-code-gen/CodeGeneration.CSharpCodeGenerator.html#CodeGeneration_CSharpCodeGenerator_GenerateCode_
@@ -139,12 +223,12 @@ references:
   isSpec: "True"
   fullName: CodeGeneration.ICodeGenerator.GenerateClassCode
   nameWithType: ICodeGenerator.GenerateClassCode
-- uid: CodeGeneration.ICodeGenerator.GenerateCode
-  name: GenerateCode()
-  href: api/api-code-gen/CodeGeneration.ICodeGenerator.html#CodeGeneration_ICodeGenerator_GenerateCode
-  commentId: M:CodeGeneration.ICodeGenerator.GenerateCode
-  fullName: CodeGeneration.ICodeGenerator.GenerateCode()
-  nameWithType: ICodeGenerator.GenerateCode()
+- uid: CodeGeneration.ICodeGenerator.GenerateCode(Diagram)
+  name: GenerateCode(Diagram)
+  href: api/api-code-gen/CodeGeneration.ICodeGenerator.html#CodeGeneration_ICodeGenerator_GenerateCode_Diagram_
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateCode(Diagram)
+  fullName: CodeGeneration.ICodeGenerator.GenerateCode(Diagram)
+  nameWithType: ICodeGenerator.GenerateCode(Diagram)
 - uid: CodeGeneration.ICodeGenerator.GenerateCode*
   name: GenerateCode
   href: api/api-code-gen/CodeGeneration.ICodeGenerator.html#CodeGeneration_ICodeGenerator_GenerateCode_
@@ -805,32 +889,19 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.GetCode
   nameWithType: CzechFormat.GetCode
-- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
-  name: ValueConstants
-  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.CzechFormat.html#DiagramModel_Commands_LanguageFormats_CzechFormat_ValueConstants
-  commentId: P:DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
-  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
-  nameWithType: CzechFormat.ValueConstants
-- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants*
-  name: ValueConstants
-  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.CzechFormat.html#DiagramModel_Commands_LanguageFormats_CzechFormat_ValueConstants_
-  commentId: Overload:DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.TargetValuesToReplace
+  name: TargetValuesToReplace
+  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.CzechFormat.html#DiagramModel_Commands_LanguageFormats_CzechFormat_TargetValuesToReplace
+  commentId: P:DiagramModel.Commands.LanguageFormats.CzechFormat.TargetValuesToReplace
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.TargetValuesToReplace
+  nameWithType: CzechFormat.TargetValuesToReplace
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.TargetValuesToReplace*
+  name: TargetValuesToReplace
+  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.CzechFormat.html#DiagramModel_Commands_LanguageFormats_CzechFormat_TargetValuesToReplace_
+  commentId: Overload:DiagramModel.Commands.LanguageFormats.CzechFormat.TargetValuesToReplace
   isSpec: "True"
-  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
-  nameWithType: CzechFormat.ValueConstants
-- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace
-  name: ValuesToReplace
-  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.CzechFormat.html#DiagramModel_Commands_LanguageFormats_CzechFormat_ValuesToReplace
-  commentId: P:DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace
-  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace
-  nameWithType: CzechFormat.ValuesToReplace
-- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace*
-  name: ValuesToReplace
-  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.CzechFormat.html#DiagramModel_Commands_LanguageFormats_CzechFormat_ValuesToReplace_
-  commentId: Overload:DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace
-  isSpec: "True"
-  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace
-  nameWithType: CzechFormat.ValuesToReplace
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.TargetValuesToReplace
+  nameWithType: CzechFormat.TargetValuesToReplace
 - uid: DiagramModel.Commands.LanguageFormats.EnglishFormat
   name: EnglishFormat
   href: api/api-diagram/DiagramModel.Commands.LanguageFormats.EnglishFormat.html
@@ -863,19 +934,6 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Commands.LanguageFormats.EnglishFormat.CommandFormats
   nameWithType: EnglishFormat.CommandFormats
-- uid: DiagramModel.Commands.LanguageFormats.EnglishFormat.ComponentNameFormat
-  name: ComponentNameFormat
-  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.EnglishFormat.html#DiagramModel_Commands_LanguageFormats_EnglishFormat_ComponentNameFormat
-  commentId: P:DiagramModel.Commands.LanguageFormats.EnglishFormat.ComponentNameFormat
-  fullName: DiagramModel.Commands.LanguageFormats.EnglishFormat.ComponentNameFormat
-  nameWithType: EnglishFormat.ComponentNameFormat
-- uid: DiagramModel.Commands.LanguageFormats.EnglishFormat.ComponentNameFormat*
-  name: ComponentNameFormat
-  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.EnglishFormat.html#DiagramModel_Commands_LanguageFormats_EnglishFormat_ComponentNameFormat_
-  commentId: Overload:DiagramModel.Commands.LanguageFormats.EnglishFormat.ComponentNameFormat
-  isSpec: "True"
-  fullName: DiagramModel.Commands.LanguageFormats.EnglishFormat.ComponentNameFormat
-  nameWithType: EnglishFormat.ComponentNameFormat
 - uid: DiagramModel.Commands.LanguageFormats.EnglishFormat.ComponentNames
   name: ComponentNames
   href: api/api-diagram/DiagramModel.Commands.LanguageFormats.EnglishFormat.html#DiagramModel_Commands_LanguageFormats_EnglishFormat_ComponentNames
@@ -915,19 +973,19 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Commands.LanguageFormats.EnglishFormat.GetCode
   nameWithType: EnglishFormat.GetCode
-- uid: DiagramModel.Commands.LanguageFormats.EnglishFormat.ValueConstants
-  name: ValueConstants
-  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.EnglishFormat.html#DiagramModel_Commands_LanguageFormats_EnglishFormat_ValueConstants
-  commentId: P:DiagramModel.Commands.LanguageFormats.EnglishFormat.ValueConstants
-  fullName: DiagramModel.Commands.LanguageFormats.EnglishFormat.ValueConstants
-  nameWithType: EnglishFormat.ValueConstants
-- uid: DiagramModel.Commands.LanguageFormats.EnglishFormat.ValueConstants*
-  name: ValueConstants
-  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.EnglishFormat.html#DiagramModel_Commands_LanguageFormats_EnglishFormat_ValueConstants_
-  commentId: Overload:DiagramModel.Commands.LanguageFormats.EnglishFormat.ValueConstants
+- uid: DiagramModel.Commands.LanguageFormats.EnglishFormat.TargetValuesToReplace
+  name: TargetValuesToReplace
+  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.EnglishFormat.html#DiagramModel_Commands_LanguageFormats_EnglishFormat_TargetValuesToReplace
+  commentId: P:DiagramModel.Commands.LanguageFormats.EnglishFormat.TargetValuesToReplace
+  fullName: DiagramModel.Commands.LanguageFormats.EnglishFormat.TargetValuesToReplace
+  nameWithType: EnglishFormat.TargetValuesToReplace
+- uid: DiagramModel.Commands.LanguageFormats.EnglishFormat.TargetValuesToReplace*
+  name: TargetValuesToReplace
+  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.EnglishFormat.html#DiagramModel_Commands_LanguageFormats_EnglishFormat_TargetValuesToReplace_
+  commentId: Overload:DiagramModel.Commands.LanguageFormats.EnglishFormat.TargetValuesToReplace
   isSpec: "True"
-  fullName: DiagramModel.Commands.LanguageFormats.EnglishFormat.ValueConstants
-  nameWithType: EnglishFormat.ValueConstants
+  fullName: DiagramModel.Commands.LanguageFormats.EnglishFormat.TargetValuesToReplace
+  nameWithType: EnglishFormat.TargetValuesToReplace
 - uid: DiagramModel.Commands.LanguageFormats.LanguageFormat
   name: LanguageFormat
   href: api/api-diagram/DiagramModel.Commands.LanguageFormats.LanguageFormat.html
@@ -1025,32 +1083,19 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.GetFormats
   nameWithType: LanguageFormat.GetFormats
-- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
-  name: ValueConstants
-  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.LanguageFormat.html#DiagramModel_Commands_LanguageFormats_LanguageFormat_ValueConstants
-  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
-  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
-  nameWithType: LanguageFormat.ValueConstants
-- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants*
-  name: ValueConstants
-  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.LanguageFormat.html#DiagramModel_Commands_LanguageFormats_LanguageFormat_ValueConstants_
-  commentId: Overload:DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.TargetValuesToReplace
+  name: TargetValuesToReplace
+  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.LanguageFormat.html#DiagramModel_Commands_LanguageFormats_LanguageFormat_TargetValuesToReplace
+  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.TargetValuesToReplace
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.TargetValuesToReplace
+  nameWithType: LanguageFormat.TargetValuesToReplace
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.TargetValuesToReplace*
+  name: TargetValuesToReplace
+  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.LanguageFormat.html#DiagramModel_Commands_LanguageFormats_LanguageFormat_TargetValuesToReplace_
+  commentId: Overload:DiagramModel.Commands.LanguageFormats.LanguageFormat.TargetValuesToReplace
   isSpec: "True"
-  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
-  nameWithType: LanguageFormat.ValueConstants
-- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
-  name: ValuesToReplace
-  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.LanguageFormat.html#DiagramModel_Commands_LanguageFormats_LanguageFormat_ValuesToReplace
-  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
-  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
-  nameWithType: LanguageFormat.ValuesToReplace
-- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace*
-  name: ValuesToReplace
-  href: api/api-diagram/DiagramModel.Commands.LanguageFormats.LanguageFormat.html#DiagramModel_Commands_LanguageFormats_LanguageFormat_ValuesToReplace_
-  commentId: Overload:DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
-  isSpec: "True"
-  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
-  nameWithType: LanguageFormat.ValuesToReplace
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.TargetValuesToReplace
+  nameWithType: LanguageFormat.TargetValuesToReplace
 - uid: DiagramModel.Components
   name: DiagramModel.Components
   href: api/api-diagram/DiagramModel.Components.html
@@ -1141,19 +1186,6 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Class.GetMethods
   nameWithType: Class.GetMethods
-- uid: DiagramModel.Components.Class.GetUniqueTypeName
-  name: GetUniqueTypeName()
-  href: api/api-diagram/DiagramModel.Components.Class.html#DiagramModel_Components_Class_GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Class.GetUniqueTypeName
-  fullName: DiagramModel.Components.Class.GetUniqueTypeName()
-  nameWithType: Class.GetUniqueTypeName()
-- uid: DiagramModel.Components.Class.GetUniqueTypeName*
-  name: GetUniqueTypeName
-  href: api/api-diagram/DiagramModel.Components.Class.html#DiagramModel_Components_Class_GetUniqueTypeName_
-  commentId: Overload:DiagramModel.Components.Class.GetUniqueTypeName
-  isSpec: "True"
-  fullName: DiagramModel.Components.Class.GetUniqueTypeName
-  nameWithType: Class.GetUniqueTypeName
 - uid: DiagramModel.Components.Class.TypeName
   name: TypeName
   href: api/api-diagram/DiagramModel.Components.Class.html#DiagramModel_Components_Class_TypeName
@@ -1167,6 +1199,19 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Class.TypeName
   nameWithType: Class.TypeName
+- uid: DiagramModel.Components.Class.UniqueTypeName
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Class.html#DiagramModel_Components_Class_UniqueTypeName
+  commentId: P:DiagramModel.Components.Class.UniqueTypeName
+  fullName: DiagramModel.Components.Class.UniqueTypeName
+  nameWithType: Class.UniqueTypeName
+- uid: DiagramModel.Components.Class.UniqueTypeName*
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Class.html#DiagramModel_Components_Class_UniqueTypeName_
+  commentId: Overload:DiagramModel.Components.Class.UniqueTypeName
+  isSpec: "True"
+  fullName: DiagramModel.Components.Class.UniqueTypeName
+  nameWithType: Class.UniqueTypeName
 - uid: DiagramModel.Components.Component
   name: Component
   href: api/api-diagram/DiagramModel.Components.Component.html
@@ -1292,19 +1337,6 @@ references:
   fullName.vb: DiagramModel.Components.Component.GetUniqueChild(Of T)()
   nameWithType: Component.GetUniqueChild<T>()
   nameWithType.vb: Component.GetUniqueChild(Of T)()
-- uid: DiagramModel.Components.Component.GetUniqueTypeName
-  name: GetUniqueTypeName()
-  href: api/api-diagram/DiagramModel.Components.Component.html#DiagramModel_Components_Component_GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Component.GetUniqueTypeName
-  fullName: DiagramModel.Components.Component.GetUniqueTypeName()
-  nameWithType: Component.GetUniqueTypeName()
-- uid: DiagramModel.Components.Component.GetUniqueTypeName*
-  name: GetUniqueTypeName
-  href: api/api-diagram/DiagramModel.Components.Component.html#DiagramModel_Components_Component_GetUniqueTypeName_
-  commentId: Overload:DiagramModel.Components.Component.GetUniqueTypeName
-  isSpec: "True"
-  fullName: DiagramModel.Components.Component.GetUniqueTypeName
-  nameWithType: Component.GetUniqueTypeName
 - uid: DiagramModel.Components.Component.Name
   name: Name
   href: api/api-diagram/DiagramModel.Components.Component.html#DiagramModel_Components_Component_Name
@@ -1344,6 +1376,19 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Component.TryDeleteChild
   nameWithType: Component.TryDeleteChild
+- uid: DiagramModel.Components.Component.UniqueTypeName
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Component.html#DiagramModel_Components_Component_UniqueTypeName
+  commentId: P:DiagramModel.Components.Component.UniqueTypeName
+  fullName: DiagramModel.Components.Component.UniqueTypeName
+  nameWithType: Component.UniqueTypeName
+- uid: DiagramModel.Components.Component.UniqueTypeName*
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Component.html#DiagramModel_Components_Component_UniqueTypeName_
+  commentId: Overload:DiagramModel.Components.Component.UniqueTypeName
+  isSpec: "True"
+  fullName: DiagramModel.Components.Component.UniqueTypeName
+  nameWithType: Component.UniqueTypeName
 - uid: DiagramModel.Components.Component.ValidChildrenTypes
   name: ValidChildrenTypes
   href: api/api-diagram/DiagramModel.Components.Component.html#DiagramModel_Components_Component_ValidChildrenTypes
@@ -1444,19 +1489,6 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Diagram.GetParsedCommands
   nameWithType: Diagram.GetParsedCommands
-- uid: DiagramModel.Components.Diagram.GetUniqueTypeName
-  name: GetUniqueTypeName()
-  href: api/api-diagram/DiagramModel.Components.Diagram.html#DiagramModel_Components_Diagram_GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Diagram.GetUniqueTypeName
-  fullName: DiagramModel.Components.Diagram.GetUniqueTypeName()
-  nameWithType: Diagram.GetUniqueTypeName()
-- uid: DiagramModel.Components.Diagram.GetUniqueTypeName*
-  name: GetUniqueTypeName
-  href: api/api-diagram/DiagramModel.Components.Diagram.html#DiagramModel_Components_Diagram_GetUniqueTypeName_
-  commentId: Overload:DiagramModel.Components.Diagram.GetUniqueTypeName
-  isSpec: "True"
-  fullName: DiagramModel.Components.Diagram.GetUniqueTypeName
-  nameWithType: Diagram.GetUniqueTypeName
 - uid: DiagramModel.Components.Diagram.TypeName
   name: TypeName
   href: api/api-diagram/DiagramModel.Components.Diagram.html#DiagramModel_Components_Diagram_TypeName
@@ -1470,6 +1502,19 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Diagram.TypeName
   nameWithType: Diagram.TypeName
+- uid: DiagramModel.Components.Diagram.UniqueTypeName
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Diagram.html#DiagramModel_Components_Diagram_UniqueTypeName
+  commentId: P:DiagramModel.Components.Diagram.UniqueTypeName
+  fullName: DiagramModel.Components.Diagram.UniqueTypeName
+  nameWithType: Diagram.UniqueTypeName
+- uid: DiagramModel.Components.Diagram.UniqueTypeName*
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Diagram.html#DiagramModel_Components_Diagram_UniqueTypeName_
+  commentId: Overload:DiagramModel.Components.Diagram.UniqueTypeName
+  isSpec: "True"
+  fullName: DiagramModel.Components.Diagram.UniqueTypeName
+  nameWithType: Diagram.UniqueTypeName
 - uid: DiagramModel.Components.Field
   name: Field
   href: api/api-diagram/DiagramModel.Components.Field.html
@@ -1528,19 +1573,6 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Field.GetFieldType
   nameWithType: Field.GetFieldType
-- uid: DiagramModel.Components.Field.GetUniqueTypeName
-  name: GetUniqueTypeName()
-  href: api/api-diagram/DiagramModel.Components.Field.html#DiagramModel_Components_Field_GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Field.GetUniqueTypeName
-  fullName: DiagramModel.Components.Field.GetUniqueTypeName()
-  nameWithType: Field.GetUniqueTypeName()
-- uid: DiagramModel.Components.Field.GetUniqueTypeName*
-  name: GetUniqueTypeName
-  href: api/api-diagram/DiagramModel.Components.Field.html#DiagramModel_Components_Field_GetUniqueTypeName_
-  commentId: Overload:DiagramModel.Components.Field.GetUniqueTypeName
-  isSpec: "True"
-  fullName: DiagramModel.Components.Field.GetUniqueTypeName
-  nameWithType: Field.GetUniqueTypeName
 - uid: DiagramModel.Components.Field.GetVisibility
   name: GetVisibility()
   href: api/api-diagram/DiagramModel.Components.Field.html#DiagramModel_Components_Field_GetVisibility
@@ -1580,6 +1612,19 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Field.TypeName
   nameWithType: Field.TypeName
+- uid: DiagramModel.Components.Field.UniqueTypeName
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Field.html#DiagramModel_Components_Field_UniqueTypeName
+  commentId: P:DiagramModel.Components.Field.UniqueTypeName
+  fullName: DiagramModel.Components.Field.UniqueTypeName
+  nameWithType: Field.UniqueTypeName
+- uid: DiagramModel.Components.Field.UniqueTypeName*
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Field.html#DiagramModel_Components_Field_UniqueTypeName_
+  commentId: Overload:DiagramModel.Components.Field.UniqueTypeName
+  isSpec: "True"
+  fullName: DiagramModel.Components.Field.UniqueTypeName
+  nameWithType: Field.UniqueTypeName
 - uid: DiagramModel.Components.FieldType
   name: FieldType
   href: api/api-diagram/DiagramModel.Components.FieldType.html
@@ -1728,19 +1773,6 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Method.GetReturnType
   nameWithType: Method.GetReturnType
-- uid: DiagramModel.Components.Method.GetUniqueTypeName
-  name: GetUniqueTypeName()
-  href: api/api-diagram/DiagramModel.Components.Method.html#DiagramModel_Components_Method_GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Method.GetUniqueTypeName
-  fullName: DiagramModel.Components.Method.GetUniqueTypeName()
-  nameWithType: Method.GetUniqueTypeName()
-- uid: DiagramModel.Components.Method.GetUniqueTypeName*
-  name: GetUniqueTypeName
-  href: api/api-diagram/DiagramModel.Components.Method.html#DiagramModel_Components_Method_GetUniqueTypeName_
-  commentId: Overload:DiagramModel.Components.Method.GetUniqueTypeName
-  isSpec: "True"
-  fullName: DiagramModel.Components.Method.GetUniqueTypeName
-  nameWithType: Method.GetUniqueTypeName
 - uid: DiagramModel.Components.Method.GetVisibility
   name: GetVisibility()
   href: api/api-diagram/DiagramModel.Components.Method.html#DiagramModel_Components_Method_GetVisibility
@@ -1767,6 +1799,19 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Method.TypeName
   nameWithType: Method.TypeName
+- uid: DiagramModel.Components.Method.UniqueTypeName
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Method.html#DiagramModel_Components_Method_UniqueTypeName
+  commentId: P:DiagramModel.Components.Method.UniqueTypeName
+  fullName: DiagramModel.Components.Method.UniqueTypeName
+  nameWithType: Method.UniqueTypeName
+- uid: DiagramModel.Components.Method.UniqueTypeName*
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Method.html#DiagramModel_Components_Method_UniqueTypeName_
+  commentId: Overload:DiagramModel.Components.Method.UniqueTypeName
+  isSpec: "True"
+  fullName: DiagramModel.Components.Method.UniqueTypeName
+  nameWithType: Method.UniqueTypeName
 - uid: DiagramModel.Components.Parameter
   name: Parameter
   href: api/api-diagram/DiagramModel.Components.Parameter.html
@@ -1838,19 +1883,6 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Parameter.GetRequireInfo
   nameWithType: Parameter.GetRequireInfo
-- uid: DiagramModel.Components.Parameter.GetUniqueTypeName
-  name: GetUniqueTypeName()
-  href: api/api-diagram/DiagramModel.Components.Parameter.html#DiagramModel_Components_Parameter_GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Parameter.GetUniqueTypeName
-  fullName: DiagramModel.Components.Parameter.GetUniqueTypeName()
-  nameWithType: Parameter.GetUniqueTypeName()
-- uid: DiagramModel.Components.Parameter.GetUniqueTypeName*
-  name: GetUniqueTypeName
-  href: api/api-diagram/DiagramModel.Components.Parameter.html#DiagramModel_Components_Parameter_GetUniqueTypeName_
-  commentId: Overload:DiagramModel.Components.Parameter.GetUniqueTypeName
-  isSpec: "True"
-  fullName: DiagramModel.Components.Parameter.GetUniqueTypeName
-  nameWithType: Parameter.GetUniqueTypeName
 - uid: DiagramModel.Components.Parameter.IsRequired
   name: IsRequired
   href: api/api-diagram/DiagramModel.Components.Parameter.html#DiagramModel_Components_Parameter_IsRequired
@@ -1890,6 +1922,19 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Parameter.TypeName
   nameWithType: Parameter.TypeName
+- uid: DiagramModel.Components.Parameter.UniqueTypeName
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Parameter.html#DiagramModel_Components_Parameter_UniqueTypeName
+  commentId: P:DiagramModel.Components.Parameter.UniqueTypeName
+  fullName: DiagramModel.Components.Parameter.UniqueTypeName
+  nameWithType: Parameter.UniqueTypeName
+- uid: DiagramModel.Components.Parameter.UniqueTypeName*
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Parameter.html#DiagramModel_Components_Parameter_UniqueTypeName_
+  commentId: Overload:DiagramModel.Components.Parameter.UniqueTypeName
+  isSpec: "True"
+  fullName: DiagramModel.Components.Parameter.UniqueTypeName
+  nameWithType: Parameter.UniqueTypeName
 - uid: DiagramModel.Components.ParameterType
   name: ParameterType
   href: api/api-diagram/DiagramModel.Components.ParameterType.html
@@ -1954,19 +1999,6 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Parent.Clone
   nameWithType: Parent.Clone
-- uid: DiagramModel.Components.Parent.GetUniqueTypeName
-  name: GetUniqueTypeName()
-  href: api/api-diagram/DiagramModel.Components.Parent.html#DiagramModel_Components_Parent_GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Parent.GetUniqueTypeName
-  fullName: DiagramModel.Components.Parent.GetUniqueTypeName()
-  nameWithType: Parent.GetUniqueTypeName()
-- uid: DiagramModel.Components.Parent.GetUniqueTypeName*
-  name: GetUniqueTypeName
-  href: api/api-diagram/DiagramModel.Components.Parent.html#DiagramModel_Components_Parent_GetUniqueTypeName_
-  commentId: Overload:DiagramModel.Components.Parent.GetUniqueTypeName
-  isSpec: "True"
-  fullName: DiagramModel.Components.Parent.GetUniqueTypeName
-  nameWithType: Parent.GetUniqueTypeName
 - uid: DiagramModel.Components.Parent.TypeName
   name: TypeName
   href: api/api-diagram/DiagramModel.Components.Parent.html#DiagramModel_Components_Parent_TypeName
@@ -1980,6 +2012,19 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Parent.TypeName
   nameWithType: Parent.TypeName
+- uid: DiagramModel.Components.Parent.UniqueTypeName
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Parent.html#DiagramModel_Components_Parent_UniqueTypeName
+  commentId: P:DiagramModel.Components.Parent.UniqueTypeName
+  fullName: DiagramModel.Components.Parent.UniqueTypeName
+  nameWithType: Parent.UniqueTypeName
+- uid: DiagramModel.Components.Parent.UniqueTypeName*
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Parent.html#DiagramModel_Components_Parent_UniqueTypeName_
+  commentId: Overload:DiagramModel.Components.Parent.UniqueTypeName
+  isSpec: "True"
+  fullName: DiagramModel.Components.Parent.UniqueTypeName
+  nameWithType: Parent.UniqueTypeName
 - uid: DiagramModel.Components.Required
   name: Required
   href: api/api-diagram/DiagramModel.Components.Required.html
@@ -2031,19 +2076,6 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Required.DefaultName
   nameWithType: Required.DefaultName
-- uid: DiagramModel.Components.Required.GetUniqueTypeName
-  name: GetUniqueTypeName()
-  href: api/api-diagram/DiagramModel.Components.Required.html#DiagramModel_Components_Required_GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Required.GetUniqueTypeName
-  fullName: DiagramModel.Components.Required.GetUniqueTypeName()
-  nameWithType: Required.GetUniqueTypeName()
-- uid: DiagramModel.Components.Required.GetUniqueTypeName*
-  name: GetUniqueTypeName
-  href: api/api-diagram/DiagramModel.Components.Required.html#DiagramModel_Components_Required_GetUniqueTypeName_
-  commentId: Overload:DiagramModel.Components.Required.GetUniqueTypeName
-  isSpec: "True"
-  fullName: DiagramModel.Components.Required.GetUniqueTypeName
-  nameWithType: Required.GetUniqueTypeName
 - uid: DiagramModel.Components.Required.Name
   name: Name
   href: api/api-diagram/DiagramModel.Components.Required.html#DiagramModel_Components_Required_Name
@@ -2070,6 +2102,19 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Required.TypeName
   nameWithType: Required.TypeName
+- uid: DiagramModel.Components.Required.UniqueTypeName
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Required.html#DiagramModel_Components_Required_UniqueTypeName
+  commentId: P:DiagramModel.Components.Required.UniqueTypeName
+  fullName: DiagramModel.Components.Required.UniqueTypeName
+  nameWithType: Required.UniqueTypeName
+- uid: DiagramModel.Components.Required.UniqueTypeName*
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Required.html#DiagramModel_Components_Required_UniqueTypeName_
+  commentId: Overload:DiagramModel.Components.Required.UniqueTypeName
+  isSpec: "True"
+  fullName: DiagramModel.Components.Required.UniqueTypeName
+  nameWithType: Required.UniqueTypeName
 - uid: DiagramModel.Components.Required.Value
   name: Value
   href: api/api-diagram/DiagramModel.Components.Required.html#DiagramModel_Components_Required_Value
@@ -2160,19 +2205,6 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Type.Clone
   nameWithType: Type.Clone
-- uid: DiagramModel.Components.Type.GetUniqueTypeName
-  name: GetUniqueTypeName()
-  href: api/api-diagram/DiagramModel.Components.Type.html#DiagramModel_Components_Type_GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Type.GetUniqueTypeName
-  fullName: DiagramModel.Components.Type.GetUniqueTypeName()
-  nameWithType: Type.GetUniqueTypeName()
-- uid: DiagramModel.Components.Type.GetUniqueTypeName*
-  name: GetUniqueTypeName
-  href: api/api-diagram/DiagramModel.Components.Type.html#DiagramModel_Components_Type_GetUniqueTypeName_
-  commentId: Overload:DiagramModel.Components.Type.GetUniqueTypeName
-  isSpec: "True"
-  fullName: DiagramModel.Components.Type.GetUniqueTypeName
-  nameWithType: Type.GetUniqueTypeName
 - uid: DiagramModel.Components.Type.TypeName
   name: TypeName
   href: api/api-diagram/DiagramModel.Components.Type.html#DiagramModel_Components_Type_TypeName
@@ -2186,6 +2218,19 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Type.TypeName
   nameWithType: Type.TypeName
+- uid: DiagramModel.Components.Type.UniqueTypeName
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Type.html#DiagramModel_Components_Type_UniqueTypeName
+  commentId: P:DiagramModel.Components.Type.UniqueTypeName
+  fullName: DiagramModel.Components.Type.UniqueTypeName
+  nameWithType: Type.UniqueTypeName
+- uid: DiagramModel.Components.Type.UniqueTypeName*
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Type.html#DiagramModel_Components_Type_UniqueTypeName_
+  commentId: Overload:DiagramModel.Components.Type.UniqueTypeName
+  isSpec: "True"
+  fullName: DiagramModel.Components.Type.UniqueTypeName
+  nameWithType: Type.UniqueTypeName
 - uid: DiagramModel.Components.Visibility
   name: Visibility
   href: api/api-diagram/DiagramModel.Components.Visibility.html
@@ -2237,19 +2282,6 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Visibility.DefaultName
   nameWithType: Visibility.DefaultName
-- uid: DiagramModel.Components.Visibility.GetUniqueTypeName
-  name: GetUniqueTypeName()
-  href: api/api-diagram/DiagramModel.Components.Visibility.html#DiagramModel_Components_Visibility_GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Visibility.GetUniqueTypeName
-  fullName: DiagramModel.Components.Visibility.GetUniqueTypeName()
-  nameWithType: Visibility.GetUniqueTypeName()
-- uid: DiagramModel.Components.Visibility.GetUniqueTypeName*
-  name: GetUniqueTypeName
-  href: api/api-diagram/DiagramModel.Components.Visibility.html#DiagramModel_Components_Visibility_GetUniqueTypeName_
-  commentId: Overload:DiagramModel.Components.Visibility.GetUniqueTypeName
-  isSpec: "True"
-  fullName: DiagramModel.Components.Visibility.GetUniqueTypeName
-  nameWithType: Visibility.GetUniqueTypeName
 - uid: DiagramModel.Components.Visibility.Name
   name: Name
   href: api/api-diagram/DiagramModel.Components.Visibility.html#DiagramModel_Components_Visibility_Name
@@ -2276,6 +2308,19 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Visibility.TypeName
   nameWithType: Visibility.TypeName
+- uid: DiagramModel.Components.Visibility.UniqueTypeName
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Visibility.html#DiagramModel_Components_Visibility_UniqueTypeName
+  commentId: P:DiagramModel.Components.Visibility.UniqueTypeName
+  fullName: DiagramModel.Components.Visibility.UniqueTypeName
+  nameWithType: Visibility.UniqueTypeName
+- uid: DiagramModel.Components.Visibility.UniqueTypeName*
+  name: UniqueTypeName
+  href: api/api-diagram/DiagramModel.Components.Visibility.html#DiagramModel_Components_Visibility_UniqueTypeName_
+  commentId: Overload:DiagramModel.Components.Visibility.UniqueTypeName
+  isSpec: "True"
+  fullName: DiagramModel.Components.Visibility.UniqueTypeName
+  nameWithType: Visibility.UniqueTypeName
 - uid: DiagramModel.Components.Visibility.ValidNames
   name: ValidNames
   href: api/api-diagram/DiagramModel.Components.Visibility.html#DiagramModel_Components_Visibility_ValidNames
@@ -3094,6 +3139,130 @@ references:
   isSpec: "True"
   fullName: VoiceScript.VoiceTranscription.Language.ToString
   nameWithType: Language.ToString
+- uid: VoiceScript.VoiceTranscription.LongRunningRecognizer
+  name: LongRunningRecognizer
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.LongRunningRecognizer.html
+  commentId: T:VoiceScript.VoiceTranscription.LongRunningRecognizer
+  fullName: VoiceScript.VoiceTranscription.LongRunningRecognizer
+  nameWithType: LongRunningRecognizer
+- uid: VoiceScript.VoiceTranscription.LongRunningRecognizer.#ctor(RecognitionConfig)
+  name: LongRunningRecognizer(RecognitionConfig)
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.LongRunningRecognizer.html#VoiceScript_VoiceTranscription_LongRunningRecognizer__ctor_RecognitionConfig_
+  commentId: M:VoiceScript.VoiceTranscription.LongRunningRecognizer.#ctor(RecognitionConfig)
+  fullName: VoiceScript.VoiceTranscription.LongRunningRecognizer.LongRunningRecognizer(RecognitionConfig)
+  nameWithType: LongRunningRecognizer.LongRunningRecognizer(RecognitionConfig)
+- uid: VoiceScript.VoiceTranscription.LongRunningRecognizer.#ctor*
+  name: LongRunningRecognizer
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.LongRunningRecognizer.html#VoiceScript_VoiceTranscription_LongRunningRecognizer__ctor_
+  commentId: Overload:VoiceScript.VoiceTranscription.LongRunningRecognizer.#ctor
+  isSpec: "True"
+  fullName: VoiceScript.VoiceTranscription.LongRunningRecognizer.LongRunningRecognizer
+  nameWithType: LongRunningRecognizer.LongRunningRecognizer
+- uid: VoiceScript.VoiceTranscription.LongRunningRecognizer.LongRunningRecognize(RecognitionAudio,System.Action{System.String})
+  name: LongRunningRecognize(RecognitionAudio, Action<String>)
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.LongRunningRecognizer.html#VoiceScript_VoiceTranscription_LongRunningRecognizer_LongRunningRecognize_RecognitionAudio_System_Action_System_String__
+  commentId: M:VoiceScript.VoiceTranscription.LongRunningRecognizer.LongRunningRecognize(RecognitionAudio,System.Action{System.String})
+  name.vb: LongRunningRecognize(RecognitionAudio, Action(Of String))
+  fullName: VoiceScript.VoiceTranscription.LongRunningRecognizer.LongRunningRecognize(RecognitionAudio, System.Action<System.String>)
+  fullName.vb: VoiceScript.VoiceTranscription.LongRunningRecognizer.LongRunningRecognize(RecognitionAudio, System.Action(Of System.String))
+  nameWithType: LongRunningRecognizer.LongRunningRecognize(RecognitionAudio, Action<String>)
+  nameWithType.vb: LongRunningRecognizer.LongRunningRecognize(RecognitionAudio, Action(Of String))
+- uid: VoiceScript.VoiceTranscription.LongRunningRecognizer.LongRunningRecognize*
+  name: LongRunningRecognize
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.LongRunningRecognizer.html#VoiceScript_VoiceTranscription_LongRunningRecognizer_LongRunningRecognize_
+  commentId: Overload:VoiceScript.VoiceTranscription.LongRunningRecognizer.LongRunningRecognize
+  isSpec: "True"
+  fullName: VoiceScript.VoiceTranscription.LongRunningRecognizer.LongRunningRecognize
+  nameWithType: LongRunningRecognizer.LongRunningRecognize
+- uid: VoiceScript.VoiceTranscription.LongRunningRecognizer.LongRunningRecognizeAsync(RecognitionAudio,System.Action{System.String})
+  name: LongRunningRecognizeAsync(RecognitionAudio, Action<String>)
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.LongRunningRecognizer.html#VoiceScript_VoiceTranscription_LongRunningRecognizer_LongRunningRecognizeAsync_RecognitionAudio_System_Action_System_String__
+  commentId: M:VoiceScript.VoiceTranscription.LongRunningRecognizer.LongRunningRecognizeAsync(RecognitionAudio,System.Action{System.String})
+  name.vb: LongRunningRecognizeAsync(RecognitionAudio, Action(Of String))
+  fullName: VoiceScript.VoiceTranscription.LongRunningRecognizer.LongRunningRecognizeAsync(RecognitionAudio, System.Action<System.String>)
+  fullName.vb: VoiceScript.VoiceTranscription.LongRunningRecognizer.LongRunningRecognizeAsync(RecognitionAudio, System.Action(Of System.String))
+  nameWithType: LongRunningRecognizer.LongRunningRecognizeAsync(RecognitionAudio, Action<String>)
+  nameWithType.vb: LongRunningRecognizer.LongRunningRecognizeAsync(RecognitionAudio, Action(Of String))
+- uid: VoiceScript.VoiceTranscription.LongRunningRecognizer.LongRunningRecognizeAsync*
+  name: LongRunningRecognizeAsync
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.LongRunningRecognizer.html#VoiceScript_VoiceTranscription_LongRunningRecognizer_LongRunningRecognizeAsync_
+  commentId: Overload:VoiceScript.VoiceTranscription.LongRunningRecognizer.LongRunningRecognizeAsync
+  isSpec: "True"
+  fullName: VoiceScript.VoiceTranscription.LongRunningRecognizer.LongRunningRecognizeAsync
+  nameWithType: LongRunningRecognizer.LongRunningRecognizeAsync
+- uid: VoiceScript.VoiceTranscription.ServerResponseProcessor
+  name: ServerResponseProcessor
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.ServerResponseProcessor.html
+  commentId: T:VoiceScript.VoiceTranscription.ServerResponseProcessor
+  fullName: VoiceScript.VoiceTranscription.ServerResponseProcessor
+  nameWithType: ServerResponseProcessor
+- uid: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessSpeechRecognitionTranscript(RepeatedField{SpeechRecognitionResult},System.Action{System.String})
+  name: ProcessSpeechRecognitionTranscript(RepeatedField<SpeechRecognitionResult>, Action<String>)
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.ServerResponseProcessor.html#VoiceScript_VoiceTranscription_ServerResponseProcessor_ProcessSpeechRecognitionTranscript_RepeatedField_SpeechRecognitionResult__System_Action_System_String__
+  commentId: M:VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessSpeechRecognitionTranscript(RepeatedField{SpeechRecognitionResult},System.Action{System.String})
+  name.vb: ProcessSpeechRecognitionTranscript(RepeatedField(Of SpeechRecognitionResult), Action(Of String))
+  fullName: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessSpeechRecognitionTranscript(RepeatedField<SpeechRecognitionResult>, System.Action<System.String>)
+  fullName.vb: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessSpeechRecognitionTranscript(RepeatedField(Of SpeechRecognitionResult), System.Action(Of System.String))
+  nameWithType: ServerResponseProcessor.ProcessSpeechRecognitionTranscript(RepeatedField<SpeechRecognitionResult>, Action<String>)
+  nameWithType.vb: ServerResponseProcessor.ProcessSpeechRecognitionTranscript(RepeatedField(Of SpeechRecognitionResult), Action(Of String))
+- uid: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessSpeechRecognitionTranscript*
+  name: ProcessSpeechRecognitionTranscript
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.ServerResponseProcessor.html#VoiceScript_VoiceTranscription_ServerResponseProcessor_ProcessSpeechRecognitionTranscript_
+  commentId: Overload:VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessSpeechRecognitionTranscript
+  isSpec: "True"
+  fullName: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessSpeechRecognitionTranscript
+  nameWithType: ServerResponseProcessor.ProcessSpeechRecognitionTranscript
+- uid: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessStreamRecognitionTranscript(RepeatedField{StreamingRecognitionResult},System.Action{System.String})
+  name: ProcessStreamRecognitionTranscript(RepeatedField<StreamingRecognitionResult>, Action<String>)
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.ServerResponseProcessor.html#VoiceScript_VoiceTranscription_ServerResponseProcessor_ProcessStreamRecognitionTranscript_RepeatedField_StreamingRecognitionResult__System_Action_System_String__
+  commentId: M:VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessStreamRecognitionTranscript(RepeatedField{StreamingRecognitionResult},System.Action{System.String})
+  name.vb: ProcessStreamRecognitionTranscript(RepeatedField(Of StreamingRecognitionResult), Action(Of String))
+  fullName: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessStreamRecognitionTranscript(RepeatedField<StreamingRecognitionResult>, System.Action<System.String>)
+  fullName.vb: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessStreamRecognitionTranscript(RepeatedField(Of StreamingRecognitionResult), System.Action(Of System.String))
+  nameWithType: ServerResponseProcessor.ProcessStreamRecognitionTranscript(RepeatedField<StreamingRecognitionResult>, Action<String>)
+  nameWithType.vb: ServerResponseProcessor.ProcessStreamRecognitionTranscript(RepeatedField(Of StreamingRecognitionResult), Action(Of String))
+- uid: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessStreamRecognitionTranscript*
+  name: ProcessStreamRecognitionTranscript
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.ServerResponseProcessor.html#VoiceScript_VoiceTranscription_ServerResponseProcessor_ProcessStreamRecognitionTranscript_
+  commentId: Overload:VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessStreamRecognitionTranscript
+  isSpec: "True"
+  fullName: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessStreamRecognitionTranscript
+  nameWithType: ServerResponseProcessor.ProcessStreamRecognitionTranscript
+- uid: VoiceScript.VoiceTranscription.StreamRecognizer
+  name: StreamRecognizer
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.StreamRecognizer.html
+  commentId: T:VoiceScript.VoiceTranscription.StreamRecognizer
+  fullName: VoiceScript.VoiceTranscription.StreamRecognizer
+  nameWithType: StreamRecognizer
+- uid: VoiceScript.VoiceTranscription.StreamRecognizer.#ctor(RecognitionConfig,VoiceScript.VoiceTranscription.IAudioRecorder)
+  name: StreamRecognizer(RecognitionConfig, IAudioRecorder)
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.StreamRecognizer.html#VoiceScript_VoiceTranscription_StreamRecognizer__ctor_RecognitionConfig_VoiceScript_VoiceTranscription_IAudioRecorder_
+  commentId: M:VoiceScript.VoiceTranscription.StreamRecognizer.#ctor(RecognitionConfig,VoiceScript.VoiceTranscription.IAudioRecorder)
+  fullName: VoiceScript.VoiceTranscription.StreamRecognizer.StreamRecognizer(RecognitionConfig, VoiceScript.VoiceTranscription.IAudioRecorder)
+  nameWithType: StreamRecognizer.StreamRecognizer(RecognitionConfig, IAudioRecorder)
+- uid: VoiceScript.VoiceTranscription.StreamRecognizer.#ctor*
+  name: StreamRecognizer
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.StreamRecognizer.html#VoiceScript_VoiceTranscription_StreamRecognizer__ctor_
+  commentId: Overload:VoiceScript.VoiceTranscription.StreamRecognizer.#ctor
+  isSpec: "True"
+  fullName: VoiceScript.VoiceTranscription.StreamRecognizer.StreamRecognizer
+  nameWithType: StreamRecognizer.StreamRecognizer
+- uid: VoiceScript.VoiceTranscription.StreamRecognizer.StreamingRecognizeAsync(System.Action{System.String})
+  name: StreamingRecognizeAsync(Action<String>)
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.StreamRecognizer.html#VoiceScript_VoiceTranscription_StreamRecognizer_StreamingRecognizeAsync_System_Action_System_String__
+  commentId: M:VoiceScript.VoiceTranscription.StreamRecognizer.StreamingRecognizeAsync(System.Action{System.String})
+  name.vb: StreamingRecognizeAsync(Action(Of String))
+  fullName: VoiceScript.VoiceTranscription.StreamRecognizer.StreamingRecognizeAsync(System.Action<System.String>)
+  fullName.vb: VoiceScript.VoiceTranscription.StreamRecognizer.StreamingRecognizeAsync(System.Action(Of System.String))
+  nameWithType: StreamRecognizer.StreamingRecognizeAsync(Action<String>)
+  nameWithType.vb: StreamRecognizer.StreamingRecognizeAsync(Action(Of String))
+- uid: VoiceScript.VoiceTranscription.StreamRecognizer.StreamingRecognizeAsync*
+  name: StreamingRecognizeAsync
+  href: api/api-voice-transcript/VoiceScript.VoiceTranscription.StreamRecognizer.html#VoiceScript_VoiceTranscription_StreamRecognizer_StreamingRecognizeAsync_
+  commentId: Overload:VoiceScript.VoiceTranscription.StreamRecognizer.StreamingRecognizeAsync
+  isSpec: "True"
+  fullName: VoiceScript.VoiceTranscription.StreamRecognizer.StreamingRecognizeAsync
+  nameWithType: StreamRecognizer.StreamingRecognizeAsync
 - uid: VoiceScript.VoiceTranscription.VoiceTranscriptor
   name: VoiceTranscriptor
   href: api/api-voice-transcript/VoiceScript.VoiceTranscription.VoiceTranscriptor.html

@@ -17,10 +17,12 @@ items:
   source:
     id: IAudioPlayer
     path: ''
-    startLine: 213
+    startLine: 228
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nManages audio playback from the file.\n"
+  example: []
   syntax:
     content: public interface IAudioPlayer
     content.vb: Public Interface IAudioPlayer
@@ -44,17 +46,21 @@ items:
   source:
     id: Play
     path: ''
-    startLine: 215
+    startLine: 236
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nPlays audio stored under the given file path.\nHandles potential callback once the audio playback stopped.\n"
+  example: []
   syntax:
     content: void Play(string audioFilename, Action PlaybackStoppedCallback = null)
     parameters:
     - id: audioFilename
       type: System.String
+      description: Path to the audio file
     - id: PlaybackStoppedCallback
       type: System.Action
+      description: Callback to trigger after audio stopped playing
     content.vb: Sub Play(audioFilename As String, PlaybackStoppedCallback As Action = Nothing)
   overload: VoiceScript.VoiceTranscription.IAudioPlayer.Play*
 - uid: VoiceScript.VoiceTranscription.IAudioPlayer.Stop
@@ -71,10 +77,12 @@ items:
   source:
     id: Stop
     path: ''
-    startLine: 216
+    startLine: 241
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nStops current audio playback immediately.\n"
+  example: []
   syntax:
     content: void Stop()
     content.vb: Sub Stop

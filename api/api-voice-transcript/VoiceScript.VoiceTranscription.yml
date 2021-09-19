@@ -12,6 +12,9 @@ items:
   - VoiceScript.VoiceTranscription.IAudioRecorder
   - VoiceScript.VoiceTranscription.IVoiceTranscriptor
   - VoiceScript.VoiceTranscription.Language
+  - VoiceScript.VoiceTranscription.LongRunningRecognizer
+  - VoiceScript.VoiceTranscription.ServerResponseProcessor
+  - VoiceScript.VoiceTranscription.StreamRecognizer
   - VoiceScript.VoiceTranscription.VoiceTranscriptor
   langs:
   - csharp
@@ -67,6 +70,21 @@ references:
   name: Czech
   nameWithType: Czech
   fullName: VoiceScript.VoiceTranscription.Czech
+- uid: VoiceScript.VoiceTranscription.LongRunningRecognizer
+  commentId: T:VoiceScript.VoiceTranscription.LongRunningRecognizer
+  name: LongRunningRecognizer
+  nameWithType: LongRunningRecognizer
+  fullName: VoiceScript.VoiceTranscription.LongRunningRecognizer
+- uid: VoiceScript.VoiceTranscription.ServerResponseProcessor
+  commentId: T:VoiceScript.VoiceTranscription.ServerResponseProcessor
+  name: ServerResponseProcessor
+  nameWithType: ServerResponseProcessor
+  fullName: VoiceScript.VoiceTranscription.ServerResponseProcessor
+- uid: VoiceScript.VoiceTranscription.StreamRecognizer
+  commentId: T:VoiceScript.VoiceTranscription.StreamRecognizer
+  name: StreamRecognizer
+  nameWithType: StreamRecognizer
+  fullName: VoiceScript.VoiceTranscription.StreamRecognizer
 - uid: VoiceScript.VoiceTranscription.VoiceTranscriptor
   commentId: T:VoiceScript.VoiceTranscription.VoiceTranscriptor
   name: VoiceTranscriptor

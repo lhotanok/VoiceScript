@@ -10,6 +10,6 @@ namespace DiagramModel.Components
 
         public override Component Clone() => new Parent(Name, Parent);
 
-        public override string GetUniqueTypeName() => TypeName;
+        public override string UniqueTypeName { get => TypeName; }
     }
 }

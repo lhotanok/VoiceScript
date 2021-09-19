@@ -27,8 +27,8 @@ namespace DiagramModel.Components
         /// </summary>
         /// <returns>Defined value of field type or null.</returns>
         public FieldType GetFieldType() => GetUniqueChild<FieldType>();
-        
-        public override string GetUniqueTypeName() => TypeName;
+
+        public override string UniqueTypeName { get => TypeName; }
 
         public override void AddChild(Component child)
         {

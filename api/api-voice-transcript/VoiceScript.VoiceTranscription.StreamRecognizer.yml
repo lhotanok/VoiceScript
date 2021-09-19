@@ -1,0 +1,518 @@
+### YamlMime:ManagedReference
+items:
+- uid: VoiceScript.VoiceTranscription.StreamRecognizer
+  commentId: T:VoiceScript.VoiceTranscription.StreamRecognizer
+  id: StreamRecognizer
+  parent: VoiceScript.VoiceTranscription
+  children:
+  - VoiceScript.VoiceTranscription.StreamRecognizer.#ctor(RecognitionConfig,VoiceScript.VoiceTranscription.IAudioRecorder)
+  - VoiceScript.VoiceTranscription.StreamRecognizer.StreamingRecognizeAsync(System.Action{System.String})
+  langs:
+  - csharp
+  - vb
+  name: StreamRecognizer
+  nameWithType: StreamRecognizer
+  fullName: VoiceScript.VoiceTranscription.StreamRecognizer
+  type: Class
+  source:
+    id: StreamRecognizer
+    path: ''
+    startLine: 534
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  summary: "\nManages real-time speech-to-text transcription using Google Cloud Speech\n<see cref=\"!:StreamingRecognizeStream\"></see>.\n"
+  example: []
+  syntax:
+    content: public class StreamRecognizer
+    content.vb: Public Class StreamRecognizer
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: VoiceScript.VoiceTranscription.StreamRecognizer.#ctor(RecognitionConfig,VoiceScript.VoiceTranscription.IAudioRecorder)
+  commentId: M:VoiceScript.VoiceTranscription.StreamRecognizer.#ctor(RecognitionConfig,VoiceScript.VoiceTranscription.IAudioRecorder)
+  id: '#ctor(RecognitionConfig,VoiceScript.VoiceTranscription.IAudioRecorder)'
+  parent: VoiceScript.VoiceTranscription.StreamRecognizer
+  langs:
+  - csharp
+  - vb
+  name: StreamRecognizer(RecognitionConfig, IAudioRecorder)
+  nameWithType: StreamRecognizer.StreamRecognizer(RecognitionConfig, IAudioRecorder)
+  fullName: VoiceScript.VoiceTranscription.StreamRecognizer.StreamRecognizer(RecognitionConfig, VoiceScript.VoiceTranscription.IAudioRecorder)
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 539
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  syntax:
+    content: public StreamRecognizer(RecognitionConfig configuration, IAudioRecorder recorder)
+    parameters:
+    - id: configuration
+      type: RecognitionConfig
+    - id: recorder
+      type: VoiceScript.VoiceTranscription.IAudioRecorder
+    content.vb: Public Sub New(configuration As RecognitionConfig, recorder As IAudioRecorder)
+  overload: VoiceScript.VoiceTranscription.StreamRecognizer.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: VoiceScript.VoiceTranscription.StreamRecognizer.StreamingRecognizeAsync(System.Action{System.String})
+  commentId: M:VoiceScript.VoiceTranscription.StreamRecognizer.StreamingRecognizeAsync(System.Action{System.String})
+  id: StreamingRecognizeAsync(System.Action{System.String})
+  parent: VoiceScript.VoiceTranscription.StreamRecognizer
+  langs:
+  - csharp
+  - vb
+  name: StreamingRecognizeAsync(Action<String>)
+  nameWithType: StreamRecognizer.StreamingRecognizeAsync(Action<String>)
+  fullName: VoiceScript.VoiceTranscription.StreamRecognizer.StreamingRecognizeAsync(System.Action<System.String>)
+  type: Method
+  source:
+    id: StreamingRecognizeAsync
+    path: ''
+    startLine: 553
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  summary: "\nPerforms asynchronous streaming recognize using Google Cloud Speech\n<see cref=\"!:StreamingRecognizeStream\"></see>. Triggers callback with each\ntranscription included in server response.\n"
+  example: []
+  syntax:
+    content: public async void StreamingRecognizeAsync(Action<string> callback)
+    parameters:
+    - id: callback
+      type: System.Action{System.String}
+      description: >-
+        Function to be called with the individual transcription parts
+
+        from <see cref="!:StreamingRecognitionResult.Alternatives"></see>.
+
+        Typical use case is for writing transcripted words to the stream.
+    content.vb: Public Sub StreamingRecognizeAsync(callback As Action(Of String))
+  overload: VoiceScript.VoiceTranscription.StreamRecognizer.StreamingRecognizeAsync*
+  nameWithType.vb: StreamRecognizer.StreamingRecognizeAsync(Action(Of String))
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+  fullName.vb: VoiceScript.VoiceTranscription.StreamRecognizer.StreamingRecognizeAsync(System.Action(Of System.String))
+  name.vb: StreamingRecognizeAsync(Action(Of String))
+references:
+- uid: VoiceScript.VoiceTranscription
+  commentId: N:VoiceScript.VoiceTranscription
+  name: VoiceScript.VoiceTranscription
+  nameWithType: VoiceScript.VoiceTranscription
+  fullName: VoiceScript.VoiceTranscription
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VoiceScript.VoiceTranscription.StreamRecognizer.#ctor*
+  commentId: Overload:VoiceScript.VoiceTranscription.StreamRecognizer.#ctor
+  name: StreamRecognizer
+  nameWithType: StreamRecognizer.StreamRecognizer
+  fullName: VoiceScript.VoiceTranscription.StreamRecognizer.StreamRecognizer
+- uid: RecognitionConfig
+  isExternal: true
+  name: RecognitionConfig
+  nameWithType: RecognitionConfig
+  fullName: RecognitionConfig
+- uid: VoiceScript.VoiceTranscription.IAudioRecorder
+  commentId: T:VoiceScript.VoiceTranscription.IAudioRecorder
+  parent: VoiceScript.VoiceTranscription
+  name: IAudioRecorder
+  nameWithType: IAudioRecorder
+  fullName: VoiceScript.VoiceTranscription.IAudioRecorder
+- uid: VoiceScript.VoiceTranscription.StreamRecognizer.StreamingRecognizeAsync*
+  commentId: Overload:VoiceScript.VoiceTranscription.StreamRecognizer.StreamingRecognizeAsync
+  name: StreamingRecognizeAsync
+  nameWithType: StreamRecognizer.StreamingRecognizeAsync
+  fullName: VoiceScript.VoiceTranscription.StreamRecognizer.StreamingRecognizeAsync
+- uid: System.Action{System.String}
+  commentId: T:System.Action{System.String}
+  parent: System
+  definition: System.Action`1
+  name: Action<String>
+  nameWithType: Action<String>
+  fullName: System.Action<System.String>
+  nameWithType.vb: Action(Of String)
+  fullName.vb: System.Action(Of System.String)
+  name.vb: Action(Of String)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

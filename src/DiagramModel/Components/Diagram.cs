@@ -46,7 +46,7 @@ namespace DiagramModel.Components
             ExecuteCommands(parsedCommands);
         }
 
-        public override string GetUniqueTypeName() => TypeName;
+        public override string UniqueTypeName { get => TypeName; }
 
         public void Clear()
         {

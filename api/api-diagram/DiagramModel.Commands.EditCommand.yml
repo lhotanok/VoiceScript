@@ -19,10 +19,12 @@ items:
   source:
     id: EditCommand
     path: ''
-    startLine: 519
+    startLine: 635
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nRepresentation of command for component editation.\n"
+  example: []
   syntax:
     content: 'public class EditCommand : Command'
     content.vb: >-
@@ -69,7 +71,7 @@ items:
   source:
     id: DefaultFormat
     path: ''
-    startLine: 522
+    startLine: 638
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -102,7 +104,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 523
+    startLine: 639
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -137,7 +139,7 @@ items:
   source:
     id: Execute
     path: ''
-    startLine: 526
+    startLine: 642
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -169,7 +171,7 @@ items:
   source:
     id: ProcessCommand
     path: ''
-    startLine: 543
+    startLine: 659
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands

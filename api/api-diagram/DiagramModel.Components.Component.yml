@@ -12,12 +12,12 @@ items:
   - DiagramModel.Components.Component.FindChild(System.String,System.String)
   - DiagramModel.Components.Component.GetTypeFilteredChildren``1
   - DiagramModel.Components.Component.GetUniqueChild``1
-  - DiagramModel.Components.Component.GetUniqueTypeName
   - DiagramModel.Components.Component.children
   - DiagramModel.Components.Component.Children
   - DiagramModel.Components.Component.Name
   - DiagramModel.Components.Component.Parent
   - DiagramModel.Components.Component.TryDeleteChild(System.String,System.String)
+  - DiagramModel.Components.Component.UniqueTypeName
   - DiagramModel.Components.Component.ValidChildrenTypes
   langs:
   - csharp
@@ -29,10 +29,12 @@ items:
   source:
     id: Component
     path: ''
-    startLine: 863
+    startLine: 1020
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
+  summary: "\nRepresents component in the diagram model. Requires\ncomponent name, parent component and valid children component types.\nHolds info about children components, allows their filtration based\non provided type and offers interface for their manipulation\n(namely for adding and deleting certain children components).\n"
+  example: []
   syntax:
     content: public abstract class Component
     content.vb: Public MustInherit Class Component
@@ -78,7 +80,7 @@ items:
   source:
     id: children
     path: ''
-    startLine: 865
+    startLine: 1022
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -107,7 +109,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 868
+    startLine: 1025
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -129,36 +131,41 @@ items:
   - Public
   fullName.vb: DiagramModel.Components.Component.Component(System.String, DiagramModel.Components.Component, ICollection(Of System.String))
   name.vb: Component(String, Component, ICollection(Of String))
-- uid: DiagramModel.Components.Component.GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Component.GetUniqueTypeName
-  id: GetUniqueTypeName
+- uid: DiagramModel.Components.Component.UniqueTypeName
+  commentId: P:DiagramModel.Components.Component.UniqueTypeName
+  id: UniqueTypeName
   parent: DiagramModel.Components.Component
   langs:
   - csharp
   - vb
-  name: GetUniqueTypeName()
-  nameWithType: Component.GetUniqueTypeName()
-  fullName: DiagramModel.Components.Component.GetUniqueTypeName()
-  type: Method
+  name: UniqueTypeName
+  nameWithType: Component.UniqueTypeName
+  fullName: DiagramModel.Components.Component.UniqueTypeName
+  type: Property
   source:
-    id: GetUniqueTypeName
+    id: UniqueTypeName
     path: ''
-    startLine: 875
+    startLine: 1037
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
+  summary: "\nHolds unique name of the component.\nMust be 1-word only to preserve correct command parsing.\n"
+  example: []
   syntax:
-    content: public abstract string GetUniqueTypeName()
+    content: public abstract string UniqueTypeName { get; }
+    parameters: []
     return:
       type: System.String
-    content.vb: Public MustOverride Function GetUniqueTypeName As String
-  overload: DiagramModel.Components.Component.GetUniqueTypeName*
+    content.vb: Public MustOverride ReadOnly Property UniqueTypeName As String
+  overload: DiagramModel.Components.Component.UniqueTypeName*
   modifiers.csharp:
   - public
   - abstract
+  - get
   modifiers.vb:
   - Public
   - MustOverride
+  - ReadOnly
 - uid: DiagramModel.Components.Component.Parent
   commentId: P:DiagramModel.Components.Component.Parent
   id: Parent
@@ -173,10 +180,12 @@ items:
   source:
     id: Parent
     path: ''
-    startLine: 877
+    startLine: 1044
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
+  summary: "\nParent component this component belongs to.\nRepresents component layers using tree structure\nwhere root component is <xref href=\"DiagramModel.Components.Diagram\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
   syntax:
     content: public Component Parent { get; protected set; }
     parameters: []
@@ -206,10 +215,12 @@ items:
   source:
     id: Children
     path: ''
-    startLine: 879
+    startLine: 1051
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
+  summary: "\nCollection of component&apos;s children. Each of these\nchildren has this component set as <xref href=\"DiagramModel.Components.Component.Parent\" data-throw-if-not-resolved=\"false\"></xref>\nto allow bidirectional component tree traversing.\n"
+  example: []
   syntax:
     content: public IReadOnlyList<Component> Children { get; }
     parameters: []
@@ -237,10 +248,12 @@ items:
   source:
     id: ValidChildrenTypes
     path: ''
-    startLine: 881
+    startLine: 1056
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
+  summary: "\nReturns collection of valid children component typenames.\n"
+  example: []
   syntax:
     content: public ICollection<string> ValidChildrenTypes { get; }
     parameters: []
@@ -268,10 +281,12 @@ items:
   source:
     id: Name
     path: ''
-    startLine: 883
+    startLine: 1063
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
+  summary: "\nRepresents component name. Could be interpreted also as component\nvalue based on the context. It is specified explicitly for each component\nas component constructor requires name parameter.\n"
+  example: []
   syntax:
     content: public virtual string Name { get; set; }
     parameters: []
@@ -301,14 +316,17 @@ items:
   source:
     id: Clone
     path: ''
-    startLine: 884
+    startLine: 1073
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
+  summary: "\nPerforms deep copy of the component. It is useful mainly for command execution\nphase. During this phase, commands are executed one by one which modifies\ncomponent tree. If an error occurrs while executing one of the commands, we \nneed to revert back all changes made. For that, we can use the previously created\ndeep copy of the whole component tree.\n"
+  example: []
   syntax:
     content: public abstract Component Clone()
     return:
       type: DiagramModel.Components.Component
+      description: ''
     content.vb: Public MustOverride Function Clone As Component
   overload: DiagramModel.Components.Component.Clone*
   modifiers.csharp:
@@ -331,15 +349,18 @@ items:
   source:
     id: AddChild
     path: ''
-    startLine: 886
+    startLine: 1081
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
+  summary: "\nAppends new component child. Does not check if the child\nhas valid type for this component. Check needs to be performed\nbefore this method is called.\n"
+  example: []
   syntax:
     content: public virtual void AddChild(Component child)
     parameters:
     - id: child
       type: DiagramModel.Components.Component
+      description: Validated component child to add.
     content.vb: Public Overridable Sub AddChild(child As Component)
   overload: DiagramModel.Components.Component.AddChild*
   modifiers.csharp:
@@ -362,19 +383,24 @@ items:
   source:
     id: TryDeleteChild
     path: ''
-    startLine: 888
+    startLine: 1089
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
+  summary: "\nTries to delete child based on its typename and child component name.\n"
+  example: []
   syntax:
     content: public virtual bool TryDeleteChild(string childType, string childName)
     parameters:
     - id: childType
       type: System.String
+      description: For valid values see <xref href="DiagramModel.Components.Component.UniqueTypeName" data-throw-if-not-resolved="false"></xref>
     - id: childName
       type: System.String
+      description: Corresponds to the <xref href="DiagramModel.Components.Component.Name" data-throw-if-not-resolved="false"></xref>
     return:
       type: System.Boolean
+      description: Result of the delete operation.
     content.vb: Public Overridable Function TryDeleteChild(childType As String, childName As String) As Boolean
   overload: DiagramModel.Components.Component.TryDeleteChild*
   modifiers.csharp:
@@ -397,19 +423,24 @@ items:
   source:
     id: FindChild
     path: ''
-    startLine: 900
+    startLine: 1107
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
+  summary: "\nSearches for child component based on its typename and child component name.\n"
+  example: []
   syntax:
     content: public virtual Component FindChild(string childType, string childName)
     parameters:
     - id: childType
       type: System.String
+      description: For valid values see <xref href="DiagramModel.Components.Component.UniqueTypeName" data-throw-if-not-resolved="false"></xref>
     - id: childName
       type: System.String
+      description: Corresponds to the <xref href="DiagramModel.Components.Component.Name" data-throw-if-not-resolved="false"></xref>
     return:
       type: DiagramModel.Components.Component
+      description: Searched child component or null if no matching component was found.
     content.vb: Public Overridable Function FindChild(childType As String, childName As String) As Component
   overload: DiagramModel.Components.Component.FindChild*
   modifiers.csharp:
@@ -432,7 +463,7 @@ items:
   source:
     id: GetTypeFilteredChildren
     path: ''
-    startLine: 912
+    startLine: 1119
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -467,7 +498,7 @@ items:
   source:
     id: GetUniqueChild
     path: ''
-    startLine: 927
+    startLine: 1134
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -502,7 +533,7 @@ items:
   source:
     id: CloneChildrenInto
     path: ''
-    startLine: 940
+    startLine: 1147
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -993,13 +1024,24 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: DiagramModel.Components.Component.GetUniqueTypeName*
-  commentId: Overload:DiagramModel.Components.Component.GetUniqueTypeName
-  name: GetUniqueTypeName
-  nameWithType: Component.GetUniqueTypeName
-  fullName: DiagramModel.Components.Component.GetUniqueTypeName
+- uid: DiagramModel.Components.Component.UniqueTypeName*
+  commentId: Overload:DiagramModel.Components.Component.UniqueTypeName
+  name: UniqueTypeName
+  nameWithType: Component.UniqueTypeName
+  fullName: DiagramModel.Components.Component.UniqueTypeName
+- uid: DiagramModel.Components.Diagram
+  commentId: T:DiagramModel.Components.Diagram
+  name: Diagram
+  nameWithType: Diagram
+  fullName: DiagramModel.Components.Diagram
 - uid: DiagramModel.Components.Component.Parent*
   commentId: Overload:DiagramModel.Components.Component.Parent
+  name: Parent
+  nameWithType: Component.Parent
+  fullName: DiagramModel.Components.Component.Parent
+- uid: DiagramModel.Components.Component.Parent
+  commentId: P:DiagramModel.Components.Component.Parent
+  parent: DiagramModel.Components.Component
   name: Parent
   nameWithType: Component.Parent
   fullName: DiagramModel.Components.Component.Parent
@@ -1107,6 +1149,18 @@ references:
   name: AddChild
   nameWithType: Component.AddChild
   fullName: DiagramModel.Components.Component.AddChild
+- uid: DiagramModel.Components.Component.UniqueTypeName
+  commentId: P:DiagramModel.Components.Component.UniqueTypeName
+  parent: DiagramModel.Components.Component
+  name: UniqueTypeName
+  nameWithType: Component.UniqueTypeName
+  fullName: DiagramModel.Components.Component.UniqueTypeName
+- uid: DiagramModel.Components.Component.Name
+  commentId: P:DiagramModel.Components.Component.Name
+  parent: DiagramModel.Components.Component
+  name: Name
+  nameWithType: Component.Name
+  fullName: DiagramModel.Components.Component.Name
 - uid: DiagramModel.Components.Component.TryDeleteChild*
   commentId: Overload:DiagramModel.Components.Component.TryDeleteChild
   name: TryDeleteChild

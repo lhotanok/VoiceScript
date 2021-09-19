@@ -17,10 +17,12 @@ items:
   source:
     id: English
     path: ''
-    startLine: 272
+    startLine: 380
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nEnglish language representation.\n"
+  example: []
   syntax:
     content: 'public class English : Language'
     content.vb: >-
@@ -57,7 +59,7 @@ items:
   source:
     id: LanguageCode
     path: ''
-    startLine: 274
+    startLine: 382
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -91,7 +93,7 @@ items:
   source:
     id: Name
     path: ''
-    startLine: 275
+    startLine: 383
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription

@@ -19,7 +19,7 @@ items:
   source:
     id: CommandParser
     path: ''
-    startLine: 216
+    startLine: 293
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -56,7 +56,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 223
+    startLine: 300
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -85,7 +85,7 @@ items:
   source:
     id: GetParsedCommands
     path: ''
-    startLine: 244
+    startLine: 321
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -116,7 +116,7 @@ items:
   source:
     id: ParseCamelCase
     path: ''
-    startLine: 272
+    startLine: 349
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -149,7 +149,7 @@ items:
   source:
     id: ParsePascalCase
     path: ''
-    startLine: 282
+    startLine: 359
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands

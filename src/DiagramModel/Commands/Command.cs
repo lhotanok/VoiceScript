@@ -3,6 +3,9 @@ using DiagramModel.Components;
 
 namespace DiagramModel.Commands
 {
+    /// <summary>
+    /// Representation of parsed command.
+    /// </summary>
     public abstract class Command
     {
         protected readonly string name, targetType, targetValue;
@@ -25,18 +28,32 @@ namespace DiagramModel.Commands
             {
                 translatedTargetType = language.ComponentNames[targetType];
             }
-
-            var lowerTargetValue = targetValue.ToLower();
-            if (language.ValueConstants.ContainsKey(lowerTargetValue))
-            {
-                translatedTargetValue = language.ValueConstants[lowerTargetValue];
-            }
         }
 
+        /// <summary>
+        /// Command identification name.
+        /// </summary>
         public string Name { get => name; }
+
+        /// <summary>
+        /// Name of the target component type a command is associated with.
+        /// For possible values, see <see cref="LanguageFormat.ComponentNames"/>
+        /// </summary>
         public string TargetType { get => targetType; }
+
+        /// <summary>
+        /// Value representing target component's <see cref="Component.Name"/>.
+        /// </summary>
         public string TargetValue { get => targetValue; }
 
+        /// <summary>
+        /// Executes command with respect to the provided execution context.
+        /// </summary>
+        /// <param name="context">Context for command execution. Gets modified 
+        /// if command is executed successfully to provide a correct context 
+        /// for subsequent command execution.</param>
+        /// <exception cref="CommandExecutionException">Thrown if command can not
+        /// be executed in the current context.</exception>
         public virtual void Execute(CommandExecutionContext context)
         {
             if (translatedTargetType == null)
@@ -66,7 +83,11 @@ namespace DiagramModel.Commands
         /// Tries to execute command.
         /// Throws an exception if command can not be executed.
         /// </summary>
-        /// <param name="context"></param>
+        /// <param name="context">Context for command execution. Gets modified 
+        /// if command is executed successfully to provide a correct context 
+        /// for subsequent command execution.</param>
+        /// <exception cref="CommandExecutionException">Thrown if command can not
+        /// be executed in the current context.</exception>
         protected abstract void ProcessCommand(CommandExecutionContext context);
     }
 }

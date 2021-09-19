@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IAudioPlayer
    ">
-    <meta name="generator" content="docfx 2.58.2.0">
+    <meta name="generator" content="docfx 2.58.4.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -73,7 +73,8 @@
   
   <h1 id="VoiceScript_VoiceTranscription_IAudioPlayer" data-uid="VoiceScript.VoiceTranscription.IAudioPlayer" class="text-break">Interface IAudioPlayer
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Manages audio playback from the file.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="VoiceScript.VoiceTranscription.html">VoiceScript.VoiceTranscription</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
@@ -87,7 +88,9 @@
   
   <a id="VoiceScript_VoiceTranscription_IAudioPlayer_Play_" data-uid="VoiceScript.VoiceTranscription.IAudioPlayer.Play*"></a>
   <h4 id="VoiceScript_VoiceTranscription_IAudioPlayer_Play_System_String_System_Action_" data-uid="VoiceScript.VoiceTranscription.IAudioPlayer.Play(System.String,System.Action)">Play(String, Action)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Plays audio stored under the given file path.
+Handles potential callback once the audio playback stopped.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -106,12 +109,14 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">audioFilename</span></td>
-        <td></td>
+        <td><p>Path to the audio file</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Action</span></td>
         <td><span class="parametername">PlaybackStoppedCallback</span></td>
-        <td></td>
+        <td><p>Callback to trigger after audio stopped playing</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -119,7 +124,8 @@
   
   <a id="VoiceScript_VoiceTranscription_IAudioPlayer_Stop_" data-uid="VoiceScript.VoiceTranscription.IAudioPlayer.Stop*"></a>
   <h4 id="VoiceScript_VoiceTranscription_IAudioPlayer_Stop" data-uid="VoiceScript.VoiceTranscription.IAudioPlayer.Stop">Stop()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Stops current audio playback immediately.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">

@@ -26,7 +26,7 @@ items:
   source:
     id: AudioRecorder
     path: ''
-    startLine: 99
+    startLine: 111
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -68,7 +68,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 111
+    startLine: 123
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -99,7 +99,7 @@ items:
   source:
     id: WaveProvider
     path: ''
-    startLine: 132
+    startLine: 144
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -132,7 +132,7 @@ items:
   source:
     id: AudioStream
     path: ''
-    startLine: 133
+    startLine: 145
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -165,7 +165,7 @@ items:
   source:
     id: Recording
     path: ''
-    startLine: 134
+    startLine: 146
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -198,7 +198,7 @@ items:
   source:
     id: OutputFilename
     path: ''
-    startLine: 135
+    startLine: 147
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -231,7 +231,7 @@ items:
   source:
     id: StartRecording
     path: ''
-    startLine: 137
+    startLine: 149
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -262,7 +262,7 @@ items:
   source:
     id: StopRecording
     path: ''
-    startLine: 146
+    startLine: 158
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -290,7 +290,7 @@ items:
   source:
     id: Dispose
     path: ''
-    startLine: 155
+    startLine: 167
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -320,7 +320,7 @@ items:
   source:
     id: GetFileSecondsLength
     path: ''
-    startLine: 164
+    startLine: 176
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -353,7 +353,7 @@ items:
   source:
     id: ConvertSecondsToBytes
     path: ''
-    startLine: 165
+    startLine: 177
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -386,7 +386,7 @@ items:
   source:
     id: RecordingDeviceAvailable
     path: ''
-    startLine: 166
+    startLine: 178
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription

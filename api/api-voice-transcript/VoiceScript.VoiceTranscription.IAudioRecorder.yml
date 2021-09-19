@@ -24,10 +24,12 @@ items:
   source:
     id: IAudioRecorder
     path: ''
-    startLine: 226
+    startLine: 254
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nHandles audio recording, buffer storage and file storage.\n"
+  example: []
   syntax:
     content: 'public interface IAudioRecorder : IDisposable'
     content.vb: >-
@@ -55,10 +57,12 @@ items:
   source:
     id: WaveProvider
     path: ''
-    startLine: 228
+    startLine: 259
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nStores buffered audio waves.\n"
+  example: []
   syntax:
     content: BufferedWaveProvider WaveProvider { get; }
     parameters: []
@@ -84,10 +88,12 @@ items:
   source:
     id: AudioStream
     path: ''
-    startLine: 229
+    startLine: 264
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nWrites audio waves into file using byte stream.\n"
+  example: []
   syntax:
     content: WaveFileWriter AudioStream { get; }
     parameters: []
@@ -113,10 +119,12 @@ items:
   source:
     id: Recording
     path: ''
-    startLine: 230
+    startLine: 269
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nCurrent state of the recording process.\n"
+  example: []
   syntax:
     content: bool Recording { get; }
     parameters: []
@@ -142,10 +150,12 @@ items:
   source:
     id: OutputFilename
     path: ''
-    startLine: 231
+    startLine: 274
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nPath to the file where raw audio is stored.\n"
+  example: []
   syntax:
     content: string OutputFilename { get; }
     parameters: []
@@ -171,15 +181,18 @@ items:
   source:
     id: StartRecording
     path: ''
-    startLine: 232
+    startLine: 282
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nStarts recording process.\nSets callback for stopped recording event.\n"
+  example: []
   syntax:
     content: void StartRecording(Action RecordingStoppedCallback = null)
     parameters:
     - id: RecordingStoppedCallback
       type: System.Action
+      description: "Specifies action that should be \nperformed once the recording stops."
     content.vb: Sub StartRecording(RecordingStoppedCallback As Action = Nothing)
   overload: VoiceScript.VoiceTranscription.IAudioRecorder.StartRecording*
 - uid: VoiceScript.VoiceTranscription.IAudioRecorder.StopRecording
@@ -196,10 +209,12 @@ items:
   source:
     id: StopRecording
     path: ''
-    startLine: 233
+    startLine: 287
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nExits the recording process.\n"
+  example: []
   syntax:
     content: void StopRecording()
     content.vb: Sub StopRecording
@@ -218,17 +233,21 @@ items:
   source:
     id: GetFileSecondsLength
     path: ''
-    startLine: 234
+    startLine: 294
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nCalculates audio duration in seconds.\n"
+  example: []
   syntax:
     content: double GetFileSecondsLength(string audioFilename)
     parameters:
     - id: audioFilename
       type: System.String
+      description: Path to the audio file
     return:
       type: System.Double
+      description: ''
     content.vb: Function GetFileSecondsLength(audioFilename As String) As Double
   overload: VoiceScript.VoiceTranscription.IAudioRecorder.GetFileSecondsLength*
 - uid: VoiceScript.VoiceTranscription.IAudioRecorder.ConvertSecondsToBytes(System.Int32)
@@ -245,17 +264,21 @@ items:
   source:
     id: ConvertSecondsToBytes
     path: ''
-    startLine: 235
+    startLine: 301
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nConverts seconds to bytes with respect to raw audio format.\n"
+  example: []
   syntax:
     content: int ConvertSecondsToBytes(int seconds)
     parameters:
     - id: seconds
       type: System.Int32
+      description: Number of seconds to convert into bytes
     return:
       type: System.Int32
+      description: ''
     content.vb: Function ConvertSecondsToBytes(seconds As Integer) As Integer
   overload: VoiceScript.VoiceTranscription.IAudioRecorder.ConvertSecondsToBytes*
 - uid: VoiceScript.VoiceTranscription.IAudioRecorder.RecordingDeviceAvailable
@@ -272,14 +295,17 @@ items:
   source:
     id: RecordingDeviceAvailable
     path: ''
-    startLine: 236
+    startLine: 307
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nFinds out if there is any recording device that might be used.\n"
+  example: []
   syntax:
     content: bool RecordingDeviceAvailable()
     return:
       type: System.Boolean
+      description: ''
     content.vb: Function RecordingDeviceAvailable As Boolean
   overload: VoiceScript.VoiceTranscription.IAudioRecorder.RecordingDeviceAvailable*
 references:

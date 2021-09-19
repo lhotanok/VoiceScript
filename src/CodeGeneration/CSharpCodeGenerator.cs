@@ -7,6 +7,9 @@ using DiagramModel.Components;
 
 namespace CodeGeneration
 {
+    /// <summary>
+    /// Generates C# code from <see cref="DiagramModel.Components"/>.
+    /// </summary>
     public class CSharpCodeGenerator : ICodeGenerator
     {
         static readonly string newLine = Environment.NewLine;
@@ -21,16 +24,14 @@ namespace CodeGeneration
             "int", "string", "object", "float", "double", "default", "null", "void"
         };
 
-        readonly Diagram diagram;
         readonly Action<string, Color> textCallback;
 
-        public CSharpCodeGenerator(Diagram diagramModel, Action<string, Color> writeTextCallback)
+        public CSharpCodeGenerator(Action<string, Color> writeTextCallback)
         {
-            diagram = diagramModel;
             textCallback = writeTextCallback;
         }
 
-        public void GenerateCode()
+        public void GenerateCode(Diagram diagram)
         {
             var classes = diagram.GetClasses();
 
@@ -94,7 +95,7 @@ namespace CodeGeneration
             WriteTypename(GetReturnTypename(method.GetReturnType()));
             WriteWhiteSpaceChar();
 
-            textCallback(method.Name, CodeColor.MethodColor);
+            textCallback(method.Name, CSharpCodeColor.MethodColor);
             GenerateParametersCode(method);
             WriteNewLine();
 
@@ -124,7 +125,7 @@ namespace CodeGeneration
             WriteTypename(GetTypename(parameter.GetParameterType()));
             WriteWhiteSpaceChar();
 
-            textCallback(parameter.Name, CodeColor.ParameterColor);
+            textCallback(parameter.Name, CSharpCodeColor.ParameterColor);
 
             if (!parameter.IsRequired)
             {
@@ -137,7 +138,7 @@ namespace CodeGeneration
         {
             WriteIndentation(indentation);
 
-            textCallback("throw ", CodeColor.ThrowKeywordColor);
+            textCallback("throw ", CSharpCodeColor.ThrowKeywordColor);
 
             WriteKeyword("new ");
 
@@ -149,11 +150,11 @@ namespace CodeGeneration
         static string GetTypename(Component typeComponent) => typeComponent == null ? defaultTypename : typeComponent.Name;
         static string GetReturnTypename(Component typeComponent) => typeComponent == null ? defaultReturnTypename : typeComponent.Name;
 
-        void WriteKeyword(string keyword) => textCallback(keyword, CodeColor.KeywordColor);
+        void WriteKeyword(string keyword) => textCallback(keyword, CSharpCodeColor.KeywordColor);
 
-        void WriteClassTypename(string typename) => textCallback(typename, CodeColor.ClassTypeColor);
+        void WriteClassTypename(string typename) => textCallback(typename, CSharpCodeColor.ClassTypeColor);
 
-        void WriteDefault(string text) => textCallback(text, CodeColor.Default);
+        void WriteDefault(string text) => textCallback(text, CSharpCodeColor.Default);
 
         void WriteTypename(string typename)
         {
@@ -164,7 +165,7 @@ namespace CodeGeneration
 
             if (keywordTypenames.Contains(lowerTypename))
             {            
-                textCallback(lowerTypename, CodeColor.KeywordColor);
+                textCallback(lowerTypename, CSharpCodeColor.KeywordColor);
             }
             else
             {
@@ -203,7 +204,7 @@ namespace CodeGeneration
 
         void WriteNewLine() => WriteWhiteSpaceChar(newLine);
 
-        void WriteSemicolon() => textCallback(semicolon, CodeColor.Default);
+        void WriteSemicolon() => textCallback(semicolon, CSharpCodeColor.Default);
 
         void WriteCurlyBracket(string curlyBracket, int indentation)
         {

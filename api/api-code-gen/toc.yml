@@ -2,6 +2,8 @@
 - uid: CodeGeneration
   name: CodeGeneration
   items:
+  - uid: CodeGeneration.CSharpCodeColor
+    name: CSharpCodeColor
   - uid: CodeGeneration.CSharpCodeGenerator
     name: CSharpCodeGenerator
   - uid: CodeGeneration.ICodeGenerator

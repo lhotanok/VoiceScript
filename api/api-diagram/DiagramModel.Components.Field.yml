@@ -9,10 +9,10 @@ items:
   - DiagramModel.Components.Field.AddChild(DiagramModel.Components.Component)
   - DiagramModel.Components.Field.Clone
   - DiagramModel.Components.Field.GetFieldType
-  - DiagramModel.Components.Field.GetUniqueTypeName
   - DiagramModel.Components.Field.GetVisibility
   - DiagramModel.Components.Field.Name
   - DiagramModel.Components.Field.TypeName
+  - DiagramModel.Components.Field.UniqueTypeName
   langs:
   - csharp
   - vb
@@ -23,7 +23,7 @@ items:
   source:
     id: Field
     path: ''
-    startLine: 1106
+    startLine: 1313
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -75,7 +75,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 1110
+    startLine: 1317
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -106,7 +106,7 @@ items:
   source:
     id: TypeName
     path: ''
-    startLine: 1115
+    startLine: 1322
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -139,7 +139,7 @@ items:
   source:
     id: GetVisibility
     path: ''
-    startLine: 1121
+    startLine: 1328
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -172,7 +172,7 @@ items:
   source:
     id: GetFieldType
     path: ''
-    startLine: 1127
+    startLine: 1334
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -189,37 +189,40 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: DiagramModel.Components.Field.GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Field.GetUniqueTypeName
-  id: GetUniqueTypeName
+- uid: DiagramModel.Components.Field.UniqueTypeName
+  commentId: P:DiagramModel.Components.Field.UniqueTypeName
+  id: UniqueTypeName
   parent: DiagramModel.Components.Field
   langs:
   - csharp
   - vb
-  name: GetUniqueTypeName()
-  nameWithType: Field.GetUniqueTypeName()
-  fullName: DiagramModel.Components.Field.GetUniqueTypeName()
-  type: Method
+  name: UniqueTypeName
+  nameWithType: Field.UniqueTypeName
+  fullName: DiagramModel.Components.Field.UniqueTypeName
+  type: Property
   source:
-    id: GetUniqueTypeName
+    id: UniqueTypeName
     path: ''
-    startLine: 1129
+    startLine: 1336
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
   syntax:
-    content: public override string GetUniqueTypeName()
+    content: public override string UniqueTypeName { get; }
+    parameters: []
     return:
       type: System.String
-    content.vb: Public Overrides Function GetUniqueTypeName As String
-  overridden: DiagramModel.Components.Component.GetUniqueTypeName
-  overload: DiagramModel.Components.Field.GetUniqueTypeName*
+    content.vb: Public Overrides ReadOnly Property UniqueTypeName As String
+  overridden: DiagramModel.Components.Component.UniqueTypeName
+  overload: DiagramModel.Components.Field.UniqueTypeName*
   modifiers.csharp:
   - public
   - override
+  - get
   modifiers.vb:
   - Public
   - Overrides
+  - ReadOnly
 - uid: DiagramModel.Components.Field.AddChild(DiagramModel.Components.Component)
   commentId: M:DiagramModel.Components.Field.AddChild(DiagramModel.Components.Component)
   id: AddChild(DiagramModel.Components.Component)
@@ -234,7 +237,7 @@ items:
   source:
     id: AddChild
     path: ''
-    startLine: 1131
+    startLine: 1338
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -266,7 +269,7 @@ items:
   source:
     id: Clone
     path: ''
-    startLine: 1138
+    startLine: 1345
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -297,7 +300,7 @@ items:
   source:
     id: Name
     path: ''
-    startLine: 1146
+    startLine: 1353
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -926,39 +929,17 @@ references:
   name: FieldType
   nameWithType: FieldType
   fullName: DiagramModel.Components.FieldType
-- uid: DiagramModel.Components.Component.GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Component.GetUniqueTypeName
+- uid: DiagramModel.Components.Component.UniqueTypeName
+  commentId: P:DiagramModel.Components.Component.UniqueTypeName
   parent: DiagramModel.Components.Component
-  name: GetUniqueTypeName()
-  nameWithType: Component.GetUniqueTypeName()
-  fullName: DiagramModel.Components.Component.GetUniqueTypeName()
-  spec.csharp:
-  - uid: DiagramModel.Components.Component.GetUniqueTypeName
-    name: GetUniqueTypeName
-    nameWithType: Component.GetUniqueTypeName
-    fullName: DiagramModel.Components.Component.GetUniqueTypeName
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DiagramModel.Components.Component.GetUniqueTypeName
-    name: GetUniqueTypeName
-    nameWithType: Component.GetUniqueTypeName
-    fullName: DiagramModel.Components.Component.GetUniqueTypeName
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: DiagramModel.Components.Field.GetUniqueTypeName*
-  commentId: Overload:DiagramModel.Components.Field.GetUniqueTypeName
-  name: GetUniqueTypeName
-  nameWithType: Field.GetUniqueTypeName
-  fullName: DiagramModel.Components.Field.GetUniqueTypeName
+  name: UniqueTypeName
+  nameWithType: Component.UniqueTypeName
+  fullName: DiagramModel.Components.Component.UniqueTypeName
+- uid: DiagramModel.Components.Field.UniqueTypeName*
+  commentId: Overload:DiagramModel.Components.Field.UniqueTypeName
+  name: UniqueTypeName
+  nameWithType: Field.UniqueTypeName
+  fullName: DiagramModel.Components.Field.UniqueTypeName
 - uid: DiagramModel.Components.Component.AddChild(DiagramModel.Components.Component)
   commentId: M:DiagramModel.Components.Component.AddChild(DiagramModel.Components.Component)
   parent: DiagramModel.Components.Component

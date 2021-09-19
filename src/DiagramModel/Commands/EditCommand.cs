@@ -3,6 +3,9 @@ using DiagramModel.Commands.LanguageFormats;
 
 namespace DiagramModel.Commands
 {
+    /// <summary>
+    /// Representation of command for component editation.
+    /// </summary>
     public class EditCommand : Command
     {
         static readonly string defaultFormat = "edit";

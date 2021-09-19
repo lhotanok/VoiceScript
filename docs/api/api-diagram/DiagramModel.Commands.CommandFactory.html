@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class CommandFactory
    ">
-    <meta name="generator" content="docfx 2.58.2.0">
+    <meta name="generator" content="docfx 2.58.4.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -73,7 +73,9 @@
   
   <h1 id="DiagramModel_Commands_CommandFactory" data-uid="DiagramModel.Commands.CommandFactory" class="text-break">Class CommandFactory
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Provides interface for creating parsed commands
+based on their name used in text command.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -116,7 +118,11 @@
   
   <a id="DiagramModel_Commands_CommandFactory_CreateCommand_" data-uid="DiagramModel.Commands.CommandFactory.CreateCommand*"></a>
   <h4 id="DiagramModel_Commands_CommandFactory_CreateCommand_System_String_System_String_System_String_DiagramModel_Commands_LanguageFormats_LanguageFormat_" data-uid="DiagramModel.Commands.CommandFactory.CreateCommand(System.String,System.String,System.String,DiagramModel.Commands.LanguageFormats.LanguageFormat)">CreateCommand(String, String, String, LanguageFormat)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates parsed commands from the provided command name, target type and value.
+Supports alternative languages that specify various command names. Checks all
+possible values of command name and constructs command type corresponding to
+the given name.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -135,22 +141,27 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">commandName</span></td>
-        <td></td>
+        <td><p>For valid values see <a class="xref" href="DiagramModel.Commands.LanguageFormats.LanguageFormat.html#DiagramModel_Commands_LanguageFormats_LanguageFormat_CommandFormats">CommandFormats</a>.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">targetType</span></td>
-        <td></td>
+        <td><p>For valid values see <a class="xref" href="DiagramModel.Commands.LanguageFormats.LanguageFormat.html#DiagramModel_Commands_LanguageFormats_LanguageFormat_ComponentNames">ComponentNames</a>.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">targetValue</span></td>
-        <td></td>
+        <td><p>Target component name.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="DiagramModel.Commands.LanguageFormats.LanguageFormat.html">LanguageFormat</a></td>
         <td><span class="parametername">language</span></td>
-        <td></td>
+        <td><p>Current language in which the command should be parsed.
+It is needed to properly map commandName on the specific command type.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -165,7 +176,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="DiagramModel.Commands.Command.html">Command</a></td>
-        <td></td>
+        <td><p>Parsed command or null if command can not be created.</p>
+</td>
       </tr>
     </tbody>
   </table>

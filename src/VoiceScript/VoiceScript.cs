@@ -16,6 +16,11 @@ using VoiceScript.VoiceTranscription;
 
 namespace VoiceScript
 {
+    /// <summary>
+    /// Main application window.
+    /// Manages individual components and delegates actions
+    /// based on user's input.
+    /// </summary>
     public partial class VoiceScript : Form
     {
         readonly IAudioRecorder audioRecorder;
@@ -33,6 +38,9 @@ namespace VoiceScript
 
         ApplicationState appState;
 
+        /// <summary>
+        /// Initializes individual components and language settings.
+        /// </summary>
         public VoiceScript()
         {
             InitializeComponent();
@@ -64,7 +72,7 @@ namespace VoiceScript
             diagram = new Diagram();
             diagramDesigner = new DiagramDesigner();
 
-            codeGenerator = new CSharpCodeGenerator(diagram, (text, color) => AppendToTextbox(codeTextBox, text, color));
+            codeGenerator = new CSharpCodeGenerator((text, color) => AppendToTextbox(codeTextBox, text, color));
             commandDesigner = new CommandDesigner((text, color) => AppendToTextbox(commandTextBox, text, color));
 
             appState = ApplicationState.Waiting;
@@ -273,7 +281,7 @@ namespace VoiceScript
         {
             codeTextBox.Clear();
             codeTextBox.Visible = true;
-            codeGenerator.GenerateCode();
+            codeGenerator.GenerateCode(diagram);
         }
 
         void ProcessParsingError(CommandParseException ex)

@@ -7,11 +7,10 @@ items:
   children:
   - DiagramModel.Commands.LanguageFormats.EnglishFormat.Code
   - DiagramModel.Commands.LanguageFormats.EnglishFormat.CommandFormats
-  - DiagramModel.Commands.LanguageFormats.EnglishFormat.ComponentNameFormat
   - DiagramModel.Commands.LanguageFormats.EnglishFormat.ComponentNames
   - DiagramModel.Commands.LanguageFormats.EnglishFormat.DelimiterFormat
   - DiagramModel.Commands.LanguageFormats.EnglishFormat.GetCode
-  - DiagramModel.Commands.LanguageFormats.EnglishFormat.ValueConstants
+  - DiagramModel.Commands.LanguageFormats.EnglishFormat.TargetValuesToReplace
   langs:
   - csharp
   - vb
@@ -22,7 +21,7 @@ items:
   source:
     id: EnglishFormat
     path: ''
-    startLine: 673
+    startLine: 785
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -35,7 +34,7 @@ items:
   - System.Object
   - DiagramModel.Commands.LanguageFormats.LanguageFormat
   inheritedMembers:
-  - DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
+  - DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNameFormat
   - DiagramModel.Commands.LanguageFormats.LanguageFormat.GetFormats(System.String)
   - DiagramModel.Commands.LanguageFormats.LanguageFormat.GetAllCommandFormats
   - System.Object.ToString
@@ -65,7 +64,7 @@ items:
   source:
     id: CommandFormats
     path: ''
-    startLine: 722
+    startLine: 834
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -99,7 +98,7 @@ items:
   source:
     id: ComponentNames
     path: ''
-    startLine: 724
+    startLine: 836
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -133,7 +132,7 @@ items:
   source:
     id: DelimiterFormat
     path: ''
-    startLine: 726
+    startLine: 838
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -167,7 +166,7 @@ items:
   source:
     id: GetCode
     path: ''
-    startLine: 728
+    startLine: 840
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -197,7 +196,7 @@ items:
   source:
     id: Code
     path: ''
-    startLine: 729
+    startLine: 841
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -217,66 +216,32 @@ items:
   - Public
   - Overrides
   - ReadOnly
-- uid: DiagramModel.Commands.LanguageFormats.EnglishFormat.ComponentNameFormat
-  commentId: P:DiagramModel.Commands.LanguageFormats.EnglishFormat.ComponentNameFormat
-  id: ComponentNameFormat
+- uid: DiagramModel.Commands.LanguageFormats.EnglishFormat.TargetValuesToReplace
+  commentId: P:DiagramModel.Commands.LanguageFormats.EnglishFormat.TargetValuesToReplace
+  id: TargetValuesToReplace
   parent: DiagramModel.Commands.LanguageFormats.EnglishFormat
   langs:
   - csharp
   - vb
-  name: ComponentNameFormat
-  nameWithType: EnglishFormat.ComponentNameFormat
-  fullName: DiagramModel.Commands.LanguageFormats.EnglishFormat.ComponentNameFormat
+  name: TargetValuesToReplace
+  nameWithType: EnglishFormat.TargetValuesToReplace
+  fullName: DiagramModel.Commands.LanguageFormats.EnglishFormat.TargetValuesToReplace
   type: Property
   source:
-    id: ComponentNameFormat
+    id: TargetValuesToReplace
     path: ''
-    startLine: 731
+    startLine: 843
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
   syntax:
-    content: public override string ComponentNameFormat { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Overrides ReadOnly Property ComponentNameFormat As String
-  overridden: DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNameFormat
-  overload: DiagramModel.Commands.LanguageFormats.EnglishFormat.ComponentNameFormat*
-  modifiers.csharp:
-  - public
-  - override
-  - get
-  modifiers.vb:
-  - Public
-  - Overrides
-  - ReadOnly
-- uid: DiagramModel.Commands.LanguageFormats.EnglishFormat.ValueConstants
-  commentId: P:DiagramModel.Commands.LanguageFormats.EnglishFormat.ValueConstants
-  id: ValueConstants
-  parent: DiagramModel.Commands.LanguageFormats.EnglishFormat
-  langs:
-  - csharp
-  - vb
-  name: ValueConstants
-  nameWithType: EnglishFormat.ValueConstants
-  fullName: DiagramModel.Commands.LanguageFormats.EnglishFormat.ValueConstants
-  type: Property
-  source:
-    id: ValueConstants
-    path: ''
-    startLine: 733
-  assemblies:
-  - cs.temp.dll
-  namespace: DiagramModel.Commands.LanguageFormats
-  syntax:
-    content: public override Dictionary<string, string> ValueConstants { get; }
+    content: public override Dictionary<string, string> TargetValuesToReplace { get; }
     parameters: []
     return:
       type: Dictionary{System.String,System.String}
-    content.vb: Public Overrides ReadOnly Property ValueConstants As Dictionary(Of String, String)
-  overridden: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
-  overload: DiagramModel.Commands.LanguageFormats.EnglishFormat.ValueConstants*
+    content.vb: Public Overrides ReadOnly Property TargetValuesToReplace As Dictionary(Of String, String)
+  overridden: DiagramModel.Commands.LanguageFormats.LanguageFormat.TargetValuesToReplace
+  overload: DiagramModel.Commands.LanguageFormats.EnglishFormat.TargetValuesToReplace*
   modifiers.csharp:
   - public
   - override
@@ -304,12 +269,12 @@ references:
   name: LanguageFormat
   nameWithType: LanguageFormat
   fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat
-- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
-  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNameFormat
+  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNameFormat
   parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
-  name: ValuesToReplace
-  nameWithType: LanguageFormat.ValuesToReplace
-  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
+  name: ComponentNameFormat
+  nameWithType: LanguageFormat.ComponentNameFormat
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNameFormat
 - uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.GetFormats(System.String)
   commentId: M:DiagramModel.Commands.LanguageFormats.LanguageFormat.GetFormats(System.String)
   parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
@@ -908,25 +873,14 @@ references:
   name: Code
   nameWithType: EnglishFormat.Code
   fullName: DiagramModel.Commands.LanguageFormats.EnglishFormat.Code
-- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNameFormat
-  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNameFormat
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.TargetValuesToReplace
+  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.TargetValuesToReplace
   parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
-  name: ComponentNameFormat
-  nameWithType: LanguageFormat.ComponentNameFormat
-  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNameFormat
-- uid: DiagramModel.Commands.LanguageFormats.EnglishFormat.ComponentNameFormat*
-  commentId: Overload:DiagramModel.Commands.LanguageFormats.EnglishFormat.ComponentNameFormat
-  name: ComponentNameFormat
-  nameWithType: EnglishFormat.ComponentNameFormat
-  fullName: DiagramModel.Commands.LanguageFormats.EnglishFormat.ComponentNameFormat
-- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
-  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
-  parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
-  name: ValueConstants
-  nameWithType: LanguageFormat.ValueConstants
-  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
-- uid: DiagramModel.Commands.LanguageFormats.EnglishFormat.ValueConstants*
-  commentId: Overload:DiagramModel.Commands.LanguageFormats.EnglishFormat.ValueConstants
-  name: ValueConstants
-  nameWithType: EnglishFormat.ValueConstants
-  fullName: DiagramModel.Commands.LanguageFormats.EnglishFormat.ValueConstants
+  name: TargetValuesToReplace
+  nameWithType: LanguageFormat.TargetValuesToReplace
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.TargetValuesToReplace
+- uid: DiagramModel.Commands.LanguageFormats.EnglishFormat.TargetValuesToReplace*
+  commentId: Overload:DiagramModel.Commands.LanguageFormats.EnglishFormat.TargetValuesToReplace
+  name: TargetValuesToReplace
+  nameWithType: EnglishFormat.TargetValuesToReplace
+  fullName: DiagramModel.Commands.LanguageFormats.EnglishFormat.TargetValuesToReplace

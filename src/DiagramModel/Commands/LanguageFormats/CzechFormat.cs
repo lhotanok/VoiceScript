@@ -46,16 +46,13 @@ namespace DiagramModel.Commands.LanguageFormats
             { "předka", Parent.TypeName }
         };
 
-        static readonly Dictionary<string, string> constantValues = new()
+        static readonly Dictionary<string, string> valuesToReplace = new()
         {
             { "veřejná", "public" },
             { "interní", "internal" },
             { "chráněná", "protected" },
-            { "privátní", "private" }
-        };
+            { "privátní", "private" },
 
-        static readonly Dictionary<string, string> valuesToReplace = new()
-        {
             { "pole", "array" },
 
             { "pravda", "true" },
@@ -76,7 +73,6 @@ namespace DiagramModel.Commands.LanguageFormats
         public override string Code { get => code; }
         public override string ComponentNameFormat { get => "jméno"; }
 
-        public override Dictionary<string, string> ValueConstants { get => constantValues; }
-        public override Dictionary<string, string> ValuesToReplace { get => valuesToReplace; }
+        public override Dictionary<string, string> TargetValuesToReplace { get => valuesToReplace; }
     }
 }

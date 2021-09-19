@@ -19,10 +19,12 @@ items:
   source:
     id: CommandParseException
     path: ''
-    startLine: 194
+    startLine: 259
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nThrown if an error is detected during command parsing phase.\n"
+  example: []
   syntax:
     content: 'public class CommandParseException : InvalidOperationException'
     content.vb: >-
@@ -50,7 +52,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 196
+    startLine: 261
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -86,7 +88,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 202
+    startLine: 267
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -115,10 +117,12 @@ items:
   source:
     id: ParsedCommands
     path: ''
-    startLine: 204
+    startLine: 273
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nContains successfully parsed commands. Can be used to show\nwhich commands got parsed before a parsing error occurred. \n"
+  example: []
   syntax:
     content: public List<Command> ParsedCommands { get; }
     parameters: []
@@ -146,10 +150,12 @@ items:
   source:
     id: UnparsedWords
     path: ''
-    startLine: 205
+    startLine: 282
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nContains collection of words that remained unparsed into commands.\nIt is designed to be used with <xref href=\"DiagramModel.Commands.CommandParseException.ParsedCommands\" data-throw-if-not-resolved=\"false\"></xref>. \nSuccessfully parsed commands might be shown to the user compiled already\nand the unparsed words might be placed below these compiled commands\nto emphasise the place where an error was detected. \n"
+  example: []
   syntax:
     content: public List<string> UnparsedWords { get; }
     parameters: []
@@ -321,6 +327,9 @@ references:
   name: ParsedCommands
   nameWithType: CommandParseException.ParsedCommands
   fullName: DiagramModel.Commands.CommandParseException.ParsedCommands
+- uid: DiagramModel.Commands.CommandParseException.ParsedCommands
+  commentId: P:DiagramModel.Commands.CommandParseException.ParsedCommands
+  isExternal: true
 - uid: DiagramModel.Commands.CommandParseException.UnparsedWords*
   commentId: Overload:DiagramModel.Commands.CommandParseException.UnparsedWords
   name: UnparsedWords

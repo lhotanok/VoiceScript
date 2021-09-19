@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class CSharpCodeGenerator
    ">
-    <meta name="generator" content="docfx 2.58.2.0">
+    <meta name="generator" content="docfx 2.58.4.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -73,7 +73,8 @@
   
   <h1 id="CodeGeneration_CSharpCodeGenerator" data-uid="CodeGeneration.CSharpCodeGenerator" class="text-break">Class CSharpCodeGenerator
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Generates C# code from <see cref="!:DiagramModel.Components"></see>.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -119,12 +120,12 @@
   
   
   <a id="CodeGeneration_CSharpCodeGenerator__ctor_" data-uid="CodeGeneration.CSharpCodeGenerator.#ctor*"></a>
-  <h4 id="CodeGeneration_CSharpCodeGenerator__ctor_Diagram_Action_System_String_Color__" data-uid="CodeGeneration.CSharpCodeGenerator.#ctor(Diagram,Action{System.String,Color})">CSharpCodeGenerator(Diagram, Action&lt;String, Color&gt;)</h4>
+  <h4 id="CodeGeneration_CSharpCodeGenerator__ctor_Action_System_String_Color__" data-uid="CodeGeneration.CSharpCodeGenerator.#ctor(Action{System.String,Color})">CSharpCodeGenerator(Action&lt;String, Color&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CSharpCodeGenerator(Diagram diagramModel, Action&lt;string, Color&gt; writeTextCallback)</code></pre>
+    <pre><code class="lang-csharp hljs">public CSharpCodeGenerator(Action&lt;string, Color&gt; writeTextCallback)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -136,11 +137,6 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><span class="xref">Diagram</span></td>
-        <td><span class="parametername">diagramModel</span></td>
-        <td></td>
-      </tr>
       <tr>
         <td><span class="xref">Action</span>&lt;<span class="xref">System.String</span>, <span class="xref">Color</span>&gt;</td>
         <td><span class="parametername">writeTextCallback</span></td>
@@ -185,13 +181,30 @@
   
   
   <a id="CodeGeneration_CSharpCodeGenerator_GenerateCode_" data-uid="CodeGeneration.CSharpCodeGenerator.GenerateCode*"></a>
-  <h4 id="CodeGeneration_CSharpCodeGenerator_GenerateCode" data-uid="CodeGeneration.CSharpCodeGenerator.GenerateCode">GenerateCode()</h4>
+  <h4 id="CodeGeneration_CSharpCodeGenerator_GenerateCode_Diagram_" data-uid="CodeGeneration.CSharpCodeGenerator.GenerateCode(Diagram)">GenerateCode(Diagram)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void GenerateCode()</code></pre>
+    <pre><code class="lang-csharp hljs">public void GenerateCode(Diagram diagram)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Diagram</span></td>
+        <td><span class="parametername">diagram</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   
   
   <a id="CodeGeneration_CSharpCodeGenerator_GenerateExceptionCode_" data-uid="CodeGeneration.CSharpCodeGenerator.GenerateExceptionCode*"></a>

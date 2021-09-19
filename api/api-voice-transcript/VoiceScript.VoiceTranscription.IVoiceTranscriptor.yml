@@ -18,10 +18,12 @@ items:
   source:
     id: IVoiceTranscriptor
     path: ''
-    startLine: 246
+    startLine: 320
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nManages speech-to-text transcription using Google Cloud Speech.\n"
+  example: []
   syntax:
     content: public interface IVoiceTranscriptor
     content.vb: Public Interface IVoiceTranscriptor
@@ -45,10 +47,12 @@ items:
   source:
     id: Configuration
     path: ''
-    startLine: 248
+    startLine: 326
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nCurrent configuration for speech recognition.\nContains info about audio format, transcription language and much more.\n"
+  example: []
   syntax:
     content: RecognitionConfig Configuration { get; }
     parameters: []
@@ -74,20 +78,28 @@ items:
   source:
     id: CreateTranscriptionTask
     path: ''
-    startLine: 250
+    startLine: 336
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nSets file transcription and binds it to the provided callback.\nEncapsulates the whole process into the task. \n"
+  example: []
   syntax:
-    content: Task CreateTranscriptionTask(string filename, Action<string> callback)
+    content: Task CreateTranscriptionTask(string audioFilename, Action<string> callback)
     parameters:
-    - id: filename
+    - id: audioFilename
       type: System.String
+      description: Name of the audio file to create transcription for.
     - id: callback
       type: System.Action{System.String}
+      description: >-
+        Function to be called with the individual transcription parts.
+
+        Typical use case is for writing new words to the stream.
     return:
       type: Task
-    content.vb: Function CreateTranscriptionTask(filename As String, callback As Action(Of String)) As Task
+      description: Task representing transcription process.
+    content.vb: Function CreateTranscriptionTask(audioFilename As String, callback As Action(Of String)) As Task
   overload: VoiceScript.VoiceTranscription.IVoiceTranscriptor.CreateTranscriptionTask*
   nameWithType.vb: IVoiceTranscriptor.CreateTranscriptionTask(String, Action(Of String))
   fullName.vb: VoiceScript.VoiceTranscription.IVoiceTranscriptor.CreateTranscriptionTask(System.String, System.Action(Of System.String))
@@ -106,18 +118,21 @@ items:
   source:
     id: DoRealTimeTranscription
     path: ''
-    startLine: 257
+    startLine: 344
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
-  summary: "\nPerforms real-time transcription from audio to text.\n"
+  summary: "\nPerforms real-time transcription from audio to text.\nExperimental feature.\n"
   example: []
   syntax:
     content: void DoRealTimeTranscription(Action<string> callback)
     parameters:
     - id: callback
       type: System.Action{System.String}
-      description: "Action to be done with the \ntranscription in string format."
+      description: >-
+        Function to be called with the individual transcription parts.
+
+        Typical use case is for writing new words to the stream.
     content.vb: Sub DoRealTimeTranscription(callback As Action(Of String))
   overload: VoiceScript.VoiceTranscription.IVoiceTranscriptor.DoRealTimeTranscription*
   nameWithType.vb: IVoiceTranscriptor.DoRealTimeTranscription(Action(Of String))

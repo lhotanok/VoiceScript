@@ -28,10 +28,12 @@ items:
   source:
     id: Command
     path: ''
-    startLine: 60
+    startLine: 66
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nRepresentation of parsed command.\n"
+  example: []
   syntax:
     content: public abstract class Command
     content.vb: Public MustInherit Class Command
@@ -71,7 +73,7 @@ items:
   source:
     id: name
     path: ''
-    startLine: 62
+    startLine: 68
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -100,7 +102,7 @@ items:
   source:
     id: targetType
     path: ''
-    startLine: 62
+    startLine: 68
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -129,7 +131,7 @@ items:
   source:
     id: targetValue
     path: ''
-    startLine: 62
+    startLine: 68
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -158,7 +160,7 @@ items:
   source:
     id: translatedTargetType
     path: ''
-    startLine: 64
+    startLine: 70
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -187,7 +189,7 @@ items:
   source:
     id: translatedTargetValue
     path: ''
-    startLine: 65
+    startLine: 71
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -216,7 +218,7 @@ items:
   source:
     id: language
     path: ''
-    startLine: 67
+    startLine: 73
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -245,7 +247,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 68
+    startLine: 74
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -280,10 +282,12 @@ items:
   source:
     id: Name
     path: ''
-    startLine: 90
+    startLine: 93
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nCommand identification name.\n"
+  example: []
   syntax:
     content: public string Name { get; }
     parameters: []
@@ -311,10 +315,12 @@ items:
   source:
     id: TargetType
     path: ''
-    startLine: 91
+    startLine: 99
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nName of the target component type a command is associated with.\nFor possible values, see <xref href=\"DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNames\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
   syntax:
     content: public string TargetType { get; }
     parameters: []
@@ -342,10 +348,12 @@ items:
   source:
     id: TargetValue
     path: ''
-    startLine: 92
+    startLine: 104
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nValue representing target component&apos;s <xref href=\"DiagramModel.Components.Component.Name\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
   syntax:
     content: public string TargetValue { get; }
     parameters: []
@@ -373,17 +381,27 @@ items:
   source:
     id: Execute
     path: ''
-    startLine: 94
+    startLine: 114
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nExecutes command with respect to the provided execution context.\n"
+  example: []
   syntax:
     content: public virtual void Execute(CommandExecutionContext context)
     parameters:
     - id: context
       type: DiagramModel.Commands.CommandExecutionContext
+      description: "Context for command execution. Gets modified \nif command is executed successfully to provide a correct context \nfor subsequent command execution."
     content.vb: Public Overridable Sub Execute(context As CommandExecutionContext)
   overload: DiagramModel.Commands.Command.Execute*
+  exceptions:
+  - type: DiagramModel.Commands.CommandExecutionException
+    commentId: T:DiagramModel.Commands.CommandExecutionException
+    description: >-
+      Thrown if command can not
+
+      be executed in the current context.
   modifiers.csharp:
   - public
   - virtual
@@ -404,7 +422,7 @@ items:
   source:
     id: IsChildComponentTypeCompatible
     path: ''
-    startLine: 114
+    startLine: 134
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -439,7 +457,7 @@ items:
   source:
     id: ProcessCommand
     path: ''
-    startLine: 124
+    startLine: 148
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -450,9 +468,16 @@ items:
     parameters:
     - id: context
       type: DiagramModel.Commands.CommandExecutionContext
-      description: ''
+      description: "Context for command execution. Gets modified \nif command is executed successfully to provide a correct context \nfor subsequent command execution."
     content.vb: Protected MustOverride Sub ProcessCommand(context As CommandExecutionContext)
   overload: DiagramModel.Commands.Command.ProcessCommand*
+  exceptions:
+  - type: DiagramModel.Commands.CommandExecutionException
+    commentId: T:DiagramModel.Commands.CommandExecutionException
+    description: >-
+      Thrown if command can not
+
+      be executed in the current context.
   modifiers.csharp:
   - protected
   - abstract
@@ -785,16 +810,44 @@ references:
   name: Name
   nameWithType: Command.Name
   fullName: DiagramModel.Commands.Command.Name
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNames
+  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNames
+  parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
+  name: ComponentNames
+  nameWithType: LanguageFormat.ComponentNames
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNames
 - uid: DiagramModel.Commands.Command.TargetType*
   commentId: Overload:DiagramModel.Commands.Command.TargetType
   name: TargetType
   nameWithType: Command.TargetType
   fullName: DiagramModel.Commands.Command.TargetType
+- uid: DiagramModel.Components.Component.Name
+  commentId: P:DiagramModel.Components.Component.Name
+  parent: DiagramModel.Components.Component
+  name: Name
+  nameWithType: Component.Name
+  fullName: DiagramModel.Components.Component.Name
 - uid: DiagramModel.Commands.Command.TargetValue*
   commentId: Overload:DiagramModel.Commands.Command.TargetValue
   name: TargetValue
   nameWithType: Command.TargetValue
   fullName: DiagramModel.Commands.Command.TargetValue
+- uid: DiagramModel.Components.Component
+  commentId: T:DiagramModel.Components.Component
+  parent: DiagramModel.Components
+  name: Component
+  nameWithType: Component
+  fullName: DiagramModel.Components.Component
+- uid: DiagramModel.Components
+  commentId: N:DiagramModel.Components
+  name: DiagramModel.Components
+  nameWithType: DiagramModel.Components
+  fullName: DiagramModel.Components
+- uid: DiagramModel.Commands.CommandExecutionException
+  commentId: T:DiagramModel.Commands.CommandExecutionException
+  name: CommandExecutionException
+  nameWithType: CommandExecutionException
+  fullName: DiagramModel.Commands.CommandExecutionException
 - uid: DiagramModel.Commands.Command.Execute*
   commentId: Overload:DiagramModel.Commands.Command.Execute
   name: Execute
@@ -811,12 +864,6 @@ references:
   name: IsChildComponentTypeCompatible
   nameWithType: Command.IsChildComponentTypeCompatible
   fullName: DiagramModel.Commands.Command.IsChildComponentTypeCompatible
-- uid: DiagramModel.Components.Component
-  commentId: T:DiagramModel.Components.Component
-  parent: DiagramModel.Components
-  name: Component
-  nameWithType: Component
-  fullName: DiagramModel.Components.Component
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -824,11 +871,6 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
-- uid: DiagramModel.Components
-  commentId: N:DiagramModel.Components
-  name: DiagramModel.Components
-  nameWithType: DiagramModel.Components
-  fullName: DiagramModel.Components
 - uid: DiagramModel.Commands.Command.ProcessCommand*
   commentId: Overload:DiagramModel.Commands.Command.ProcessCommand
   name: ProcessCommand

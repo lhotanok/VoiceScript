@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Component
    ">
-    <meta name="generator" content="docfx 2.58.2.0">
+    <meta name="generator" content="docfx 2.58.4.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -73,7 +73,12 @@
   
   <h1 id="DiagramModel_Components_Component" data-uid="DiagramModel.Components.Component" class="text-break">Class Component
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Represents component in the diagram model. Requires
+component name, parent component and valid children component types.
+Holds info about children components, allows their filtration based
+on provided type and offers interface for their manipulation
+(namely for adding and deleting certain children components).</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -190,7 +195,10 @@
   
   <a id="DiagramModel_Components_Component_Children_" data-uid="DiagramModel.Components.Component.Children*"></a>
   <h4 id="DiagramModel_Components_Component_Children" data-uid="DiagramModel.Components.Component.Children">Children</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Collection of component's children. Each of these
+children has this component set as <a class="xref" href="DiagramModel.Components.Component.html#DiagramModel_Components_Component_Parent">Parent</a>
+to allow bidirectional component tree traversing.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -215,7 +223,10 @@
   
   <a id="DiagramModel_Components_Component_Name_" data-uid="DiagramModel.Components.Component.Name*"></a>
   <h4 id="DiagramModel_Components_Component_Name" data-uid="DiagramModel.Components.Component.Name">Name</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Represents component name. Could be interpreted also as component
+value based on the context. It is specified explicitly for each component
+as component constructor requires name parameter.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -240,7 +251,10 @@
   
   <a id="DiagramModel_Components_Component_Parent_" data-uid="DiagramModel.Components.Component.Parent*"></a>
   <h4 id="DiagramModel_Components_Component_Parent" data-uid="DiagramModel.Components.Component.Parent">Parent</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Parent component this component belongs to.
+Represents component layers using tree structure
+where root component is <a class="xref" href="DiagramModel.Components.Diagram.html">Diagram</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -263,9 +277,37 @@
   </table>
   
   
+  <a id="DiagramModel_Components_Component_UniqueTypeName_" data-uid="DiagramModel.Components.Component.UniqueTypeName*"></a>
+  <h4 id="DiagramModel_Components_Component_UniqueTypeName" data-uid="DiagramModel.Components.Component.UniqueTypeName">UniqueTypeName</h4>
+  <div class="markdown level1 summary"><p>Holds unique name of the component.
+Must be 1-word only to preserve correct command parsing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string UniqueTypeName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="DiagramModel_Components_Component_ValidChildrenTypes_" data-uid="DiagramModel.Components.Component.ValidChildrenTypes*"></a>
   <h4 id="DiagramModel_Components_Component_ValidChildrenTypes" data-uid="DiagramModel.Components.Component.ValidChildrenTypes">ValidChildrenTypes</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns collection of valid children component typenames.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -292,7 +334,10 @@
   
   <a id="DiagramModel_Components_Component_AddChild_" data-uid="DiagramModel.Components.Component.AddChild*"></a>
   <h4 id="DiagramModel_Components_Component_AddChild_DiagramModel_Components_Component_" data-uid="DiagramModel.Components.Component.AddChild(DiagramModel.Components.Component)">AddChild(Component)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Appends new component child. Does not check if the child
+has valid type for this component. Check needs to be performed
+before this method is called.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -311,7 +356,8 @@
       <tr>
         <td><a class="xref" href="DiagramModel.Components.Component.html">Component</a></td>
         <td><span class="parametername">child</span></td>
-        <td></td>
+        <td><p>Validated component child to add.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -319,7 +365,12 @@
   
   <a id="DiagramModel_Components_Component_Clone_" data-uid="DiagramModel.Components.Component.Clone*"></a>
   <h4 id="DiagramModel_Components_Component_Clone" data-uid="DiagramModel.Components.Component.Clone">Clone()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Performs deep copy of the component. It is useful mainly for command execution
+phase. During this phase, commands are executed one by one which modifies
+component tree. If an error occurrs while executing one of the commands, we
+need to revert back all changes made. For that, we can use the previously created
+deep copy of the whole component tree.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -371,7 +422,8 @@
   
   <a id="DiagramModel_Components_Component_FindChild_" data-uid="DiagramModel.Components.Component.FindChild*"></a>
   <h4 id="DiagramModel_Components_Component_FindChild_System_String_System_String_" data-uid="DiagramModel.Components.Component.FindChild(System.String,System.String)">FindChild(String, String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Searches for child component based on its typename and child component name.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -390,12 +442,14 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">childType</span></td>
-        <td></td>
+        <td><p>For valid values see <a class="xref" href="DiagramModel.Components.Component.html#DiagramModel_Components_Component_UniqueTypeName">UniqueTypeName</a></p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">childName</span></td>
-        <td></td>
+        <td><p>Corresponds to the <a class="xref" href="DiagramModel.Components.Component.html#DiagramModel_Components_Component_Name">Name</a></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -410,7 +464,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="DiagramModel.Components.Component.html">Component</a></td>
-        <td></td>
+        <td><p>Searched child component or null if no matching component was found.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -498,34 +553,10 @@
   </table>
   
   
-  <a id="DiagramModel_Components_Component_GetUniqueTypeName_" data-uid="DiagramModel.Components.Component.GetUniqueTypeName*"></a>
-  <h4 id="DiagramModel_Components_Component_GetUniqueTypeName" data-uid="DiagramModel.Components.Component.GetUniqueTypeName">GetUniqueTypeName()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract string GetUniqueTypeName()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
   <a id="DiagramModel_Components_Component_TryDeleteChild_" data-uid="DiagramModel.Components.Component.TryDeleteChild*"></a>
   <h4 id="DiagramModel_Components_Component_TryDeleteChild_System_String_System_String_" data-uid="DiagramModel.Components.Component.TryDeleteChild(System.String,System.String)">TryDeleteChild(String, String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Tries to delete child based on its typename and child component name.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -544,12 +575,14 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">childType</span></td>
-        <td></td>
+        <td><p>For valid values see <a class="xref" href="DiagramModel.Components.Component.html#DiagramModel_Components_Component_UniqueTypeName">UniqueTypeName</a></p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">childName</span></td>
-        <td></td>
+        <td><p>Corresponds to the <a class="xref" href="DiagramModel.Components.Component.html#DiagramModel_Components_Component_Name">Name</a></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -564,7 +597,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p>Result of the delete operation.</p>
+</td>
       </tr>
     </tbody>
   </table>

@@ -2,7 +2,10 @@
 
 namespace CodeGeneration
 {
-    class CodeColor
+    /// <summary>
+    /// Wrapper for colors of individual components in C# code.
+    /// </summary>
+    public class CSharpCodeColor : ICodeColor
     {
         static readonly Color keyword = Color.CornflowerBlue;
         static readonly Color throwKeyword = Color.Plum;

@@ -20,7 +20,7 @@ namespace DiagramModel.Components
 
         public static IEnumerable<string> ValidNames { get => validNames; }
 
-        public override string GetUniqueTypeName() => TypeName;
+        public override string UniqueTypeName { get => TypeName; }
 
         public override Component Clone()
         {

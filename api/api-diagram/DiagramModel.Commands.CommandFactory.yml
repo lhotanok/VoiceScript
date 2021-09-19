@@ -16,10 +16,12 @@ items:
   source:
     id: CommandFactory
     path: ''
-    startLine: 160
+    startLine: 210
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nProvides interface for creating parsed commands\nbased on their name used in text command.\n"
+  example: []
   syntax:
     content: public class CommandFactory
     content.vb: Public Class CommandFactory
@@ -53,23 +55,30 @@ items:
   source:
     id: CreateCommand
     path: ''
-    startLine: 169
+    startLine: 231
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nCreates parsed commands from the provided command name, target type and value.\nSupports alternative languages that specify various command names. Checks all\npossible values of command name and constructs command type corresponding to \nthe given name.\n"
+  example: []
   syntax:
     content: public static Command CreateCommand(string commandName, string targetType, string targetValue, LanguageFormat language)
     parameters:
     - id: commandName
       type: System.String
+      description: For valid values see <xref href="DiagramModel.Commands.LanguageFormats.LanguageFormat.CommandFormats" data-throw-if-not-resolved="false"></xref>.
     - id: targetType
       type: System.String
+      description: For valid values see <xref href="DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNames" data-throw-if-not-resolved="false"></xref>.
     - id: targetValue
       type: System.String
+      description: Target component name.
     - id: language
       type: DiagramModel.Commands.LanguageFormats.LanguageFormat
+      description: "Current language in which the command should be parsed. \nIt is needed to properly map commandName on the specific command type."
     return:
       type: DiagramModel.Commands.Command
+      description: Parsed command or null if command can not be created.
     content.vb: Public Shared Function CreateCommand(commandName As String, targetType As String, targetValue As String, language As LanguageFormat) As Command
   overload: DiagramModel.Commands.CommandFactory.CreateCommand*
   modifiers.csharp:
@@ -376,6 +385,18 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.CommandFormats
+  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.CommandFormats
+  parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
+  name: CommandFormats
+  nameWithType: LanguageFormat.CommandFormats
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.CommandFormats
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNames
+  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNames
+  parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
+  name: ComponentNames
+  nameWithType: LanguageFormat.ComponentNames
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.ComponentNames
 - uid: DiagramModel.Commands.CommandFactory.CreateCommand*
   commentId: Overload:DiagramModel.Commands.CommandFactory.CreateCommand
   name: CreateCommand

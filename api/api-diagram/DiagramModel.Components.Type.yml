@@ -7,8 +7,8 @@ items:
   children:
   - DiagramModel.Components.Type.#ctor(System.String,DiagramModel.Components.Component)
   - DiagramModel.Components.Type.Clone
-  - DiagramModel.Components.Type.GetUniqueTypeName
   - DiagramModel.Components.Type.TypeName
+  - DiagramModel.Components.Type.UniqueTypeName
   langs:
   - csharp
   - vb
@@ -19,7 +19,7 @@ items:
   source:
     id: Type
     path: ''
-    startLine: 1377
+    startLine: 1584
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -74,7 +74,7 @@ items:
   source:
     id: TypeName
     path: ''
-    startLine: 1381
+    startLine: 1588
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -107,7 +107,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 1383
+    startLine: 1590
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -124,37 +124,40 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: DiagramModel.Components.Type.GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Type.GetUniqueTypeName
-  id: GetUniqueTypeName
+- uid: DiagramModel.Components.Type.UniqueTypeName
+  commentId: P:DiagramModel.Components.Type.UniqueTypeName
+  id: UniqueTypeName
   parent: DiagramModel.Components.Type
   langs:
   - csharp
   - vb
-  name: GetUniqueTypeName()
-  nameWithType: Type.GetUniqueTypeName()
-  fullName: DiagramModel.Components.Type.GetUniqueTypeName()
-  type: Method
+  name: UniqueTypeName
+  nameWithType: Type.UniqueTypeName
+  fullName: DiagramModel.Components.Type.UniqueTypeName
+  type: Property
   source:
-    id: GetUniqueTypeName
+    id: UniqueTypeName
     path: ''
-    startLine: 1391
+    startLine: 1598
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
   syntax:
-    content: public override string GetUniqueTypeName()
+    content: public override string UniqueTypeName { get; }
+    parameters: []
     return:
       type: System.String
-    content.vb: Public Overrides Function GetUniqueTypeName As String
-  overridden: DiagramModel.Components.Component.GetUniqueTypeName
-  overload: DiagramModel.Components.Type.GetUniqueTypeName*
+    content.vb: Public Overrides ReadOnly Property UniqueTypeName As String
+  overridden: DiagramModel.Components.Component.UniqueTypeName
+  overload: DiagramModel.Components.Type.UniqueTypeName*
   modifiers.csharp:
   - public
   - override
+  - get
   modifiers.vb:
   - Public
   - Overrides
+  - ReadOnly
 - uid: DiagramModel.Components.Type.Clone
   commentId: M:DiagramModel.Components.Type.Clone
   id: Clone
@@ -169,7 +172,7 @@ items:
   source:
     id: Clone
     path: ''
-    startLine: 1392
+    startLine: 1599
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -781,39 +784,17 @@ references:
   name: Type
   nameWithType: Type.Type
   fullName: DiagramModel.Components.Type.Type
-- uid: DiagramModel.Components.Component.GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Component.GetUniqueTypeName
+- uid: DiagramModel.Components.Component.UniqueTypeName
+  commentId: P:DiagramModel.Components.Component.UniqueTypeName
   parent: DiagramModel.Components.Component
-  name: GetUniqueTypeName()
-  nameWithType: Component.GetUniqueTypeName()
-  fullName: DiagramModel.Components.Component.GetUniqueTypeName()
-  spec.csharp:
-  - uid: DiagramModel.Components.Component.GetUniqueTypeName
-    name: GetUniqueTypeName
-    nameWithType: Component.GetUniqueTypeName
-    fullName: DiagramModel.Components.Component.GetUniqueTypeName
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DiagramModel.Components.Component.GetUniqueTypeName
-    name: GetUniqueTypeName
-    nameWithType: Component.GetUniqueTypeName
-    fullName: DiagramModel.Components.Component.GetUniqueTypeName
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: DiagramModel.Components.Type.GetUniqueTypeName*
-  commentId: Overload:DiagramModel.Components.Type.GetUniqueTypeName
-  name: GetUniqueTypeName
-  nameWithType: Type.GetUniqueTypeName
-  fullName: DiagramModel.Components.Type.GetUniqueTypeName
+  name: UniqueTypeName
+  nameWithType: Component.UniqueTypeName
+  fullName: DiagramModel.Components.Component.UniqueTypeName
+- uid: DiagramModel.Components.Type.UniqueTypeName*
+  commentId: Overload:DiagramModel.Components.Type.UniqueTypeName
+  name: UniqueTypeName
+  nameWithType: Type.UniqueTypeName
+  fullName: DiagramModel.Components.Type.UniqueTypeName
 - uid: DiagramModel.Components.Component.Clone
   commentId: M:DiagramModel.Components.Component.Clone
   parent: DiagramModel.Components.Component

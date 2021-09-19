@@ -17,7 +17,7 @@ items:
   source:
     id: ParameterType
     path: ''
-    startLine: 1301
+    startLine: 1508
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -32,7 +32,7 @@ items:
   - DiagramModel.Components.Type
   inheritedMembers:
   - DiagramModel.Components.Type.TypeName
-  - DiagramModel.Components.Type.GetUniqueTypeName
+  - DiagramModel.Components.Type.UniqueTypeName
   - DiagramModel.Components.Component.children
   - DiagramModel.Components.Component.Parent
   - DiagramModel.Components.Component.Children
@@ -71,7 +71,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 1303
+    startLine: 1510
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -102,7 +102,7 @@ items:
   source:
     id: Clone
     path: ''
-    startLine: 1304
+    startLine: 1511
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -150,34 +150,12 @@ references:
   name: TypeName
   nameWithType: Type.TypeName
   fullName: DiagramModel.Components.Type.TypeName
-- uid: DiagramModel.Components.Type.GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Type.GetUniqueTypeName
+- uid: DiagramModel.Components.Type.UniqueTypeName
+  commentId: P:DiagramModel.Components.Type.UniqueTypeName
   parent: DiagramModel.Components.Type
-  name: GetUniqueTypeName()
-  nameWithType: Type.GetUniqueTypeName()
-  fullName: DiagramModel.Components.Type.GetUniqueTypeName()
-  spec.csharp:
-  - uid: DiagramModel.Components.Type.GetUniqueTypeName
-    name: GetUniqueTypeName
-    nameWithType: Type.GetUniqueTypeName
-    fullName: DiagramModel.Components.Type.GetUniqueTypeName
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DiagramModel.Components.Type.GetUniqueTypeName
-    name: GetUniqueTypeName
-    nameWithType: Type.GetUniqueTypeName
-    fullName: DiagramModel.Components.Type.GetUniqueTypeName
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
+  name: UniqueTypeName
+  nameWithType: Type.UniqueTypeName
+  fullName: DiagramModel.Components.Type.UniqueTypeName
 - uid: DiagramModel.Components.Component.children
   commentId: F:DiagramModel.Components.Component.children
   parent: DiagramModel.Components.Component

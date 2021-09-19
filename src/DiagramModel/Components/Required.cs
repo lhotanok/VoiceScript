@@ -13,7 +13,7 @@ namespace DiagramModel.Components
         public bool Value { get => Name.ToLower() == "true"; }
         public override string Name { get => base.Name; set => base.Name = value.ToLower(); }
         public static string DefaultName { get => defaultName; }
-        public override string GetUniqueTypeName() => TypeName;
+        public override string UniqueTypeName { get => TypeName; }
 
         public override Component Clone()
         {

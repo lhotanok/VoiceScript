@@ -16,7 +16,7 @@ namespace DiagramModel.Components
 
         public IReadOnlyList<Method> GetMethods() => GetTypeFilteredChildren<Method>();
 
-        public override string GetUniqueTypeName() => TypeName;
+        public override string UniqueTypeName { get => TypeName; }
         public override Component Clone()
         {
             var clone = new Class(Name, Parent);

@@ -17,10 +17,12 @@ items:
   source:
     id: CommandExecutionException
     path: ''
-    startLine: 144
+    startLine: 190
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nThrown if an error is detected during command execution.\n"
+  example: []
   syntax:
     content: 'public class CommandExecutionException : InvalidOperationException'
     content.vb: >-
@@ -48,7 +50,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 146
+    startLine: 192
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -79,7 +81,7 @@ items:
   source:
     id: CommandNumber
     path: ''
-    startLine: 151
+    startLine: 197
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands

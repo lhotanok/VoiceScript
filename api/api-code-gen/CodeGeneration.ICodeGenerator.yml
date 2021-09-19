@@ -6,7 +6,7 @@ items:
   parent: CodeGeneration
   children:
   - CodeGeneration.ICodeGenerator.GenerateClassCode(Class,System.Int32)
-  - CodeGeneration.ICodeGenerator.GenerateCode
+  - CodeGeneration.ICodeGenerator.GenerateCode(Diagram)
   - CodeGeneration.ICodeGenerator.GenerateExceptionCode(System.String,System.Int32)
   - CodeGeneration.ICodeGenerator.GenerateFieldCode(Field,System.Int32)
   - CodeGeneration.ICodeGenerator.GenerateMethodCode(Method,System.Int32)
@@ -22,10 +22,12 @@ items:
   source:
     id: ICodeGenerator
     path: ''
-    startLine: 263
+    startLine: 311
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
+  summary: "\nHandles code generation from <see cref=\"!:DiagramModel.Components\"></see>.\n"
+  example: []
   syntax:
     content: public interface ICodeGenerator
     content.vb: Public Interface ICodeGenerator
@@ -35,27 +37,33 @@ items:
   modifiers.vb:
   - Public
   - Interface
-- uid: CodeGeneration.ICodeGenerator.GenerateCode
-  commentId: M:CodeGeneration.ICodeGenerator.GenerateCode
-  id: GenerateCode
+- uid: CodeGeneration.ICodeGenerator.GenerateCode(Diagram)
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateCode(Diagram)
+  id: GenerateCode(Diagram)
   parent: CodeGeneration.ICodeGenerator
   langs:
   - csharp
   - vb
-  name: GenerateCode()
-  nameWithType: ICodeGenerator.GenerateCode()
-  fullName: CodeGeneration.ICodeGenerator.GenerateCode()
+  name: GenerateCode(Diagram)
+  nameWithType: ICodeGenerator.GenerateCode(Diagram)
+  fullName: CodeGeneration.ICodeGenerator.GenerateCode(Diagram)
   type: Method
   source:
     id: GenerateCode
     path: ''
-    startLine: 265
+    startLine: 317
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
+  summary: "\nGenerates full code from <see cref=\"!:Diagram\"></see>.\n"
+  example: []
   syntax:
-    content: void GenerateCode()
-    content.vb: Sub GenerateCode
+    content: void GenerateCode(Diagram diagram)
+    parameters:
+    - id: diagram
+      type: Diagram
+      description: Component representing diagram model.
+    content.vb: Sub GenerateCode(diagram As Diagram)
   overload: CodeGeneration.ICodeGenerator.GenerateCode*
 - uid: CodeGeneration.ICodeGenerator.GenerateClassCode(Class,System.Int32)
   commentId: M:CodeGeneration.ICodeGenerator.GenerateClassCode(Class,System.Int32)
@@ -71,17 +79,21 @@ items:
   source:
     id: GenerateClassCode
     path: ''
-    startLine: 266
+    startLine: 325
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
+  summary: "\nGenerates code from <see cref=\"!:Class\"></see>.\n"
+  example: []
   syntax:
     content: void GenerateClassCode(Class cls, int indentation = 0)
     parameters:
     - id: cls
       type: Class
+      description: Component representing class from diagram model.
     - id: indentation
       type: System.Int32
+      description: "Optional block indentation. \nCorresponds to the number of tabs. Set to 0 by default."
     content.vb: Sub GenerateClassCode(cls As  Class, indentation As Integer = 0)
   overload: CodeGeneration.ICodeGenerator.GenerateClassCode*
 - uid: CodeGeneration.ICodeGenerator.GenerateFieldCode(Field,System.Int32)
@@ -98,17 +110,24 @@ items:
   source:
     id: GenerateFieldCode
     path: ''
-    startLine: 267
+    startLine: 333
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
+  summary: "\nGenerates code from <see cref=\"!:Field\"></see>.\n"
+  example: []
   syntax:
     content: void GenerateFieldCode(Field field, int indentation = 1)
     parameters:
     - id: field
       type: Field
+      description: Component representing class field from diagram model.
     - id: indentation
       type: System.Int32
+      description: >-
+        Optional block indentation. Corresponds to the number of tabs.
+
+        Set to 1 by default (with respect to class indentation).
     content.vb: Sub GenerateFieldCode(field As Field, indentation As Integer = 1)
   overload: CodeGeneration.ICodeGenerator.GenerateFieldCode*
 - uid: CodeGeneration.ICodeGenerator.GenerateMethodCode(Method,System.Int32)
@@ -125,17 +144,24 @@ items:
   source:
     id: GenerateMethodCode
     path: ''
-    startLine: 268
+    startLine: 341
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
+  summary: "\nGenerates code from <see cref=\"!:Method\"></see>.\n"
+  example: []
   syntax:
     content: void GenerateMethodCode(Method method, int indentation = 1)
     parameters:
     - id: method
       type: Method
+      description: Component representing class method from diagram model.
     - id: indentation
       type: System.Int32
+      description: >-
+        Optional block indentation. Corresponds to the number of tabs.
+
+        Set to 1 by default (with respect to class indentation).
     content.vb: Sub GenerateMethodCode(method As Method, indentation As Integer = 1)
   overload: CodeGeneration.ICodeGenerator.GenerateMethodCode*
 - uid: CodeGeneration.ICodeGenerator.GenerateParametersCode(Method)
@@ -152,15 +178,18 @@ items:
   source:
     id: GenerateParametersCode
     path: ''
-    startLine: 269
+    startLine: 347
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
+  summary: "\nGenerates code from all <see cref=\"!:Method.GetParameters\"></see>.\n"
+  example: []
   syntax:
     content: void GenerateParametersCode(Method method)
     parameters:
     - id: method
       type: Method
+      description: Component representing class method from diagram model.
     content.vb: Sub GenerateParametersCode(method As Method)
   overload: CodeGeneration.ICodeGenerator.GenerateParametersCode*
 - uid: CodeGeneration.ICodeGenerator.GenerateParameterCode(Parameter,System.Int32)
@@ -177,17 +206,24 @@ items:
   source:
     id: GenerateParameterCode
     path: ''
-    startLine: 270
+    startLine: 355
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
+  summary: "\nGenerates code from <see cref=\"!:Parameter\"></see>.\n"
+  example: []
   syntax:
     content: void GenerateParameterCode(Parameter parameter, int indentation = 0)
     parameters:
     - id: parameter
       type: Parameter
+      description: Component representing method parameter from diagram model.
     - id: indentation
       type: System.Int32
+      description: >-
+        Optional block indentation. Corresponds to the number of tabs.
+
+        Set to 0 by default (with respect to method code design).
     content.vb: Sub GenerateParameterCode(parameter As Parameter, indentation As Integer = 0)
   overload: CodeGeneration.ICodeGenerator.GenerateParameterCode*
 - uid: CodeGeneration.ICodeGenerator.GenerateExceptionCode(System.String,System.Int32)
@@ -204,17 +240,24 @@ items:
   source:
     id: GenerateExceptionCode
     path: ''
-    startLine: 271
+    startLine: 363
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
+  summary: "\nGenerates code for exception with the given name.\n"
+  example: []
   syntax:
     content: void GenerateExceptionCode(string exceptionName, int indentation = 2)
     parameters:
     - id: exceptionName
       type: System.String
+      description: Name of the exception
     - id: indentation
       type: System.Int32
+      description: >-
+        Optional block indentation. Corresponds to the number of tabs.
+
+        Set to 2 by default (with respect to class and method indentation).
     content.vb: Sub GenerateExceptionCode(exceptionName As String, indentation As Integer = 2)
   overload: CodeGeneration.ICodeGenerator.GenerateExceptionCode*
 references:
@@ -228,6 +271,11 @@ references:
   name: GenerateCode
   nameWithType: ICodeGenerator.GenerateCode
   fullName: CodeGeneration.ICodeGenerator.GenerateCode
+- uid: Diagram
+  isExternal: true
+  name: Diagram
+  nameWithType: Diagram
+  fullName: Diagram
 - uid: CodeGeneration.ICodeGenerator.GenerateClassCode*
   commentId: Overload:CodeGeneration.ICodeGenerator.GenerateClassCode
   name: GenerateClassCode

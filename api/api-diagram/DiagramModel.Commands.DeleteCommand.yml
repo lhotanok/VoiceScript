@@ -18,10 +18,12 @@ items:
   source:
     id: DeleteCommand
     path: ''
-    startLine: 454
+    startLine: 534
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nRepresentation of command for component deletion.\n"
+  example: []
   syntax:
     content: 'public class DeleteCommand : Command'
     content.vb: >-
@@ -69,7 +71,7 @@ items:
   source:
     id: DefaultFormat
     path: ''
-    startLine: 457
+    startLine: 537
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -102,7 +104,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 458
+    startLine: 538
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -137,7 +139,7 @@ items:
   source:
     id: ProcessCommand
     path: ''
-    startLine: 461
+    startLine: 541
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands

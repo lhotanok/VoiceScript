@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Command
    ">
-    <meta name="generator" content="docfx 2.58.2.0">
+    <meta name="generator" content="docfx 2.58.4.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -73,7 +73,8 @@
   
   <h1 id="DiagramModel_Commands_Command" data-uid="DiagramModel.Commands.Command" class="text-break">Class Command
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Representation of parsed command.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -309,7 +310,8 @@
   
   <a id="DiagramModel_Commands_Command_Name_" data-uid="DiagramModel.Commands.Command.Name*"></a>
   <h4 id="DiagramModel_Commands_Command_Name" data-uid="DiagramModel.Commands.Command.Name">Name</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Command identification name.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -334,7 +336,9 @@
   
   <a id="DiagramModel_Commands_Command_TargetType_" data-uid="DiagramModel.Commands.Command.TargetType*"></a>
   <h4 id="DiagramModel_Commands_Command_TargetType" data-uid="DiagramModel.Commands.Command.TargetType">TargetType</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Name of the target component type a command is associated with.
+For possible values, see <a class="xref" href="DiagramModel.Commands.LanguageFormats.LanguageFormat.html#DiagramModel_Commands_LanguageFormats_LanguageFormat_ComponentNames">ComponentNames</a></p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -359,7 +363,8 @@
   
   <a id="DiagramModel_Commands_Command_TargetValue_" data-uid="DiagramModel.Commands.Command.TargetValue*"></a>
   <h4 id="DiagramModel_Commands_Command_TargetValue" data-uid="DiagramModel.Commands.Command.TargetValue">TargetValue</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Value representing target component's <a class="xref" href="DiagramModel.Components.Component.html#DiagramModel_Components_Component_Name">Name</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -386,7 +391,8 @@
   
   <a id="DiagramModel_Commands_Command_Execute_" data-uid="DiagramModel.Commands.Command.Execute*"></a>
   <h4 id="DiagramModel_Commands_Command_Execute_DiagramModel_Commands_CommandExecutionContext_" data-uid="DiagramModel.Commands.Command.Execute(DiagramModel.Commands.CommandExecutionContext)">Execute(CommandExecutionContext)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Executes command with respect to the provided execution context.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -405,7 +411,27 @@
       <tr>
         <td><a class="xref" href="DiagramModel.Commands.CommandExecutionContext.html">CommandExecutionContext</a></td>
         <td><span class="parametername">context</span></td>
-        <td></td>
+        <td><p>Context for command execution. Gets modified
+if command is executed successfully to provide a correct context
+for subsequent command execution.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DiagramModel.Commands.CommandExecutionException.html">CommandExecutionException</a></td>
+        <td><p>Thrown if command can not
+be executed in the current context.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -481,7 +507,27 @@ Throws an exception if command can not be executed.</p>
       <tr>
         <td><a class="xref" href="DiagramModel.Commands.CommandExecutionContext.html">CommandExecutionContext</a></td>
         <td><span class="parametername">context</span></td>
-        <td></td>
+        <td><p>Context for command execution. Gets modified
+if command is executed successfully to provide a correct context
+for subsequent command execution.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DiagramModel.Commands.CommandExecutionException.html">CommandExecutionException</a></td>
+        <td><p>Thrown if command can not
+be executed in the current context.</p>
+</td>
       </tr>
     </tbody>
   </table>

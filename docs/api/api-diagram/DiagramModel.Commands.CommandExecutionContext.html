@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class CommandExecutionContext
    ">
-    <meta name="generator" content="docfx 2.58.2.0">
+    <meta name="generator" content="docfx 2.58.4.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -73,7 +73,10 @@
   
   <h1 id="DiagramModel_Commands_CommandExecutionContext" data-uid="DiagramModel.Commands.CommandExecutionContext" class="text-break">Class CommandExecutionContext
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Context for command execution. Contains info about
+start component, target component and current command
+execution result.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -116,7 +119,8 @@
   
   <a id="DiagramModel_Commands_CommandExecutionContext_CommandExecuted_" data-uid="DiagramModel.Commands.CommandExecutionContext.CommandExecuted*"></a>
   <h4 id="DiagramModel_Commands_CommandExecutionContext_CommandExecuted" data-uid="DiagramModel.Commands.CommandExecutionContext.CommandExecuted">CommandExecuted</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Specifies whether current command was executed or not.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -141,7 +145,11 @@
   
   <a id="DiagramModel_Commands_CommandExecutionContext_CurrentComponent_" data-uid="DiagramModel.Commands.CommandExecutionContext.CurrentComponent*"></a>
   <h4 id="DiagramModel_Commands_CommandExecutionContext_CurrentComponent" data-uid="DiagramModel.Commands.CommandExecutionContext.CurrentComponent">CurrentComponent</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Component which should be inspected as a starting point
+for command execution. If the command is not valid in the
+context of this component, <a class="xref" href="DiagramModel.Commands.CommandExecutionContext.html#DiagramModel_Commands_CommandExecutionContext_CurrentComponent">CurrentComponent</a>
+value is updated to <a class="xref" href="DiagramModel.Components.Component.html#DiagramModel_Components_Component_Parent">Parent</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -166,7 +174,8 @@
   
   <a id="DiagramModel_Commands_CommandExecutionContext_TargetComponent_" data-uid="DiagramModel.Commands.CommandExecutionContext.TargetComponent*"></a>
   <h4 id="DiagramModel_Commands_CommandExecutionContext_TargetComponent" data-uid="DiagramModel.Commands.CommandExecutionContext.TargetComponent">TargetComponent</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Component in whose context the current command was finally executed.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">

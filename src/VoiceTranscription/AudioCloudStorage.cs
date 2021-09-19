@@ -5,7 +5,7 @@ using Google.Cloud.Storage.V1;
 namespace VoiceScript.VoiceTranscription
 {
     /// <summary>
-    /// To be used for cloud storage of audio files longer than 1 minute.
+    /// Designed for cloud storage management of long audio files.
     /// </summary>
     class AudioCloudStorage
     {
@@ -27,14 +27,31 @@ namespace VoiceScript.VoiceTranscription
             #endregion
         }
 
+        /// <summary>
+        /// Name of the bucket in which the file is stored in Google Cloud Storage.
+        /// </summary>
         public string BucketName => bucketName;
+
+        /// <summary>
+        /// Uri address of the stored file.
+        /// </summary>
         public string FileStorageUri => $"gs://{bucketName}/{filePath}";
 
+        /// <summary>
+        /// Uploads file to the Google Cloud Storage into default bucket.
+        /// </summary>
+        /// <param name="content">Uploaded file content</param>
         public void Upload(byte[] content)
         {
             client.UploadObject(bucketName, filePath, contentType, new MemoryStream(content));
         }
 
+        /// <summary>
+        /// Downloads file from Google Cloud Storage.
+        /// File is stored in default bucket.
+        /// </summary>
+        /// <param name="objectDownloadName">Optional download name.
+        /// If not specified, file's original name is used.</param>
         public void Download(string objectDownloadName = null)
         {
             objectDownloadName ??= filePath;

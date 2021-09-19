@@ -1,0 +1,581 @@
+### YamlMime:ManagedReference
+items:
+- uid: CodeGeneration.CSharpCodeColor
+  commentId: T:CodeGeneration.CSharpCodeColor
+  id: CSharpCodeColor
+  parent: CodeGeneration
+  children:
+  - CodeGeneration.CSharpCodeColor.ClassTypeColor
+  - CodeGeneration.CSharpCodeColor.Default
+  - CodeGeneration.CSharpCodeColor.KeywordColor
+  - CodeGeneration.CSharpCodeColor.MethodColor
+  - CodeGeneration.CSharpCodeColor.ParameterColor
+  - CodeGeneration.CSharpCodeColor.ThrowKeywordColor
+  langs:
+  - csharp
+  - vb
+  name: CSharpCodeColor
+  nameWithType: CSharpCodeColor
+  fullName: CodeGeneration.CSharpCodeColor
+  type: Class
+  source:
+    id: CSharpCodeColor
+    path: ''
+    startLine: 7
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  summary: "\nWrapper for colors of individual components in C# code.\n"
+  example: []
+  syntax:
+    content: 'public class CSharpCodeColor : ICodeColor'
+    content.vb: >-
+      Public Class CSharpCodeColor
+          Implements ICodeColor
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CodeGeneration.CSharpCodeColor.KeywordColor
+  commentId: P:CodeGeneration.CSharpCodeColor.KeywordColor
+  id: KeywordColor
+  parent: CodeGeneration.CSharpCodeColor
+  langs:
+  - csharp
+  - vb
+  name: KeywordColor
+  nameWithType: CSharpCodeColor.KeywordColor
+  fullName: CodeGeneration.CSharpCodeColor.KeywordColor
+  type: Property
+  source:
+    id: KeywordColor
+    path: ''
+    startLine: 16
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: public static Color KeywordColor { get; }
+    parameters: []
+    return:
+      type: Color
+    content.vb: Public Shared ReadOnly Property KeywordColor As Color
+  overload: CodeGeneration.CSharpCodeColor.KeywordColor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CodeGeneration.CSharpCodeColor.ThrowKeywordColor
+  commentId: P:CodeGeneration.CSharpCodeColor.ThrowKeywordColor
+  id: ThrowKeywordColor
+  parent: CodeGeneration.CSharpCodeColor
+  langs:
+  - csharp
+  - vb
+  name: ThrowKeywordColor
+  nameWithType: CSharpCodeColor.ThrowKeywordColor
+  fullName: CodeGeneration.CSharpCodeColor.ThrowKeywordColor
+  type: Property
+  source:
+    id: ThrowKeywordColor
+    path: ''
+    startLine: 17
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: public static Color ThrowKeywordColor { get; }
+    parameters: []
+    return:
+      type: Color
+    content.vb: Public Shared ReadOnly Property ThrowKeywordColor As Color
+  overload: CodeGeneration.CSharpCodeColor.ThrowKeywordColor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CodeGeneration.CSharpCodeColor.ClassTypeColor
+  commentId: P:CodeGeneration.CSharpCodeColor.ClassTypeColor
+  id: ClassTypeColor
+  parent: CodeGeneration.CSharpCodeColor
+  langs:
+  - csharp
+  - vb
+  name: ClassTypeColor
+  nameWithType: CSharpCodeColor.ClassTypeColor
+  fullName: CodeGeneration.CSharpCodeColor.ClassTypeColor
+  type: Property
+  source:
+    id: ClassTypeColor
+    path: ''
+    startLine: 18
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: public static Color ClassTypeColor { get; }
+    parameters: []
+    return:
+      type: Color
+    content.vb: Public Shared ReadOnly Property ClassTypeColor As Color
+  overload: CodeGeneration.CSharpCodeColor.ClassTypeColor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CodeGeneration.CSharpCodeColor.MethodColor
+  commentId: P:CodeGeneration.CSharpCodeColor.MethodColor
+  id: MethodColor
+  parent: CodeGeneration.CSharpCodeColor
+  langs:
+  - csharp
+  - vb
+  name: MethodColor
+  nameWithType: CSharpCodeColor.MethodColor
+  fullName: CodeGeneration.CSharpCodeColor.MethodColor
+  type: Property
+  source:
+    id: MethodColor
+    path: ''
+    startLine: 19
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: public static Color MethodColor { get; }
+    parameters: []
+    return:
+      type: Color
+    content.vb: Public Shared ReadOnly Property MethodColor As Color
+  overload: CodeGeneration.CSharpCodeColor.MethodColor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CodeGeneration.CSharpCodeColor.ParameterColor
+  commentId: P:CodeGeneration.CSharpCodeColor.ParameterColor
+  id: ParameterColor
+  parent: CodeGeneration.CSharpCodeColor
+  langs:
+  - csharp
+  - vb
+  name: ParameterColor
+  nameWithType: CSharpCodeColor.ParameterColor
+  fullName: CodeGeneration.CSharpCodeColor.ParameterColor
+  type: Property
+  source:
+    id: ParameterColor
+    path: ''
+    startLine: 20
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: public static Color ParameterColor { get; }
+    parameters: []
+    return:
+      type: Color
+    content.vb: Public Shared ReadOnly Property ParameterColor As Color
+  overload: CodeGeneration.CSharpCodeColor.ParameterColor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CodeGeneration.CSharpCodeColor.Default
+  commentId: P:CodeGeneration.CSharpCodeColor.Default
+  id: Default
+  parent: CodeGeneration.CSharpCodeColor
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: CSharpCodeColor.Default
+  fullName: CodeGeneration.CSharpCodeColor.Default
+  type: Property
+  source:
+    id: Default
+    path: ''
+    startLine: 21
+  assemblies:
+  - cs.temp.dll
+  namespace: CodeGeneration
+  syntax:
+    content: public static Color Default { get; }
+    parameters: []
+    return:
+      type: Color
+    content.vb: Public Shared ReadOnly Property Default As Color
+  overload: CodeGeneration.CSharpCodeColor.Default*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: CodeGeneration
+  commentId: N:CodeGeneration
+  name: CodeGeneration
+  nameWithType: CodeGeneration
+  fullName: CodeGeneration
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CodeGeneration.CSharpCodeColor.KeywordColor*
+  commentId: Overload:CodeGeneration.CSharpCodeColor.KeywordColor
+  name: KeywordColor
+  nameWithType: CSharpCodeColor.KeywordColor
+  fullName: CodeGeneration.CSharpCodeColor.KeywordColor
+- uid: Color
+  isExternal: true
+  name: Color
+  nameWithType: Color
+  fullName: Color
+- uid: CodeGeneration.CSharpCodeColor.ThrowKeywordColor*
+  commentId: Overload:CodeGeneration.CSharpCodeColor.ThrowKeywordColor
+  name: ThrowKeywordColor
+  nameWithType: CSharpCodeColor.ThrowKeywordColor
+  fullName: CodeGeneration.CSharpCodeColor.ThrowKeywordColor
+- uid: CodeGeneration.CSharpCodeColor.ClassTypeColor*
+  commentId: Overload:CodeGeneration.CSharpCodeColor.ClassTypeColor
+  name: ClassTypeColor
+  nameWithType: CSharpCodeColor.ClassTypeColor
+  fullName: CodeGeneration.CSharpCodeColor.ClassTypeColor
+- uid: CodeGeneration.CSharpCodeColor.MethodColor*
+  commentId: Overload:CodeGeneration.CSharpCodeColor.MethodColor
+  name: MethodColor
+  nameWithType: CSharpCodeColor.MethodColor
+  fullName: CodeGeneration.CSharpCodeColor.MethodColor
+- uid: CodeGeneration.CSharpCodeColor.ParameterColor*
+  commentId: Overload:CodeGeneration.CSharpCodeColor.ParameterColor
+  name: ParameterColor
+  nameWithType: CSharpCodeColor.ParameterColor
+  fullName: CodeGeneration.CSharpCodeColor.ParameterColor
+- uid: CodeGeneration.CSharpCodeColor.Default*
+  commentId: Overload:CodeGeneration.CSharpCodeColor.Default
+  name: Default
+  nameWithType: CSharpCodeColor.Default
+  fullName: CodeGeneration.CSharpCodeColor.Default

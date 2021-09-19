@@ -18,10 +18,12 @@ items:
   source:
     id: Language
     path: ''
-    startLine: 265
+    startLine: 356
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nWrapper for language info.\nContains language code and human-readable name.\n"
+  example: []
   syntax:
     content: public abstract class Language
     content.vb: Public MustInherit Class Language
@@ -59,10 +61,12 @@ items:
   source:
     id: LanguageCode
     path: ''
-    startLine: 267
+    startLine: 361
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nLanguage code corresponding to the unified standard.\n"
+  example: []
   syntax:
     content: public abstract string LanguageCode { get; }
     parameters: []
@@ -92,10 +96,12 @@ items:
   source:
     id: Name
     path: ''
-    startLine: 268
+    startLine: 366
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nLanguage full name. \n"
+  example: []
   syntax:
     content: public abstract string Name { get; }
     parameters: []
@@ -125,14 +131,17 @@ items:
   source:
     id: ToString
     path: ''
-    startLine: 269
+    startLine: 374
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
+  summary: "\nOverrides default <xref href=\"System.Object.ToString\" data-throw-if-not-resolved=\"false\"></xref>\nand returns language name directly.\nUseful for integration with WinForms designer.\n"
+  example: []
   syntax:
     content: public override string ToString()
     return:
       type: System.String
+      description: ''
     content.vb: Public Overrides Function ToString As String
   overridden: System.Object.ToString
   overload: VoiceScript.VoiceTranscription.Language.ToString*

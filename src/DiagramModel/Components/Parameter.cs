@@ -23,7 +23,7 @@ namespace DiagramModel.Components
         public Required GetRequireInfo() => GetUniqueChild<Required>() ?? new Required(this);
 
         public bool IsRequired { get => GetRequireInfo().Value; }
-        public override string GetUniqueTypeName() => TypeName;
+        public override string UniqueTypeName { get => TypeName; }
 
         public override void AddChild(Component child)
         {

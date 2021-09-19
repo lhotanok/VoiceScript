@@ -5,9 +5,9 @@ items:
   id: CSharpCodeGenerator
   parent: CodeGeneration
   children:
-  - CodeGeneration.CSharpCodeGenerator.#ctor(Diagram,Action{System.String,Color})
+  - CodeGeneration.CSharpCodeGenerator.#ctor(Action{System.String,Color})
   - CodeGeneration.CSharpCodeGenerator.GenerateClassCode(Class,System.Int32)
-  - CodeGeneration.CSharpCodeGenerator.GenerateCode
+  - CodeGeneration.CSharpCodeGenerator.GenerateCode(Diagram)
   - CodeGeneration.CSharpCodeGenerator.GenerateExceptionCode(System.String,System.Int32)
   - CodeGeneration.CSharpCodeGenerator.GenerateFieldCode(Field,System.Int32)
   - CodeGeneration.CSharpCodeGenerator.GenerateMethodCode(Method,System.Int32)
@@ -23,10 +23,12 @@ items:
   source:
     id: CSharpCodeGenerator
     path: ''
-    startLine: 32
+    startLine: 38
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
+  summary: "\nGenerates C# code from <see cref=\"!:DiagramModel.Components\"></see>.\n"
+  example: []
   syntax:
     content: 'public class CSharpCodeGenerator : ICodeGenerator'
     content.vb: >-
@@ -50,64 +52,65 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: CodeGeneration.CSharpCodeGenerator.#ctor(Diagram,Action{System.String,Color})
-  commentId: M:CodeGeneration.CSharpCodeGenerator.#ctor(Diagram,Action{System.String,Color})
-  id: '#ctor(Diagram,Action{System.String,Color})'
+- uid: CodeGeneration.CSharpCodeGenerator.#ctor(Action{System.String,Color})
+  commentId: M:CodeGeneration.CSharpCodeGenerator.#ctor(Action{System.String,Color})
+  id: '#ctor(Action{System.String,Color})'
   parent: CodeGeneration.CSharpCodeGenerator
   langs:
   - csharp
   - vb
-  name: CSharpCodeGenerator(Diagram, Action<String, Color>)
-  nameWithType: CSharpCodeGenerator.CSharpCodeGenerator(Diagram, Action<String, Color>)
-  fullName: CodeGeneration.CSharpCodeGenerator.CSharpCodeGenerator(Diagram, Action<System.String, Color>)
+  name: CSharpCodeGenerator(Action<String, Color>)
+  nameWithType: CSharpCodeGenerator.CSharpCodeGenerator(Action<String, Color>)
+  fullName: CodeGeneration.CSharpCodeGenerator.CSharpCodeGenerator(Action<System.String, Color>)
   type: Constructor
   source:
     id: .ctor
     path: ''
-    startLine: 49
+    startLine: 54
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
   syntax:
-    content: public CSharpCodeGenerator(Diagram diagramModel, Action<string, Color> writeTextCallback)
+    content: public CSharpCodeGenerator(Action<string, Color> writeTextCallback)
     parameters:
-    - id: diagramModel
-      type: Diagram
     - id: writeTextCallback
       type: Action{System.String,Color}
-    content.vb: Public Sub New(diagramModel As Diagram, writeTextCallback As Action(Of String, Color))
+    content.vb: Public Sub New(writeTextCallback As Action(Of String, Color))
   overload: CodeGeneration.CSharpCodeGenerator.#ctor*
-  nameWithType.vb: CSharpCodeGenerator.CSharpCodeGenerator(Diagram, Action(Of String, Color))
+  nameWithType.vb: CSharpCodeGenerator.CSharpCodeGenerator(Action(Of String, Color))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: CodeGeneration.CSharpCodeGenerator.CSharpCodeGenerator(Diagram, Action(Of System.String, Color))
-  name.vb: CSharpCodeGenerator(Diagram, Action(Of String, Color))
-- uid: CodeGeneration.CSharpCodeGenerator.GenerateCode
-  commentId: M:CodeGeneration.CSharpCodeGenerator.GenerateCode
-  id: GenerateCode
+  fullName.vb: CodeGeneration.CSharpCodeGenerator.CSharpCodeGenerator(Action(Of System.String, Color))
+  name.vb: CSharpCodeGenerator(Action(Of String, Color))
+- uid: CodeGeneration.CSharpCodeGenerator.GenerateCode(Diagram)
+  commentId: M:CodeGeneration.CSharpCodeGenerator.GenerateCode(Diagram)
+  id: GenerateCode(Diagram)
   parent: CodeGeneration.CSharpCodeGenerator
   langs:
   - csharp
   - vb
-  name: GenerateCode()
-  nameWithType: CSharpCodeGenerator.GenerateCode()
-  fullName: CodeGeneration.CSharpCodeGenerator.GenerateCode()
+  name: GenerateCode(Diagram)
+  nameWithType: CSharpCodeGenerator.GenerateCode(Diagram)
+  fullName: CodeGeneration.CSharpCodeGenerator.GenerateCode(Diagram)
   type: Method
   source:
     id: GenerateCode
     path: ''
-    startLine: 55
+    startLine: 59
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
   syntax:
-    content: public void GenerateCode()
-    content.vb: Public Sub GenerateCode
+    content: public void GenerateCode(Diagram diagram)
+    parameters:
+    - id: diagram
+      type: Diagram
+    content.vb: Public Sub GenerateCode(diagram As Diagram)
   overload: CodeGeneration.CSharpCodeGenerator.GenerateCode*
   implements:
-  - CodeGeneration.ICodeGenerator.GenerateCode
+  - CodeGeneration.ICodeGenerator.GenerateCode(Diagram)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -126,7 +129,7 @@ items:
   source:
     id: GenerateClassCode
     path: ''
-    startLine: 66
+    startLine: 70
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
@@ -159,7 +162,7 @@ items:
   source:
     id: GenerateFieldCode
     path: ''
-    startLine: 94
+    startLine: 98
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
@@ -192,7 +195,7 @@ items:
   source:
     id: GenerateMethodCode
     path: ''
-    startLine: 109
+    startLine: 113
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
@@ -225,7 +228,7 @@ items:
   source:
     id: GenerateParametersCode
     path: ''
-    startLine: 128
+    startLine: 132
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
@@ -256,7 +259,7 @@ items:
   source:
     id: GenerateParameterCode
     path: ''
-    startLine: 144
+    startLine: 148
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
@@ -289,7 +292,7 @@ items:
   source:
     id: GenerateExceptionCode
     path: ''
-    startLine: 158
+    startLine: 162
   assemblies:
   - cs.temp.dll
   namespace: CodeGeneration
@@ -617,12 +620,6 @@ references:
   name: CSharpCodeGenerator
   nameWithType: CSharpCodeGenerator.CSharpCodeGenerator
   fullName: CodeGeneration.CSharpCodeGenerator.CSharpCodeGenerator
-- uid: Diagram
-  commentId: '!:Diagram'
-  isExternal: true
-  name: Diagram
-  nameWithType: Diagram
-  fullName: Diagram
 - uid: Action{System.String,Color}
   commentId: '!:Action{System.String,Color}'
   definition: Action`2
@@ -738,34 +735,50 @@ references:
   name: GenerateCode
   nameWithType: CSharpCodeGenerator.GenerateCode
   fullName: CodeGeneration.CSharpCodeGenerator.GenerateCode
-- uid: CodeGeneration.ICodeGenerator.GenerateCode
-  commentId: M:CodeGeneration.ICodeGenerator.GenerateCode
+- uid: CodeGeneration.ICodeGenerator.GenerateCode(Diagram)
+  commentId: M:CodeGeneration.ICodeGenerator.GenerateCode(Diagram)
   parent: CodeGeneration.ICodeGenerator
-  name: GenerateCode()
-  nameWithType: ICodeGenerator.GenerateCode()
-  fullName: CodeGeneration.ICodeGenerator.GenerateCode()
+  isExternal: true
+  name: GenerateCode(Diagram)
+  nameWithType: ICodeGenerator.GenerateCode(Diagram)
+  fullName: CodeGeneration.ICodeGenerator.GenerateCode(Diagram)
   spec.csharp:
-  - uid: CodeGeneration.ICodeGenerator.GenerateCode
+  - uid: CodeGeneration.ICodeGenerator.GenerateCode(Diagram)
     name: GenerateCode
     nameWithType: ICodeGenerator.GenerateCode
     fullName: CodeGeneration.ICodeGenerator.GenerateCode
   - name: (
     nameWithType: (
     fullName: (
+  - uid: Diagram
+    name: Diagram
+    nameWithType: Diagram
+    fullName: Diagram
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: CodeGeneration.ICodeGenerator.GenerateCode
+  - uid: CodeGeneration.ICodeGenerator.GenerateCode(Diagram)
     name: GenerateCode
     nameWithType: ICodeGenerator.GenerateCode
     fullName: CodeGeneration.ICodeGenerator.GenerateCode
   - name: (
     nameWithType: (
     fullName: (
+  - uid: Diagram
+    name: Diagram
+    nameWithType: Diagram
+    fullName: Diagram
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
+- uid: Diagram
+  isExternal: true
+  name: Diagram
+  nameWithType: Diagram
+  fullName: Diagram
 - uid: CodeGeneration.CSharpCodeGenerator.GenerateClassCode*
   commentId: Overload:CodeGeneration.CSharpCodeGenerator.GenerateClassCode
   name: GenerateClassCode

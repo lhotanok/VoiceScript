@@ -18,10 +18,12 @@ items:
   source:
     id: CommandExecutionContext
     path: ''
-    startLine: 132
+    startLine: 161
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nContext for command execution. Contains info about\nstart component, target component and current command\nexecution result.\n"
+  example: []
   syntax:
     content: public class CommandExecutionContext
     content.vb: Public Class CommandExecutionContext
@@ -55,10 +57,12 @@ items:
   source:
     id: CurrentComponent
     path: ''
-    startLine: 134
+    startLine: 169
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nComponent which should be inspected as a starting point\nfor command execution. If the command is not valid in the\ncontext of this component, <xref href=\"DiagramModel.Commands.CommandExecutionContext.CurrentComponent\" data-throw-if-not-resolved=\"false\"></xref>\nvalue is updated to <xref href=\"DiagramModel.Components.Component.Parent\" data-throw-if-not-resolved=\"false\"></xref>. \n"
+  example: []
   syntax:
     content: public Component CurrentComponent { get; set; }
     parameters: []
@@ -86,10 +90,12 @@ items:
   source:
     id: TargetComponent
     path: ''
-    startLine: 135
+    startLine: 174
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nComponent in whose context the current command was finally executed.\n"
+  example: []
   syntax:
     content: public Component TargetComponent { get; set; }
     parameters: []
@@ -117,10 +123,12 @@ items:
   source:
     id: CommandExecuted
     path: ''
-    startLine: 136
+    startLine: 179
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nSpecifies whether current command was executed or not.\n"
+  example: []
   syntax:
     content: public bool CommandExecuted { get; set; }
     parameters: []
@@ -432,6 +440,15 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: DiagramModel.Commands.CommandExecutionContext.CurrentComponent
+  commentId: P:DiagramModel.Commands.CommandExecutionContext.CurrentComponent
+  isExternal: true
+- uid: DiagramModel.Components.Component.Parent
+  commentId: P:DiagramModel.Components.Component.Parent
+  parent: DiagramModel.Components.Component
+  name: Parent
+  nameWithType: Component.Parent
+  fullName: DiagramModel.Components.Component.Parent
 - uid: DiagramModel.Commands.CommandExecutionContext.CurrentComponent*
   commentId: Overload:DiagramModel.Commands.CommandExecutionContext.CurrentComponent
   name: CurrentComponent

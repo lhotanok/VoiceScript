@@ -11,8 +11,7 @@ items:
   - DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNames
   - DiagramModel.Commands.LanguageFormats.CzechFormat.DelimiterFormat
   - DiagramModel.Commands.LanguageFormats.CzechFormat.GetCode
-  - DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
-  - DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace
+  - DiagramModel.Commands.LanguageFormats.CzechFormat.TargetValuesToReplace
   langs:
   - csharp
   - vb
@@ -23,7 +22,7 @@ items:
   source:
     id: CzechFormat
     path: ''
-    startLine: 589
+    startLine: 705
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -65,7 +64,7 @@ items:
   source:
     id: CommandFormats
     path: ''
-    startLine: 654
+    startLine: 767
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -99,7 +98,7 @@ items:
   source:
     id: ComponentNames
     path: ''
-    startLine: 655
+    startLine: 768
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -133,7 +132,7 @@ items:
   source:
     id: DelimiterFormat
     path: ''
-    startLine: 656
+    startLine: 769
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -167,7 +166,7 @@ items:
   source:
     id: GetCode
     path: ''
-    startLine: 657
+    startLine: 770
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -197,7 +196,7 @@ items:
   source:
     id: Code
     path: ''
-    startLine: 658
+    startLine: 771
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -231,7 +230,7 @@ items:
   source:
     id: ComponentNameFormat
     path: ''
-    startLine: 659
+    startLine: 772
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -251,66 +250,32 @@ items:
   - Public
   - Overrides
   - ReadOnly
-- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
-  commentId: P:DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
-  id: ValueConstants
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.TargetValuesToReplace
+  commentId: P:DiagramModel.Commands.LanguageFormats.CzechFormat.TargetValuesToReplace
+  id: TargetValuesToReplace
   parent: DiagramModel.Commands.LanguageFormats.CzechFormat
   langs:
   - csharp
   - vb
-  name: ValueConstants
-  nameWithType: CzechFormat.ValueConstants
-  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
+  name: TargetValuesToReplace
+  nameWithType: CzechFormat.TargetValuesToReplace
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.TargetValuesToReplace
   type: Property
   source:
-    id: ValueConstants
+    id: TargetValuesToReplace
     path: ''
-    startLine: 661
+    startLine: 774
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
   syntax:
-    content: public override Dictionary<string, string> ValueConstants { get; }
+    content: public override Dictionary<string, string> TargetValuesToReplace { get; }
     parameters: []
     return:
       type: Dictionary{System.String,System.String}
-    content.vb: Public Overrides ReadOnly Property ValueConstants As Dictionary(Of String, String)
-  overridden: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
-  overload: DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants*
-  modifiers.csharp:
-  - public
-  - override
-  - get
-  modifiers.vb:
-  - Public
-  - Overrides
-  - ReadOnly
-- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace
-  commentId: P:DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace
-  id: ValuesToReplace
-  parent: DiagramModel.Commands.LanguageFormats.CzechFormat
-  langs:
-  - csharp
-  - vb
-  name: ValuesToReplace
-  nameWithType: CzechFormat.ValuesToReplace
-  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace
-  type: Property
-  source:
-    id: ValuesToReplace
-    path: ''
-    startLine: 662
-  assemblies:
-  - cs.temp.dll
-  namespace: DiagramModel.Commands.LanguageFormats
-  syntax:
-    content: public override Dictionary<string, string> ValuesToReplace { get; }
-    parameters: []
-    return:
-      type: Dictionary{System.String,System.String}
-    content.vb: Public Overrides ReadOnly Property ValuesToReplace As Dictionary(Of String, String)
-  overridden: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
-  overload: DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace*
+    content.vb: Public Overrides ReadOnly Property TargetValuesToReplace As Dictionary(Of String, String)
+  overridden: DiagramModel.Commands.LanguageFormats.LanguageFormat.TargetValuesToReplace
+  overload: DiagramModel.Commands.LanguageFormats.CzechFormat.TargetValuesToReplace*
   modifiers.csharp:
   - public
   - override
@@ -947,25 +912,14 @@ references:
   name: ComponentNameFormat
   nameWithType: CzechFormat.ComponentNameFormat
   fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ComponentNameFormat
-- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
-  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
+- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.TargetValuesToReplace
+  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.TargetValuesToReplace
   parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
-  name: ValueConstants
-  nameWithType: LanguageFormat.ValueConstants
-  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValueConstants
-- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants*
-  commentId: Overload:DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
-  name: ValueConstants
-  nameWithType: CzechFormat.ValueConstants
-  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ValueConstants
-- uid: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
-  commentId: P:DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
-  parent: DiagramModel.Commands.LanguageFormats.LanguageFormat
-  name: ValuesToReplace
-  nameWithType: LanguageFormat.ValuesToReplace
-  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.ValuesToReplace
-- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace*
-  commentId: Overload:DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace
-  name: ValuesToReplace
-  nameWithType: CzechFormat.ValuesToReplace
-  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.ValuesToReplace
+  name: TargetValuesToReplace
+  nameWithType: LanguageFormat.TargetValuesToReplace
+  fullName: DiagramModel.Commands.LanguageFormats.LanguageFormat.TargetValuesToReplace
+- uid: DiagramModel.Commands.LanguageFormats.CzechFormat.TargetValuesToReplace*
+  commentId: Overload:DiagramModel.Commands.LanguageFormats.CzechFormat.TargetValuesToReplace
+  name: TargetValuesToReplace
+  nameWithType: CzechFormat.TargetValuesToReplace
+  fullName: DiagramModel.Commands.LanguageFormats.CzechFormat.TargetValuesToReplace

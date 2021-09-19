@@ -19,7 +19,7 @@ items:
   source:
     id: VoiceTranscriptor
     path: ''
-    startLine: 437
+    startLine: 629
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -62,7 +62,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 446
+    startLine: 638
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -91,7 +91,7 @@ items:
   source:
     id: Configuration
     path: ''
-    startLine: 464
+    startLine: 656
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -124,7 +124,7 @@ items:
   source:
     id: DoRealTimeTranscription
     path: ''
-    startLine: 466
+    startLine: 658
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -158,7 +158,7 @@ items:
   source:
     id: CreateTranscriptionTask
     path: ''
-    startLine: 471
+    startLine: 663
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription

@@ -3,6 +3,9 @@ using DiagramModel.Components;
 
 namespace DiagramModel.Commands
 {
+    /// <summary>
+    /// Representation of command for component addition.
+    /// </summary>
     public class AddCommand : Command
     {
         static readonly string defaultFormat = "add";

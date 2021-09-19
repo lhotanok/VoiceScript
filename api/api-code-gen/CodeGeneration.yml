@@ -4,6 +4,7 @@ items:
   commentId: N:CodeGeneration
   id: CodeGeneration
   children:
+  - CodeGeneration.CSharpCodeColor
   - CodeGeneration.CSharpCodeGenerator
   - CodeGeneration.ICodeGenerator
   langs:
@@ -16,6 +17,11 @@ items:
   assemblies:
   - cs.temp.dll
 references:
+- uid: CodeGeneration.CSharpCodeColor
+  commentId: T:CodeGeneration.CSharpCodeColor
+  name: CSharpCodeColor
+  nameWithType: CSharpCodeColor
+  fullName: CodeGeneration.CSharpCodeColor
 - uid: CodeGeneration.CSharpCodeGenerator
   commentId: T:CodeGeneration.CSharpCodeGenerator
   name: CSharpCodeGenerator

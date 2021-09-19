@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IAudioRecorder
    ">
-    <meta name="generator" content="docfx 2.58.2.0">
+    <meta name="generator" content="docfx 2.58.4.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -73,7 +73,8 @@
   
   <h1 id="VoiceScript_VoiceTranscription_IAudioRecorder" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder" class="text-break">Interface IAudioRecorder
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Handles audio recording, buffer storage and file storage.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -93,7 +94,8 @@
   
   <a id="VoiceScript_VoiceTranscription_IAudioRecorder_AudioStream_" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.AudioStream*"></a>
   <h4 id="VoiceScript_VoiceTranscription_IAudioRecorder_AudioStream" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.AudioStream">AudioStream</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes audio waves into file using byte stream.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -118,7 +120,8 @@
   
   <a id="VoiceScript_VoiceTranscription_IAudioRecorder_OutputFilename_" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.OutputFilename*"></a>
   <h4 id="VoiceScript_VoiceTranscription_IAudioRecorder_OutputFilename" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.OutputFilename">OutputFilename</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Path to the file where raw audio is stored.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -143,7 +146,8 @@
   
   <a id="VoiceScript_VoiceTranscription_IAudioRecorder_Recording_" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.Recording*"></a>
   <h4 id="VoiceScript_VoiceTranscription_IAudioRecorder_Recording" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.Recording">Recording</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Current state of the recording process.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -168,7 +172,8 @@
   
   <a id="VoiceScript_VoiceTranscription_IAudioRecorder_WaveProvider_" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.WaveProvider*"></a>
   <h4 id="VoiceScript_VoiceTranscription_IAudioRecorder_WaveProvider" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.WaveProvider">WaveProvider</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Stores buffered audio waves.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -195,7 +200,8 @@
   
   <a id="VoiceScript_VoiceTranscription_IAudioRecorder_ConvertSecondsToBytes_" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.ConvertSecondsToBytes*"></a>
   <h4 id="VoiceScript_VoiceTranscription_IAudioRecorder_ConvertSecondsToBytes_System_Int32_" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.ConvertSecondsToBytes(System.Int32)">ConvertSecondsToBytes(Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Converts seconds to bytes with respect to raw audio format.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -214,7 +220,8 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">seconds</span></td>
-        <td></td>
+        <td><p>Number of seconds to convert into bytes</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -237,7 +244,8 @@
   
   <a id="VoiceScript_VoiceTranscription_IAudioRecorder_GetFileSecondsLength_" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.GetFileSecondsLength*"></a>
   <h4 id="VoiceScript_VoiceTranscription_IAudioRecorder_GetFileSecondsLength_System_String_" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.GetFileSecondsLength(System.String)">GetFileSecondsLength(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Calculates audio duration in seconds.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -256,7 +264,8 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">audioFilename</span></td>
-        <td></td>
+        <td><p>Path to the audio file</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -279,7 +288,8 @@
   
   <a id="VoiceScript_VoiceTranscription_IAudioRecorder_RecordingDeviceAvailable_" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.RecordingDeviceAvailable*"></a>
   <h4 id="VoiceScript_VoiceTranscription_IAudioRecorder_RecordingDeviceAvailable" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.RecordingDeviceAvailable">RecordingDeviceAvailable()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Finds out if there is any recording device that might be used.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -304,7 +314,9 @@
   
   <a id="VoiceScript_VoiceTranscription_IAudioRecorder_StartRecording_" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.StartRecording*"></a>
   <h4 id="VoiceScript_VoiceTranscription_IAudioRecorder_StartRecording_System_Action_" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.StartRecording(System.Action)">StartRecording(Action)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Starts recording process.
+Sets callback for stopped recording event.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -323,7 +335,9 @@
       <tr>
         <td><span class="xref">System.Action</span></td>
         <td><span class="parametername">RecordingStoppedCallback</span></td>
-        <td></td>
+        <td><p>Specifies action that should be
+performed once the recording stops.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -331,7 +345,8 @@
   
   <a id="VoiceScript_VoiceTranscription_IAudioRecorder_StopRecording_" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.StopRecording*"></a>
   <h4 id="VoiceScript_VoiceTranscription_IAudioRecorder_StopRecording" data-uid="VoiceScript.VoiceTranscription.IAudioRecorder.StopRecording">StopRecording()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Exits the recording process.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">

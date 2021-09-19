@@ -2,6 +2,9 @@
 
 namespace DiagramModel.Commands
 {
+    /// <summary>
+    /// Representation of command for component deletion.
+    /// </summary>
     public class DeleteCommand : Command
     {
         static readonly string defaultFormat = "delete";

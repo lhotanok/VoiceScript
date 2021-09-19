@@ -19,7 +19,7 @@ items:
   source:
     id: ClassDiagramGrid
     path: ''
-    startLine: 766
+    startLine: 781
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.DiagramDesign
@@ -56,7 +56,7 @@ items:
   source:
     id: BuildGridText
     path: ''
-    startLine: 778
+    startLine: 793
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.DiagramDesign
@@ -84,7 +84,7 @@ items:
   source:
     id: AddNameCell
     path: ''
-    startLine: 798
+    startLine: 813
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.DiagramDesign
@@ -113,7 +113,7 @@ items:
   source:
     id: AddFieldsCell
     path: ''
-    startLine: 805
+    startLine: 820
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.DiagramDesign
@@ -145,7 +145,7 @@ items:
   source:
     id: AddMethodsCell
     path: ''
-    startLine: 817
+    startLine: 832
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.DiagramDesign

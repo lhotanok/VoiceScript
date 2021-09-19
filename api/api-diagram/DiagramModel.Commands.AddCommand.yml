@@ -18,10 +18,12 @@ items:
   source:
     id: AddCommand
     path: ''
-    startLine: 5
+    startLine: 8
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nRepresentation of command for component addition.\n"
+  example: []
   syntax:
     content: 'public class AddCommand : Command'
     content.vb: >-
@@ -69,7 +71,7 @@ items:
   source:
     id: DefaultFormat
     path: ''
-    startLine: 8
+    startLine: 11
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -102,7 +104,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 10
+    startLine: 13
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -137,7 +139,7 @@ items:
   source:
     id: ProcessCommand
     path: ''
-    startLine: 13
+    startLine: 16
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands

@@ -9,11 +9,6 @@ namespace VoiceScript.VoiceTranscription
         WaveOutEvent waveOut;
         Action PlayStoppedCallback;
 
-        /// <summary>
-        /// Start audio playing from the given file.
-        /// </summary>
-        /// <param name="audioFilename"></param>
-        /// <param name="PlaybackStoppedCallback"></param>
         public void Play(string audioFilename, Action PlaybackStoppedCallback = null)
         {
             PlayStoppedCallback = PlaybackStoppedCallback;

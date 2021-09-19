@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface ICodeGenerator
    ">
-    <meta name="generator" content="docfx 2.58.2.0">
+    <meta name="generator" content="docfx 2.58.4.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -73,7 +73,8 @@
   
   <h1 id="CodeGeneration_ICodeGenerator" data-uid="CodeGeneration.ICodeGenerator" class="text-break">Interface ICodeGenerator
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Handles code generation from <see cref="!:DiagramModel.Components"></see>.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="CodeGeneration.html">CodeGeneration</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
@@ -87,7 +88,8 @@
   
   <a id="CodeGeneration_ICodeGenerator_GenerateClassCode_" data-uid="CodeGeneration.ICodeGenerator.GenerateClassCode*"></a>
   <h4 id="CodeGeneration_ICodeGenerator_GenerateClassCode_Class_System_Int32_" data-uid="CodeGeneration.ICodeGenerator.GenerateClassCode(Class,System.Int32)">GenerateClassCode(Class, Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Generates code from <see cref="!:Class"></see>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -106,30 +108,53 @@
       <tr>
         <td><span class="xref">Class</span></td>
         <td><span class="parametername">cls</span></td>
-        <td></td>
+        <td><p>Component representing class from diagram model.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">indentation</span></td>
-        <td></td>
+        <td><p>Optional block indentation.
+Corresponds to the number of tabs. Set to 0 by default.</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
   <a id="CodeGeneration_ICodeGenerator_GenerateCode_" data-uid="CodeGeneration.ICodeGenerator.GenerateCode*"></a>
-  <h4 id="CodeGeneration_ICodeGenerator_GenerateCode" data-uid="CodeGeneration.ICodeGenerator.GenerateCode">GenerateCode()</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="CodeGeneration_ICodeGenerator_GenerateCode_Diagram_" data-uid="CodeGeneration.ICodeGenerator.GenerateCode(Diagram)">GenerateCode(Diagram)</h4>
+  <div class="markdown level1 summary"><p>Generates full code from <see cref="!:Diagram"></see>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void GenerateCode()</code></pre>
+    <pre><code class="lang-csharp hljs">void GenerateCode(Diagram diagram)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Diagram</span></td>
+        <td><span class="parametername">diagram</span></td>
+        <td><p>Component representing diagram model.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   
   
   <a id="CodeGeneration_ICodeGenerator_GenerateExceptionCode_" data-uid="CodeGeneration.ICodeGenerator.GenerateExceptionCode*"></a>
   <h4 id="CodeGeneration_ICodeGenerator_GenerateExceptionCode_System_String_System_Int32_" data-uid="CodeGeneration.ICodeGenerator.GenerateExceptionCode(System.String,System.Int32)">GenerateExceptionCode(String, Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Generates code for exception with the given name.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -148,12 +173,15 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">exceptionName</span></td>
-        <td></td>
+        <td><p>Name of the exception</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">indentation</span></td>
-        <td></td>
+        <td><p>Optional block indentation. Corresponds to the number of tabs.
+Set to 2 by default (with respect to class and method indentation).</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -161,7 +189,8 @@
   
   <a id="CodeGeneration_ICodeGenerator_GenerateFieldCode_" data-uid="CodeGeneration.ICodeGenerator.GenerateFieldCode*"></a>
   <h4 id="CodeGeneration_ICodeGenerator_GenerateFieldCode_Field_System_Int32_" data-uid="CodeGeneration.ICodeGenerator.GenerateFieldCode(Field,System.Int32)">GenerateFieldCode(Field, Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Generates code from <see cref="!:Field"></see>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -180,12 +209,15 @@
       <tr>
         <td><span class="xref">Field</span></td>
         <td><span class="parametername">field</span></td>
-        <td></td>
+        <td><p>Component representing class field from diagram model.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">indentation</span></td>
-        <td></td>
+        <td><p>Optional block indentation. Corresponds to the number of tabs.
+Set to 1 by default (with respect to class indentation).</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -193,7 +225,8 @@
   
   <a id="CodeGeneration_ICodeGenerator_GenerateMethodCode_" data-uid="CodeGeneration.ICodeGenerator.GenerateMethodCode*"></a>
   <h4 id="CodeGeneration_ICodeGenerator_GenerateMethodCode_Method_System_Int32_" data-uid="CodeGeneration.ICodeGenerator.GenerateMethodCode(Method,System.Int32)">GenerateMethodCode(Method, Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Generates code from <see cref="!:Method"></see>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -212,12 +245,15 @@
       <tr>
         <td><span class="xref">Method</span></td>
         <td><span class="parametername">method</span></td>
-        <td></td>
+        <td><p>Component representing class method from diagram model.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">indentation</span></td>
-        <td></td>
+        <td><p>Optional block indentation. Corresponds to the number of tabs.
+Set to 1 by default (with respect to class indentation).</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -225,7 +261,8 @@
   
   <a id="CodeGeneration_ICodeGenerator_GenerateParameterCode_" data-uid="CodeGeneration.ICodeGenerator.GenerateParameterCode*"></a>
   <h4 id="CodeGeneration_ICodeGenerator_GenerateParameterCode_Parameter_System_Int32_" data-uid="CodeGeneration.ICodeGenerator.GenerateParameterCode(Parameter,System.Int32)">GenerateParameterCode(Parameter, Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Generates code from <see cref="!:Parameter"></see>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -244,12 +281,15 @@
       <tr>
         <td><span class="xref">Parameter</span></td>
         <td><span class="parametername">parameter</span></td>
-        <td></td>
+        <td><p>Component representing method parameter from diagram model.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">indentation</span></td>
-        <td></td>
+        <td><p>Optional block indentation. Corresponds to the number of tabs.
+Set to 0 by default (with respect to method code design).</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -257,7 +297,8 @@
   
   <a id="CodeGeneration_ICodeGenerator_GenerateParametersCode_" data-uid="CodeGeneration.ICodeGenerator.GenerateParametersCode*"></a>
   <h4 id="CodeGeneration_ICodeGenerator_GenerateParametersCode_Method_" data-uid="CodeGeneration.ICodeGenerator.GenerateParametersCode(Method)">GenerateParametersCode(Method)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Generates code from all <see cref="!:Method.GetParameters"></see>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -276,7 +317,8 @@
       <tr>
         <td><span class="xref">Method</span></td>
         <td><span class="parametername">method</span></td>
-        <td></td>
+        <td><p>Component representing class method from diagram model.</p>
+</td>
       </tr>
     </tbody>
   </table>

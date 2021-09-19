@@ -9,9 +9,9 @@ items:
   - DiagramModel.Components.Visibility.#ctor(System.String,DiagramModel.Components.Component)
   - DiagramModel.Components.Visibility.Clone
   - DiagramModel.Components.Visibility.DefaultName
-  - DiagramModel.Components.Visibility.GetUniqueTypeName
   - DiagramModel.Components.Visibility.Name
   - DiagramModel.Components.Visibility.TypeName
+  - DiagramModel.Components.Visibility.UniqueTypeName
   - DiagramModel.Components.Visibility.ValidNames
   langs:
   - csharp
@@ -23,7 +23,7 @@ items:
   source:
     id: Visibility
     path: ''
-    startLine: 1428
+    startLine: 1635
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -73,7 +73,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 1433
+    startLine: 1640
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -102,7 +102,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 1434
+    startLine: 1641
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -133,7 +133,7 @@ items:
   source:
     id: TypeName
     path: ''
-    startLine: 1438
+    startLine: 1645
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -166,7 +166,7 @@ items:
   source:
     id: DefaultName
     path: ''
-    startLine: 1440
+    startLine: 1647
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -199,7 +199,7 @@ items:
   source:
     id: ValidNames
     path: ''
-    startLine: 1442
+    startLine: 1649
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -218,37 +218,40 @@ items:
   - Public
   - Shared
   - ReadOnly
-- uid: DiagramModel.Components.Visibility.GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Visibility.GetUniqueTypeName
-  id: GetUniqueTypeName
+- uid: DiagramModel.Components.Visibility.UniqueTypeName
+  commentId: P:DiagramModel.Components.Visibility.UniqueTypeName
+  id: UniqueTypeName
   parent: DiagramModel.Components.Visibility
   langs:
   - csharp
   - vb
-  name: GetUniqueTypeName()
-  nameWithType: Visibility.GetUniqueTypeName()
-  fullName: DiagramModel.Components.Visibility.GetUniqueTypeName()
-  type: Method
+  name: UniqueTypeName
+  nameWithType: Visibility.UniqueTypeName
+  fullName: DiagramModel.Components.Visibility.UniqueTypeName
+  type: Property
   source:
-    id: GetUniqueTypeName
+    id: UniqueTypeName
     path: ''
-    startLine: 1444
+    startLine: 1651
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
   syntax:
-    content: public override string GetUniqueTypeName()
+    content: public override string UniqueTypeName { get; }
+    parameters: []
     return:
       type: System.String
-    content.vb: Public Overrides Function GetUniqueTypeName As String
-  overridden: DiagramModel.Components.Component.GetUniqueTypeName
-  overload: DiagramModel.Components.Visibility.GetUniqueTypeName*
+    content.vb: Public Overrides ReadOnly Property UniqueTypeName As String
+  overridden: DiagramModel.Components.Component.UniqueTypeName
+  overload: DiagramModel.Components.Visibility.UniqueTypeName*
   modifiers.csharp:
   - public
   - override
+  - get
   modifiers.vb:
   - Public
   - Overrides
+  - ReadOnly
 - uid: DiagramModel.Components.Visibility.Clone
   commentId: M:DiagramModel.Components.Visibility.Clone
   id: Clone
@@ -263,7 +266,7 @@ items:
   source:
     id: Clone
     path: ''
-    startLine: 1446
+    startLine: 1653
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -294,7 +297,7 @@ items:
   source:
     id: Name
     path: ''
-    startLine: 1454
+    startLine: 1661
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -994,39 +997,17 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: DiagramModel.Components.Component.GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Component.GetUniqueTypeName
+- uid: DiagramModel.Components.Component.UniqueTypeName
+  commentId: P:DiagramModel.Components.Component.UniqueTypeName
   parent: DiagramModel.Components.Component
-  name: GetUniqueTypeName()
-  nameWithType: Component.GetUniqueTypeName()
-  fullName: DiagramModel.Components.Component.GetUniqueTypeName()
-  spec.csharp:
-  - uid: DiagramModel.Components.Component.GetUniqueTypeName
-    name: GetUniqueTypeName
-    nameWithType: Component.GetUniqueTypeName
-    fullName: DiagramModel.Components.Component.GetUniqueTypeName
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DiagramModel.Components.Component.GetUniqueTypeName
-    name: GetUniqueTypeName
-    nameWithType: Component.GetUniqueTypeName
-    fullName: DiagramModel.Components.Component.GetUniqueTypeName
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: DiagramModel.Components.Visibility.GetUniqueTypeName*
-  commentId: Overload:DiagramModel.Components.Visibility.GetUniqueTypeName
-  name: GetUniqueTypeName
-  nameWithType: Visibility.GetUniqueTypeName
-  fullName: DiagramModel.Components.Visibility.GetUniqueTypeName
+  name: UniqueTypeName
+  nameWithType: Component.UniqueTypeName
+  fullName: DiagramModel.Components.Component.UniqueTypeName
+- uid: DiagramModel.Components.Visibility.UniqueTypeName*
+  commentId: Overload:DiagramModel.Components.Visibility.UniqueTypeName
+  name: UniqueTypeName
+  nameWithType: Visibility.UniqueTypeName
+  fullName: DiagramModel.Components.Visibility.UniqueTypeName
 - uid: DiagramModel.Components.Component.Clone
   commentId: M:DiagramModel.Components.Component.Clone
   parent: DiagramModel.Components.Component

@@ -18,5 +18,11 @@
     name: IVoiceTranscriptor
   - uid: VoiceScript.VoiceTranscription.Language
     name: Language
+  - uid: VoiceScript.VoiceTranscription.LongRunningRecognizer
+    name: LongRunningRecognizer
+  - uid: VoiceScript.VoiceTranscription.ServerResponseProcessor
+    name: ServerResponseProcessor
+  - uid: VoiceScript.VoiceTranscription.StreamRecognizer
+    name: StreamRecognizer
   - uid: VoiceScript.VoiceTranscription.VoiceTranscriptor
     name: VoiceTranscriptor

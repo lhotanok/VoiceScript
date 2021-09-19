@@ -207,9 +207,9 @@ namespace DiagramModel.Commands
         void AddWordToNameParts(string word, List<string> nameParts)
         {
             var lowerWord = word.ToLower();
-            if (language.ValuesToReplace.ContainsKey(lowerWord))
+            if (language.TargetValuesToReplace.ContainsKey(lowerWord))
             {
-                word = language.ValuesToReplace[lowerWord];
+                word = language.TargetValuesToReplace[lowerWord];
             }
 
             nameParts.Add(word);

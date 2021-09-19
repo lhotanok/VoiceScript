@@ -46,7 +46,7 @@ namespace DiagramModel.Commands.LanguageFormats
             { "ancestor", Parent.TypeName }
         };
 
-        static readonly Dictionary<string, string> constantValues = new()
+        static readonly Dictionary<string, string> valuesToReplace = new()
         {
             { "true", "true" },
             { "yes", "true" },
@@ -63,8 +63,6 @@ namespace DiagramModel.Commands.LanguageFormats
         public static string GetCode() => code;
         public override string Code { get => code; }
 
-        public override string ComponentNameFormat { get => "name"; }
-
-        public override Dictionary<string, string> ValueConstants { get => constantValues; }
+        public override Dictionary<string, string> TargetValuesToReplace { get => valuesToReplace; }
     }
 }

@@ -20,7 +20,7 @@ items:
   source:
     id: ClassDiagramCell
     path: ''
-    startLine: 718
+    startLine: 733
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.DiagramDesign
@@ -57,7 +57,7 @@ items:
   source:
     id: MarginHorizontal
     path: ''
-    startLine: 723
+    startLine: 738
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.DiagramDesign
@@ -90,7 +90,7 @@ items:
   source:
     id: MarginVertical
     path: ''
-    startLine: 724
+    startLine: 739
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.DiagramDesign
@@ -123,7 +123,7 @@ items:
   source:
     id: BuildCellText
     path: ''
-    startLine: 725
+    startLine: 740
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.DiagramDesign
@@ -151,7 +151,7 @@ items:
   source:
     id: AddLine
     path: ''
-    startLine: 740
+    startLine: 755
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.DiagramDesign
@@ -180,7 +180,7 @@ items:
   source:
     id: GetMaxLineLength
     path: ''
-    startLine: 745
+    startLine: 760
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.DiagramDesign

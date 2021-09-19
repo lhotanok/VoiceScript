@@ -11,8 +11,8 @@ items:
   - DiagramModel.Components.Diagram.ConvertTextToDiagram(System.String,IList{Command},System.String)
   - DiagramModel.Components.Diagram.GetClasses
   - DiagramModel.Components.Diagram.GetParsedCommands(System.String,System.String)
-  - DiagramModel.Components.Diagram.GetUniqueTypeName
   - DiagramModel.Components.Diagram.TypeName
+  - DiagramModel.Components.Diagram.UniqueTypeName
   langs:
   - csharp
   - vb
@@ -23,7 +23,7 @@ items:
   source:
     id: Diagram
     path: ''
-    startLine: 1000
+    startLine: 1207
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -74,7 +74,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 1004
+    startLine: 1211
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -105,7 +105,7 @@ items:
   source:
     id: TypeName
     path: ''
-    startLine: 1010
+    startLine: 1217
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -138,7 +138,7 @@ items:
   source:
     id: GetClasses
     path: ''
-    startLine: 1012
+    startLine: 1219
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -166,7 +166,7 @@ items:
   source:
     id: GetParsedCommands
     path: ''
-    startLine: 1024
+    startLine: 1231
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -201,7 +201,7 @@ items:
   source:
     id: ConvertTextToDiagram
     path: ''
-    startLine: 1031
+    startLine: 1238
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -223,37 +223,40 @@ items:
   - Public
   fullName.vb: DiagramModel.Components.Diagram.ConvertTextToDiagram(System.String, IList(Of Command), System.String)
   name.vb: ConvertTextToDiagram(String, IList(Of Command), String)
-- uid: DiagramModel.Components.Diagram.GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Diagram.GetUniqueTypeName
-  id: GetUniqueTypeName
+- uid: DiagramModel.Components.Diagram.UniqueTypeName
+  commentId: P:DiagramModel.Components.Diagram.UniqueTypeName
+  id: UniqueTypeName
   parent: DiagramModel.Components.Diagram
   langs:
   - csharp
   - vb
-  name: GetUniqueTypeName()
-  nameWithType: Diagram.GetUniqueTypeName()
-  fullName: DiagramModel.Components.Diagram.GetUniqueTypeName()
-  type: Method
+  name: UniqueTypeName
+  nameWithType: Diagram.UniqueTypeName
+  fullName: DiagramModel.Components.Diagram.UniqueTypeName
+  type: Property
   source:
-    id: GetUniqueTypeName
+    id: UniqueTypeName
     path: ''
-    startLine: 1041
+    startLine: 1248
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
   syntax:
-    content: public override string GetUniqueTypeName()
+    content: public override string UniqueTypeName { get; }
+    parameters: []
     return:
       type: System.String
-    content.vb: Public Overrides Function GetUniqueTypeName As String
-  overridden: DiagramModel.Components.Component.GetUniqueTypeName
-  overload: DiagramModel.Components.Diagram.GetUniqueTypeName*
+    content.vb: Public Overrides ReadOnly Property UniqueTypeName As String
+  overridden: DiagramModel.Components.Component.UniqueTypeName
+  overload: DiagramModel.Components.Diagram.UniqueTypeName*
   modifiers.csharp:
   - public
   - override
+  - get
   modifiers.vb:
   - Public
   - Overrides
+  - ReadOnly
 - uid: DiagramModel.Components.Diagram.Clear
   commentId: M:DiagramModel.Components.Diagram.Clear
   id: Clear
@@ -268,7 +271,7 @@ items:
   source:
     id: Clear
     path: ''
-    startLine: 1043
+    startLine: 1250
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -294,7 +297,7 @@ items:
   source:
     id: Clone
     path: ''
-    startLine: 1081
+    startLine: 1288
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -1081,39 +1084,17 @@ references:
   name: ConvertTextToDiagram
   nameWithType: Diagram.ConvertTextToDiagram
   fullName: DiagramModel.Components.Diagram.ConvertTextToDiagram
-- uid: DiagramModel.Components.Component.GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Component.GetUniqueTypeName
+- uid: DiagramModel.Components.Component.UniqueTypeName
+  commentId: P:DiagramModel.Components.Component.UniqueTypeName
   parent: DiagramModel.Components.Component
-  name: GetUniqueTypeName()
-  nameWithType: Component.GetUniqueTypeName()
-  fullName: DiagramModel.Components.Component.GetUniqueTypeName()
-  spec.csharp:
-  - uid: DiagramModel.Components.Component.GetUniqueTypeName
-    name: GetUniqueTypeName
-    nameWithType: Component.GetUniqueTypeName
-    fullName: DiagramModel.Components.Component.GetUniqueTypeName
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DiagramModel.Components.Component.GetUniqueTypeName
-    name: GetUniqueTypeName
-    nameWithType: Component.GetUniqueTypeName
-    fullName: DiagramModel.Components.Component.GetUniqueTypeName
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: DiagramModel.Components.Diagram.GetUniqueTypeName*
-  commentId: Overload:DiagramModel.Components.Diagram.GetUniqueTypeName
-  name: GetUniqueTypeName
-  nameWithType: Diagram.GetUniqueTypeName
-  fullName: DiagramModel.Components.Diagram.GetUniqueTypeName
+  name: UniqueTypeName
+  nameWithType: Component.UniqueTypeName
+  fullName: DiagramModel.Components.Component.UniqueTypeName
+- uid: DiagramModel.Components.Diagram.UniqueTypeName*
+  commentId: Overload:DiagramModel.Components.Diagram.UniqueTypeName
+  name: UniqueTypeName
+  nameWithType: Diagram.UniqueTypeName
+  fullName: DiagramModel.Components.Diagram.UniqueTypeName
 - uid: DiagramModel.Components.Diagram.Clear*
   commentId: Overload:DiagramModel.Components.Diagram.Clear
   name: Clear

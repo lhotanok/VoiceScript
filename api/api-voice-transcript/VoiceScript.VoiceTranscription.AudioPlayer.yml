@@ -17,7 +17,7 @@ items:
   source:
     id: AudioPlayer
     path: ''
-    startLine: 52
+    startLine: 69
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
@@ -58,21 +58,17 @@ items:
   source:
     id: Play
     path: ''
-    startLine: 63
+    startLine: 75
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription
-  summary: "\nStart audio playing from the given file.\n"
-  example: []
   syntax:
     content: public void Play(string audioFilename, Action PlaybackStoppedCallback = null)
     parameters:
     - id: audioFilename
       type: System.String
-      description: ''
     - id: PlaybackStoppedCallback
       type: System.Action
-      description: ''
     content.vb: Public Sub Play(audioFilename As String, PlaybackStoppedCallback As Action = Nothing)
   overload: VoiceScript.VoiceTranscription.AudioPlayer.Play*
   implements:
@@ -95,7 +91,7 @@ items:
   source:
     id: Stop
     path: ''
-    startLine: 74
+    startLine: 86
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript.VoiceTranscription

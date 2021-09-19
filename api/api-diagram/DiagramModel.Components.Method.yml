@@ -12,9 +12,9 @@ items:
   - DiagramModel.Components.Method.GetParameters
   - DiagramModel.Components.Method.GetRequiredParameters
   - DiagramModel.Components.Method.GetReturnType
-  - DiagramModel.Components.Method.GetUniqueTypeName
   - DiagramModel.Components.Method.GetVisibility
   - DiagramModel.Components.Method.TypeName
+  - DiagramModel.Components.Method.UniqueTypeName
   langs:
   - csharp
   - vb
@@ -25,7 +25,7 @@ items:
   source:
     id: Method
     path: ''
-    startLine: 1189
+    startLine: 1396
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -78,7 +78,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 1192
+    startLine: 1399
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -109,7 +109,7 @@ items:
   source:
     id: TypeName
     path: ''
-    startLine: 1193
+    startLine: 1400
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -142,7 +142,7 @@ items:
   source:
     id: GetVisibility
     path: ''
-    startLine: 1199
+    startLine: 1406
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -175,7 +175,7 @@ items:
   source:
     id: GetReturnType
     path: ''
-    startLine: 1205
+    startLine: 1412
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -206,7 +206,7 @@ items:
   source:
     id: GetParameters
     path: ''
-    startLine: 1206
+    startLine: 1413
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -234,7 +234,7 @@ items:
   source:
     id: GetRequiredParameters
     path: ''
-    startLine: 1215
+    startLine: 1422
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -262,7 +262,7 @@ items:
   source:
     id: GetOptionalParameters
     path: ''
-    startLine: 1218
+    startLine: 1425
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -276,37 +276,40 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: DiagramModel.Components.Method.GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Method.GetUniqueTypeName
-  id: GetUniqueTypeName
+- uid: DiagramModel.Components.Method.UniqueTypeName
+  commentId: P:DiagramModel.Components.Method.UniqueTypeName
+  id: UniqueTypeName
   parent: DiagramModel.Components.Method
   langs:
   - csharp
   - vb
-  name: GetUniqueTypeName()
-  nameWithType: Method.GetUniqueTypeName()
-  fullName: DiagramModel.Components.Method.GetUniqueTypeName()
-  type: Method
+  name: UniqueTypeName
+  nameWithType: Method.UniqueTypeName
+  fullName: DiagramModel.Components.Method.UniqueTypeName
+  type: Property
   source:
-    id: GetUniqueTypeName
+    id: UniqueTypeName
     path: ''
-    startLine: 1221
+    startLine: 1428
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
   syntax:
-    content: public override string GetUniqueTypeName()
+    content: public override string UniqueTypeName { get; }
+    parameters: []
     return:
       type: System.String
-    content.vb: Public Overrides Function GetUniqueTypeName As String
-  overridden: DiagramModel.Components.Component.GetUniqueTypeName
-  overload: DiagramModel.Components.Method.GetUniqueTypeName*
+    content.vb: Public Overrides ReadOnly Property UniqueTypeName As String
+  overridden: DiagramModel.Components.Component.UniqueTypeName
+  overload: DiagramModel.Components.Method.UniqueTypeName*
   modifiers.csharp:
   - public
   - override
+  - get
   modifiers.vb:
   - Public
   - Overrides
+  - ReadOnly
 - uid: DiagramModel.Components.Method.AddChild(DiagramModel.Components.Component)
   commentId: M:DiagramModel.Components.Method.AddChild(DiagramModel.Components.Component)
   id: AddChild(DiagramModel.Components.Component)
@@ -321,7 +324,7 @@ items:
   source:
     id: AddChild
     path: ''
-    startLine: 1223
+    startLine: 1430
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -353,7 +356,7 @@ items:
   source:
     id: Clone
     path: ''
-    startLine: 1244
+    startLine: 1451
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -1079,39 +1082,17 @@ references:
   name: GetOptionalParameters
   nameWithType: Method.GetOptionalParameters
   fullName: DiagramModel.Components.Method.GetOptionalParameters
-- uid: DiagramModel.Components.Component.GetUniqueTypeName
-  commentId: M:DiagramModel.Components.Component.GetUniqueTypeName
+- uid: DiagramModel.Components.Component.UniqueTypeName
+  commentId: P:DiagramModel.Components.Component.UniqueTypeName
   parent: DiagramModel.Components.Component
-  name: GetUniqueTypeName()
-  nameWithType: Component.GetUniqueTypeName()
-  fullName: DiagramModel.Components.Component.GetUniqueTypeName()
-  spec.csharp:
-  - uid: DiagramModel.Components.Component.GetUniqueTypeName
-    name: GetUniqueTypeName
-    nameWithType: Component.GetUniqueTypeName
-    fullName: DiagramModel.Components.Component.GetUniqueTypeName
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: DiagramModel.Components.Component.GetUniqueTypeName
-    name: GetUniqueTypeName
-    nameWithType: Component.GetUniqueTypeName
-    fullName: DiagramModel.Components.Component.GetUniqueTypeName
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: DiagramModel.Components.Method.GetUniqueTypeName*
-  commentId: Overload:DiagramModel.Components.Method.GetUniqueTypeName
-  name: GetUniqueTypeName
-  nameWithType: Method.GetUniqueTypeName
-  fullName: DiagramModel.Components.Method.GetUniqueTypeName
+  name: UniqueTypeName
+  nameWithType: Component.UniqueTypeName
+  fullName: DiagramModel.Components.Component.UniqueTypeName
+- uid: DiagramModel.Components.Method.UniqueTypeName*
+  commentId: Overload:DiagramModel.Components.Method.UniqueTypeName
+  name: UniqueTypeName
+  nameWithType: Method.UniqueTypeName
+  fullName: DiagramModel.Components.Method.UniqueTypeName
 - uid: DiagramModel.Components.Component.AddChild(DiagramModel.Components.Component)
   commentId: M:DiagramModel.Components.Component.AddChild(DiagramModel.Components.Component)
   parent: DiagramModel.Components.Component

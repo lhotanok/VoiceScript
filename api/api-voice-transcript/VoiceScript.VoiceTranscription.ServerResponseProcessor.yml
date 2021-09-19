@@ -1,0 +1,650 @@
+### YamlMime:ManagedReference
+items:
+- uid: VoiceScript.VoiceTranscription.ServerResponseProcessor
+  commentId: T:VoiceScript.VoiceTranscription.ServerResponseProcessor
+  id: ServerResponseProcessor
+  parent: VoiceScript.VoiceTranscription
+  children:
+  - VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessSpeechRecognitionTranscript(RepeatedField{SpeechRecognitionResult},System.Action{System.String})
+  - VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessStreamRecognitionTranscript(RepeatedField{StreamingRecognitionResult},System.Action{System.String})
+  langs:
+  - csharp
+  - vb
+  name: ServerResponseProcessor
+  nameWithType: ServerResponseProcessor
+  fullName: VoiceScript.VoiceTranscription.ServerResponseProcessor
+  type: Class
+  source:
+    id: ServerResponseProcessor
+    path: ''
+    startLine: 471
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  summary: "\nHandles recognition results in Google Cloud Speech format.\n"
+  example: []
+  syntax:
+    content: public static class ServerResponseProcessor
+    content.vb: Public Module ServerResponseProcessor
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessSpeechRecognitionTranscript(RepeatedField{SpeechRecognitionResult},System.Action{System.String})
+  commentId: M:VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessSpeechRecognitionTranscript(RepeatedField{SpeechRecognitionResult},System.Action{System.String})
+  id: ProcessSpeechRecognitionTranscript(RepeatedField{SpeechRecognitionResult},System.Action{System.String})
+  parent: VoiceScript.VoiceTranscription.ServerResponseProcessor
+  langs:
+  - csharp
+  - vb
+  name: ProcessSpeechRecognitionTranscript(RepeatedField<SpeechRecognitionResult>, Action<String>)
+  nameWithType: ServerResponseProcessor.ProcessSpeechRecognitionTranscript(RepeatedField<SpeechRecognitionResult>, Action<String>)
+  fullName: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessSpeechRecognitionTranscript(RepeatedField<SpeechRecognitionResult>, System.Action<System.String>)
+  type: Method
+  source:
+    id: ProcessSpeechRecognitionTranscript
+    path: ''
+    startLine: 482
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  summary: "\nTriggers provided callback with each <see cref=\"!:SpeechRecognitionResult\"></see>.\nInspects result alternatives <see cref=\"!:SpeechRecognitionResult.Alternatives\"></see>\nand binds them with callback.\n"
+  example: []
+  syntax:
+    content: public static void ProcessSpeechRecognitionTranscript(RepeatedField<SpeechRecognitionResult> results, Action<string> callback)
+    parameters:
+    - id: results
+      type: RepeatedField{SpeechRecognitionResult}
+      description: Collection of speech recognition results with transcription details.
+    - id: callback
+      type: System.Action{System.String}
+      description: >-
+        Function to be called with the individual transcription parts
+
+        from <see cref="!:SpeechRecognitionAlternative.Transcript"></see>.
+
+        Typical use case is for writing transcripted words to the stream.
+    content.vb: Public Shared Sub ProcessSpeechRecognitionTranscript(results As RepeatedField(Of SpeechRecognitionResult), callback As Action(Of String))
+  overload: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessSpeechRecognitionTranscript*
+  nameWithType.vb: ServerResponseProcessor.ProcessSpeechRecognitionTranscript(RepeatedField(Of SpeechRecognitionResult), Action(Of String))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessSpeechRecognitionTranscript(RepeatedField(Of SpeechRecognitionResult), System.Action(Of System.String))
+  name.vb: ProcessSpeechRecognitionTranscript(RepeatedField(Of SpeechRecognitionResult), Action(Of String))
+- uid: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessStreamRecognitionTranscript(RepeatedField{StreamingRecognitionResult},System.Action{System.String})
+  commentId: M:VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessStreamRecognitionTranscript(RepeatedField{StreamingRecognitionResult},System.Action{System.String})
+  id: ProcessStreamRecognitionTranscript(RepeatedField{StreamingRecognitionResult},System.Action{System.String})
+  parent: VoiceScript.VoiceTranscription.ServerResponseProcessor
+  langs:
+  - csharp
+  - vb
+  name: ProcessStreamRecognitionTranscript(RepeatedField<StreamingRecognitionResult>, Action<String>)
+  nameWithType: ServerResponseProcessor.ProcessStreamRecognitionTranscript(RepeatedField<StreamingRecognitionResult>, Action<String>)
+  fullName: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessStreamRecognitionTranscript(RepeatedField<StreamingRecognitionResult>, System.Action<System.String>)
+  type: Method
+  source:
+    id: ProcessStreamRecognitionTranscript
+    path: ''
+    startLine: 499
+  assemblies:
+  - cs.temp.dll
+  namespace: VoiceScript.VoiceTranscription
+  summary: "\nTriggers provided callback with each <see cref=\"!:StreamingRecognitionResult\"></see>.\nInspects result alternatives <see cref=\"!:StreamingRecognitionResult.Alternatives\"></see>\nand binds them with callback.\n"
+  example: []
+  syntax:
+    content: public static void ProcessStreamRecognitionTranscript(RepeatedField<StreamingRecognitionResult> results, Action<string> callback)
+    parameters:
+    - id: results
+      type: RepeatedField{StreamingRecognitionResult}
+      description: Collection of speech recognition results with transcription details.
+    - id: callback
+      type: System.Action{System.String}
+      description: >-
+        Function to be called with the individual transcription parts
+
+        from <see cref="!:SpeechRecognitionAlternative.Transcript"></see>.
+
+        Typical use case is for writing transcripted words to the stream.
+    content.vb: Public Shared Sub ProcessStreamRecognitionTranscript(results As RepeatedField(Of StreamingRecognitionResult), callback As Action(Of String))
+  overload: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessStreamRecognitionTranscript*
+  nameWithType.vb: ServerResponseProcessor.ProcessStreamRecognitionTranscript(RepeatedField(Of StreamingRecognitionResult), Action(Of String))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessStreamRecognitionTranscript(RepeatedField(Of StreamingRecognitionResult), System.Action(Of System.String))
+  name.vb: ProcessStreamRecognitionTranscript(RepeatedField(Of StreamingRecognitionResult), Action(Of String))
+references:
+- uid: VoiceScript.VoiceTranscription
+  commentId: N:VoiceScript.VoiceTranscription
+  name: VoiceScript.VoiceTranscription
+  nameWithType: VoiceScript.VoiceTranscription
+  fullName: VoiceScript.VoiceTranscription
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessSpeechRecognitionTranscript*
+  commentId: Overload:VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessSpeechRecognitionTranscript
+  name: ProcessSpeechRecognitionTranscript
+  nameWithType: ServerResponseProcessor.ProcessSpeechRecognitionTranscript
+  fullName: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessSpeechRecognitionTranscript
+- uid: RepeatedField{SpeechRecognitionResult}
+  commentId: '!:RepeatedField{SpeechRecognitionResult}'
+  definition: RepeatedField`1
+  name: RepeatedField<SpeechRecognitionResult>
+  nameWithType: RepeatedField<SpeechRecognitionResult>
+  fullName: RepeatedField<SpeechRecognitionResult>
+  nameWithType.vb: RepeatedField(Of SpeechRecognitionResult)
+  fullName.vb: RepeatedField(Of SpeechRecognitionResult)
+  name.vb: RepeatedField(Of SpeechRecognitionResult)
+  spec.csharp:
+  - uid: RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SpeechRecognitionResult
+    name: SpeechRecognitionResult
+    nameWithType: SpeechRecognitionResult
+    fullName: SpeechRecognitionResult
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SpeechRecognitionResult
+    name: SpeechRecognitionResult
+    nameWithType: SpeechRecognitionResult
+    fullName: SpeechRecognitionResult
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action{System.String}
+  commentId: T:System.Action{System.String}
+  parent: System
+  definition: System.Action`1
+  name: Action<String>
+  nameWithType: Action<String>
+  fullName: System.Action<System.String>
+  nameWithType.vb: Action(Of String)
+  fullName.vb: System.Action(Of System.String)
+  name.vb: Action(Of String)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RepeatedField`1
+  isExternal: true
+  name: RepeatedField<>
+  nameWithType: RepeatedField<>
+  fullName: RepeatedField<>
+  nameWithType.vb: RepeatedField(Of )
+  fullName.vb: RepeatedField(Of )
+  name.vb: RepeatedField(Of )
+  spec.csharp:
+  - uid: RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessStreamRecognitionTranscript*
+  commentId: Overload:VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessStreamRecognitionTranscript
+  name: ProcessStreamRecognitionTranscript
+  nameWithType: ServerResponseProcessor.ProcessStreamRecognitionTranscript
+  fullName: VoiceScript.VoiceTranscription.ServerResponseProcessor.ProcessStreamRecognitionTranscript
+- uid: RepeatedField{StreamingRecognitionResult}
+  commentId: '!:RepeatedField{StreamingRecognitionResult}'
+  definition: RepeatedField`1
+  name: RepeatedField<StreamingRecognitionResult>
+  nameWithType: RepeatedField<StreamingRecognitionResult>
+  fullName: RepeatedField<StreamingRecognitionResult>
+  nameWithType.vb: RepeatedField(Of StreamingRecognitionResult)
+  fullName.vb: RepeatedField(Of StreamingRecognitionResult)
+  name.vb: RepeatedField(Of StreamingRecognitionResult)
+  spec.csharp:
+  - uid: RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: StreamingRecognitionResult
+    name: StreamingRecognitionResult
+    nameWithType: StreamingRecognitionResult
+    fullName: StreamingRecognitionResult
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: StreamingRecognitionResult
+    name: StreamingRecognitionResult
+    nameWithType: StreamingRecognitionResult
+    fullName: StreamingRecognitionResult
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

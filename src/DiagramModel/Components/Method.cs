@@ -35,7 +35,7 @@ namespace DiagramModel.Components
         public IReadOnlyList<Parameter> GetOptionalParameters()
             => GetFilteredParameters(parameter => !parameter.GetRequireInfo().Value);
 
-        public override string GetUniqueTypeName() => TypeName;
+        public override string UniqueTypeName { get => TypeName; }
 
         public override void AddChild(Component child)
         {

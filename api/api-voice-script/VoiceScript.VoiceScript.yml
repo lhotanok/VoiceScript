@@ -17,10 +17,12 @@ items:
   source:
     id: VoiceScript
     path: ''
-    startLine: 362
+    startLine: 371
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript
+  summary: "\nMain application window.\nManages individual components and delegates actions\nbased on user&apos;s input.\n"
+  example: []
   syntax:
     content: 'public class VoiceScript : Form'
     content.vb: >-
@@ -48,10 +50,12 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 70
+    startLine: 78
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript
+  summary: "\nInitializes individual components and language settings.\n"
+  example: []
   syntax:
     content: public VoiceScript()
     content.vb: Public Sub New
@@ -74,7 +78,7 @@ items:
   source:
     id: Dispose
     path: ''
-    startLine: 373
+    startLine: 382
   assemblies:
   - cs.temp.dll
   namespace: VoiceScript

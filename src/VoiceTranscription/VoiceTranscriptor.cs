@@ -42,7 +42,7 @@ namespace VoiceScript.VoiceTranscription
 
         public void DoRealTimeTranscription(Action<string> callback)
         {
-            streamRecognizer.StreamingRecognizeAsync(ProcessServerStreamResponseTask, callback);
+            streamRecognizer.StreamingRecognizeAsync(callback);
         }
 
         public Task CreateTranscriptionTask(string filename, Action<string> callback)
@@ -127,25 +127,6 @@ namespace VoiceScript.VoiceTranscription
 
             ServerResponseProcessor.ProcessSpeechRecognitionTranscript(response.Results,
                 transcript => callback(transcript));
-        }
-
-        /// <summary>
-        /// Task for server responses processing.
-        /// </summary>
-        /// <param name="recognizeStream"></param>
-        /// <param name="callback"></param>
-        /// <returns></returns>
-        Task ProcessServerStreamResponseTask(SpeechClient.StreamingRecognizeStream recognizeStream, Action<string> callback)
-        {
-            return Task.Run(async () =>
-            {
-                var responseStream = recognizeStream.GetResponseStream();
-
-                while (await responseStream.MoveNextAsync())
-                {
-                    ServerResponseProcessor.ProcessStreamRecognitionTranscript(responseStream.Current.Results, callback);
-                }
-            });
         }
     }
 }
