@@ -23,7 +23,7 @@ items:
   source:
     id: Field
     path: ''
-    startLine: 1313
+    startLine: 1381
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -75,7 +75,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 1317
+    startLine: 1385
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -106,7 +106,7 @@ items:
   source:
     id: TypeName
     path: ''
-    startLine: 1322
+    startLine: 1390
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -139,7 +139,7 @@ items:
   source:
     id: GetVisibility
     path: ''
-    startLine: 1328
+    startLine: 1396
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -172,7 +172,7 @@ items:
   source:
     id: GetFieldType
     path: ''
-    startLine: 1334
+    startLine: 1402
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -203,7 +203,7 @@ items:
   source:
     id: UniqueTypeName
     path: ''
-    startLine: 1336
+    startLine: 1404
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -237,7 +237,7 @@ items:
   source:
     id: AddChild
     path: ''
-    startLine: 1338
+    startLine: 1406
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -269,7 +269,7 @@ items:
   source:
     id: Clone
     path: ''
-    startLine: 1345
+    startLine: 1413
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -300,7 +300,7 @@ items:
   source:
     id: Name
     path: ''
-    startLine: 1353
+    startLine: 1421
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components

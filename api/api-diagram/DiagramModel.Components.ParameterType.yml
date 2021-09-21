@@ -17,7 +17,7 @@ items:
   source:
     id: ParameterType
     path: ''
-    startLine: 1508
+    startLine: 1576
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -71,7 +71,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 1510
+    startLine: 1578
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -102,7 +102,7 @@ items:
   source:
     id: Clone
     path: ''
-    startLine: 1511
+    startLine: 1579
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components

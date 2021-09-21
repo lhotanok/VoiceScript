@@ -108,6 +108,11 @@ namespace DiagramModel.Components
             return null;
         }
 
+        /// <summary>
+        /// Filters children components that match the given type.
+        /// </summary>
+        /// <typeparam name="T">Component type to filter.</typeparam>
+        /// <returns>Collection of child components of the provided type.</returns>
         protected List<T> GetTypeFilteredChildren<T>() where T: Component
         {
             var filteredChildren = new List<T>();
@@ -123,6 +128,14 @@ namespace DiagramModel.Components
             return filteredChildren;
         }
 
+        /// <summary>
+        /// Gets child component matching the provided type.
+        /// Relies on child being unique for this component, 
+        /// such as <see cref="Visibility"/> or <see cref="Type"/>.
+        /// </summary>
+        /// <typeparam name="T">Child component type.</typeparam>
+        /// <returns>Child component or null if no component of the 
+        /// matching type exists.</returns>
         protected T GetUniqueChild<T>() where T : Component
         {
             var filteredChildren = GetTypeFilteredChildren<T>();
@@ -136,6 +149,11 @@ namespace DiagramModel.Components
             }
         }
 
+        /// <summary>
+        /// Inserts deep copy of this component's children
+        /// into parent component which is provided as a parameter. 
+        /// </summary>
+        /// <param name="parent"></param>
         protected void CloneChildrenInto(Component parent)
         {
             foreach (var child in children)

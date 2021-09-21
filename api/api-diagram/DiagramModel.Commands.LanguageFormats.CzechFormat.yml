@@ -22,7 +22,7 @@ items:
   source:
     id: CzechFormat
     path: ''
-    startLine: 705
+    startLine: 737
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -64,7 +64,7 @@ items:
   source:
     id: CommandFormats
     path: ''
-    startLine: 767
+    startLine: 799
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -98,7 +98,7 @@ items:
   source:
     id: ComponentNames
     path: ''
-    startLine: 768
+    startLine: 800
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -132,7 +132,7 @@ items:
   source:
     id: DelimiterFormat
     path: ''
-    startLine: 769
+    startLine: 801
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -166,7 +166,7 @@ items:
   source:
     id: GetCode
     path: ''
-    startLine: 770
+    startLine: 802
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -196,7 +196,7 @@ items:
   source:
     id: Code
     path: ''
-    startLine: 771
+    startLine: 803
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -230,7 +230,7 @@ items:
   source:
     id: ComponentNameFormat
     path: ''
-    startLine: 772
+    startLine: 804
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats
@@ -264,7 +264,7 @@ items:
   source:
     id: TargetValuesToReplace
     path: ''
-    startLine: 774
+    startLine: 806
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands.LanguageFormats

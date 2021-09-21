@@ -23,7 +23,7 @@ items:
   source:
     id: Diagram
     path: ''
-    startLine: 1207
+    startLine: 1275
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -74,7 +74,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 1211
+    startLine: 1279
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -105,7 +105,7 @@ items:
   source:
     id: TypeName
     path: ''
-    startLine: 1217
+    startLine: 1285
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -138,7 +138,7 @@ items:
   source:
     id: GetClasses
     path: ''
-    startLine: 1219
+    startLine: 1287
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -166,7 +166,7 @@ items:
   source:
     id: GetParsedCommands
     path: ''
-    startLine: 1231
+    startLine: 1299
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -201,7 +201,7 @@ items:
   source:
     id: ConvertTextToDiagram
     path: ''
-    startLine: 1238
+    startLine: 1306
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -237,7 +237,7 @@ items:
   source:
     id: UniqueTypeName
     path: ''
-    startLine: 1248
+    startLine: 1316
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -271,7 +271,7 @@ items:
   source:
     id: Clear
     path: ''
-    startLine: 1250
+    startLine: 1318
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -297,7 +297,7 @@ items:
   source:
     id: Clone
     path: ''
-    startLine: 1288
+    startLine: 1356
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components

@@ -19,10 +19,12 @@ items:
   source:
     id: CommandParser
     path: ''
-    startLine: 293
+    startLine: 308
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nManages parsing of text commands into the corresponding typed instances.\n"
+  example: []
   syntax:
     content: public class CommandParser
     content.vb: Public Class CommandParser
@@ -56,7 +58,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 300
+    startLine: 315
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -85,17 +87,21 @@ items:
   source:
     id: GetParsedCommands
     path: ''
-    startLine: 321
+    startLine: 341
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nParses all commands from the given input text and returns them in the list.\n"
+  example: []
   syntax:
     content: public IList<Command> GetParsedCommands(string inputText)
     parameters:
     - id: inputText
       type: System.String
+      description: ''
     return:
       type: IList{DiagramModel.Commands.Command}
+      description: ''
     content.vb: Public Function GetParsedCommands(inputText As String) As IList(Of Command)
   overload: DiagramModel.Commands.CommandParser.GetParsedCommands*
   modifiers.csharp:
@@ -116,17 +122,21 @@ items:
   source:
     id: ParseCamelCase
     path: ''
-    startLine: 349
+    startLine: 374
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nParses word from PascalCase format into camelCase.\n"
+  example: []
   syntax:
     content: public static string ParseCamelCase(string pascalCaseWord)
     parameters:
     - id: pascalCaseWord
       type: System.String
+      description: Word in PascalCae format.
     return:
       type: System.String
+      description: Word parsed into camelCase format.
     content.vb: Public Shared Function ParseCamelCase(pascalCaseWord As String) As String
   overload: DiagramModel.Commands.CommandParser.ParseCamelCase*
   modifiers.csharp:
@@ -149,17 +159,24 @@ items:
   source:
     id: ParsePascalCase
     path: ''
-    startLine: 359
+    startLine: 391
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nParses PascalCase word from multiple words.\nJoins word fragments together with respect to PascalCase format.\n"
+  example: []
   syntax:
     content: public static string ParsePascalCase(IEnumerable<string> wordFragments)
     parameters:
     - id: wordFragments
       type: IEnumerable{System.String}
+      description: >-
+        Individual word parts that should be joined
+
+        to created one PascalCase word.
     return:
       type: System.String
+      description: Formatted PascalCase word.
     content.vb: Public Shared Function ParsePascalCase(wordFragments As IEnumerable(Of String)) As String
   overload: DiagramModel.Commands.CommandParser.ParsePascalCase*
   nameWithType.vb: CommandParser.ParsePascalCase(IEnumerable(Of String))

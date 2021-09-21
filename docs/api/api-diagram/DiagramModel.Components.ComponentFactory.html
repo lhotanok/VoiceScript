@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class CommandParser
+    <title>Class ComponentFactory
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class CommandParser
+    <meta name="title" content="Class ComponentFactory
    ">
     <meta name="generator" content="docfx 2.58.4.0">
     
@@ -68,18 +68,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DiagramModel.Commands.CommandParser">
+            <article class="content wrap" id="_content" data-uid="DiagramModel.Components.ComponentFactory">
   
   
-  <h1 id="DiagramModel_Commands_CommandParser" data-uid="DiagramModel.Commands.CommandParser" class="text-break">Class CommandParser
+  <h1 id="DiagramModel_Components_ComponentFactory" data-uid="DiagramModel.Components.ComponentFactory" class="text-break">Class ComponentFactory
   </h1>
-  <div class="markdown level0 summary"><p>Manages parsing of text commands into the corresponding typed instances.</p>
+  <div class="markdown level0 summary"><p>Provides interface for creating components
+based on their unique typename. To be used with add command.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">CommandParser</span></div>
+    <div class="level1"><span class="xref">ComponentFactory</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -105,53 +106,24 @@
       <span class="xref">System.Object.MemberwiseClone()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="DiagramModel.Commands.html">DiagramModel.Commands</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DiagramModel.Components.html">DiagramModel.Components</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="DiagramModel_Commands_CommandParser_syntax">Syntax</h5>
+  <h5 id="DiagramModel_Components_ComponentFactory_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CommandParser</code></pre>
+    <pre><code class="lang-csharp hljs">public class ComponentFactory</code></pre>
   </div>
-  <h3 id="constructors">Constructors
-  </h3>
-  
-  
-  <a id="DiagramModel_Commands_CommandParser__ctor_" data-uid="DiagramModel.Commands.CommandParser.#ctor*"></a>
-  <h4 id="DiagramModel_Commands_CommandParser__ctor_System_String_" data-uid="DiagramModel.Commands.CommandParser.#ctor(System.String)">CommandParser(String)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CommandParser(string languageCode = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">languageCode</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="methods">Methods
   </h3>
   
   
-  <a id="DiagramModel_Commands_CommandParser_GetParsedCommands_" data-uid="DiagramModel.Commands.CommandParser.GetParsedCommands*"></a>
-  <h4 id="DiagramModel_Commands_CommandParser_GetParsedCommands_System_String_" data-uid="DiagramModel.Commands.CommandParser.GetParsedCommands(System.String)">GetParsedCommands(String)</h4>
-  <div class="markdown level1 summary"><p>Parses all commands from the given input text and returns them in the list.</p>
+  <a id="DiagramModel_Components_ComponentFactory_CanCreateComponent_" data-uid="DiagramModel.Components.ComponentFactory.CanCreateComponent*"></a>
+  <h4 id="DiagramModel_Components_ComponentFactory_CanCreateComponent_System_String_" data-uid="DiagramModel.Components.ComponentFactory.CanCreateComponent(System.String)">CanCreateComponent(String)</h4>
+  <div class="markdown level1 summary"><p>Checks whether component with the given typename can be created.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IList&lt;Command&gt; GetParsedCommands(string inputText)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool CanCreateComponent(string type)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -165,115 +137,83 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">inputText</span></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>Component's default and unique typename.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>The result of the check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="DiagramModel_Components_ComponentFactory_CreateComponent_" data-uid="DiagramModel.Components.ComponentFactory.CreateComponent*"></a>
+  <h4 id="DiagramModel_Components_ComponentFactory_CreateComponent_System_String_System_String_DiagramModel_Components_Component_" data-uid="DiagramModel.Components.ComponentFactory.CreateComponent(System.String,System.String,DiagramModel.Components.Component)">CreateComponent(String, String, Component)</h4>
+  <div class="markdown level1 summary"><p>Creates new component from the provided typename, name and parent component.
+Doesn't do any validation checks as <a class="xref" href="DiagramModel.Components.ComponentFactory.html#DiagramModel_Components_ComponentFactory_CanCreateComponent_System_String_">CanCreateComponent(String)</a>
+is designed for these.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Component CreateComponent(string type, string name, Component parent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>Component's default and unique typename.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Component's name that should be passed in the constructor.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DiagramModel.Components.Component.html">Component</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Parent component instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DiagramModel.Components.Component.html">Component</a></td>
         <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IList</span>&lt;<a class="xref" href="DiagramModel.Commands.Command.html">Command</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="DiagramModel_Commands_CommandParser_ParseCamelCase_" data-uid="DiagramModel.Commands.CommandParser.ParseCamelCase*"></a>
-  <h4 id="DiagramModel_Commands_CommandParser_ParseCamelCase_System_String_" data-uid="DiagramModel.Commands.CommandParser.ParseCamelCase(System.String)">ParseCamelCase(String)</h4>
-  <div class="markdown level1 summary"><p>Parses word from PascalCase format into camelCase.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ParseCamelCase(string pascalCaseWord)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">pascalCaseWord</span></td>
-        <td><p>Word in PascalCae format.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><p>Word parsed into camelCase format.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="DiagramModel_Commands_CommandParser_ParsePascalCase_" data-uid="DiagramModel.Commands.CommandParser.ParsePascalCase*"></a>
-  <h4 id="DiagramModel_Commands_CommandParser_ParsePascalCase_IEnumerable_System_String__" data-uid="DiagramModel.Commands.CommandParser.ParsePascalCase(IEnumerable{System.String})">ParsePascalCase(IEnumerable&lt;String&gt;)</h4>
-  <div class="markdown level1 summary"><p>Parses PascalCase word from multiple words.
-Joins word fragments together with respect to PascalCase format.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ParsePascalCase(IEnumerable&lt;string&gt; wordFragments)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">wordFragments</span></td>
-        <td><p>Individual word parts that should be joined
-to created one PascalCase word.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><p>Formatted PascalCase word.</p>
-</td>
       </tr>
     </tbody>
   </table>

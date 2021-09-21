@@ -1,32 +1,31 @@
 ### YamlMime:ManagedReference
 items:
-- uid: DiagramModel.Commands.CommandExecutionContext
-  commentId: T:DiagramModel.Commands.CommandExecutionContext
-  id: CommandExecutionContext
-  parent: DiagramModel.Commands
+- uid: DiagramModel.Components.ComponentFactory
+  commentId: T:DiagramModel.Components.ComponentFactory
+  id: ComponentFactory
+  parent: DiagramModel.Components
   children:
-  - DiagramModel.Commands.CommandExecutionContext.CommandExecuted
-  - DiagramModel.Commands.CommandExecutionContext.CurrentComponent
-  - DiagramModel.Commands.CommandExecutionContext.TargetComponent
+  - DiagramModel.Components.ComponentFactory.CanCreateComponent(System.String)
+  - DiagramModel.Components.ComponentFactory.CreateComponent(System.String,System.String,DiagramModel.Components.Component)
   langs:
   - csharp
   - vb
-  name: CommandExecutionContext
-  nameWithType: CommandExecutionContext
-  fullName: DiagramModel.Commands.CommandExecutionContext
+  name: ComponentFactory
+  nameWithType: ComponentFactory
+  fullName: DiagramModel.Components.ComponentFactory
   type: Class
   source:
-    id: CommandExecutionContext
+    id: ComponentFactory
     path: ''
-    startLine: 169
+    startLine: 1232
   assemblies:
   - cs.temp.dll
-  namespace: DiagramModel.Commands
-  summary: "\nContext for command execution. Contains info about\nstart component, target component and current command\nexecution result.\n"
+  namespace: DiagramModel.Components
+  summary: "\nProvides interface for creating components\nbased on their unique typename. To be used with add command.\n"
   example: []
   syntax:
-    content: public class CommandExecutionContext
-    content.vb: Public Class CommandExecutionContext
+    content: public class ComponentFactory
+    content.vb: Public Class ComponentFactory
   inheritance:
   - System.Object
   inheritedMembers:
@@ -43,111 +42,92 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: DiagramModel.Commands.CommandExecutionContext.CurrentComponent
-  commentId: P:DiagramModel.Commands.CommandExecutionContext.CurrentComponent
-  id: CurrentComponent
-  parent: DiagramModel.Commands.CommandExecutionContext
+- uid: DiagramModel.Components.ComponentFactory.CanCreateComponent(System.String)
+  commentId: M:DiagramModel.Components.ComponentFactory.CanCreateComponent(System.String)
+  id: CanCreateComponent(System.String)
+  parent: DiagramModel.Components.ComponentFactory
   langs:
   - csharp
   - vb
-  name: CurrentComponent
-  nameWithType: CommandExecutionContext.CurrentComponent
-  fullName: DiagramModel.Commands.CommandExecutionContext.CurrentComponent
-  type: Property
+  name: CanCreateComponent(String)
+  nameWithType: ComponentFactory.CanCreateComponent(String)
+  fullName: DiagramModel.Components.ComponentFactory.CanCreateComponent(System.String)
+  type: Method
   source:
-    id: CurrentComponent
+    id: CanCreateComponent
     path: ''
-    startLine: 177
+    startLine: 1252
   assemblies:
   - cs.temp.dll
-  namespace: DiagramModel.Commands
-  summary: "\nComponent which should be inspected as a starting point\nfor command execution. If the command is not valid in the\ncontext of this component, <xref href=\"DiagramModel.Commands.CommandExecutionContext.CurrentComponent\" data-throw-if-not-resolved=\"false\"></xref>\nvalue is updated to <xref href=\"DiagramModel.Components.Component.Parent\" data-throw-if-not-resolved=\"false\"></xref>. \n"
+  namespace: DiagramModel.Components
+  summary: "\nChecks whether component with the given typename can be created.\n"
   example: []
   syntax:
-    content: public Component CurrentComponent { get; set; }
-    parameters: []
-    return:
-      type: DiagramModel.Components.Component
-    content.vb: Public Property CurrentComponent As Component
-  overload: DiagramModel.Commands.CommandExecutionContext.CurrentComponent*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DiagramModel.Commands.CommandExecutionContext.TargetComponent
-  commentId: P:DiagramModel.Commands.CommandExecutionContext.TargetComponent
-  id: TargetComponent
-  parent: DiagramModel.Commands.CommandExecutionContext
-  langs:
-  - csharp
-  - vb
-  name: TargetComponent
-  nameWithType: CommandExecutionContext.TargetComponent
-  fullName: DiagramModel.Commands.CommandExecutionContext.TargetComponent
-  type: Property
-  source:
-    id: TargetComponent
-    path: ''
-    startLine: 182
-  assemblies:
-  - cs.temp.dll
-  namespace: DiagramModel.Commands
-  summary: "\nComponent in whose context the current command was finally executed.\n"
-  example: []
-  syntax:
-    content: public Component TargetComponent { get; set; }
-    parameters: []
-    return:
-      type: DiagramModel.Components.Component
-    content.vb: Public Property TargetComponent As Component
-  overload: DiagramModel.Commands.CommandExecutionContext.TargetComponent*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DiagramModel.Commands.CommandExecutionContext.CommandExecuted
-  commentId: P:DiagramModel.Commands.CommandExecutionContext.CommandExecuted
-  id: CommandExecuted
-  parent: DiagramModel.Commands.CommandExecutionContext
-  langs:
-  - csharp
-  - vb
-  name: CommandExecuted
-  nameWithType: CommandExecutionContext.CommandExecuted
-  fullName: DiagramModel.Commands.CommandExecutionContext.CommandExecuted
-  type: Property
-  source:
-    id: CommandExecuted
-    path: ''
-    startLine: 187
-  assemblies:
-  - cs.temp.dll
-  namespace: DiagramModel.Commands
-  summary: "\nSpecifies whether current command was executed or not.\n"
-  example: []
-  syntax:
-    content: public bool CommandExecuted { get; set; }
-    parameters: []
+    content: public static bool CanCreateComponent(string type)
+    parameters:
+    - id: type
+      type: System.String
+      description: Component&apos;s default and unique typename.
     return:
       type: System.Boolean
-    content.vb: Public Property CommandExecuted As Boolean
-  overload: DiagramModel.Commands.CommandExecutionContext.CommandExecuted*
+      description: The result of the check.
+    content.vb: Public Shared Function CanCreateComponent(type As String) As Boolean
+  overload: DiagramModel.Components.ComponentFactory.CanCreateComponent*
   modifiers.csharp:
   - public
-  - get
-  - set
+  - static
   modifiers.vb:
   - Public
+  - Shared
+- uid: DiagramModel.Components.ComponentFactory.CreateComponent(System.String,System.String,DiagramModel.Components.Component)
+  commentId: M:DiagramModel.Components.ComponentFactory.CreateComponent(System.String,System.String,DiagramModel.Components.Component)
+  id: CreateComponent(System.String,System.String,DiagramModel.Components.Component)
+  parent: DiagramModel.Components.ComponentFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateComponent(String, String, Component)
+  nameWithType: ComponentFactory.CreateComponent(String, String, Component)
+  fullName: DiagramModel.Components.ComponentFactory.CreateComponent(System.String, System.String, DiagramModel.Components.Component)
+  type: Method
+  source:
+    id: CreateComponent
+    path: ''
+    startLine: 1263
+  assemblies:
+  - cs.temp.dll
+  namespace: DiagramModel.Components
+  summary: "\nCreates new component from the provided typename, name and parent component.\nDoesn&apos;t do any validation checks as <xref href=\"DiagramModel.Components.ComponentFactory.CanCreateComponent(System.String)\" data-throw-if-not-resolved=\"false\"></xref> \nis designed for these. \n"
+  example: []
+  syntax:
+    content: public static Component CreateComponent(string type, string name, Component parent)
+    parameters:
+    - id: type
+      type: System.String
+      description: Component&apos;s default and unique typename.
+    - id: name
+      type: System.String
+      description: Component&apos;s name that should be passed in the constructor.
+    - id: parent
+      type: DiagramModel.Components.Component
+      description: Parent component instance.
+    return:
+      type: DiagramModel.Components.Component
+      description: ''
+    content.vb: Public Shared Function CreateComponent(type As String, name As String, parent As Component) As Component
+  overload: DiagramModel.Components.ComponentFactory.CreateComponent*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
 references:
-- uid: DiagramModel.Commands
-  commentId: N:DiagramModel.Commands
-  name: DiagramModel.Commands
-  nameWithType: DiagramModel.Commands
-  fullName: DiagramModel.Commands
+- uid: DiagramModel.Components
+  commentId: N:DiagramModel.Components
+  name: DiagramModel.Components
+  nameWithType: DiagramModel.Components
+  fullName: DiagramModel.Components
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -440,41 +420,18 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: DiagramModel.Commands.CommandExecutionContext.CurrentComponent
-  commentId: P:DiagramModel.Commands.CommandExecutionContext.CurrentComponent
+- uid: DiagramModel.Components.ComponentFactory.CanCreateComponent*
+  commentId: Overload:DiagramModel.Components.ComponentFactory.CanCreateComponent
+  name: CanCreateComponent
+  nameWithType: ComponentFactory.CanCreateComponent
+  fullName: DiagramModel.Components.ComponentFactory.CanCreateComponent
+- uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
-- uid: DiagramModel.Components.Component.Parent
-  commentId: P:DiagramModel.Components.Component.Parent
-  parent: DiagramModel.Components.Component
-  name: Parent
-  nameWithType: Component.Parent
-  fullName: DiagramModel.Components.Component.Parent
-- uid: DiagramModel.Commands.CommandExecutionContext.CurrentComponent*
-  commentId: Overload:DiagramModel.Commands.CommandExecutionContext.CurrentComponent
-  name: CurrentComponent
-  nameWithType: CommandExecutionContext.CurrentComponent
-  fullName: DiagramModel.Commands.CommandExecutionContext.CurrentComponent
-- uid: DiagramModel.Components.Component
-  commentId: T:DiagramModel.Components.Component
-  parent: DiagramModel.Components
-  name: Component
-  nameWithType: Component
-  fullName: DiagramModel.Components.Component
-- uid: DiagramModel.Components
-  commentId: N:DiagramModel.Components
-  name: DiagramModel.Components
-  nameWithType: DiagramModel.Components
-  fullName: DiagramModel.Components
-- uid: DiagramModel.Commands.CommandExecutionContext.TargetComponent*
-  commentId: Overload:DiagramModel.Commands.CommandExecutionContext.TargetComponent
-  name: TargetComponent
-  nameWithType: CommandExecutionContext.TargetComponent
-  fullName: DiagramModel.Commands.CommandExecutionContext.TargetComponent
-- uid: DiagramModel.Commands.CommandExecutionContext.CommandExecuted*
-  commentId: Overload:DiagramModel.Commands.CommandExecutionContext.CommandExecuted
-  name: CommandExecuted
-  nameWithType: CommandExecutionContext.CommandExecuted
-  fullName: DiagramModel.Commands.CommandExecutionContext.CommandExecuted
+  name: String
+  nameWithType: String
+  fullName: System.String
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -482,3 +439,17 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
+- uid: DiagramModel.Components.ComponentFactory.CanCreateComponent(System.String)
+  commentId: M:DiagramModel.Components.ComponentFactory.CanCreateComponent(System.String)
+  isExternal: true
+- uid: DiagramModel.Components.ComponentFactory.CreateComponent*
+  commentId: Overload:DiagramModel.Components.ComponentFactory.CreateComponent
+  name: CreateComponent
+  nameWithType: ComponentFactory.CreateComponent
+  fullName: DiagramModel.Components.ComponentFactory.CreateComponent
+- uid: DiagramModel.Components.Component
+  commentId: T:DiagramModel.Components.Component
+  parent: DiagramModel.Components
+  name: Component
+  nameWithType: Component
+  fullName: DiagramModel.Components.Component

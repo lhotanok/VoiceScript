@@ -25,7 +25,7 @@ items:
   source:
     id: Method
     path: ''
-    startLine: 1396
+    startLine: 1464
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -78,7 +78,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 1399
+    startLine: 1467
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -109,7 +109,7 @@ items:
   source:
     id: TypeName
     path: ''
-    startLine: 1400
+    startLine: 1468
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -142,7 +142,7 @@ items:
   source:
     id: GetVisibility
     path: ''
-    startLine: 1406
+    startLine: 1474
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -175,7 +175,7 @@ items:
   source:
     id: GetReturnType
     path: ''
-    startLine: 1412
+    startLine: 1480
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -206,7 +206,7 @@ items:
   source:
     id: GetParameters
     path: ''
-    startLine: 1413
+    startLine: 1481
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -234,7 +234,7 @@ items:
   source:
     id: GetRequiredParameters
     path: ''
-    startLine: 1422
+    startLine: 1490
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -262,7 +262,7 @@ items:
   source:
     id: GetOptionalParameters
     path: ''
-    startLine: 1425
+    startLine: 1493
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -290,7 +290,7 @@ items:
   source:
     id: UniqueTypeName
     path: ''
-    startLine: 1428
+    startLine: 1496
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -324,7 +324,7 @@ items:
   source:
     id: AddChild
     path: ''
-    startLine: 1430
+    startLine: 1498
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -356,7 +356,7 @@ items:
   source:
     id: Clone
     path: ''
-    startLine: 1451
+    startLine: 1519
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components

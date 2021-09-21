@@ -74,6 +74,14 @@ namespace DiagramModel.Commands
             if (context.CurrentComponent == null)
                 throw new CommandExecutionException("Command can not be executed in the current context.");
         }
+
+        /// <summary>
+        /// Checks if the given child component's typename
+        /// is valid in the context of the provided component.
+        /// </summary>
+        /// <param name="component">Component to check the context of.</param>
+        /// <param name="componentChildType">Child component's typename to check.</param>
+        /// <returns></returns>
         protected static bool IsChildComponentTypeCompatible(Component component, string componentChildType)
         {
             return component.ValidChildrenTypes.Contains(componentChildType);

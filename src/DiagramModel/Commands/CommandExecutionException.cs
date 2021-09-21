@@ -12,6 +12,10 @@ namespace DiagramModel.Commands
             CommandNumber = commandOrderNumber;
         }
 
+        /// <summary>
+        /// Number of command whose execution thrown an exception.
+        /// Is useful to emphasise where exactly the error happened.
+        /// </summary>
         public int CommandNumber { get; }
     }
 }

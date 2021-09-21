@@ -16,7 +16,7 @@ items:
   source:
     id: IVisibleComponent
     path: ''
-    startLine: 1385
+    startLine: 1453
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -43,7 +43,7 @@ items:
   source:
     id: GetVisibility
     path: ''
-    startLine: 1387
+    startLine: 1455
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components

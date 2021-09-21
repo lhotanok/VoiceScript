@@ -19,7 +19,7 @@ items:
   source:
     id: EditCommand
     path: ''
-    startLine: 635
+    startLine: 667
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -71,7 +71,7 @@ items:
   source:
     id: DefaultFormat
     path: ''
-    startLine: 638
+    startLine: 670
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -104,7 +104,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 639
+    startLine: 671
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -139,7 +139,7 @@ items:
   source:
     id: Execute
     path: ''
-    startLine: 642
+    startLine: 674
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -171,7 +171,7 @@ items:
   source:
     id: ProcessCommand
     path: ''
-    startLine: 659
+    startLine: 691
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands

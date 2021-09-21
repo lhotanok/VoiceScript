@@ -422,19 +422,24 @@ items:
   source:
     id: IsChildComponentTypeCompatible
     path: ''
-    startLine: 134
+    startLine: 142
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nChecks if the given child component&apos;s typename\nis valid in the context of the provided component.\n"
+  example: []
   syntax:
     content: protected static bool IsChildComponentTypeCompatible(Component component, string componentChildType)
     parameters:
     - id: component
       type: DiagramModel.Components.Component
+      description: Component to check the context of.
     - id: componentChildType
       type: System.String
+      description: Child component&apos;s typename to check.
     return:
       type: System.Boolean
+      description: ''
     content.vb: Protected Shared Function IsChildComponentTypeCompatible(component As Component, componentChildType As String) As Boolean
   overload: DiagramModel.Commands.Command.IsChildComponentTypeCompatible*
   modifiers.csharp:
@@ -457,7 +462,7 @@ items:
   source:
     id: ProcessCommand
     path: ''
-    startLine: 148
+    startLine: 156
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands

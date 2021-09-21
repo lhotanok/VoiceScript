@@ -6,6 +6,7 @@ items:
   children:
   - DiagramModel.Components.Class
   - DiagramModel.Components.Component
+  - DiagramModel.Components.ComponentFactory
   - DiagramModel.Components.Diagram
   - DiagramModel.Components.Field
   - DiagramModel.Components.FieldType
@@ -39,6 +40,11 @@ references:
   name: Component
   nameWithType: Component
   fullName: DiagramModel.Components.Component
+- uid: DiagramModel.Components.ComponentFactory
+  commentId: T:DiagramModel.Components.ComponentFactory
+  name: ComponentFactory
+  nameWithType: ComponentFactory
+  fullName: DiagramModel.Components.ComponentFactory
 - uid: DiagramModel.Components.Diagram
   commentId: T:DiagramModel.Components.Diagram
   name: Diagram

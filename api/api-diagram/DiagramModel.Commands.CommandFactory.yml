@@ -16,7 +16,7 @@ items:
   source:
     id: CommandFactory
     path: ''
-    startLine: 210
+    startLine: 222
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -55,7 +55,7 @@ items:
   source:
     id: CreateCommand
     path: ''
-    startLine: 231
+    startLine: 243
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands

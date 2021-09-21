@@ -36,6 +36,8 @@
     name: Class
   - uid: DiagramModel.Components.Component
     name: Component
+  - uid: DiagramModel.Components.ComponentFactory
+    name: ComponentFactory
   - uid: DiagramModel.Components.Diagram
     name: Diagram
   - uid: DiagramModel.Components.Field

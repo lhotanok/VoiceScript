@@ -17,7 +17,7 @@ items:
   source:
     id: FieldType
     path: ''
-    startLine: 1370
+    startLine: 1438
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -71,7 +71,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 1372
+    startLine: 1440
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -102,7 +102,7 @@ items:
   source:
     id: Clone
     path: ''
-    startLine: 1373
+    startLine: 1441
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components

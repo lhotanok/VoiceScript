@@ -17,7 +17,7 @@ items:
   source:
     id: CommandExecutionException
     path: ''
-    startLine: 190
+    startLine: 198
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -50,7 +50,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 192
+    startLine: 200
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -81,10 +81,12 @@ items:
   source:
     id: CommandNumber
     path: ''
-    startLine: 197
+    startLine: 209
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
+  summary: "\nNumber of command whose execution thrown an exception.\nIs useful to emphasise where exactly the error happened.\n"
+  example: []
   syntax:
     content: public int CommandNumber { get; }
     parameters: []

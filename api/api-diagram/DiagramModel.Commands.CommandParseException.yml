@@ -19,7 +19,7 @@ items:
   source:
     id: CommandParseException
     path: ''
-    startLine: 259
+    startLine: 271
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -52,7 +52,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 261
+    startLine: 273
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -88,7 +88,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 267
+    startLine: 279
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -117,7 +117,7 @@ items:
   source:
     id: ParsedCommands
     path: ''
-    startLine: 273
+    startLine: 285
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands
@@ -150,7 +150,7 @@ items:
   source:
     id: UnparsedWords
     path: ''
-    startLine: 282
+    startLine: 294
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Commands

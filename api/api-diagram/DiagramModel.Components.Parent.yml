@@ -19,7 +19,7 @@ items:
   source:
     id: Parent
     path: ''
-    startLine: 1525
+    startLine: 1593
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -70,7 +70,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 1528
+    startLine: 1596
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -101,7 +101,7 @@ items:
   source:
     id: TypeName
     path: ''
-    startLine: 1529
+    startLine: 1597
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -134,7 +134,7 @@ items:
   source:
     id: Clone
     path: ''
-    startLine: 1531
+    startLine: 1599
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -165,7 +165,7 @@ items:
   source:
     id: UniqueTypeName
     path: ''
-    startLine: 1533
+    startLine: 1601
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components

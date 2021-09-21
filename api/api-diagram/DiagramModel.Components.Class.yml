@@ -23,7 +23,7 @@ items:
   source:
     id: Class
     path: ''
-    startLine: 968
+    startLine: 1000
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -73,7 +73,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 974
+    startLine: 1006
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -104,7 +104,7 @@ items:
   source:
     id: TypeName
     path: ''
-    startLine: 976
+    startLine: 1008
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -137,7 +137,7 @@ items:
   source:
     id: GetFields
     path: ''
-    startLine: 978
+    startLine: 1010
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -165,7 +165,7 @@ items:
   source:
     id: GetMethods
     path: ''
-    startLine: 980
+    startLine: 1012
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -193,7 +193,7 @@ items:
   source:
     id: UniqueTypeName
     path: ''
-    startLine: 982
+    startLine: 1014
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -227,7 +227,7 @@ items:
   source:
     id: Clone
     path: ''
-    startLine: 983
+    startLine: 1015
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -258,7 +258,7 @@ items:
   source:
     id: GetInheritanceParent
     path: ''
-    startLine: 991
+    startLine: 1023
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -286,7 +286,7 @@ items:
   source:
     id: AddChild
     path: ''
-    startLine: 993
+    startLine: 1025
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components

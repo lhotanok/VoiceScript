@@ -1402,6 +1402,38 @@ references:
   isSpec: "True"
   fullName: DiagramModel.Components.Component.ValidChildrenTypes
   nameWithType: Component.ValidChildrenTypes
+- uid: DiagramModel.Components.ComponentFactory
+  name: ComponentFactory
+  href: api/api-diagram/DiagramModel.Components.ComponentFactory.html
+  commentId: T:DiagramModel.Components.ComponentFactory
+  fullName: DiagramModel.Components.ComponentFactory
+  nameWithType: ComponentFactory
+- uid: DiagramModel.Components.ComponentFactory.CanCreateComponent(System.String)
+  name: CanCreateComponent(String)
+  href: api/api-diagram/DiagramModel.Components.ComponentFactory.html#DiagramModel_Components_ComponentFactory_CanCreateComponent_System_String_
+  commentId: M:DiagramModel.Components.ComponentFactory.CanCreateComponent(System.String)
+  fullName: DiagramModel.Components.ComponentFactory.CanCreateComponent(System.String)
+  nameWithType: ComponentFactory.CanCreateComponent(String)
+- uid: DiagramModel.Components.ComponentFactory.CanCreateComponent*
+  name: CanCreateComponent
+  href: api/api-diagram/DiagramModel.Components.ComponentFactory.html#DiagramModel_Components_ComponentFactory_CanCreateComponent_
+  commentId: Overload:DiagramModel.Components.ComponentFactory.CanCreateComponent
+  isSpec: "True"
+  fullName: DiagramModel.Components.ComponentFactory.CanCreateComponent
+  nameWithType: ComponentFactory.CanCreateComponent
+- uid: DiagramModel.Components.ComponentFactory.CreateComponent(System.String,System.String,DiagramModel.Components.Component)
+  name: CreateComponent(String, String, Component)
+  href: api/api-diagram/DiagramModel.Components.ComponentFactory.html#DiagramModel_Components_ComponentFactory_CreateComponent_System_String_System_String_DiagramModel_Components_Component_
+  commentId: M:DiagramModel.Components.ComponentFactory.CreateComponent(System.String,System.String,DiagramModel.Components.Component)
+  fullName: DiagramModel.Components.ComponentFactory.CreateComponent(System.String, System.String, DiagramModel.Components.Component)
+  nameWithType: ComponentFactory.CreateComponent(String, String, Component)
+- uid: DiagramModel.Components.ComponentFactory.CreateComponent*
+  name: CreateComponent
+  href: api/api-diagram/DiagramModel.Components.ComponentFactory.html#DiagramModel_Components_ComponentFactory_CreateComponent_
+  commentId: Overload:DiagramModel.Components.ComponentFactory.CreateComponent
+  isSpec: "True"
+  fullName: DiagramModel.Components.ComponentFactory.CreateComponent
+  nameWithType: ComponentFactory.CreateComponent
 - uid: DiagramModel.Components.Diagram
   name: Diagram
   href: api/api-diagram/DiagramModel.Components.Diagram.html

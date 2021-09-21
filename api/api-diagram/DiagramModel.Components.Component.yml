@@ -29,7 +29,7 @@ items:
   source:
     id: Component
     path: ''
-    startLine: 1020
+    startLine: 1052
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -80,7 +80,7 @@ items:
   source:
     id: children
     path: ''
-    startLine: 1022
+    startLine: 1054
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -109,7 +109,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 1025
+    startLine: 1057
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -145,7 +145,7 @@ items:
   source:
     id: UniqueTypeName
     path: ''
-    startLine: 1037
+    startLine: 1069
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -180,7 +180,7 @@ items:
   source:
     id: Parent
     path: ''
-    startLine: 1044
+    startLine: 1076
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -215,7 +215,7 @@ items:
   source:
     id: Children
     path: ''
-    startLine: 1051
+    startLine: 1083
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -248,7 +248,7 @@ items:
   source:
     id: ValidChildrenTypes
     path: ''
-    startLine: 1056
+    startLine: 1088
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -281,7 +281,7 @@ items:
   source:
     id: Name
     path: ''
-    startLine: 1063
+    startLine: 1095
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -316,7 +316,7 @@ items:
   source:
     id: Clone
     path: ''
-    startLine: 1073
+    startLine: 1105
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -349,7 +349,7 @@ items:
   source:
     id: AddChild
     path: ''
-    startLine: 1081
+    startLine: 1113
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -383,7 +383,7 @@ items:
   source:
     id: TryDeleteChild
     path: ''
-    startLine: 1089
+    startLine: 1121
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -423,7 +423,7 @@ items:
   source:
     id: FindChild
     path: ''
-    startLine: 1107
+    startLine: 1139
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
@@ -463,18 +463,22 @@ items:
   source:
     id: GetTypeFilteredChildren
     path: ''
-    startLine: 1119
+    startLine: 1156
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
+  summary: "\nFilters children components that match the given type.\n"
+  example: []
   syntax:
     content: >-
       protected List<T> GetTypeFilteredChildren<T>()
           where T : Component
     typeParameters:
     - id: T
+      description: Component type to filter.
     return:
       type: List{{T}}
+      description: Collection of child components of the provided type.
     content.vb: Protected Function GetTypeFilteredChildren(Of T As Component) As List(Of T)
   overload: DiagramModel.Components.Component.GetTypeFilteredChildren*
   nameWithType.vb: Component.GetTypeFilteredChildren(Of T)()
@@ -498,18 +502,22 @@ items:
   source:
     id: GetUniqueChild
     path: ''
-    startLine: 1134
+    startLine: 1179
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
+  summary: "\nGets child component matching the provided type.\nRelies on child being unique for this component, \nsuch as <xref href=\"DiagramModel.Components.Visibility\" data-throw-if-not-resolved=\"false\"></xref> or <xref href=\"DiagramModel.Components.Type\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
   syntax:
     content: >-
       protected T GetUniqueChild<T>()
           where T : Component
     typeParameters:
     - id: T
+      description: Child component type.
     return:
       type: '{T}'
+      description: "Child component or null if no component of the \nmatching type exists."
     content.vb: Protected Function GetUniqueChild(Of T As Component) As T
   overload: DiagramModel.Components.Component.GetUniqueChild*
   nameWithType.vb: Component.GetUniqueChild(Of T)()
@@ -533,15 +541,18 @@ items:
   source:
     id: CloneChildrenInto
     path: ''
-    startLine: 1147
+    startLine: 1197
   assemblies:
   - cs.temp.dll
   namespace: DiagramModel.Components
+  summary: "\nInserts deep copy of this component&apos;s children\ninto parent component which is provided as a parameter. \n"
+  example: []
   syntax:
     content: protected void CloneChildrenInto(Component parent)
     parameters:
     - id: parent
       type: DiagramModel.Components.Component
+      description: ''
     content.vb: Protected Sub CloneChildrenInto(parent As Component)
   overload: DiagramModel.Components.Component.CloneChildrenInto*
   modifiers.csharp:
@@ -1222,6 +1233,18 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: DiagramModel.Components.Visibility
+  commentId: T:DiagramModel.Components.Visibility
+  parent: DiagramModel.Components
+  name: Visibility
+  nameWithType: Visibility
+  fullName: DiagramModel.Components.Visibility
+- uid: DiagramModel.Components.Type
+  commentId: T:DiagramModel.Components.Type
+  parent: DiagramModel.Components
+  name: Type
+  nameWithType: Type
+  fullName: DiagramModel.Components.Type
 - uid: DiagramModel.Components.Component.GetUniqueChild*
   commentId: Overload:DiagramModel.Components.Component.GetUniqueChild
   name: GetUniqueChild

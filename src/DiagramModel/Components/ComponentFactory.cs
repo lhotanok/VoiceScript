@@ -3,7 +3,11 @@ using System.Collections.Generic;
 
 namespace DiagramModel.Components
 {
-    class ComponentFactory
+    /// <summary>
+    /// Provides interface for creating components
+    /// based on their unique typename. To be used with add command.
+    /// </summary>
+    public class ComponentFactory
     {
         static readonly Dictionary<string, Func<string, Component, Component>> componentCtors = new()
         {
@@ -18,8 +22,22 @@ namespace DiagramModel.Components
             { Parent.TypeName, (childName, parent) => new Parent(childName, parent) }
         };
 
+        /// <summary>
+        /// Checks whether component with the given typename can be created.
+        /// </summary>
+        /// <param name="type">Component's default and unique typename.</param>
+        /// <returns>The result of the check.</returns>
         public static bool CanCreateComponent(string type) => componentCtors.ContainsKey(type);
 
+        /// <summary>
+        /// Creates new component from the provided typename, name and parent component.
+        /// Doesn't do any validation checks as <see cref="CanCreateComponent(string)"/> 
+        /// is designed for these. 
+        /// </summary>
+        /// <param name="type">Component's default and unique typename.</param>
+        /// <param name="name">Component's name that should be passed in the constructor.</param>
+        /// <param name="parent">Parent component instance.</param>
+        /// <returns></returns>
         public static Component CreateComponent(string type, string name, Component parent) => componentCtors[type](name, parent);
 
     }

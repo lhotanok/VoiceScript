@@ -81,6 +81,7 @@ namespace VoiceScript.VoiceTranscription
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
+                    Directory.CreateDirectory(@"..\\..\\..\\..\\Keys");
                     File.Copy(openFileDialog.FileName, apiKeyPath);
                     System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", apiKeyPath);
                 }

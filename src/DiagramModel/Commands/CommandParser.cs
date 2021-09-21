@@ -5,6 +5,9 @@ using DiagramModel.Commands.LanguageFormats;
 
 namespace DiagramModel.Commands
 {
+    /// <summary>
+    /// Manages parsing of text commands into the corresponding typed instances.
+    /// </summary>
     public class CommandParser
     {
         readonly LanguageFormat language;
@@ -33,6 +36,11 @@ namespace DiagramModel.Commands
             #endregion
         }
 
+        /// <summary>
+        /// Parses all commands from the given input text and returns them in the list.
+        /// </summary>
+        /// <param name="inputText"></param>
+        /// <returns></returns>
         public IList<Command> GetParsedCommands(string inputText)
         {
             ParseIntoWords(inputText);
@@ -61,6 +69,11 @@ namespace DiagramModel.Commands
             return parsedCommands;
         }
 
+        /// <summary>
+        /// Parses word from PascalCase format into camelCase.
+        /// </summary>
+        /// <param name="pascalCaseWord">Word in PascalCae format.</param>
+        /// <returns>Word parsed into camelCase format.</returns>
         public static string ParseCamelCase(string pascalCaseWord)
         {
             if (pascalCaseWord.Length == 0) return pascalCaseWord;
@@ -71,6 +84,13 @@ namespace DiagramModel.Commands
             return firstLetter + remainingLetters;
         }
 
+        /// <summary>
+        /// Parses PascalCase word from multiple words.
+        /// Joins word fragments together with respect to PascalCase format.
+        /// </summary>
+        /// <param name="wordFragments">Individual word parts that should be joined
+        /// to created one PascalCase word.</param>
+        /// <returns>Formatted PascalCase word.</returns>
         public static string ParsePascalCase(IEnumerable<string> wordFragments)
         {
             var pascalCaseWord = new StringBuilder();
