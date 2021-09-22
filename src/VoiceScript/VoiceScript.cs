@@ -118,6 +118,8 @@ namespace VoiceScript
                 new Czech(),
             });
 
+            languages.SelectedItem = languages.Items[0]; // sets English as default language
+
             languages.SelectedIndexChanged += (sender, e)
                 => voiceTranscriptor.Configuration.LanguageCode = ((Language)languages.SelectedItem).LanguageCode;
         }
@@ -232,7 +234,9 @@ namespace VoiceScript
         {
             try
             {
-                var currentLanguageCode = voiceTranscriptor.Configuration.LanguageCode;
+                // independent of VoiceTranscriptor instance as it can be null (transcription is unavailable without api key)
+                var currentLanguageCode = ((Language)languages.SelectedItem).LanguageCode;
+
                 var parsedCommands = Diagram.GetParsedCommands(commandTextBox.Text, currentLanguageCode);
 
                 if (parsedCommands.Count == 0)
