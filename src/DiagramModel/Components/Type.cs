@@ -24,7 +24,20 @@ namespace DiagramModel.Components
 
             return clone;
         }
-
+        public override string Name {
+            get => base.Name;
+            set
+            {
+                if (TryParseArray(value, out string arrayFormatName))
+                {
+                    base.Name = arrayFormatName;
+                }
+                else
+                {
+                    base.Name = value;
+                }
+            }
+        }
         static bool TryParseArray(string name, out string arrayFormatName)
         {
             arrayFormatName = string.Empty;
@@ -43,6 +56,15 @@ namespace DiagramModel.Components
             }
 
             return false;
+        }
+
+        protected override bool IsNameSynonym(string synonym)
+        {
+            if (TryParseArray(synonym, out string arrayFormatName))
+            {
+                return arrayFormatName == Name;
+            }
+            return base.IsNameSynonym(synonym);
         }
     }
 }

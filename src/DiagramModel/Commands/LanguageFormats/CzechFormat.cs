@@ -13,9 +13,9 @@ namespace DiagramModel.Commands.LanguageFormats
         /// </summary>
         static readonly Dictionary<string, List<string>> commandFormats = new()
         {
-            { AddCommand.DefaultFormat, new() { "přidej", "vlož", "připoj", "vytvoř" } },
-            { EditCommand.DefaultFormat, new() { "uprav", "oprav", "změň", "edituj" } },
-            { DeleteCommand.DefaultFormat, new() { "smaž", "vymaž", "odstraň", "vystřihni" } }
+            { AddCommand.DefaultFormat, new() { AddCommand.DefaultFormat, "přidej", "vlož", "připoj", "vytvoř" } },
+            { EditCommand.DefaultFormat, new() { EditCommand.DefaultFormat, "uprav", "oprav", "změň", "edituj" } },
+            { DeleteCommand.DefaultFormat, new() { DeleteCommand.DefaultFormat, "smaž", "vymaž", "odstraň", "vystřihni" } }
         };
 
         static readonly Dictionary<string, string> componentNames = new()

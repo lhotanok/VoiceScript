@@ -162,7 +162,7 @@ namespace DiagramModel.Components
             }
         }
 
-        int GetChildIndex(string childType, string childName)
+        protected int GetChildIndex(string childType, string childName)
         {
             var lowerChildName = childName.ToLower();
 
@@ -170,12 +170,15 @@ namespace DiagramModel.Components
             {
                 var child = children[i];
 
-                if (child.UniqueTypeName == childType && child.Name.ToLower() == lowerChildName)
+                if (child.UniqueTypeName == childType
+                    && (child.Name.ToLower() == lowerChildName || child.IsNameSynonym(childName)))
                 {
                     return i;
                 }
             }
             return -1;
         }
+
+        protected virtual bool IsNameSynonym(string synonym) => synonym == name;
     }
 }
