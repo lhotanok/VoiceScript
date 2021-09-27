@@ -21,6 +21,7 @@ Desktop application providing voice commands conversion into UML diagrams and th
      - [Class Diagram](#diagram)
      - [Inheritance](#inheritance)
      - [Traversing Diagram Structure](#traversing)
+     - [Alternative Commands](#alternativeCommands)
 5. [License](#license)
 
 ## About VoiceScript project <a name="about"></a>
@@ -301,7 +302,7 @@ add class teacher add parent person add field students add type array student ad
 
 <img src=".\images\traversing_example.png"/>
 
-#### Alternative Commands
+#### Alternative Commands<a name="alternativeCommands"></a>
 
 We mentioned that VoiceScript comes with the support of both [English](#english) and [Czech](#czech) commands. It is planned to extend the language support for more languages following the same translation rules as with Czech commands. Let's have a look at the alternative commands in practice. We will be using various synonyms of Czech commands. Also, we'll reuse the previous example focused on [diagram traversing](#traversing). We'll translate all commands into Czech and use command synonyms along the way.
 
