@@ -5,21 +5,23 @@
 Desktop application providing voice commands conversion into UML diagrams and the corresponding code signatures.
 
 1. [About the project](#about)
-   - [Built With](#builtWith)
-2. [Getting Started](#gettingStarted)
+2. [Built With](#builtWith)
+3. [Getting Started](#gettingStarted)
    - [Prerequisites](#prerequisites)
    - [Installation](#installation)
-3. [Usage](#usage)
+4. [Usage](#usage)
    - [Components](#components)
    - [Commands](#commands)
    - [Compilation](#compilation)
    - [Diagram and Code Visualization](#visualization)
    - [Languages](#languages)
+     - [English Format](#english)
+     - [Czech Format](#czech)
    - [Examples](#examples)
      - [Class Diagram](#diagram)
      - [Inheritance](#inheritance)
      - [Traversing Diagram Structure](#traversing)
-4. [License](#license)
+5. [License](#license)
 
 ## About VoiceScript project <a name="about"></a>
 
@@ -54,7 +56,7 @@ git clone https://github.com/lhotanok/VoiceScript.git
 
 Create folder Keys in project's root directory and copy your json API key in this directory. The whole directory is ignored by git so that an api key wouldn't get exposed if any changes are published in a public repository. 
 
-> **_NOTE:_**  You can skip this step as VoiceScript prompts you to add your api key at the first start. It opens a file dialog where you can easily navigate to your json key and you don't need to worry about it its directory. It is copied to Keys directory automatically. This way is preferred considering future code changes.
+> **_NOTE:_**  You can skip this step as VoiceScript prompts you to add your API key at the first start. It opens a file dialog where you can easily navigate to your json key and you don't need to worry about it its directory. It is copied to Keys directory automatically. This way is preferred considering future code changes.
 
 If used with VisualStudio, you can build and launch VoiceScript project right after this quick setup. Otherwise you'll need to install package dependencies manually.  All packages can be installed using nuget:
 
@@ -74,9 +76,12 @@ Uses packages:
 Uses packages:
 
 - [NAudio](https://github.com/naudio/NAudio)
-
 - [Google.Cloud.Speech.V1](https://github.com/googleapis/google-cloud-dotnet)
 - [Google.Cloud.Storage.V1](https://github.com/googleapis/google-cloud-dotnet)
+
+
+
+See [API documentation](https://lhotanok.github.io/VoiceScript/) for details about project's structure.
 
 ## Usage <a name="usage"></a>
 
@@ -164,7 +169,7 @@ To add more commands, you can either keep the old ones in the transcript textbox
 
 VoiceScript currently supports English and Czech voice commands. With both languages, there are **synonyms** you can use for the individual commands. It is mainly because of the voice transcription feature - you might test which commands are recognized better from the Speech-To-Text service. Or you can combine them all and have funnier conversation with VoiceScript 🎙.
 
-#### English format
+#### English Format<a name="english"></a>
 
 ##### Commands
 
@@ -188,7 +193,7 @@ Diagram components you can manipulate by using their names in commands are:
 - **visibility** = protection
 - **parent** = ancestor
 
-#### Czech format
+#### Czech Format<a name="czech"></a>
 
 ##### Commands
 
@@ -223,7 +228,6 @@ VoiceScript translates specific values from Czech in English automatically to pr
 - **internal** = interní
 - **protected** = chráněná
 - **private** = privátní
-
 - **array** = pole
 - **true** = pravda, ano
 - **false** = nepravda, lež, ne
@@ -259,41 +263,61 @@ Okay, let's try out something a little bit more complicated. UML diagrams are ty
 
 **Transcribed commands**
 
+Newly added commands are **emphasized**.
+
 ```markdown
 add class person add field name add type string add method get name add type string add method set name add parameter name add type string
 
-add class student add parent person add field teachers add type array teacher add visibility private add method get teachers add type array teacher
+**add class student add parent person add field teachers add type array teacher add visibility private add method get teachers add type array teacher**
 
-add class teacher add parent person add field students add type array student add visibility protected add method get students add type array student
+**add class teacher add parent person add field students add type array student add visibility protected add method get students add type array student**
 ```
 
 <img src=".\images\inheritance_example.png"/>
 
 #### Traversing Diagram Structure<a name="traversing"></a>
 
-We'll start with a diagram from the previous [inheritance example](#inheritance). So we have class `Person` which is parent of `Teacher` and `Student` classes. We realized we didn't want the `Teacher` class to be called `Teacher` and we'd like to rename it to `Tutor`. We'd also like to rename all its occurrences in `Student` class. 
+We'll start with a diagram from the previous [inheritance example](#inheritance). So, we have a class `Person` which is a parent of `Teacher` and `Student` classes. We decided we didn't want the `Teacher` class to be called `Teacher` and we'd like to rename it to `Tutor`. We'd also like to rename all its occurrences in `Student` class. 
 
-And to finish with, we want to get rid of the `SetName` method in `Person` class entirely as we plan to make this class immutable and accept name only through class constructor.
+And to finish with, we want to get rid of the `SetName` method in `Person` class entirely as we plan to make this class immutable and accept the name only through class constructor.
 
 So, let's turn our idea into concrete commands and generate our new diagram.
 
 **Transcribed commands**
 
-```
+Newly added commands are **emphasized**.
+
+```markdown
 add class person add field name add type string add method get name add type string add method set name add parameter name add type string
 
 add class student add parent person add field teachers add type array teacher add visibility private add method get teachers add type array teacher
 
 add class teacher add parent person add field students add type array student add visibility protected add method get students add type array student
 
-edit class teacher edit name tutor edit class student edit field teachers edit name tutors edit type array teacher edit name array tutor edit method get teachers edit name get tutors edit type array teacher edit name array tutor
+**edit class teacher edit name tutor edit class student edit field teachers edit name tutors edit type array teacher edit name array tutor edit method get teachers edit name get tutors edit type array teacher edit name array tutor**
 
-edit class person delete method set name
+**edit class person delete method set name**
 ```
 
 <img src=".\images\traversing_example.png"/>
 
-See [API documentation](https://lhotanok.github.io/VoiceScript/) for more details about project's structure.
+#### Alternative Commands
+
+We mentioned that VoiceScript comes with the support of both [English](#english) and [Czech](#czech) commands. It is planned to extend the language support for more languages following the same translation rules as with Czech commands. Let's have a look at the alternative commands in practice. We will be using various synonyms of Czech commands. Also, we'll reuse the previous example focused on [diagram traversing](#traversing). We'll translate all commands into Czech and use command synonyms along the way.
+
+```markdown
+přidej třídu osoba vlož atribut jméno vytvoř typ řetězec přidej metodu vrať jméno vytvoř typ řetězec připoj funkci nastav jméno přidej parameter jméno vlož typ string
+
+vytvoř třídu student přidej rodiče osoba vlož člen učitelé přidej typ pole učitel vlož viditelnost privátní přidej metodu vrať učitele vytvoř druh pole učitel
+
+vlož třídu učitel vytvoř rodiče osoba přidej atribut studenti vlož typ pole student přidej ochranu protected vytvoř metodu vrať studenty přidej typ pole student
+
+uprav třídu učitel změň jméno cvičící edituj třídu student změň atribut učitelé uprav jméno cvičící změň typ pole učitel uprav jméno pole cvičící edituj funkci vrať učitele změň jméno vrať cvičící uprav druh pole učitel změň jméno pole cvičící
+
+změň třídu osoba smaž metodu nastav jméno
+```
+
+<img src=".\images\czech_commands_example.png"/>
 
 ## License <a name="license"></a>
 
