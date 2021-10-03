@@ -264,14 +264,12 @@ Okay, let's try out something a little bit more complicated. UML diagrams are ty
 
 **Transcribed commands**
 
-Newly added commands are **emphasized**.
-
 ```markdown
 add class person add field name add type string add method get name add type string add method set name add parameter name add type string
 
-**add class student add parent person add field teachers add type array teacher add visibility private add method get teachers add type array teacher**
+add class student add parent person add field teachers add type array teacher add visibility private add method get teachers add type array teacher
 
-**add class teacher add parent person add field students add type array student add visibility protected add method get students add type array student**
+add class teacher add parent person add field students add type array student add visibility protected add method get students add type array student
 ```
 
 <img src=".\images\inheritance_example.png"/>
@@ -286,8 +284,6 @@ So, let's turn our idea into concrete commands and generate our new diagram.
 
 **Transcribed commands**
 
-Newly added commands are **emphasized**.
-
 ```markdown
 add class person add field name add type string add method get name add type string add method set name add parameter name add type string
 
@@ -295,9 +291,9 @@ add class student add parent person add field teachers add type array teacher ad
 
 add class teacher add parent person add field students add type array student add visibility protected add method get students add type array student
 
-**edit class teacher edit name tutor edit class student edit field teachers edit name tutors edit type array teacher edit name array tutor edit method get teachers edit name get tutors edit type array teacher edit name array tutor**
+edit class teacher edit name tutor edit class student edit field teachers edit name tutors edit type array teacher edit name array tutor edit method get teachers edit name get tutors edit type array teacher edit name array tutor
 
-**edit class person delete method set name**
+edit class person delete method set name
 ```
 
 <img src=".\images\traversing_example.png"/>
