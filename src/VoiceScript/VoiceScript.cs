@@ -63,8 +63,8 @@ namespace VoiceScript
                 MessageBox.Show(ex.Message);
             }
             
-            realTimeTranscriptTimer.Tick += (sender, e) 
-                => voiceTranscriptor.DoRealTimeTranscription(voiceCommand => AppendToTextbox(commandTextBox, voiceCommand));
+            realTimeTranscriptTimer.Tick += async (sender, e) 
+                => await voiceTranscriptor.DoRealTimeTranscription(voiceCommand => AppendToTextbox(commandTextBox, voiceCommand));
 
             SetLanguages();
             #endregion
@@ -121,7 +121,7 @@ namespace VoiceScript
             languages.SelectedItem = languages.Items[0]; // sets English as default language
 
             languages.SelectedIndexChanged += (sender, e)
-                => voiceTranscriptor.Configuration.LanguageCode = ((Language)languages.SelectedItem).LanguageCode;
+                => voiceTranscriptor.Configuration.SpeechRecognitionLanguage = ((Language)languages.SelectedItem).LanguageCode;
         }
 
         #region Textbox manipulation
@@ -136,7 +136,8 @@ namespace VoiceScript
             if (commandTextBox.TextLength != 0) commandTextBox.AppendText(Environment.NewLine);
 
             await voiceTranscriptor.CreateTranscriptionTask(filename,
-                transcript => {
+                transcript =>
+                {
                     AppendToTextbox(commandTextBox, transcript);
                     EnableButtons(compileBtn);
                 });

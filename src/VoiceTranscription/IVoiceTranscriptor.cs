@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Google.Cloud.Speech.V1;
+using Microsoft.CognitiveServices.Speech;
 
 namespace VoiceScript.VoiceTranscription
 {
     /// <summary>
-    /// Manages speech-to-text transcription using Google Cloud Speech.
+    /// Manages speech-to-text transcription.
     /// </summary>
     public interface IVoiceTranscriptor
     {
@@ -13,7 +14,7 @@ namespace VoiceScript.VoiceTranscription
         /// Current configuration for speech recognition.
         /// Contains info about audio format, transcription language and much more.
         /// </summary>
-        RecognitionConfig Configuration { get; }
+        SpeechConfig Configuration { get; }
 
         /// <summary>
         /// Sets file transcription and binds it to the provided callback.
@@ -31,6 +32,6 @@ namespace VoiceScript.VoiceTranscription
         /// </summary>
         /// <param name="callback">Function to be called with the individual transcription parts.
         /// Typical use case is for writing new words to the stream.</param>
-        void DoRealTimeTranscription(Action<string> callback);
+        Task DoRealTimeTranscription(Action<string> callback);
     }
 }

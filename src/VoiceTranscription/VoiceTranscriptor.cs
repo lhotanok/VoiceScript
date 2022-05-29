@@ -4,74 +4,87 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Google.Cloud.Speech.V1;
+using Microsoft.CognitiveServices.Speech;
+using Microsoft.CognitiveServices.Speech.Audio;
 
 namespace VoiceScript.VoiceTranscription
 {
     /// <summary>
-    /// Manages voice transcription from audio to text
-    /// using Google Cloud speech-to-text API.
+    /// Manages voice transcription from audio to text.
     /// </summary>
     public class VoiceTranscriptor : IVoiceTranscriptor
     {
+        readonly SpeechConfig speechConfig;
         readonly IAudioRecorder recorder;
-        readonly StreamRecognizer streamRecognizer;
-        readonly RecognitionConfig configuration;
-        readonly int shortAudioFileSeconds = 30;
-
-        // readonly LongRunningRecognizer longRunningRecognizer;
+        string subscriptionKey;
+        readonly string subsciptionRegion = "westeurope";
 
         public VoiceTranscriptor(IAudioRecorder audioRecorder)
         {
             #region Initialize voice recognition configuration
-            configuration = new RecognitionConfig()
-            {
-                Encoding = RecognitionConfig.Types.AudioEncoding.Linear16,
-                LanguageCode = LanguageCodes.English.UnitedStates,
-                SampleRateHertz = 16000
-            };
-            #endregion
+            CheckAzureCloudCredentials();
 
             recorder = audioRecorder;
-            streamRecognizer = new StreamRecognizer(configuration, recorder);
-            // longRunningRecognizer = new LongRunningRecognizer(configuration);
 
-            CheckGoogleCloudCredentials();
+            speechConfig = SpeechConfig.FromSubscription(subscriptionKey, subsciptionRegion);
+            speechConfig.SpeechRecognitionLanguage = LanguageCodes.English.UnitedStates;
+            #endregion
         }
 
-        public RecognitionConfig Configuration => configuration;
+        public SpeechConfig Configuration => speechConfig;
 
-        public void DoRealTimeTranscription(Action<string> callback)
+        public Task DoRealTimeTranscription(Action<string> callback)
         {
-            streamRecognizer.StreamingRecognizeAsync(callback);
+            return Task.Run(async () =>
+            {
+                using var audioConfig = AudioConfig.FromStreamInput(GetBufferedAudio());
+                await RecognizeSpeech(audioConfig, callback);
+            });    
         }
 
         public Task CreateTranscriptionTask(string filename, Action<string> callback)
         {
-            return Task.Run(() =>
+            return Task.Run(async () =>
             {
-                if (IsShortAudioFile(filename))
-                {
-                    CreateShortTranscription(filename, callback);
-                }
-                else
-                {
-                    CreateLongTranscription(filename, callback);
-                }
+                using var audioConfig = AudioConfig.FromWavFileInput(filename);
+                await RecognizeSpeech(audioConfig, callback);
             });
         }
 
-        static void CheckGoogleCloudCredentials()
+        async Task RecognizeSpeech(AudioConfig audioConfig, Action<string> callback)
         {
-            // path to Google Cloud speech-to-text api key
+            using var speechRecognizer = new SpeechRecognizer(speechConfig, audioConfig);
+
+            var speechRecognitionResult = await speechRecognizer.RecognizeOnceAsync();
+            callback(speechRecognitionResult.Text);
+        }
+
+        AudioInputStream GetBufferedAudio()
+        {
+            var waveProvider = recorder.WaveProvider;
+
+            byte[] buffer = new byte[waveProvider.BufferLength];
+            waveProvider.Read(buffer, 0, buffer.Length);
+            waveProvider.ClearBuffer();
+
+            var pushStream = AudioInputStream.CreatePushStream();
+            pushStream.Write(buffer);
+
+            return pushStream;            
+        }
+
+        void CheckAzureCloudCredentials()
+        {
+            // path to Azure speech service api key
             var apiKeyPath = @"..\\..\\..\\..\\Keys\\vs_auth_key.json";
 
             if (File.Exists(apiKeyPath))
             {
-                System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", apiKeyPath);
+                subscriptionKey = File.ReadAllText(apiKeyPath);
             }
             else
             {
-                MessageBox.Show("Google Cloud api key not found. Please, open file with your credentials.");
+                MessageBox.Show("Azure subscription key not found. Please, open file with your credentials.");
 
                 using var openFileDialog = new OpenFileDialog();
                 openFileDialog.InitialDirectory = "c:\\";
@@ -83,51 +96,13 @@ namespace VoiceScript.VoiceTranscription
                 {
                     Directory.CreateDirectory(@"..\\..\\..\\..\\Keys");
                     File.Copy(openFileDialog.FileName, apiKeyPath);
-                    System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", apiKeyPath);
+                    subscriptionKey = File.ReadAllText(apiKeyPath);
                 }
                 else
                 {
-                    throw new Exception($"Invalid path to Google Cloud api key given. File not found at {openFileDialog.FileName}");
+                    throw new Exception($"Invalid path to Azure subscription key given. File not found at {openFileDialog.FileName}");
                 }
             }
-        }
-
-        bool IsShortAudioFile(string filename) => recorder.GetFileSecondsLength(filename) < shortAudioFileSeconds;
-
-        void CreateLongTranscription(string filename, Action<string> callback)
-        {
-            var audio = RecognitionAudio.FromFile(filename);
-            var audioBytes = audio.Content.ToByteArray();
-            var maxAudioFileSeconds = shortAudioFileSeconds; // Google Cloud speech-to-text request padding is 15 seconds
-            var maxBytes = recorder.ConvertSecondsToBytes(maxAudioFileSeconds - 1); // 1 second reserved
-
-            var offset = 0;
-
-            while (offset < audioBytes.Length)
-            {
-                var remainingBytes = audioBytes.Length - offset;
-                var bytesToCopy = remainingBytes < maxBytes ? remainingBytes : maxBytes;
-
-                var transcription = new StringBuilder();
-
-                CreateShortTranscription(RecognitionAudio.FromBytes(audioBytes, offset, bytesToCopy),
-                    transcript => transcription.Append(transcript));
-
-                callback(transcription.ToString());
-
-                offset += bytesToCopy;
-            }
-        }
-
-        void CreateShortTranscription(string filename, Action<string> callback)
-            => CreateShortTranscription(RecognitionAudio.FromFile(filename), callback);
-
-        void CreateShortTranscription(RecognitionAudio audio, Action<string> callback)
-        {
-            var response = SpeechClient.Create().Recognize(configuration, audio);
-
-            ServerResponseProcessor.ProcessSpeechRecognitionTranscript(response.Results,
-                transcript => callback(transcript));
         }
     }
 }
