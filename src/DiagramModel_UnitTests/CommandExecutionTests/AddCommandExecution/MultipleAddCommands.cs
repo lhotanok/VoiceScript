@@ -25,11 +25,10 @@ namespace DiagramModel_UnitTests.CommandExecutionTests
         public void ExecuteAddClassCommandManually_CheckThatClassHasOneMethodAndOneField()
         {
             var parsedCommands = parser.GetParsedCommands(input);
-            InitializeCommandExecutionContext(diagram);
 
             foreach (var command in parsedCommands)
             {
-                InitializeCommandExecutionContext(context.TargetComponent);
+                context.Initialize();
                 command.Execute(context);
             }
 

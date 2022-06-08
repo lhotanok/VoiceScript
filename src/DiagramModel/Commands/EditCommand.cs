@@ -17,6 +17,9 @@ namespace DiagramModel.Commands
         {
             while (context.CurrentComponent != null && !context.CommandExecuted)
             {
+                executedIn = context.CurrentComponent;
+                clonedExecutedIn = context.CurrentComponent.Clone();
+
                 if (IsEditNameCommand() || IsChildComponentTypeCompatible(context.CurrentComponent, translatedTargetType))
                 {
                     ProcessCommand(context);
@@ -29,11 +32,18 @@ namespace DiagramModel.Commands
 
             if (context.CurrentComponent == null)
                 throw new CommandExecutionException("Edit command can not be executed in the current context.");
+
         }
         protected override void ProcessCommand(CommandExecutionContext context)
         {
-            if (IsEditNameCommand()) ChangeEditedComponentName(context);
-            else EnterEditedComponentContext(context);
+            if (IsEditNameCommand())
+            {
+                ChangeEditedComponentName(context);
+            }
+            else
+            {
+                EnterEditedComponentContext(context);
+            }
         }
 
         bool IsEditNameCommand() => targetType == language.ComponentNameFormat;
@@ -48,24 +58,18 @@ namespace DiagramModel.Commands
 
         void EnterEditedComponentContext(CommandExecutionContext context)
         {
-            while (context.CurrentComponent != null && !context.CommandExecuted)
+            var validTargetValue = translatedTargetValue ?? targetValue;
+            var childToEdit = context.CurrentComponent.FindChild(translatedTargetType, validTargetValue);
+
+            if (childToEdit != null)
             {
-                var validTargetValue = translatedTargetValue ?? targetValue;
-                var childToEdit = context.CurrentComponent.FindChild(translatedTargetType, validTargetValue);
-
-                if (childToEdit != null)
-                {
-                    context.TargetComponent = childToEdit;
-                    context.CommandExecuted = true;
-                    return;
-                }
-                else
-                {
-                    context.CurrentComponent = context.CurrentComponent.Parent;
-                }
+                context.TargetComponent = childToEdit;
+                context.CommandExecuted = true;
             }
-
-            throw new CommandExecutionException("Component can not be edited. It does not exist in the current context.");
+            else
+            {
+                context.CurrentComponent = context.CurrentComponent.Parent;
+            }
         }
     }
 }

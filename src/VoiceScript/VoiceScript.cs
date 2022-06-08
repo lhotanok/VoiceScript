@@ -232,6 +232,8 @@ namespace VoiceScript
         #region Compile button handling
         void CompileBtnClickCallback(object sender, EventArgs e)
         {
+            ICommand macroCommand = null;
+
             try
             {
                 // independent of VoiceTranscriptor instance as it can be null (transcription is unavailable without api key)
@@ -243,7 +245,12 @@ namespace VoiceScript
                     throw new CommandParseException("No command recognized. Nothing to compile.");
 
                 CompileParsedCommands(parsedCommands);
-                GenerateDiagram(parsedCommands);
+
+                // execute commands
+                macroCommand = new MacroCommand(parsedCommands);
+                diagram.ConvertTextToDiagram(commandTextBox.Text, macroCommand);
+
+                GenerateDiagram(diagram);
                 GenerateCode();
 
             }
@@ -254,6 +261,16 @@ namespace VoiceScript
             }
             catch (CommandExecutionException ex)
             {
+                if (strictGeneratorCheckbox.Checked && macroCommand != null)
+                {
+                    // if unchecked (non-strict mode), diagram is generated partially even with command execution error
+                    macroCommand.Undo();
+                }
+
+                // we can generate part of the diagram that was built successfully
+                GenerateDiagram(diagram);
+                GenerateCode();
+
                 ProcessExecutionError(ex);
                 MessageBox.Show(ex.Message, "Command Execution Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -269,23 +286,29 @@ namespace VoiceScript
             commandDesigner.DesignCommands(commands);
         }
 
-        void GenerateDiagram(IList<Command> parsedCommands)
+        void GenerateDiagram(Diagram diagram)
         {
-            // execute commands
-            diagram.ConvertTextToDiagram(commandTextBox.Text, parsedCommands);
             var classes = diagram.GetClasses();
 
-            // show diagram
-            gViewer.Visible = true;
-            gViewer.Graph = diagramDesigner.CreateGraphDiagram(classes);
-            ResumeLayout();
+            if (classes.Count > 0)
+            {
+                // show diagram
+                gViewer.Visible = true;
+                gViewer.Graph = diagramDesigner.CreateGraphDiagram(classes);
+                ResumeLayout();
+            }
         }
 
         void GenerateCode()
         {
-            codeTextBox.Clear();
-            codeTextBox.Visible = true;
-            codeGenerator.GenerateCode(diagram);
+            var classes = diagram.GetClasses();
+
+            if (classes.Count > 0)
+            {
+                codeTextBox.Clear();
+                codeTextBox.Visible = true;
+                codeGenerator.GenerateCode(diagram);
+            }
         }
 
         void ProcessParsingError(CommandParseException ex)

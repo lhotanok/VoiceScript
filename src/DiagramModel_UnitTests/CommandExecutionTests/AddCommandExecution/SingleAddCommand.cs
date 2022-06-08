@@ -30,7 +30,7 @@ namespace DiagramModel_UnitTests.CommandExecutionTests
         public void TryExecuteAddCommandManuallyWithInvalidTargetTypeInCurrentContext_CheckThatExceptionIsThrown(string inputText)
         {
             var parsedCommands = parser.GetParsedCommands(inputText);
-            InitializeCommandExecutionContext(diagram);
+            context.Initialize(diagram);
 
             Assert.Throws<CommandExecutionException>(() => parsedCommands[0].Execute(context));
         }

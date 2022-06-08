@@ -17,24 +17,16 @@ namespace DiagramModel_UnitTests.CommandExecutionTests
         {
             diagram = new Diagram();
             parser = new CommandParser();
-            context = new CommandExecutionContext();
-        }
-
-        protected void InitializeCommandExecutionContext(Component target)
-        {
-            context.TargetComponent = target;
-            context.CurrentComponent = target;
-            context.CommandExecuted = false;
+            context = new CommandExecutionContext(diagram);
         }
 
         protected void ExecuteCommandsManually(string inputText)
         {
             var parsedCommands = parser.GetParsedCommands(inputText);
-            InitializeCommandExecutionContext(diagram);
 
             foreach (var command in parsedCommands)
             {
-                InitializeCommandExecutionContext(context.TargetComponent);
+                context.Initialize();
                 command.Execute(context);
             }
         }

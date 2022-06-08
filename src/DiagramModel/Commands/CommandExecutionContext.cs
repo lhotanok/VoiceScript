@@ -9,6 +9,20 @@ namespace DiagramModel.Commands
     /// </summary>
     public class CommandExecutionContext
     {
+        public CommandExecutionContext(Component target) => Initialize(target);
+
+        public void Initialize(Component target = null)
+        {
+            if (target == null)
+            {
+                target = TargetComponent; // default target is the current target
+            }
+
+            TargetComponent = target;
+            CurrentComponent = target;
+            CommandExecuted = false;
+        }
+
         /// <summary>
         /// Component which should be inspected as a starting point
         /// for command execution. If the command is not valid in the

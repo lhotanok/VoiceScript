@@ -45,6 +45,7 @@ namespace VoiceScript
             this.codeTextBox = new System.Windows.Forms.RichTextBox();
             this.clearBtn = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.strictGeneratorCheckbox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -257,6 +258,17 @@ namespace VoiceScript
             this.splitContainer1.SplitterWidth = 46;
             this.splitContainer1.TabIndex = 14;
             // 
+            // strictGeneratorCheckbox
+            // 
+            this.strictGeneratorCheckbox.AutoSize = true;
+            this.strictGeneratorCheckbox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.strictGeneratorCheckbox.Location = new System.Drawing.Point(788, 36);
+            this.strictGeneratorCheckbox.Name = "strictGeneratorCheckbox";
+            this.strictGeneratorCheckbox.Size = new System.Drawing.Size(172, 32);
+            this.strictGeneratorCheckbox.TabIndex = 15;
+            this.strictGeneratorCheckbox.Text = "Strict Generator";
+            this.strictGeneratorCheckbox.UseVisualStyleBackColor = true;
+            // 
             // VoiceScript
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -264,6 +276,7 @@ namespace VoiceScript
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(1962, 973);
+            this.Controls.Add(this.strictGeneratorCheckbox);
             this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.compileBtn);
             this.Controls.Add(this.realTimeTranscBtn);
@@ -286,6 +299,7 @@ namespace VoiceScript
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -304,6 +318,7 @@ namespace VoiceScript
         private RichTextBox codeTextBox;
         private Button clearBtn;
         private SplitContainer splitContainer1;
+        private CheckBox strictGeneratorCheckbox;
     }
 }
 

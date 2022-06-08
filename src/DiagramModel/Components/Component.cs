@@ -64,6 +64,14 @@ namespace DiagramModel.Components
         /// <returns></returns>
         public abstract Component Clone();
 
+        public virtual void RevertChanges(Component original)
+        {
+            Name = original.Name;
+            Parent = original.Parent;
+            children.Clear();
+            children.AddRange(original.Children);
+        }
+
         /// <summary>
         /// Appends new component child. Does not check if the child
         /// has valid type for this component. Check needs to be performed
