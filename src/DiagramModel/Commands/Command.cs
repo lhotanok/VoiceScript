@@ -1,12 +1,14 @@
 ﻿using DiagramModel.Commands.LanguageFormats;
 using DiagramModel.Components;
+using System;
+using System.Collections.Generic;
 
 namespace DiagramModel.Commands
 {
     /// <summary>
     /// Representation of parsed command.
     /// </summary>
-    public abstract class Command
+    public abstract class Command : ICommand
     {
         protected readonly string name, targetType, targetValue;
 
@@ -14,6 +16,9 @@ namespace DiagramModel.Commands
         protected readonly string translatedTargetValue;
 
         protected readonly LanguageFormat language;
+
+        protected Component executedIn;
+        protected Component clonedExecutedIn;
         public Command(string commandName, string commandTargetType, string commandTargetValue, LanguageFormat languageFormat)
         {
             name = commandName;
@@ -61,6 +66,9 @@ namespace DiagramModel.Commands
 
             while (context.CurrentComponent != null && !context.CommandExecuted)
             {
+                executedIn = context.CurrentComponent;
+                clonedExecutedIn = context.CurrentComponent.Clone();
+
                 if (IsChildComponentTypeCompatible(context.CurrentComponent, translatedTargetType))
                 {
                     ProcessCommand(context);
@@ -73,6 +81,14 @@ namespace DiagramModel.Commands
 
             if (context.CurrentComponent == null)
                 throw new CommandExecutionException("Command can not be executed in the current context.");
+        }
+
+        public virtual void Undo()
+        {
+            if (executedIn != null)
+            {
+                executedIn.RevertChanges(clonedExecutedIn);
+            }
         }
 
         /// <summary>

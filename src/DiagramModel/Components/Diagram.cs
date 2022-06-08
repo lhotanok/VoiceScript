@@ -11,8 +11,7 @@ namespace DiagramModel.Components
         readonly CommandExecutionContext context;
         public Diagram(string name = "Diagram", Component parent = null) : base(name, parent, validChildTypes)
         {
-            context = new CommandExecutionContext();
-            InitializeCommandExecutionContext(this);
+            context = new CommandExecutionContext(this);
         }
 
         public static string TypeName { get => nameof(Diagram).ToLower(); }
@@ -36,14 +35,14 @@ namespace DiagramModel.Components
             return parser.GetParsedCommands(text);
         }
 
-        public void ConvertTextToDiagram(string text, IList<Command> parsedCommands = null, string languageCode = null)
+        public void ConvertTextToDiagram(string text, ICommand command = null, string languageCode = null)
         {
-            if (parsedCommands == null)
+            if (command == null)
             {
-                parsedCommands = GetParsedCommands(text, languageCode);
+                command = new MacroCommand(GetParsedCommands(text, languageCode));
             }
 
-            ExecuteCommands(parsedCommands);
+            command.Execute(context);
         }
 
         public override string UniqueTypeName { get => TypeName; }
@@ -51,39 +50,7 @@ namespace DiagramModel.Components
         public void Clear()
         {
             children.Clear();
-            InitializeCommandExecutionContext(this);
-        }
-
-        void ExecuteCommands(IEnumerable<Command> commands)
-        {
-
-            var clonedDiagram = Clone();
-            var currentCommandNumber = 1;
-
-            try
-            {
-                foreach (var command in commands)
-                {
-                    InitializeCommandExecutionContext(context.TargetComponent);
-                    command.Execute(context);
-
-                    currentCommandNumber++;
-                }
-            }
-            catch (Exception ex)
-            {
-                RevertChanges(clonedDiagram);
-                throw new CommandExecutionException($"Error while executing {currentCommandNumber}. command.\n\n" + ex.Message,
-                    currentCommandNumber);
-            }
-            
-        }
-
-        void InitializeCommandExecutionContext(Component target)
-        {
-            context.TargetComponent = target;
-            context.CurrentComponent = target;
-            context.CommandExecuted = false;
+            context.Initialize(this);
         }
 
         public override Component Clone()
@@ -92,14 +59,6 @@ namespace DiagramModel.Components
             CloneChildrenInto(clone);
 
             return clone;
-        }
-
-        void RevertChanges(Component original)
-        {
-            Name = original.Name;
-            Parent = original.Parent;
-            children.Clear();
-            children.AddRange(original.Children);
         }
     }
 }
